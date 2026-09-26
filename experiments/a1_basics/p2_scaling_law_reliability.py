@@ -3,9 +3,6 @@ from model_config import depth_model_config
 from train import TrainConfig
 
 
-EXPERIMENT_KEY = "a1-basics-p2"
-
-
 RUNS = []
 seen_configs = set()
 for depth in range(4, 10):
@@ -21,8 +18,6 @@ for depth in range(4, 10):
         seen_configs.add(config_key)
         RUNS.append(
             TrainConfig(
-                run_name_suffix=EXPERIMENT_KEY,
-                wandb_tags=(EXPERIMENT_KEY,),
                 model_config=depth_model_config(depth),
                 learning_rate=learning_rate,
                 lr_schedule=lr_schedule,
