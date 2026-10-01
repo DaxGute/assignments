@@ -118,6 +118,62 @@ For local CUDA runs, `baseline.config(train_path, val_path, ...)` and
 to download data, prepare each prefix once, and use the same prepared prefix
 across comparisons. The Modal commands above do not require this local workflow.
 
+## Hyperball and Muon
+
+Both implementations are included; no additional package is required. The A2
+Modal config factory selects their optimizer builder automatically.
+
+For P1(d), pass your predicted or swept LR to:
+
+```python
+from experiments.a2.modal_launcher import config, launch_training_jobs
+
+def hyperball_run(lr):
+    return config(tokens=1_228_800_000, optimizer_name='adamh',
+                  learning_rate=lr, weight_decay=0.,
+                  run_name_suffix='a2-hyperball-target')
+```
+
+Launch your chosen configurations with `launch_training_jobs(RUNS)`.
+[`hyperball.py`](hyperball.py) supplies AdamH for linear-layer weights,
+including the readout. Embeddings, normalization parameters, and biases use
+ordinary Adam at `(0.000656 / 0.00630) * learning_rate`, matching the supplied
+Hyperball runs. Both groups follow the same scheduler; epsilon is `1e-8`.
+Hyperball requires zero weight decay. Keep the fallback LR ratio fixed for P1(d).
+
+For the optional Muon exploration:
+
+```python
+muon_run = config(
+    optimizer_name='muon', learning_rate=.02, weight_decay=.1,
+    optimizer_kwargs={'adam_learning_rate': 3e-4, 'momentum': .95},
+    run_name_suffix='a2-muon-exploration',
+)
+```
+
+These are starting settings, not tuned assignment results. Tune Muon's LR and
+the auxiliary AdamW LR separately. [`muon.py`](muon.py) uses five BF16
+Newton–Schulz steps, Nesterov momentum, and the upstream rectangular-matrix
+factor `sqrt(max(1, rows / columns))`. Hidden linear weights use Muon;
+embedding, readout, normalization, and bias parameters use AdamW. Weight decay
+applies to hidden and readout weights; embedding, normalization, and bias
+parameters are exempt. The auxiliary AdamW uses the config's betas and epsilon
+`1e-8`. Both optimizers' groups follow the configured LR schedule.
+
+The Muon implementation is adapted from
+[KellerJordan/Muon](https://github.com/KellerJordan/Muon/tree/f98f1cacc0263b04290753e32be8d498c1efc806)
+under its [MIT license](licenses/Muon.txt). It supports one device without
+initializing a distributed process group. Missing gradients are skipped, and
+optimizer steps preserve the recorded gradients.
+
+For local training, set
+`optimizer_builder='experiments.a2.optimizers:build_optimizer'` alongside the
+optimizer name in `TrainConfig`; pass optional settings in `optimizer_kwargs`.
+Muon routing expects an output module named `lm_head` or `head`.
+For custom parameter groups, use `AdamH` or `SingleDeviceMuonWithAuxAdam`
+directly in your optimizer factory. Width/depth initialization, readout
+multipliers, and parameter-group scaling remain student work.
+
 ## Implement the experiments
 
 P1 and P2 analyze supplied source sweeps and train new target configurations. P4.1 derives and
