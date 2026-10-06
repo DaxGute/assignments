@@ -1,0 +1,5057 @@
+{
+  "batch": "batch2",
+  "source_batch": "batch1",
+  "fits": {
+    "p32b": {
+      "problem": "3.2",
+      "subpart": "b",
+      "hypotheses": [
+        {
+          "hypothesis": "fixed_wd_scale_lr",
+          "source_optima": [
+            {
+              "batch_size": 8,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.028099422108992897,
+                  "log_linear": 0.38106576619147536,
+                  "intercept": 4.226404088543182
+                },
+                "samples": [
+                  {
+                    "value": 0.0015,
+                    "loss": 2.936641216278076
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 2.9609856605529785
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 3.012331008911133
+                  }
+                ],
+                "best_sampled_value": 0.0015,
+                "best_sampled_loss": 2.936641216278076,
+                "optimum": 0.0011355148761954298,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": false,
+                "fitted_loss_at_optimum": 2.9344636564602125
+              }
+            },
+            {
+              "batch_size": 16,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.01865503885816179,
+                  "log_linear": 0.2390780589891211,
+                  "intercept": 3.6883706466267
+                },
+                "samples": [
+                  {
+                    "value": 0.0015,
+                    "loss": 2.922546625137329
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 2.929067611694336
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 2.953514337539673
+                  }
+                ],
+                "best_sampled_value": 0.0015,
+                "best_sampled_loss": 2.922546625137329,
+                "optimum": 0.0016485351743621619,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 2.9223803058320166
+              }
+            },
+            {
+              "batch_size": 32,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.017726331247089392,
+                  "log_linear": 0.20538324694673704,
+                  "intercept": 3.513367152549528
+                },
+                "samples": [
+                  {
+                    "value": 0.0015,
+                    "loss": 2.927371025085449
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 2.918461799621582
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 2.926585912704468
+                  }
+                ],
+                "best_sampled_value": 0.003,
+                "best_sampled_loss": 2.918461799621582,
+                "optimum": 0.003048308350215339,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 2.9184572761289544
+              }
+            },
+            {
+              "batch_size": 64,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.03832264938631657,
+                  "log_linear": 0.44048697593065383,
+                  "intercept": 4.191246302826944
+                },
+                "samples": [
+                  {
+                    "value": 0.0015,
+                    "loss": 2.94734525680542
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 2.925636053085327
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 2.940751314163208
+                  }
+                ],
+                "best_sampled_value": 0.003,
+                "best_sampled_loss": 2.925636053085327,
+                "optimum": 0.0031920750936311744,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 2.925488460717703
+              }
+            }
+          ],
+          "power_law": {
+            "exponent": 0.5360268129742036,
+            "log_prefactor": -7.854152085925836,
+            "prefactor": 0.00038813703957221724,
+            "r_squared": 0.920598123493609,
+            "controls": [
+              8.0,
+              16.0,
+              32.0,
+              64.0
+            ],
+            "responses": [
+              0.0011355148761954298,
+              0.0016485351743621619,
+              0.003048308350215339,
+              0.0031920750936311744
+            ]
+          },
+          "jobs": [
+            {
+              "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0036982063-wd0.1-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_wd_scale_lr",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.5360268129742036,
+                  "prefactor": 0.00038813703957221724,
+                  "r_squared": 0.920598123493609,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_wd_scale_lr",
+                  "varied": "peak_lr",
+                  "held_fixed": {
+                    "weight_decay": 0.1
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.0011355148761954298,
+                    0.0016485351743621619,
+                    0.003048308350215339,
+                    0.0031920750936311744
+                  ],
+                  "predicted": 0.0052300535230619186,
+                  "trained_value": 0.0036982063121256763
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 128,
+                "tokens": 614400000,
+                "peak_lr": 0.0036982063121256763,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0052300535-wd0.1-predicted",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "predicted",
+                "hypothesis": "fixed_wd_scale_lr",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.5360268129742036,
+                  "prefactor": 0.00038813703957221724,
+                  "r_squared": 0.920598123493609,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_wd_scale_lr",
+                  "varied": "peak_lr",
+                  "held_fixed": {
+                    "weight_decay": 0.1
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.0011355148761954298,
+                    0.0016485351743621619,
+                    0.003048308350215339,
+                    0.0031920750936311744
+                  ],
+                  "predicted": 0.0052300535230619186,
+                  "trained_value": 0.0052300535230619186
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 128,
+                "tokens": 614400000,
+                "peak_lr": 0.0052300535230619186,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0073964126-wd0.1-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_wd_scale_lr",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.5360268129742036,
+                  "prefactor": 0.00038813703957221724,
+                  "r_squared": 0.920598123493609,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_wd_scale_lr",
+                  "varied": "peak_lr",
+                  "held_fixed": {
+                    "weight_decay": 0.1
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.0011355148761954298,
+                    0.0016485351743621619,
+                    0.003048308350215339,
+                    0.0031920750936311744
+                  ],
+                  "predicted": 0.0052300535230619186,
+                  "trained_value": 0.007396412624251353
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 128,
+                "tokens": 614400000,
+                "peak_lr": 0.007396412624251353,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0053623022-wd0.1-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_wd_scale_lr",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.5360268129742036,
+                  "prefactor": 0.00038813703957221724,
+                  "r_squared": 0.920598123493609,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_wd_scale_lr",
+                  "varied": "peak_lr",
+                  "held_fixed": {
+                    "weight_decay": 0.1
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.0011355148761954298,
+                    0.0016485351743621619,
+                    0.003048308350215339,
+                    0.0031920750936311744
+                  ],
+                  "predicted": 0.007583440481041338,
+                  "trained_value": 0.005362302188868904
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 256,
+                "tokens": 614400000,
+                "peak_lr": 0.005362302188868904,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0075834405-wd0.1-predicted",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "predicted",
+                "hypothesis": "fixed_wd_scale_lr",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.5360268129742036,
+                  "prefactor": 0.00038813703957221724,
+                  "r_squared": 0.920598123493609,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_wd_scale_lr",
+                  "varied": "peak_lr",
+                  "held_fixed": {
+                    "weight_decay": 0.1
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.0011355148761954298,
+                    0.0016485351743621619,
+                    0.003048308350215339,
+                    0.0031920750936311744
+                  ],
+                  "predicted": 0.007583440481041338,
+                  "trained_value": 0.007583440481041338
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 256,
+                "tokens": 614400000,
+                "peak_lr": 0.007583440481041338,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.010724604-wd0.1-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_wd_scale_lr",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.5360268129742036,
+                  "prefactor": 0.00038813703957221724,
+                  "r_squared": 0.920598123493609,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_wd_scale_lr",
+                  "varied": "peak_lr",
+                  "held_fixed": {
+                    "weight_decay": 0.1
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.0011355148761954298,
+                    0.0016485351743621619,
+                    0.003048308350215339,
+                    0.0031920750936311744
+                  ],
+                  "predicted": 0.007583440481041338,
+                  "trained_value": 0.010724604377737808
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 256,
+                "tokens": 614400000,
+                "peak_lr": 0.010724604377737808,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            }
+          ]
+        },
+        {
+          "hypothesis": "fixed_lr_scale_wd",
+          "source_optima": [
+            {
+              "batch_size": 8,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.039378269619100806,
+                  "log_linear": 0.17810989503630706,
+                  "intercept": 3.1389724113137363
+                },
+                "samples": [
+                  {
+                    "value": 0.1,
+                    "loss": 2.936641216278076
+                  },
+                  {
+                    "value": 0.2,
+                    "loss": 2.9573094844818115
+                  },
+                  {
+                    "value": 0.4,
+                    "loss": 3.00584077835083
+                  },
+                  {
+                    "value": 0.8,
+                    "loss": 3.102186679840088
+                  }
+                ],
+                "best_sampled_value": 0.1,
+                "best_sampled_loss": 2.936641216278076,
+                "optimum": 0.10419145482751331,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 2.937572406839843
+              }
+            },
+            {
+              "batch_size": 16,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.02736685218601966,
+                  "log_linear": 0.10791719204200469,
+                  "intercept": 3.0265931134182043
+                },
+                "samples": [
+                  {
+                    "value": 0.1,
+                    "loss": 2.922546625137329
+                  },
+                  {
+                    "value": 0.2,
+                    "loss": 2.925757884979248
+                  },
+                  {
+                    "value": 0.4,
+                    "loss": 2.948723793029785
+                  },
+                  {
+                    "value": 0.8,
+                    "loss": 3.0045289993286133
+                  }
+                ],
+                "best_sampled_value": 0.1,
+                "best_sampled_loss": 2.922546625137329,
+                "optimum": 0.13922316777757093,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 2.9202041847695126
+              }
+            },
+            {
+              "batch_size": 32,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.01905959610097634,
+                  "log_linear": 0.059257255079269794,
+                  "intercept": 2.9635153441688695
+                },
+                "samples": [
+                  {
+                    "value": 0.1,
+                    "loss": 2.927371025085449
+                  },
+                  {
+                    "value": 0.2,
+                    "loss": 2.919768810272217
+                  },
+                  {
+                    "value": 0.4,
+                    "loss": 2.922966241836548
+                  },
+                  {
+                    "value": 0.8,
+                    "loss": 2.951992988586426
+                  }
+                ],
+                "best_sampled_value": 0.2,
+                "best_sampled_loss": 2.919768810272217,
+                "optimum": 0.21128962264390608,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 2.917456888090808
+              }
+            },
+            {
+              "batch_size": 64,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.008157392500462792,
+                  "log_linear": 0.009771273412402744,
+                  "intercept": 2.927261328241345
+                },
+                "samples": [
+                  {
+                    "value": 0.1,
+                    "loss": 2.94734525680542
+                  },
+                  {
+                    "value": 0.2,
+                    "loss": 2.934664726257324
+                  },
+                  {
+                    "value": 0.4,
+                    "loss": 2.923157215118408
+                  },
+                  {
+                    "value": 0.8,
+                    "loss": 2.9261536598205566
+                  }
+                ],
+                "best_sampled_value": 0.4,
+                "best_sampled_loss": 2.923157215118408,
+                "optimum": 0.5494039192031848,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 2.924335216003442
+              }
+            }
+          ],
+          "power_law": {
+            "exponent": 0.7797713328294835,
+            "log_prefactor": -4.028895631106914,
+            "prefactor": 0.017793970213805743,
+            "r_squared": 0.9245162117544369,
+            "controls": [
+              8.0,
+              16.0,
+              32.0,
+              64.0
+            ],
+            "responses": [
+              0.10419145482751331,
+              0.13922316777757093,
+              0.21128962264390608,
+              0.5494039192031848
+            ]
+          },
+          "jobs": [
+            {
+              "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.55322244-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_lr_scale_wd",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.7797713328294835,
+                  "prefactor": 0.017793970213805743,
+                  "r_squared": 0.9245162117544369,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_lr_scale_wd",
+                  "varied": "weight_decay",
+                  "held_fixed": {
+                    "peak_lr": 0.0015
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.10419145482751331,
+                    0.13922316777757093,
+                    0.21128962264390608,
+                    0.5494039192031848
+                  ],
+                  "predicted": 0.7823746780182889,
+                  "trained_value": 0.5532224402553738
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 128,
+                "tokens": 614400000,
+                "peak_lr": 0.0015,
+                "weight_decay": 0.5532224402553738,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.78237468-predicted",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "predicted",
+                "hypothesis": "fixed_lr_scale_wd",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.7797713328294835,
+                  "prefactor": 0.017793970213805743,
+                  "r_squared": 0.9245162117544369,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_lr_scale_wd",
+                  "varied": "weight_decay",
+                  "held_fixed": {
+                    "peak_lr": 0.0015
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.10419145482751331,
+                    0.13922316777757093,
+                    0.21128962264390608,
+                    0.5494039192031848
+                  ],
+                  "predicted": 0.7823746780182889,
+                  "trained_value": 0.7823746780182889
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 128,
+                "tokens": 614400000,
+                "peak_lr": 0.0015,
+                "weight_decay": 0.7823746780182889,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd1.1064449-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_lr_scale_wd",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.7797713328294835,
+                  "prefactor": 0.017793970213805743,
+                  "r_squared": 0.9245162117544369,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_lr_scale_wd",
+                  "varied": "weight_decay",
+                  "held_fixed": {
+                    "peak_lr": 0.0015
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.10419145482751331,
+                    0.13922316777757093,
+                    0.21128962264390608,
+                    0.5494039192031848
+                  ],
+                  "predicted": 0.7823746780182889,
+                  "trained_value": 1.1064448805107476
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 128,
+                "tokens": 614400000,
+                "peak_lr": 0.0015,
+                "weight_decay": 1.1064448805107476,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd0.94980478-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_lr_scale_wd",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.7797713328294835,
+                  "prefactor": 0.017793970213805743,
+                  "r_squared": 0.9245162117544369,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_lr_scale_wd",
+                  "varied": "weight_decay",
+                  "held_fixed": {
+                    "peak_lr": 0.0015
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.10419145482751331,
+                    0.13922316777757093,
+                    0.21128962264390608,
+                    0.5494039192031848
+                  ],
+                  "predicted": 1.3432267954547417,
+                  "trained_value": 0.9498047757375235
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 256,
+                "tokens": 614400000,
+                "peak_lr": 0.0015,
+                "weight_decay": 0.9498047757375235,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.3432268-predicted",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "predicted",
+                "hypothesis": "fixed_lr_scale_wd",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.7797713328294835,
+                  "prefactor": 0.017793970213805743,
+                  "r_squared": 0.9245162117544369,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_lr_scale_wd",
+                  "varied": "weight_decay",
+                  "held_fixed": {
+                    "peak_lr": 0.0015
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.10419145482751331,
+                    0.13922316777757093,
+                    0.21128962264390608,
+                    0.5494039192031848
+                  ],
+                  "predicted": 1.3432267954547417,
+                  "trained_value": 1.3432267954547417
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 256,
+                "tokens": 614400000,
+                "peak_lr": 0.0015,
+                "weight_decay": 1.3432267954547417,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.8996096-nearby_validation",
+              "membership": {
+                "problem": "3.2",
+                "subpart": "b",
+                "family": "batch_scaling_target",
+                "config_role": "nearby_validation",
+                "hypothesis": "fixed_lr_scale_wd",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "parameterization": "baseline",
+                "prediction_source": {
+                  "exponent": 0.7797713328294835,
+                  "prefactor": 0.017793970213805743,
+                  "r_squared": 0.9245162117544369,
+                  "kind": "batch_power_law",
+                  "hypothesis": "fixed_lr_scale_wd",
+                  "varied": "weight_decay",
+                  "held_fixed": {
+                    "peak_lr": 0.0015
+                  },
+                  "source_batches": [
+                    8,
+                    16,
+                    32,
+                    64
+                  ],
+                  "source_optima": [
+                    0.10419145482751331,
+                    0.13922316777757093,
+                    0.21128962264390608,
+                    0.5494039192031848
+                  ],
+                  "predicted": 1.3432267954547417,
+                  "trained_value": 1.899609551475047
+                }
+              },
+              "hyperparameters": {
+                "batch_size": 256,
+                "tokens": 614400000,
+                "peak_lr": 0.0015,
+                "weight_decay": 1.899609551475047,
+                "optimizer": "adamw",
+                "width": 512,
+                "depth": 8
+              },
+              "scheduled": true
+            }
+          ]
+        }
+      ]
+    },
+    "p42c": {
+      "problem": "4.2",
+      "subpart": "c",
+      "prescriptions": [
+        {
+          "parameterization": "baseline",
+          "source_optima": [
+            {
+              "width": 128,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.10652607005540296,
+                  "log_linear": 1.04346583589586,
+                  "intercept": 6.168240135107069
+                },
+                "samples": [
+                  {
+                    "value": 0.00075,
+                    "loss": 4.174891471862793
+                  },
+                  {
+                    "value": 0.0015,
+                    "loss": 3.891066551208496
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 3.692727088928222
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 3.625798225402832
+                  },
+                  {
+                    "value": 0.012,
+                    "loss": 3.634533405303955
+                  }
+                ],
+                "best_sampled_value": 0.006,
+                "best_sampled_loss": 3.625798225402832,
+                "optimum": 0.007463716986721006,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 3.612947918573682
+              }
+            },
+            {
+              "width": 256,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.07905793234598207,
+                  "log_linear": 0.8362583651250842,
+                  "intercept": 5.6004630987389765
+                },
+                "samples": [
+                  {
+                    "value": 0.00075,
+                    "loss": 3.684466361999512
+                  },
+                  {
+                    "value": 0.0015,
+                    "loss": 3.4898266792297363
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 3.408735752105713
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 3.4092226028442383
+                  },
+                  {
+                    "value": 0.012,
+                    "loss": 3.4396793842315674
+                  }
+                ],
+                "best_sampled_value": 0.003,
+                "best_sampled_loss": 3.408735752105713,
+                "optimum": 0.005047329410486991,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 3.3890213354343093
+              }
+            },
+            {
+              "width": 512,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.09529438278637474,
+                  "log_linear": 1.1514766327562846,
+                  "intercept": 6.702408453885946
+                },
+                "samples": [
+                  {
+                    "value": 0.0015,
+                    "loss": 3.2441985607147217
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 3.2291338443756104
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 3.305638074874878
+                  }
+                ],
+                "best_sampled_value": 0.003,
+                "best_sampled_loss": 3.2291338443756104,
+                "optimum": 0.0023775575165277136,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 3.223980877635015
+              }
+            }
+          ],
+          "power_law": {
+            "exponent": -0.8252070199803745,
+            "log_prefactor": -0.8335070825320714,
+            "prefactor": 0.4345227039761929,
+            "r_squared": 0.9677707335246699,
+            "controls": [
+              128.0,
+              256.0,
+              512.0
+            ],
+            "responses": [
+              0.007463716986721006,
+              0.005047329410486991,
+              0.0023775575165277136
+            ]
+          },
+          "predicted_lr": 0.001425252518053827,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "jobs": [
+            {
+              "label": "a2-b2-p42c-width-baseline-w1024-lr0.0014252525-powerlaw_prediction",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "powerlaw_prediction",
+                "parameterization": "baseline",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.8252070199803745,
+                  "prefactor": 0.4345227039761929,
+                  "r_squared": 0.9677707335246699,
+                  "kind": "width_power_law",
+                  "parameterization": "baseline",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.007463716986721006,
+                    0.005047329410486991,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001425252518053827,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.001425252518053827
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.001425252518053827,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "baseline",
+                "scaling": {
+                  "parameterization": "baseline",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 1.0,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 1.0,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-baseline-w1024-lr0.003-direct_transfer",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "direct_transfer",
+                "parameterization": "baseline",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.8252070199803745,
+                  "prefactor": 0.4345227039761929,
+                  "r_squared": 0.9677707335246699,
+                  "kind": "problem1_best_sampled_lr",
+                  "parameterization": "baseline",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.007463716986721006,
+                    0.005047329410486991,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001425252518053827,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.003
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.003,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "baseline",
+                "scaling": {
+                  "parameterization": "baseline",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 1.0,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 1.0,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-baseline-w1024-lr0.00071262626-local_sweep",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "local_sweep",
+                "parameterization": "baseline",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.8252070199803745,
+                  "prefactor": 0.4345227039761929,
+                  "r_squared": 0.9677707335246699,
+                  "kind": "width_power_law",
+                  "parameterization": "baseline",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.007463716986721006,
+                    0.005047329410486991,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001425252518053827,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.0007126262590269135
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.0007126262590269135,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "baseline",
+                "scaling": {
+                  "parameterization": "baseline",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 1.0,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 1.0,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-baseline-w1024-lr0.0014252525-local_sweep",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "local_sweep",
+                "parameterization": "baseline",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.8252070199803745,
+                  "prefactor": 0.4345227039761929,
+                  "r_squared": 0.9677707335246699,
+                  "kind": "width_power_law",
+                  "parameterization": "baseline",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.007463716986721006,
+                    0.005047329410486991,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001425252518053827,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.001425252518053827
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.001425252518053827,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "baseline",
+                "scaling": {
+                  "parameterization": "baseline",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 1.0,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 1.0,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-baseline-w1024-lr0.002850505-local_sweep",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "local_sweep",
+                "parameterization": "baseline",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.8252070199803745,
+                  "prefactor": 0.4345227039761929,
+                  "r_squared": 0.9677707335246699,
+                  "kind": "width_power_law",
+                  "parameterization": "baseline",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.007463716986721006,
+                    0.005047329410486991,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001425252518053827,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.002850505036107654
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.002850505036107654,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "baseline",
+                "scaling": {
+                  "parameterization": "baseline",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 1.0,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 1.0,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            }
+          ]
+        },
+        {
+          "parameterization": "mup",
+          "source_optima": [
+            {
+              "width": 128,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.04748864366049366,
+                  "log_linear": 0.5348696507755666,
+                  "intercept": 5.13156245112837
+                },
+                "samples": [
+                  {
+                    "value": 0.00075,
+                    "loss": 3.745706081390381
+                  },
+                  {
+                    "value": 0.0015,
+                    "loss": 3.6530394554138184
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 3.627915382385254
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 3.6453278064727783
+                  },
+                  {
+                    "value": 0.012,
+                    "loss": 3.691105365753174
+                  }
+                ],
+                "best_sampled_value": 0.003,
+                "best_sampled_loss": 3.627915382385254,
+                "optimum": 0.003583005711149412,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 3.6254889919343016
+              }
+            },
+            {
+              "width": 256,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.044487791973114664,
+                  "log_linear": 0.5152485799453724,
+                  "intercept": 4.904389315879116
+                },
+                "samples": [
+                  {
+                    "value": 0.00075,
+                    "loss": 3.5084564685821533
+                  },
+                  {
+                    "value": 0.0015,
+                    "loss": 3.417285680770874
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 3.416667938232422
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 3.4449989795684814
+                  },
+                  {
+                    "value": 0.012,
+                    "loss": 3.48897385597229
+                  }
+                ],
+                "best_sampled_value": 0.003,
+                "best_sampled_loss": 3.416667938232422,
+                "optimum": 0.003055235664587458,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 3.412513188962314
+              }
+            },
+            {
+              "width": 512,
+              "optimum": {
+                "coefficients": {
+                  "log_quadratic": 0.09529438278637474,
+                  "log_linear": 1.1514766327562846,
+                  "intercept": 6.702408453885946
+                },
+                "samples": [
+                  {
+                    "value": 0.0015,
+                    "loss": 3.2441985607147217
+                  },
+                  {
+                    "value": 0.003,
+                    "loss": 3.2291338443756104
+                  },
+                  {
+                    "value": 0.006,
+                    "loss": 3.305638074874878
+                  }
+                ],
+                "best_sampled_value": 0.003,
+                "best_sampled_loss": 3.2291338443756104,
+                "optimum": 0.0023775575165277136,
+                "method": "log_quadratic_vertex",
+                "vertex_inside_sample_range": true,
+                "fitted_loss_at_optimum": 3.223980877635015
+              }
+            }
+          ],
+          "power_law": {
+            "exponent": -0.29584505038510744,
+            "log_prefactor": -4.180864488622382,
+            "prefactor": 0.015285287895945441,
+            "r_squared": 0.9837012895603415,
+            "controls": [
+              128.0,
+              256.0,
+              512.0
+            ],
+            "responses": [
+              0.003583005711149412,
+              0.003055235664587458,
+              0.0023775575165277136
+            ]
+          },
+          "predicted_lr": 0.001966487909797544,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "jobs": [
+            {
+              "label": "a2-b2-p42c-width-mup-w1024-lr0.0019664879-powerlaw_prediction",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "powerlaw_prediction",
+                "parameterization": "mup",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.29584505038510744,
+                  "prefactor": 0.015285287895945441,
+                  "r_squared": 0.9837012895603415,
+                  "kind": "width_power_law",
+                  "parameterization": "mup",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.003583005711149412,
+                    0.003055235664587458,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001966487909797544,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.001966487909797544
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.001966487909797544,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "mup",
+                "scaling": {
+                  "parameterization": "mup",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 0.5,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 0.5,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-mup-w1024-lr0.003-direct_transfer",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "direct_transfer",
+                "parameterization": "mup",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.29584505038510744,
+                  "prefactor": 0.015285287895945441,
+                  "r_squared": 0.9837012895603415,
+                  "kind": "problem1_best_sampled_lr",
+                  "parameterization": "mup",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.003583005711149412,
+                    0.003055235664587458,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001966487909797544,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.003
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.003,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "mup",
+                "scaling": {
+                  "parameterization": "mup",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 0.5,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 0.5,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-mup-w1024-lr0.00098324395-local_sweep",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "local_sweep",
+                "parameterization": "mup",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.29584505038510744,
+                  "prefactor": 0.015285287895945441,
+                  "r_squared": 0.9837012895603415,
+                  "kind": "width_power_law",
+                  "parameterization": "mup",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.003583005711149412,
+                    0.003055235664587458,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001966487909797544,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.000983243954898772
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.000983243954898772,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "mup",
+                "scaling": {
+                  "parameterization": "mup",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 0.5,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 0.5,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-mup-w1024-lr0.0019664879-local_sweep",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "local_sweep",
+                "parameterization": "mup",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.29584505038510744,
+                  "prefactor": 0.015285287895945441,
+                  "r_squared": 0.9837012895603415,
+                  "kind": "width_power_law",
+                  "parameterization": "mup",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.003583005711149412,
+                    0.003055235664587458,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001966487909797544,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.001966487909797544
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.001966487909797544,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "mup",
+                "scaling": {
+                  "parameterization": "mup",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 0.5,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 0.5,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            },
+            {
+              "label": "a2-b2-p42c-width-mup-w1024-lr0.0039329758-local_sweep",
+              "membership": {
+                "problem": "4.2",
+                "subpart": "c",
+                "family": "heldout_width",
+                "config_role": "local_sweep",
+                "parameterization": "mup",
+                "stage": "target",
+                "batch": "batch2",
+                "source_batch": "batch1",
+                "prediction_source": {
+                  "exponent": -0.29584505038510744,
+                  "prefactor": 0.015285287895945441,
+                  "r_squared": 0.9837012895603415,
+                  "kind": "width_power_law",
+                  "parameterization": "mup",
+                  "source_widths": [
+                    128,
+                    256,
+                    512
+                  ],
+                  "source_optima": [
+                    0.003583005711149412,
+                    0.003055235664587458,
+                    0.0023775575165277136
+                  ],
+                  "predicted": 0.001966487909797544,
+                  "transferred_lr": 0.003,
+                  "transferred_run_id": "jysl6iqh",
+                  "trained_lr": 0.003932975819595088
+                }
+              },
+              "hyperparameters": {
+                "tokens": 153600000,
+                "batch_size": 64,
+                "width": 1024,
+                "depth": 8,
+                "peak_lr": 0.003932975819595088,
+                "weight_decay": 0.1,
+                "optimizer": "adamw",
+                "parameterization": "mup",
+                "scaling": {
+                  "parameterization": "mup",
+                  "reference_width": 512,
+                  "reference_depth": 8,
+                  "output_multiplier": 0.5,
+                  "residual_multiplier": 1.0,
+                  "block_lr_multiplier": 1.0,
+                  "block_eps_multiplier": 1.0,
+                  "hidden_lr_multiplier": 0.5,
+                  "norm_lr_multiplier": 1.0,
+                  "width_ratio": 2.0,
+                  "relative_depth": 1.0
+                }
+              },
+              "scheduled": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0036982063-wd0.1-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0036982063121256763-bs128-tok614M-a2-a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0036982063-wd0.1-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_wd_scale_lr",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0036982063-wd0.1-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_wd_scale_lr",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.5360268129742036,
+              "prefactor": 0.00038813703957221724,
+              "r_squared": 0.920598123493609,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_wd_scale_lr",
+              "varied": "peak_lr",
+              "held_fixed": {
+                "weight_decay": 0.1
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.0011355148761954298,
+                0.0016485351743621619,
+                0.003048308350215339,
+                0.0031920750936311744
+              ],
+              "predicted": 0.0052300535230619186,
+              "trained_value": 0.0036982063121256763
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_wd_scale_lr",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 128,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0036982063121256763,
+        "base_lr": 0.0036982063121256763,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_wd_scale_lr"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.5360268129742036,
+            "prefactor": 0.00038813703957221724,
+            "r_squared": 0.920598123493609,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_wd_scale_lr",
+            "varied": "peak_lr",
+            "held_fixed": {
+              "weight_decay": 0.1
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.0011355148761954298,
+              0.0016485351743621619,
+              0.003048308350215339,
+              0.0031920750936311744
+            ],
+            "predicted": 0.0052300535230619186,
+            "trained_value": 0.0036982063121256763
+          }
+        ],
+        "processed_tokens": 614334464,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.5360268129742036,
+          "prefactor": 0.00038813703957221724,
+          "r_squared": 0.920598123493609,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_wd_scale_lr",
+          "varied": "peak_lr",
+          "held_fixed": {
+            "weight_decay": 0.1
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.0011355148761954298,
+            0.0016485351743621619,
+            0.003048308350215339,
+            0.0031920750936311744
+          ],
+          "predicted": 0.0052300535230619186,
+          "trained_value": 0.0036982063121256763
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0036982063121256763,
+      "weight_decay": 0.1,
+      "batch_size": 128,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614334464
+    },
+    {
+      "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0052300535-wd0.1-predicted",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0052300535230619186-bs128-tok614M-a2-a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0052300535-wd0.1-predicted",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "predicted",
+        "fixed_wd_scale_lr",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0052300535-wd0.1-predicted",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "predicted",
+            "hypothesis": "fixed_wd_scale_lr",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.5360268129742036,
+              "prefactor": 0.00038813703957221724,
+              "r_squared": 0.920598123493609,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_wd_scale_lr",
+              "varied": "peak_lr",
+              "held_fixed": {
+                "weight_decay": 0.1
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.0011355148761954298,
+                0.0016485351743621619,
+                0.003048308350215339,
+                0.0031920750936311744
+              ],
+              "predicted": 0.0052300535230619186,
+              "trained_value": 0.0052300535230619186
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "predicted",
+        "hypothesis": "fixed_wd_scale_lr",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 128,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0052300535230619186,
+        "base_lr": 0.0052300535230619186,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "predicted"
+        ],
+        "hypotheses": [
+          "fixed_wd_scale_lr"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.5360268129742036,
+            "prefactor": 0.00038813703957221724,
+            "r_squared": 0.920598123493609,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_wd_scale_lr",
+            "varied": "peak_lr",
+            "held_fixed": {
+              "weight_decay": 0.1
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.0011355148761954298,
+              0.0016485351743621619,
+              0.003048308350215339,
+              0.0031920750936311744
+            ],
+            "predicted": 0.0052300535230619186,
+            "trained_value": 0.0052300535230619186
+          }
+        ],
+        "processed_tokens": 614334464,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.5360268129742036,
+          "prefactor": 0.00038813703957221724,
+          "r_squared": 0.920598123493609,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_wd_scale_lr",
+          "varied": "peak_lr",
+          "held_fixed": {
+            "weight_decay": 0.1
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.0011355148761954298,
+            0.0016485351743621619,
+            0.003048308350215339,
+            0.0031920750936311744
+          ],
+          "predicted": 0.0052300535230619186,
+          "trained_value": 0.0052300535230619186
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0052300535230619186,
+      "weight_decay": 0.1,
+      "batch_size": 128,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614334464
+    },
+    {
+      "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0073964126-wd0.1-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.007396412624251353-bs128-tok614M-a2-a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0073964126-wd0.1-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_wd_scale_lr",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_wd_scale_lr-b128-lr0.0073964126-wd0.1-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_wd_scale_lr",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.5360268129742036,
+              "prefactor": 0.00038813703957221724,
+              "r_squared": 0.920598123493609,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_wd_scale_lr",
+              "varied": "peak_lr",
+              "held_fixed": {
+                "weight_decay": 0.1
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.0011355148761954298,
+                0.0016485351743621619,
+                0.003048308350215339,
+                0.0031920750936311744
+              ],
+              "predicted": 0.0052300535230619186,
+              "trained_value": 0.007396412624251353
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_wd_scale_lr",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 128,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.007396412624251353,
+        "base_lr": 0.007396412624251353,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_wd_scale_lr"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.5360268129742036,
+            "prefactor": 0.00038813703957221724,
+            "r_squared": 0.920598123493609,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_wd_scale_lr",
+            "varied": "peak_lr",
+            "held_fixed": {
+              "weight_decay": 0.1
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.0011355148761954298,
+              0.0016485351743621619,
+              0.003048308350215339,
+              0.0031920750936311744
+            ],
+            "predicted": 0.0052300535230619186,
+            "trained_value": 0.007396412624251353
+          }
+        ],
+        "processed_tokens": 614334464,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.5360268129742036,
+          "prefactor": 0.00038813703957221724,
+          "r_squared": 0.920598123493609,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_wd_scale_lr",
+          "varied": "peak_lr",
+          "held_fixed": {
+            "weight_decay": 0.1
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.0011355148761954298,
+            0.0016485351743621619,
+            0.003048308350215339,
+            0.0031920750936311744
+          ],
+          "predicted": 0.0052300535230619186,
+          "trained_value": 0.007396412624251353
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.007396412624251353,
+      "weight_decay": 0.1,
+      "batch_size": 128,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614334464
+    },
+    {
+      "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0053623022-wd0.1-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.005362302188868904-bs256-tok614M-a2-a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0053623022-wd0.1-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_wd_scale_lr",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0053623022-wd0.1-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_wd_scale_lr",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.5360268129742036,
+              "prefactor": 0.00038813703957221724,
+              "r_squared": 0.920598123493609,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_wd_scale_lr",
+              "varied": "peak_lr",
+              "held_fixed": {
+                "weight_decay": 0.1
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.0011355148761954298,
+                0.0016485351743621619,
+                0.003048308350215339,
+                0.0031920750936311744
+              ],
+              "predicted": 0.007583440481041338,
+              "trained_value": 0.005362302188868904
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_wd_scale_lr",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 256,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.005362302188868904,
+        "base_lr": 0.005362302188868904,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_wd_scale_lr"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.5360268129742036,
+            "prefactor": 0.00038813703957221724,
+            "r_squared": 0.920598123493609,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_wd_scale_lr",
+            "varied": "peak_lr",
+            "held_fixed": {
+              "weight_decay": 0.1
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.0011355148761954298,
+              0.0016485351743621619,
+              0.003048308350215339,
+              0.0031920750936311744
+            ],
+            "predicted": 0.007583440481041338,
+            "trained_value": 0.005362302188868904
+          }
+        ],
+        "processed_tokens": 614203392,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.5360268129742036,
+          "prefactor": 0.00038813703957221724,
+          "r_squared": 0.920598123493609,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_wd_scale_lr",
+          "varied": "peak_lr",
+          "held_fixed": {
+            "weight_decay": 0.1
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.0011355148761954298,
+            0.0016485351743621619,
+            0.003048308350215339,
+            0.0031920750936311744
+          ],
+          "predicted": 0.007583440481041338,
+          "trained_value": 0.005362302188868904
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.005362302188868904,
+      "weight_decay": 0.1,
+      "batch_size": 256,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614203392
+    },
+    {
+      "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0075834405-wd0.1-predicted",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.007583440481041338-bs256-tok614M-a2-a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0075834405-wd0.1-predicted",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "predicted",
+        "fixed_wd_scale_lr",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.0075834405-wd0.1-predicted",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "predicted",
+            "hypothesis": "fixed_wd_scale_lr",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.5360268129742036,
+              "prefactor": 0.00038813703957221724,
+              "r_squared": 0.920598123493609,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_wd_scale_lr",
+              "varied": "peak_lr",
+              "held_fixed": {
+                "weight_decay": 0.1
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.0011355148761954298,
+                0.0016485351743621619,
+                0.003048308350215339,
+                0.0031920750936311744
+              ],
+              "predicted": 0.007583440481041338,
+              "trained_value": 0.007583440481041338
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "predicted",
+        "hypothesis": "fixed_wd_scale_lr",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 256,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.007583440481041338,
+        "base_lr": 0.007583440481041338,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "predicted"
+        ],
+        "hypotheses": [
+          "fixed_wd_scale_lr"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.5360268129742036,
+            "prefactor": 0.00038813703957221724,
+            "r_squared": 0.920598123493609,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_wd_scale_lr",
+            "varied": "peak_lr",
+            "held_fixed": {
+              "weight_decay": 0.1
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.0011355148761954298,
+              0.0016485351743621619,
+              0.003048308350215339,
+              0.0031920750936311744
+            ],
+            "predicted": 0.007583440481041338,
+            "trained_value": 0.007583440481041338
+          }
+        ],
+        "processed_tokens": 614203392,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.5360268129742036,
+          "prefactor": 0.00038813703957221724,
+          "r_squared": 0.920598123493609,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_wd_scale_lr",
+          "varied": "peak_lr",
+          "held_fixed": {
+            "weight_decay": 0.1
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.0011355148761954298,
+            0.0016485351743621619,
+            0.003048308350215339,
+            0.0031920750936311744
+          ],
+          "predicted": 0.007583440481041338,
+          "trained_value": 0.007583440481041338
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.007583440481041338,
+      "weight_decay": 0.1,
+      "batch_size": 256,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614203392
+    },
+    {
+      "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.010724604-wd0.1-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.010724604377737808-bs256-tok614M-a2-a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.010724604-wd0.1-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_wd_scale_lr",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_wd_scale_lr-b256-lr0.010724604-wd0.1-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_wd_scale_lr",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.5360268129742036,
+              "prefactor": 0.00038813703957221724,
+              "r_squared": 0.920598123493609,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_wd_scale_lr",
+              "varied": "peak_lr",
+              "held_fixed": {
+                "weight_decay": 0.1
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.0011355148761954298,
+                0.0016485351743621619,
+                0.003048308350215339,
+                0.0031920750936311744
+              ],
+              "predicted": 0.007583440481041338,
+              "trained_value": 0.010724604377737808
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_wd_scale_lr",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 256,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.010724604377737808,
+        "base_lr": 0.010724604377737808,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_wd_scale_lr"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.5360268129742036,
+            "prefactor": 0.00038813703957221724,
+            "r_squared": 0.920598123493609,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_wd_scale_lr",
+            "varied": "peak_lr",
+            "held_fixed": {
+              "weight_decay": 0.1
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.0011355148761954298,
+              0.0016485351743621619,
+              0.003048308350215339,
+              0.0031920750936311744
+            ],
+            "predicted": 0.007583440481041338,
+            "trained_value": 0.010724604377737808
+          }
+        ],
+        "processed_tokens": 614203392,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.5360268129742036,
+          "prefactor": 0.00038813703957221724,
+          "r_squared": 0.920598123493609,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_wd_scale_lr",
+          "varied": "peak_lr",
+          "held_fixed": {
+            "weight_decay": 0.1
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.0011355148761954298,
+            0.0016485351743621619,
+            0.003048308350215339,
+            0.0031920750936311744
+          ],
+          "predicted": 0.007583440481041338,
+          "trained_value": 0.010724604377737808
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.010724604377737808,
+      "weight_decay": 0.1,
+      "batch_size": 256,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614203392
+    },
+    {
+      "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.55322244-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0015-bs128-tok614M-wd0.5532224402553738-a2-a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.55322244-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_lr_scale_wd",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.55322244-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_lr_scale_wd",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.7797713328294835,
+              "prefactor": 0.017793970213805743,
+              "r_squared": 0.9245162117544369,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_lr_scale_wd",
+              "varied": "weight_decay",
+              "held_fixed": {
+                "peak_lr": 0.0015
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.10419145482751331,
+                0.13922316777757093,
+                0.21128962264390608,
+                0.5494039192031848
+              ],
+              "predicted": 0.7823746780182889,
+              "trained_value": 0.5532224402553738
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_lr_scale_wd",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 128,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0015,
+        "base_lr": 0.0015,
+        "weight_decay": 0.5532224402553738,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_lr_scale_wd"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.7797713328294835,
+            "prefactor": 0.017793970213805743,
+            "r_squared": 0.9245162117544369,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_lr_scale_wd",
+            "varied": "weight_decay",
+            "held_fixed": {
+              "peak_lr": 0.0015
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.10419145482751331,
+              0.13922316777757093,
+              0.21128962264390608,
+              0.5494039192031848
+            ],
+            "predicted": 0.7823746780182889,
+            "trained_value": 0.5532224402553738
+          }
+        ],
+        "processed_tokens": 614334464,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.7797713328294835,
+          "prefactor": 0.017793970213805743,
+          "r_squared": 0.9245162117544369,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_lr_scale_wd",
+          "varied": "weight_decay",
+          "held_fixed": {
+            "peak_lr": 0.0015
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.10419145482751331,
+            0.13922316777757093,
+            0.21128962264390608,
+            0.5494039192031848
+          ],
+          "predicted": 0.7823746780182889,
+          "trained_value": 0.5532224402553738
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0015,
+      "weight_decay": 0.5532224402553738,
+      "batch_size": 128,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614334464
+    },
+    {
+      "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.78237468-predicted",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0015-bs128-tok614M-wd0.7823746780182889-a2-a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.78237468-predicted",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "predicted",
+        "fixed_lr_scale_wd",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.78237468-predicted",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "predicted",
+            "hypothesis": "fixed_lr_scale_wd",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.7797713328294835,
+              "prefactor": 0.017793970213805743,
+              "r_squared": 0.9245162117544369,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_lr_scale_wd",
+              "varied": "weight_decay",
+              "held_fixed": {
+                "peak_lr": 0.0015
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.10419145482751331,
+                0.13922316777757093,
+                0.21128962264390608,
+                0.5494039192031848
+              ],
+              "predicted": 0.7823746780182889,
+              "trained_value": 0.7823746780182889
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "predicted",
+        "hypothesis": "fixed_lr_scale_wd",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 128,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0015,
+        "base_lr": 0.0015,
+        "weight_decay": 0.7823746780182889,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "predicted"
+        ],
+        "hypotheses": [
+          "fixed_lr_scale_wd"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.7797713328294835,
+            "prefactor": 0.017793970213805743,
+            "r_squared": 0.9245162117544369,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_lr_scale_wd",
+            "varied": "weight_decay",
+            "held_fixed": {
+              "peak_lr": 0.0015
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.10419145482751331,
+              0.13922316777757093,
+              0.21128962264390608,
+              0.5494039192031848
+            ],
+            "predicted": 0.7823746780182889,
+            "trained_value": 0.7823746780182889
+          }
+        ],
+        "processed_tokens": 614334464,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.7797713328294835,
+          "prefactor": 0.017793970213805743,
+          "r_squared": 0.9245162117544369,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_lr_scale_wd",
+          "varied": "weight_decay",
+          "held_fixed": {
+            "peak_lr": 0.0015
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.10419145482751331,
+            0.13922316777757093,
+            0.21128962264390608,
+            0.5494039192031848
+          ],
+          "predicted": 0.7823746780182889,
+          "trained_value": 0.7823746780182889
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0015,
+      "weight_decay": 0.7823746780182889,
+      "batch_size": 128,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614334464
+    },
+    {
+      "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd1.1064449-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0015-bs128-tok614M-wd1.1064448805107476-a2-a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd1.1064449-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_lr_scale_wd",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd1.1064449-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_lr_scale_wd",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.7797713328294835,
+              "prefactor": 0.017793970213805743,
+              "r_squared": 0.9245162117544369,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_lr_scale_wd",
+              "varied": "weight_decay",
+              "held_fixed": {
+                "peak_lr": 0.0015
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.10419145482751331,
+                0.13922316777757093,
+                0.21128962264390608,
+                0.5494039192031848
+              ],
+              "predicted": 0.7823746780182889,
+              "trained_value": 1.1064448805107476
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_lr_scale_wd",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 128,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0015,
+        "base_lr": 0.0015,
+        "weight_decay": 1.1064448805107476,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_lr_scale_wd"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.7797713328294835,
+            "prefactor": 0.017793970213805743,
+            "r_squared": 0.9245162117544369,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_lr_scale_wd",
+            "varied": "weight_decay",
+            "held_fixed": {
+              "peak_lr": 0.0015
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.10419145482751331,
+              0.13922316777757093,
+              0.21128962264390608,
+              0.5494039192031848
+            ],
+            "predicted": 0.7823746780182889,
+            "trained_value": 1.1064448805107476
+          }
+        ],
+        "processed_tokens": 614334464,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.7797713328294835,
+          "prefactor": 0.017793970213805743,
+          "r_squared": 0.9245162117544369,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_lr_scale_wd",
+          "varied": "weight_decay",
+          "held_fixed": {
+            "peak_lr": 0.0015
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.10419145482751331,
+            0.13922316777757093,
+            0.21128962264390608,
+            0.5494039192031848
+          ],
+          "predicted": 0.7823746780182889,
+          "trained_value": 1.1064448805107476
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0015,
+      "weight_decay": 1.1064448805107476,
+      "batch_size": 128,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614334464
+    },
+    {
+      "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd0.94980478-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0015-bs256-tok614M-wd0.9498047757375235-a2-a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd0.94980478-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_lr_scale_wd",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd0.94980478-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_lr_scale_wd",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.7797713328294835,
+              "prefactor": 0.017793970213805743,
+              "r_squared": 0.9245162117544369,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_lr_scale_wd",
+              "varied": "weight_decay",
+              "held_fixed": {
+                "peak_lr": 0.0015
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.10419145482751331,
+                0.13922316777757093,
+                0.21128962264390608,
+                0.5494039192031848
+              ],
+              "predicted": 1.3432267954547417,
+              "trained_value": 0.9498047757375235
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_lr_scale_wd",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 256,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0015,
+        "base_lr": 0.0015,
+        "weight_decay": 0.9498047757375235,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_lr_scale_wd"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.7797713328294835,
+            "prefactor": 0.017793970213805743,
+            "r_squared": 0.9245162117544369,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_lr_scale_wd",
+            "varied": "weight_decay",
+            "held_fixed": {
+              "peak_lr": 0.0015
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.10419145482751331,
+              0.13922316777757093,
+              0.21128962264390608,
+              0.5494039192031848
+            ],
+            "predicted": 1.3432267954547417,
+            "trained_value": 0.9498047757375235
+          }
+        ],
+        "processed_tokens": 614203392,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.7797713328294835,
+          "prefactor": 0.017793970213805743,
+          "r_squared": 0.9245162117544369,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_lr_scale_wd",
+          "varied": "weight_decay",
+          "held_fixed": {
+            "peak_lr": 0.0015
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.10419145482751331,
+            0.13922316777757093,
+            0.21128962264390608,
+            0.5494039192031848
+          ],
+          "predicted": 1.3432267954547417,
+          "trained_value": 0.9498047757375235
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0015,
+      "weight_decay": 0.9498047757375235,
+      "batch_size": 256,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614203392
+    },
+    {
+      "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.3432268-predicted",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0015-bs256-tok614M-wd1.3432267954547417-a2-a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.3432268-predicted",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "predicted",
+        "fixed_lr_scale_wd",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.3432268-predicted",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "predicted",
+            "hypothesis": "fixed_lr_scale_wd",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.7797713328294835,
+              "prefactor": 0.017793970213805743,
+              "r_squared": 0.9245162117544369,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_lr_scale_wd",
+              "varied": "weight_decay",
+              "held_fixed": {
+                "peak_lr": 0.0015
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.10419145482751331,
+                0.13922316777757093,
+                0.21128962264390608,
+                0.5494039192031848
+              ],
+              "predicted": 1.3432267954547417,
+              "trained_value": 1.3432267954547417
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "predicted",
+        "hypothesis": "fixed_lr_scale_wd",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 256,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0015,
+        "base_lr": 0.0015,
+        "weight_decay": 1.3432267954547417,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "predicted"
+        ],
+        "hypotheses": [
+          "fixed_lr_scale_wd"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.7797713328294835,
+            "prefactor": 0.017793970213805743,
+            "r_squared": 0.9245162117544369,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_lr_scale_wd",
+            "varied": "weight_decay",
+            "held_fixed": {
+              "peak_lr": 0.0015
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.10419145482751331,
+              0.13922316777757093,
+              0.21128962264390608,
+              0.5494039192031848
+            ],
+            "predicted": 1.3432267954547417,
+            "trained_value": 1.3432267954547417
+          }
+        ],
+        "processed_tokens": 614203392,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.7797713328294835,
+          "prefactor": 0.017793970213805743,
+          "r_squared": 0.9245162117544369,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_lr_scale_wd",
+          "varied": "weight_decay",
+          "held_fixed": {
+            "peak_lr": 0.0015
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.10419145482751331,
+            0.13922316777757093,
+            0.21128962264390608,
+            0.5494039192031848
+          ],
+          "predicted": 1.3432267954547417,
+          "trained_value": 1.3432267954547417
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0015,
+      "weight_decay": 1.3432267954547417,
+      "batch_size": 256,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614203392
+    },
+    {
+      "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.8996096-nearby_validation",
+      "aliases": [],
+      "wandb_name": "model-a2-d8-lr0.0015-bs256-tok614M-wd1.899609551475047-a2-a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.8996096-nearby_validation",
+      "tags": [
+        "a2",
+        "batch2",
+        "p32",
+        "p32b",
+        "batch_scaling_target",
+        "nearby_validation",
+        "fixed_lr_scale_wd",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p32b-fixed_lr_scale_wd-b256-lr0.0015-wd1.8996096-nearby_validation",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "3.2",
+            "subpart": "b",
+            "family": "batch_scaling_target",
+            "config_role": "nearby_validation",
+            "hypothesis": "fixed_lr_scale_wd",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "parameterization": "baseline",
+            "prediction_source": {
+              "exponent": 0.7797713328294835,
+              "prefactor": 0.017793970213805743,
+              "r_squared": 0.9245162117544369,
+              "kind": "batch_power_law",
+              "hypothesis": "fixed_lr_scale_wd",
+              "varied": "weight_decay",
+              "held_fixed": {
+                "peak_lr": 0.0015
+              },
+              "source_batches": [
+                8,
+                16,
+                32,
+                64
+              ],
+              "source_optima": [
+                0.10419145482751331,
+                0.13922316777757093,
+                0.21128962264390608,
+                0.5494039192031848
+              ],
+              "predicted": 1.3432267954547417,
+              "trained_value": 1.899609551475047
+            }
+          }
+        ],
+        "problem": "3.2",
+        "subpart": "b",
+        "family": "batch_scaling_target",
+        "config_role": "nearby_validation",
+        "hypothesis": "fixed_lr_scale_wd",
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 614400000,
+        "target_tokens": 614400000,
+        "batch_size": 256,
+        "width": 512,
+        "depth": 8,
+        "peak_lr": 0.0015,
+        "base_lr": 0.0015,
+        "weight_decay": 1.899609551475047,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "nearby_validation"
+        ],
+        "hypotheses": [
+          "fixed_lr_scale_wd"
+        ],
+        "prediction_sources": [
+          {
+            "exponent": 0.7797713328294835,
+            "prefactor": 0.017793970213805743,
+            "r_squared": 0.9245162117544369,
+            "kind": "batch_power_law",
+            "hypothesis": "fixed_lr_scale_wd",
+            "varied": "weight_decay",
+            "held_fixed": {
+              "peak_lr": 0.0015
+            },
+            "source_batches": [
+              8,
+              16,
+              32,
+              64
+            ],
+            "source_optima": [
+              0.10419145482751331,
+              0.13922316777757093,
+              0.21128962264390608,
+              0.5494039192031848
+            ],
+            "predicted": 1.3432267954547417,
+            "trained_value": 1.899609551475047
+          }
+        ],
+        "processed_tokens": 614203392,
+        "model_name": "a2-d8"
+      },
+      "prediction_sources": [
+        {
+          "exponent": 0.7797713328294835,
+          "prefactor": 0.017793970213805743,
+          "r_squared": 0.9245162117544369,
+          "kind": "batch_power_law",
+          "hypothesis": "fixed_lr_scale_wd",
+          "varied": "weight_decay",
+          "held_fixed": {
+            "peak_lr": 0.0015
+          },
+          "source_batches": [
+            8,
+            16,
+            32,
+            64
+          ],
+          "source_optima": [
+            0.10419145482751331,
+            0.13922316777757093,
+            0.21128962264390608,
+            0.5494039192031848
+          ],
+          "predicted": 1.3432267954547417,
+          "trained_value": 1.899609551475047
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0015,
+      "weight_decay": 1.899609551475047,
+      "batch_size": 256,
+      "width": 512,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 614400000,
+      "processed_tokens": 614203392
+    },
+    {
+      "label": "a2-b2-p42c-width-baseline-w1024-lr0.0014252525-powerlaw_prediction",
+      "aliases": [
+        "a2-b2-p42c-width-baseline-w1024-lr0.0014252525-local_sweep"
+      ],
+      "wandb_name": "model-a2-w1024-d008-baseline-lr0.001425252518053827-tok154M-a2-a2-b2-p42c-width-baseline-w1024-lr0.0014252525-powerlaw_prediction",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "powerlaw_prediction",
+        "target",
+        "baseline",
+        "local_sweep",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-baseline-w1024-lr0.0014252525-powerlaw_prediction",
+        "aliases": [
+          "a2-b2-p42c-width-baseline-w1024-lr0.0014252525-local_sweep"
+        ],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "powerlaw_prediction",
+            "parameterization": "baseline",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.8252070199803745,
+              "prefactor": 0.4345227039761929,
+              "r_squared": 0.9677707335246699,
+              "kind": "width_power_law",
+              "parameterization": "baseline",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.007463716986721006,
+                0.005047329410486991,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001425252518053827,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.001425252518053827
+            }
+          },
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "local_sweep",
+            "parameterization": "baseline",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.8252070199803745,
+              "prefactor": 0.4345227039761929,
+              "r_squared": 0.9677707335246699,
+              "kind": "width_power_law",
+              "parameterization": "baseline",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.007463716986721006,
+                0.005047329410486991,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001425252518053827,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.001425252518053827
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "powerlaw_prediction",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.001425252518053827,
+        "base_lr": 0.001425252518053827,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "powerlaw_prediction",
+          "local_sweep"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.8252070199803745,
+            "prefactor": 0.4345227039761929,
+            "r_squared": 0.9677707335246699,
+            "kind": "width_power_law",
+            "parameterization": "baseline",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.007463716986721006,
+              0.005047329410486991,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001425252518053827,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.001425252518053827
+          },
+          {
+            "exponent": -0.8252070199803745,
+            "prefactor": 0.4345227039761929,
+            "r_squared": 0.9677707335246699,
+            "kind": "width_power_law",
+            "parameterization": "baseline",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.007463716986721006,
+              0.005047329410486991,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001425252518053827,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.001425252518053827
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-baseline"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.8252070199803745,
+          "prefactor": 0.4345227039761929,
+          "r_squared": 0.9677707335246699,
+          "kind": "width_power_law",
+          "parameterization": "baseline",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.007463716986721006,
+            0.005047329410486991,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001425252518053827,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.001425252518053827
+        },
+        {
+          "exponent": -0.8252070199803745,
+          "prefactor": 0.4345227039761929,
+          "r_squared": 0.9677707335246699,
+          "kind": "width_power_law",
+          "parameterization": "baseline",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.007463716986721006,
+            0.005047329410486991,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001425252518053827,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.001425252518053827
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.001425252518053827,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    },
+    {
+      "label": "a2-b2-p42c-width-baseline-w1024-lr0.003-direct_transfer",
+      "aliases": [],
+      "wandb_name": "model-a2-w1024-d008-baseline-lr0.003-tok154M-a2-a2-b2-p42c-width-baseline-w1024-lr0.003-direct_transfer",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "direct_transfer",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-baseline-w1024-lr0.003-direct_transfer",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "direct_transfer",
+            "parameterization": "baseline",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.8252070199803745,
+              "prefactor": 0.4345227039761929,
+              "r_squared": 0.9677707335246699,
+              "kind": "problem1_best_sampled_lr",
+              "parameterization": "baseline",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.007463716986721006,
+                0.005047329410486991,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001425252518053827,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.003
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "direct_transfer",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.003,
+        "base_lr": 0.003,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "direct_transfer"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.8252070199803745,
+            "prefactor": 0.4345227039761929,
+            "r_squared": 0.9677707335246699,
+            "kind": "problem1_best_sampled_lr",
+            "parameterization": "baseline",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.007463716986721006,
+              0.005047329410486991,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001425252518053827,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.003
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-baseline"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.8252070199803745,
+          "prefactor": 0.4345227039761929,
+          "r_squared": 0.9677707335246699,
+          "kind": "problem1_best_sampled_lr",
+          "parameterization": "baseline",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.007463716986721006,
+            0.005047329410486991,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001425252518053827,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.003
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.003,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    },
+    {
+      "label": "a2-b2-p42c-width-baseline-w1024-lr0.00071262626-local_sweep",
+      "aliases": [],
+      "wandb_name": "model-a2-w1024-d008-baseline-lr0.0007126262590269135-tok154M-a2-a2-b2-p42c-width-baseline-w1024-lr0.00071262626-local_sweep",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "local_sweep",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-baseline-w1024-lr0.00071262626-local_sweep",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "local_sweep",
+            "parameterization": "baseline",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.8252070199803745,
+              "prefactor": 0.4345227039761929,
+              "r_squared": 0.9677707335246699,
+              "kind": "width_power_law",
+              "parameterization": "baseline",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.007463716986721006,
+                0.005047329410486991,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001425252518053827,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.0007126262590269135
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "local_sweep",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.0007126262590269135,
+        "base_lr": 0.0007126262590269135,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "local_sweep"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.8252070199803745,
+            "prefactor": 0.4345227039761929,
+            "r_squared": 0.9677707335246699,
+            "kind": "width_power_law",
+            "parameterization": "baseline",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.007463716986721006,
+              0.005047329410486991,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001425252518053827,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.0007126262590269135
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-baseline"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.8252070199803745,
+          "prefactor": 0.4345227039761929,
+          "r_squared": 0.9677707335246699,
+          "kind": "width_power_law",
+          "parameterization": "baseline",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.007463716986721006,
+            0.005047329410486991,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001425252518053827,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.0007126262590269135
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.0007126262590269135,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    },
+    {
+      "label": "a2-b2-p42c-width-baseline-w1024-lr0.002850505-local_sweep",
+      "aliases": [],
+      "wandb_name": "model-a2-w1024-d008-baseline-lr0.002850505036107654-tok154M-a2-a2-b2-p42c-width-baseline-w1024-lr0.002850505-local_sweep",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "local_sweep",
+        "target",
+        "baseline",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-baseline-w1024-lr0.002850505-local_sweep",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "local_sweep",
+            "parameterization": "baseline",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.8252070199803745,
+              "prefactor": 0.4345227039761929,
+              "r_squared": 0.9677707335246699,
+              "kind": "width_power_law",
+              "parameterization": "baseline",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.007463716986721006,
+                0.005047329410486991,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001425252518053827,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.002850505036107654
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "local_sweep",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "baseline",
+        "equivalent_parameterizations": [
+          "baseline"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.002850505036107654,
+        "base_lr": 0.002850505036107654,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "local_sweep"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.8252070199803745,
+            "prefactor": 0.4345227039761929,
+            "r_squared": 0.9677707335246699,
+            "kind": "width_power_law",
+            "parameterization": "baseline",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.007463716986721006,
+              0.005047329410486991,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001425252518053827,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.002850505036107654
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-baseline"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.8252070199803745,
+          "prefactor": 0.4345227039761929,
+          "r_squared": 0.9677707335246699,
+          "kind": "width_power_law",
+          "parameterization": "baseline",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.007463716986721006,
+            0.005047329410486991,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001425252518053827,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.002850505036107654
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.002850505036107654,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "baseline",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    },
+    {
+      "label": "a2-b2-p42c-width-mup-w1024-lr0.0019664879-powerlaw_prediction",
+      "aliases": [
+        "a2-b2-p42c-width-mup-w1024-lr0.0019664879-local_sweep"
+      ],
+      "wandb_name": "model-a2-w1024-d008-mup-lr0.001966487909797544-tok154M-a2-a2-b2-p42c-width-mup-w1024-lr0.0019664879-powerlaw_prediction",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "powerlaw_prediction",
+        "target",
+        "mup",
+        "local_sweep",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-mup-w1024-lr0.0019664879-powerlaw_prediction",
+        "aliases": [
+          "a2-b2-p42c-width-mup-w1024-lr0.0019664879-local_sweep"
+        ],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "powerlaw_prediction",
+            "parameterization": "mup",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.29584505038510744,
+              "prefactor": 0.015285287895945441,
+              "r_squared": 0.9837012895603415,
+              "kind": "width_power_law",
+              "parameterization": "mup",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.003583005711149412,
+                0.003055235664587458,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001966487909797544,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.001966487909797544
+            }
+          },
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "local_sweep",
+            "parameterization": "mup",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.29584505038510744,
+              "prefactor": 0.015285287895945441,
+              "r_squared": 0.9837012895603415,
+              "kind": "width_power_law",
+              "parameterization": "mup",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.003583005711149412,
+                0.003055235664587458,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001966487909797544,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.001966487909797544
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "powerlaw_prediction",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "mup",
+        "equivalent_parameterizations": [
+          "mup"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.001966487909797544,
+        "base_lr": 0.001966487909797544,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "hidden_lr_multiplier": 0.5,
+        "output_multiplier": 0.5,
+        "residual_multiplier": 1.0,
+        "block_eps_multiplier": 1.0,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "powerlaw_prediction",
+          "local_sweep"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.29584505038510744,
+            "prefactor": 0.015285287895945441,
+            "r_squared": 0.9837012895603415,
+            "kind": "width_power_law",
+            "parameterization": "mup",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.003583005711149412,
+              0.003055235664587458,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001966487909797544,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.001966487909797544
+          },
+          {
+            "exponent": -0.29584505038510744,
+            "prefactor": 0.015285287895945441,
+            "r_squared": 0.9837012895603415,
+            "kind": "width_power_law",
+            "parameterization": "mup",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.003583005711149412,
+              0.003055235664587458,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001966487909797544,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.001966487909797544
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-mup"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.29584505038510744,
+          "prefactor": 0.015285287895945441,
+          "r_squared": 0.9837012895603415,
+          "kind": "width_power_law",
+          "parameterization": "mup",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.003583005711149412,
+            0.003055235664587458,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001966487909797544,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.001966487909797544
+        },
+        {
+          "exponent": -0.29584505038510744,
+          "prefactor": 0.015285287895945441,
+          "r_squared": 0.9837012895603415,
+          "kind": "width_power_law",
+          "parameterization": "mup",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.003583005711149412,
+            0.003055235664587458,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001966487909797544,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.001966487909797544
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.001966487909797544,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "mup",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    },
+    {
+      "label": "a2-b2-p42c-width-mup-w1024-lr0.003-direct_transfer",
+      "aliases": [],
+      "wandb_name": "model-a2-w1024-d008-mup-lr0.003-tok154M-a2-a2-b2-p42c-width-mup-w1024-lr0.003-direct_transfer",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "direct_transfer",
+        "target",
+        "mup",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-mup-w1024-lr0.003-direct_transfer",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "direct_transfer",
+            "parameterization": "mup",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.29584505038510744,
+              "prefactor": 0.015285287895945441,
+              "r_squared": 0.9837012895603415,
+              "kind": "problem1_best_sampled_lr",
+              "parameterization": "mup",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.003583005711149412,
+                0.003055235664587458,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001966487909797544,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.003
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "direct_transfer",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "mup",
+        "equivalent_parameterizations": [
+          "mup"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.003,
+        "base_lr": 0.003,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "hidden_lr_multiplier": 0.5,
+        "output_multiplier": 0.5,
+        "residual_multiplier": 1.0,
+        "block_eps_multiplier": 1.0,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "direct_transfer"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.29584505038510744,
+            "prefactor": 0.015285287895945441,
+            "r_squared": 0.9837012895603415,
+            "kind": "problem1_best_sampled_lr",
+            "parameterization": "mup",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.003583005711149412,
+              0.003055235664587458,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001966487909797544,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.003
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-mup"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.29584505038510744,
+          "prefactor": 0.015285287895945441,
+          "r_squared": 0.9837012895603415,
+          "kind": "problem1_best_sampled_lr",
+          "parameterization": "mup",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.003583005711149412,
+            0.003055235664587458,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001966487909797544,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.003
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.003,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "mup",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    },
+    {
+      "label": "a2-b2-p42c-width-mup-w1024-lr0.00098324395-local_sweep",
+      "aliases": [],
+      "wandb_name": "model-a2-w1024-d008-mup-lr0.000983243954898772-tok154M-a2-a2-b2-p42c-width-mup-w1024-lr0.00098324395-local_sweep",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "local_sweep",
+        "target",
+        "mup",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-mup-w1024-lr0.00098324395-local_sweep",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "local_sweep",
+            "parameterization": "mup",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.29584505038510744,
+              "prefactor": 0.015285287895945441,
+              "r_squared": 0.9837012895603415,
+              "kind": "width_power_law",
+              "parameterization": "mup",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.003583005711149412,
+                0.003055235664587458,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001966487909797544,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.000983243954898772
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "local_sweep",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "mup",
+        "equivalent_parameterizations": [
+          "mup"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.000983243954898772,
+        "base_lr": 0.000983243954898772,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "hidden_lr_multiplier": 0.5,
+        "output_multiplier": 0.5,
+        "residual_multiplier": 1.0,
+        "block_eps_multiplier": 1.0,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "local_sweep"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.29584505038510744,
+            "prefactor": 0.015285287895945441,
+            "r_squared": 0.9837012895603415,
+            "kind": "width_power_law",
+            "parameterization": "mup",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.003583005711149412,
+              0.003055235664587458,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001966487909797544,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.000983243954898772
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-mup"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.29584505038510744,
+          "prefactor": 0.015285287895945441,
+          "r_squared": 0.9837012895603415,
+          "kind": "width_power_law",
+          "parameterization": "mup",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.003583005711149412,
+            0.003055235664587458,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001966487909797544,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.000983243954898772
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.000983243954898772,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "mup",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    },
+    {
+      "label": "a2-b2-p42c-width-mup-w1024-lr0.0039329758-local_sweep",
+      "aliases": [],
+      "wandb_name": "model-a2-w1024-d008-mup-lr0.003932975819595088-tok154M-a2-a2-b2-p42c-width-mup-w1024-lr0.0039329758-local_sweep",
+      "tags": [
+        "a2",
+        "batch2",
+        "p42",
+        "p42c",
+        "heldout_width",
+        "local_sweep",
+        "target",
+        "mup",
+        "source_batch1"
+      ],
+      "metadata": {
+        "assignment": "a2",
+        "batch": "batch2",
+        "label": "a2-b2-p42c-width-mup-w1024-lr0.0039329758-local_sweep",
+        "aliases": [],
+        "memberships": [
+          {
+            "problem": "4.2",
+            "subpart": "c",
+            "family": "heldout_width",
+            "config_role": "local_sweep",
+            "parameterization": "mup",
+            "stage": "target",
+            "batch": "batch2",
+            "source_batch": "batch1",
+            "prediction_source": {
+              "exponent": -0.29584505038510744,
+              "prefactor": 0.015285287895945441,
+              "r_squared": 0.9837012895603415,
+              "kind": "width_power_law",
+              "parameterization": "mup",
+              "source_widths": [
+                128,
+                256,
+                512
+              ],
+              "source_optima": [
+                0.003583005711149412,
+                0.003055235664587458,
+                0.0023775575165277136
+              ],
+              "predicted": 0.001966487909797544,
+              "transferred_lr": 0.003,
+              "transferred_run_id": "jysl6iqh",
+              "trained_lr": 0.003932975819595088
+            }
+          }
+        ],
+        "problem": "4.2",
+        "subpart": "c",
+        "family": "heldout_width",
+        "config_role": "local_sweep",
+        "hypothesis": null,
+        "stage": "target",
+        "parameterization": "mup",
+        "equivalent_parameterizations": [
+          "mup"
+        ],
+        "source_type": null,
+        "protocol": "language_model",
+        "token_budget": 153600000,
+        "target_tokens": 153600000,
+        "batch_size": 64,
+        "width": 1024,
+        "depth": 8,
+        "peak_lr": 0.003932975819595088,
+        "base_lr": 0.003932975819595088,
+        "weight_decay": 0.1,
+        "optimizer": "adamw",
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "seed": 42,
+        "num_updates": null,
+        "hidden_lr_multiplier": 0.5,
+        "output_multiplier": 0.5,
+        "residual_multiplier": 1.0,
+        "block_eps_multiplier": 1.0,
+        "optimizer_name": "adamw",
+        "lr_schedule": "linear",
+        "warmup_percent": 0.01,
+        "source_batch": "batch1",
+        "config_roles": [
+          "local_sweep"
+        ],
+        "hypotheses": [],
+        "prediction_sources": [
+          {
+            "exponent": -0.29584505038510744,
+            "prefactor": 0.015285287895945441,
+            "r_squared": 0.9837012895603415,
+            "kind": "width_power_law",
+            "parameterization": "mup",
+            "source_widths": [
+              128,
+              256,
+              512
+            ],
+            "source_optima": [
+              0.003583005711149412,
+              0.003055235664587458,
+              0.0023775575165277136
+            ],
+            "predicted": 0.001966487909797544,
+            "transferred_lr": 0.003,
+            "transferred_run_id": "jysl6iqh",
+            "trained_lr": 0.003932975819595088
+          }
+        ],
+        "processed_tokens": 153550848,
+        "model_name": "a2-w1024-d008-mup"
+      },
+      "prediction_sources": [
+        {
+          "exponent": -0.29584505038510744,
+          "prefactor": 0.015285287895945441,
+          "r_squared": 0.9837012895603415,
+          "kind": "width_power_law",
+          "parameterization": "mup",
+          "source_widths": [
+            128,
+            256,
+            512
+          ],
+          "source_optima": [
+            0.003583005711149412,
+            0.003055235664587458,
+            0.0023775575165277136
+          ],
+          "predicted": 0.001966487909797544,
+          "transferred_lr": 0.003,
+          "transferred_run_id": "jysl6iqh",
+          "trained_lr": 0.003932975819595088
+        }
+      ],
+      "reused_run_id": null,
+      "reused_run_url": null,
+      "peak_lr": 0.003932975819595088,
+      "weight_decay": 0.1,
+      "batch_size": 64,
+      "width": 1024,
+      "depth": 8,
+      "parameterization": "mup",
+      "token_budget": 153600000,
+      "processed_tokens": 153550848
+    }
+  ],
+  "discretionary": {
+    "p32b_local_factors": [
+      0.7071067811865476,
+      1.0,
+      1.4142135623730951
+    ],
+    "p42c_local_exponents": [
+      -1,
+      0,
+      1
+    ],
+    "note": "Problem 3.2(b) trains the prediction and half an octave on either side. Problem 4.2(c) trains the power-law prediction, the Problem 1 sampled learning rate, and one octave on either side of the prediction. Matching values are one physical run with every analytical role kept."
+  }
+}

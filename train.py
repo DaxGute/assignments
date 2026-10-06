@@ -68,6 +68,8 @@ class TrainConfig:
     tie_word_embeddings: bool = False
     deterministic: bool = False
     perturb_one_token: bool = False
+    perturb_step: int | None = None
+    perturb_num_tokens: int = 1
     wandb_tags: tuple[str, ...] = field(default_factory=tuple)
     wandb_online: bool = True
     force_run: bool = False
@@ -76,6 +78,9 @@ class TrainConfig:
     train_dataset: TokenDatasetConfig = field(default_factory=dclm_train_dataset)
     val_dataset: TokenDatasetConfig = field(default_factory=dclm_val_dataset)
     optimizer_name: str = "adamw"
+    optimizer_builder: str | None = None
+    optimizer_kwargs: dict = field(default_factory=dict)
+    experiment_metadata: dict = field(default_factory=dict)
     beta1: float = 0.9
     beta2: float = 0.95
     save_model: bool = True
@@ -158,7 +163,9 @@ def training_run_name(config):
     if config.deterministic != TrainConfig.deterministic:
         run_name += "-deterministic"
     if config.perturb_one_token != TrainConfig.perturb_one_token:
-        run_name += "-perturb1tok"
+        run_name += f"-perturb{config.perturb_num_tokens}tok"
+        if config.perturb_step is not None:
+            run_name += f"-at{config.perturb_step}"
     if config.data_seed != TrainConfig.data_seed:
         if config.data_seed is None:
             run_name += "-dsnone"
@@ -288,7 +295,7 @@ def checked_train_config(config):
     if not isinstance(config, TrainConfig):
         raise TypeError(f"config must be a TrainConfig, got {type(config).__name__}.")
     validate_precision(config.precision)
-    if config.optimizer_name not in {"adamw", "sgd"}:
+    if config.optimizer_builder is None and config.optimizer_name not in {"adamw", "sgd"}:
         raise ValueError(
             f"optimizer_name must be 'adamw' or 'sgd', got {config.optimizer_name!r}."
         )
@@ -315,6 +322,26 @@ def checked_train_config(config):
             "perturb_one_token must be bool, got "
             f"{type(config.perturb_one_token).__name__}."
         )
+    if config.perturb_step is not None and (
+        not isinstance(config.perturb_step, int)
+        or isinstance(config.perturb_step, bool)
+        or config.perturb_step < 0
+    ):
+        raise ValueError(
+            f"perturb_step must be a nonnegative integer or None, got "
+            f"{config.perturb_step!r}."
+        )
+    if (
+        not isinstance(config.perturb_num_tokens, int)
+        or isinstance(config.perturb_num_tokens, bool)
+        or config.perturb_num_tokens <= 0
+    ):
+        raise ValueError(
+            f"perturb_num_tokens must be a positive integer, got "
+            f"{config.perturb_num_tokens!r}."
+        )
+    if config.perturb_step is not None and not config.perturb_one_token:
+        raise ValueError("perturb_step requires perturb_one_token=True.")
     if config.deterministic and config.model_seed is None:
         raise ValueError("deterministic=True requires model_seed to be set.")
     if config.model_builder_kwargs is None:
@@ -325,6 +352,14 @@ def checked_train_config(config):
             f"{type(config.model_builder_kwargs).__name__}."
         )
     resolve_model_builder(config.model_builder)
+    resolve_model_builder(config.optimizer_builder)
+    if not isinstance(config.optimizer_kwargs, dict):
+        raise TypeError("optimizer_kwargs must be a dict")
+    if not isinstance(config.experiment_metadata, dict):
+        raise TypeError(
+            "experiment_metadata must be a dict, got "
+            f"{type(config.experiment_metadata).__name__}."
+        )
     LoggerManager(config.metric_loggers)
     if config.batch_size % config.num_micro_batches != 0:
         raise ValueError(
@@ -400,10 +435,22 @@ def train(config):
     train_dataset = select_train_sequences(train_dataset, config)
     if config.data_seed is not None:
         train_dataset = train_dataset.shuffle(seed=config.data_seed)
-    if config.perturb_one_token:
+    if config.perturb_one_token and config.perturb_step is None:
         first_input_ids = train_dataset[0]["input_ids"]
-        assert int(first_input_ids[100]) != 17
-        first_input_ids[100] = 17
+        if config.perturb_num_tokens > len(first_input_ids):
+            raise ValueError(
+                "A pre-training perturbation cannot exceed one sequence "
+                f"({len(first_input_ids)} tokens)."
+            )
+        indices = (np.arange(config.perturb_num_tokens) + 100) % len(first_input_ids)
+        original = first_input_ids[indices].copy()
+        if config.perturb_num_tokens == 1:
+            assert int(original[0]) != 17
+            replacement = np.array([17], dtype=original.dtype)
+        else:
+            replacement = np.where(original == 17, 18, 17)
+        first_input_ids[indices] = replacement
+        assert np.all(first_input_ids[indices] != original)
     effective_train_sequences = len(train_dataset)
     seq_len = len(train_dataset[0]["input_ids"])
     train_tokens = effective_train_sequences * seq_len
@@ -448,13 +495,15 @@ def train(config):
         print(f"Using DataParallel across {num_cuda_devices} CUDA devices")
         model = DataParallel(base_model, device_ids=list(range(num_cuda_devices)))
 
-    optimizer = build_optimizer(
+    optimizer_factory = resolve_model_builder(config.optimizer_builder) or build_optimizer
+    optimizer = optimizer_factory(
         base_model,
         optimizer_name=config.optimizer_name,
         learning_rate=config.learning_rate,
         weight_decay=config.weight_decay,
         beta1=config.beta1,
         beta2=config.beta2,
+        **config.optimizer_kwargs,
     )
 
     micro_batch_size = config.batch_size // config.num_micro_batches
@@ -466,6 +515,10 @@ def train(config):
     }
     steps_per_epoch = len(train_batches) // config.num_micro_batches
     total_steps = int(config.num_epochs * steps_per_epoch)
+    if config.perturb_step is not None and config.perturb_step >= total_steps:
+        raise ValueError(
+            f"perturb_step={config.perturb_step} must be below total_steps={total_steps}."
+        )
     keep_checkpoint_steps = normalize_checkpoint_steps(config.keep_checkpoint_steps)
     out_of_range_steps = [step for step in keep_checkpoint_steps if step > total_steps]
     if out_of_range_steps:
@@ -508,6 +561,13 @@ def train(config):
     if run_config["init_checkpoint_path"] is not None:
         run_config["init_checkpoint_path"] = str(run_config["init_checkpoint_path"])
     run_config["wandb_tags"] = list(config.wandb_tags)
+    for key, value in config.experiment_metadata.items():
+        if key in run_config and run_config[key] != value:
+            raise ValueError(
+                f"experiment_metadata[{key!r}] collides with training config "
+                f"value {run_config[key]!r}."
+            )
+        run_config[key] = value
     checkpointer.set_metadata(run_config)
 
     start_step = checkpointer.restore_if_available(
@@ -585,6 +645,32 @@ def train(config):
                         train_batches
                     )
                     input_ids = train_batches[batch_idx].to(device)
+                    if (
+                        config.perturb_one_token
+                        and config.perturb_step == step
+                        and micro_batch == 0
+                    ):
+                        if config.perturb_num_tokens > input_ids.numel():
+                            raise ValueError(
+                                "perturb_num_tokens exceeds the number of tokens "
+                                "in one micro-batch."
+                            )
+                        input_ids = input_ids.clone()
+                        flat_input_ids = input_ids.view(-1)
+                        indices = (
+                            torch.arange(
+                                config.perturb_num_tokens,
+                                device=input_ids.device,
+                            )
+                            + 100
+                        ) % flat_input_ids.numel()
+                        original = flat_input_ids[indices].clone()
+                        flat_input_ids[indices] = torch.where(
+                            original == 17,
+                            torch.tensor(18, device=input_ids.device),
+                            torch.tensor(17, device=input_ids.device),
+                        )
+                        assert torch.all(flat_input_ids[indices] != original)
                     if torch_compile_enabled and hasattr(
                         torch.compiler,
                         "cudagraph_mark_step_begin",
@@ -619,6 +705,7 @@ def train(config):
                         base_model.parameters(), max_norm=config.grad_norm
                     )
 
+                applied_learning_rate = optimizer.param_groups[0]["lr"]
                 optimizer.step()
                 scheduler.step()
 
@@ -651,7 +738,7 @@ def train(config):
                         {
                             "optimizer_step": step,
                             "train_loss": current_loss,
-                            "learning_rate": scheduler.get_last_lr()[0],
+                            "learning_rate": applied_learning_rate,
                             "step": step,
                             "progress": completed_steps / total_steps,
                             **train_logger_stats,

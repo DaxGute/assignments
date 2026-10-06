@@ -1,0 +1,630 @@
+{
+  "p1c_all6": {
+    "optima": [
+      {
+        "tokens": 153600000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.09529438278637474,
+          "log_linear": 1.1514766327562846,
+          "intercept": 6.702408453885946
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 3.2441985607147217
+          },
+          {
+            "value": 0.003,
+            "loss": 3.2291338443756104
+          },
+          {
+            "value": 0.006,
+            "loss": 3.305638074874878
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 3.2291338443756104,
+        "optimum": 0.0023775575165277136,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 3.223980877635015
+      },
+      {
+        "tokens": 307200000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.031134407815282247,
+          "log_linear": 0.3621762966582976,
+          "intercept": 4.109491131479348
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 3.070871591567993
+          },
+          {
+            "value": 0.003,
+            "loss": 3.0562233924865723
+          },
+          {
+            "value": 0.006,
+            "loss": 3.0714924335479736
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 3.0562233924865723,
+        "optimum": 0.0029785011385062947,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 3.056221782024001
+      },
+      {
+        "tokens": 614400000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.03832264938631657,
+          "log_linear": 0.44048697593065383,
+          "intercept": 4.191246302826944
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 2.94734525680542
+          },
+          {
+            "value": 0.003,
+            "loss": 2.925636053085327
+          },
+          {
+            "value": 0.006,
+            "loss": 2.940751314163208
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 2.925636053085327,
+        "optimum": 0.0031920750936311744,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.925488460717703
+      },
+      {
+        "tokens": 1228800000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.015567203907641481,
+          "log_linear": 0.17286892546176777,
+          "intercept": 3.3166762872758047
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 2.8508102893829346
+          },
+          {
+            "value": 0.003,
+            "loss": 2.8377890586853027
+          },
+          {
+            "value": 0.006,
+            "loss": 2.839726448059082
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 2.8377890586853027,
+        "optimum": 0.0038783578281519873,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.8367624638364326
+      },
+      {
+        "tokens": 1843200000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.014079981513633853,
+          "log_linear": 0.15984239339662693,
+          "intercept": 3.2500817564343567
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 2.8060386180877686
+          },
+          {
+            "value": 0.003,
+            "loss": 2.7966794967651367
+          },
+          {
+            "value": 0.006,
+            "loss": 2.8008499145507812
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 2.7966794967651367,
+        "optimum": 0.0034264559283228558,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.7964307572831504
+      },
+      {
+        "tokens": 2457600000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.01766107607698187,
+          "log_linear": 0.20631963877766388,
+          "intercept": 3.3707985162912237
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 2.7759547233581543
+          },
+          {
+            "value": 0.003,
+            "loss": 2.768251419067383
+          },
+          {
+            "value": 0.006,
+            "loss": 2.7775187492370605
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 2.768251419067383,
+        "optimum": 0.0029056927129908227,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.768233401348633
+      }
+    ],
+    "power_law": {
+      "exponent": 0.09880990832673463,
+      "log_prefactor": -7.796751163998359,
+      "prefactor": 0.00041106830543736204,
+      "r_squared": 0.41346227621990805,
+      "controls": [
+        153600000.0,
+        307200000.0,
+        614400000.0,
+        1228800000.0,
+        1843200000.0,
+        2457600000.0
+      ],
+      "responses": [
+        0.0023775575165277136,
+        0.0029785011385062947,
+        0.0031920750936311744,
+        0.0038783578281519873,
+        0.0034264559283228558,
+        0.0029056927129908227
+      ]
+    },
+    "prediction_tokens": 4915200000,
+    "predicted_lr": 0.0037285012208270597
+  },
+  "p1c_large3": {
+    "optima": [
+      {
+        "tokens": 1228800000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.015567203907641481,
+          "log_linear": 0.17286892546176777,
+          "intercept": 3.3166762872758047
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 2.8508102893829346
+          },
+          {
+            "value": 0.003,
+            "loss": 2.8377890586853027
+          },
+          {
+            "value": 0.006,
+            "loss": 2.839726448059082
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 2.8377890586853027,
+        "optimum": 0.0038783578281519873,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.8367624638364326
+      },
+      {
+        "tokens": 1843200000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.014079981513633853,
+          "log_linear": 0.15984239339662693,
+          "intercept": 3.2500817564343567
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 2.8060386180877686
+          },
+          {
+            "value": 0.003,
+            "loss": 2.7966794967651367
+          },
+          {
+            "value": 0.006,
+            "loss": 2.8008499145507812
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 2.7966794967651367,
+        "optimum": 0.0034264559283228558,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.7964307572831504
+      },
+      {
+        "tokens": 2457600000,
+        "n_runs": 3,
+        "coefficients": {
+          "log_quadratic": 0.01766107607698187,
+          "log_linear": 0.20631963877766388,
+          "intercept": 3.3707985162912237
+        },
+        "samples": [
+          {
+            "value": 0.0015,
+            "loss": 2.7759547233581543
+          },
+          {
+            "value": 0.003,
+            "loss": 2.768251419067383
+          },
+          {
+            "value": 0.006,
+            "loss": 2.7775187492370605
+          }
+        ],
+        "best_sampled_value": 0.003,
+        "best_sampled_loss": 2.768251419067383,
+        "optimum": 0.0029056927129908227,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.768233401348633
+      }
+    ],
+    "power_law": {
+      "exponent": -0.4092766809844842,
+      "log_prefactor": 3.025869598963779,
+      "prefactor": 20.61192102522798,
+      "r_squared": 0.9681134339247196,
+      "controls": [
+        1228800000.0,
+        1843200000.0,
+        2457600000.0
+      ],
+      "responses": [
+        0.0038783578281519873,
+        0.0034264559283228558,
+        0.0029056927129908227
+      ]
+    },
+    "prediction_tokens": 4915200000,
+    "predicted_lr": 0.00222636648823489
+  },
+  "p1d_hyperball": {
+    "optima": [
+      {
+        "tokens": 153600000,
+        "n_runs": 8,
+        "coefficients": {
+          "log_quadratic": 0.09155001016389061,
+          "log_linear": 0.7616664479103954,
+          "intercept": 4.785147112360495
+        },
+        "samples": [
+          {
+            "value": 0.0003,
+            "loss": 4.607871055603027
+          },
+          {
+            "value": 0.001,
+            "loss": 3.9459733963012695
+          },
+          {
+            "value": 0.0015,
+            "loss": 3.7063896656036377
+          },
+          {
+            "value": 0.003,
+            "loss": 3.4326374530792236
+          },
+          {
+            "value": 0.006,
+            "loss": 3.2595674991607666
+          },
+          {
+            "value": 0.01,
+            "loss": 3.211301326751709
+          },
+          {
+            "value": 0.015,
+            "loss": 3.2039880752563477
+          },
+          {
+            "value": 0.03,
+            "loss": 3.253335475921631
+          }
+        ],
+        "best_sampled_value": 0.015,
+        "best_sampled_loss": 3.2039880752563477,
+        "optimum": 0.01561008437091884,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 3.200942542546975
+      },
+      {
+        "tokens": 307200000,
+        "n_runs": 8,
+        "coefficients": {
+          "log_quadratic": 0.08421936398551043,
+          "log_linear": 0.7420116393073508,
+          "intercept": 4.66623067853194
+        },
+        "samples": [
+          {
+            "value": 0.0003,
+            "loss": 4.194560527801514
+          },
+          {
+            "value": 0.001,
+            "loss": 3.549534797668457
+          },
+          {
+            "value": 0.0015,
+            "loss": 3.393914222717285
+          },
+          {
+            "value": 0.003,
+            "loss": 3.206303596496582
+          },
+          {
+            "value": 0.006,
+            "loss": 3.0835177898406982
+          },
+          {
+            "value": 0.01,
+            "loss": 3.0357251167297363
+          },
+          {
+            "value": 0.015,
+            "loss": 3.0315449237823486
+          },
+          {
+            "value": 0.03,
+            "loss": 3.098109483718872
+          }
+        ],
+        "best_sampled_value": 0.015,
+        "best_sampled_loss": 3.0315449237823486,
+        "optimum": 0.012213275158462551,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 3.031864047117141
+      },
+      {
+        "tokens": 614400000,
+        "n_runs": 8,
+        "coefficients": {
+          "log_quadratic": 0.06963861561694158,
+          "log_linear": 0.6357210094212928,
+          "intercept": 4.368464263328735
+        },
+        "samples": [
+          {
+            "value": 0.0003,
+            "loss": 3.8001112937927246
+          },
+          {
+            "value": 0.001,
+            "loss": 3.2863409519195557
+          },
+          {
+            "value": 0.0015,
+            "loss": 3.1730291843414307
+          },
+          {
+            "value": 0.003,
+            "loss": 3.036421775817871
+          },
+          {
+            "value": 0.006,
+            "loss": 2.9493961334228516
+          },
+          {
+            "value": 0.01,
+            "loss": 2.9176270961761475
+          },
+          {
+            "value": 0.015,
+            "loss": 2.91831636428833
+          },
+          {
+            "value": 0.03,
+            "loss": 2.9962453842163086
+          }
+        ],
+        "best_sampled_value": 0.01,
+        "best_sampled_loss": 2.9176270961761475,
+        "optimum": 0.010415826729674931,
+        "method": "log_quadratic_vertex",
+        "vertex_inside_sample_range": true,
+        "fitted_loss_at_optimum": 2.9176126121318218
+      }
+    ],
+    "power_law": {
+      "exponent": -0.29185049039759997,
+      "log_prefactor": 1.327137337277206,
+      "prefactor": 3.7702350133559692,
+      "r_squared": 0.9850958951165525,
+      "controls": [
+        153600000.0,
+        307200000.0,
+        614400000.0
+      ],
+      "responses": [
+        0.01561008437091884,
+        0.012213275158462551,
+        0.010415826729674931
+      ]
+    },
+    "prediction_tokens": 1228800000,
+    "predicted_lr": 0.008386850003371102
+  },
+  "p2c_product": {
+    "budgets": [
+      {
+        "tokens": 153600000,
+        "coefficients": {
+          "a": 7.090750699069059,
+          "b": 1.2347249601516948,
+          "c": 0.3899387731721932,
+          "d": 0.09739487144951818,
+          "e": 0.05986392689951599,
+          "f": 0.04065388827075116
+        },
+        "hessian_eigenvalues": [
+          0.05556707135294919,
+          0.22053044808758948
+        ],
+        "fit_rank": 6,
+        "n_runs": 9,
+        "best_sampled_lr": 0.0015,
+        "best_sampled_wd": 1.6,
+        "best_sampled_loss": 3.1844499111175537,
+        "best_sampled_run_id": "bmkn0egr",
+        "method": "critical_point",
+        "optimum_lr": 0.0018592514315184622,
+        "optimum_wd": 0.8466049141942673,
+        "vertex_inside_log_range": true,
+        "optimum_product": 0.0015740513986462563
+      },
+      {
+        "tokens": 307200000,
+        "coefficients": {
+          "a": 4.413584821202541,
+          "b": 0.41157121012535586,
+          "c": 0.17805262983058925,
+          "d": 0.03071566646388337,
+          "e": 0.024742343121463572,
+          "f": 0.014360906812914468
+        },
+        "hessian_eigenvalues": [
+          0.015417481814293523,
+          0.07473566473930215
+        ],
+        "fit_rank": 6,
+        "n_runs": 9,
+        "best_sampled_lr": 0.0015,
+        "best_sampled_wd": 0.8,
+        "best_sampled_loss": 3.0281717777252197,
+        "best_sampled_run_id": "52x79yfd",
+        "method": "critical_point",
+        "optimum_lr": 0.0016030234616864103,
+        "optimum_wd": 0.5194150756833827,
+        "vertex_inside_log_range": true,
+        "optimum_product": 0.0008326345526740851
+      },
+      {
+        "tokens": 614400000,
+        "coefficients": {
+          "a": 4.604460016005172,
+          "b": 0.5225534662119664,
+          "c": 0.1747726670173437,
+          "d": 0.040816654018243075,
+          "e": 0.023960681177521516,
+          "f": 0.011409151084889773
+        },
+        "hessian_eigenvalues": [
+          0.014292765793501768,
+          0.09015884441276392
+        ],
+        "fit_rank": 6,
+        "n_runs": 9,
+        "best_sampled_lr": 0.003,
+        "best_sampled_wd": 0.2,
+        "best_sampled_loss": 2.917806625366211,
+        "best_sampled_run_id": "prypsstm",
+        "method": "critical_point",
+        "optimum_lr": 0.002470311989395219,
+        "optimum_wd": 0.25785625551766006,
+        "vertex_inside_log_range": true,
+        "optimum_product": 0.0006369853995458328
+      },
+      {
+        "tokens": 1228800000,
+        "coefficients": {
+          "a": 3.8150483963464965,
+          "b": 0.2627013336588595,
+          "c": 0.22335229666749432,
+          "d": 0.017806638940593072,
+          "e": 0.028597644092169947,
+          "f": 0.014891246359747305
+        },
+        "hessian_eigenvalues": [
+          0.003952020179894391,
+          0.06144375042078636
+        ],
+        "fit_rank": 6,
+        "n_runs": 9,
+        "best_sampled_lr": 0.003,
+        "best_sampled_wd": 0.2,
+        "best_sampled_loss": 2.8361215591430664,
+        "best_sampled_run_id": "sycvuh98",
+        "method": "critical_point",
+        "optimum_lr": 0.0026961081179044067,
+        "optimum_wd": 0.16221059692833978,
+        "vertex_inside_log_range": true,
+        "optimum_product": 0.0004373373071886165
+      }
+    ],
+    "power_law": {
+      "exponent": -0.5929416092124317,
+      "log_prefactor": 4.633714485995313,
+      "prefactor": 102.8955592565062,
+      "r_squared": 0.9674852743407563,
+      "controls": [
+        153600000.0,
+        307200000.0,
+        614400000.0,
+        1228800000.0
+      ],
+      "responses": [
+        0.0015740513986462563,
+        0.0008326345526740851,
+        0.0006369853995458328,
+        0.0004373373071886165
+      ]
+    },
+    "prediction_tokens": 2457600000,
+    "predicted_product": 0.00027820940709561673,
+    "target_peak_lr": 0.003,
+    "predicted_wd": 0.09273646903187224
+  },
+  "p1_1536m_best_sampled": {
+    "learning_rate": 0.003,
+    "weight_decay": 0.1,
+    "final_val_loss": 3.2291338443756104,
+    "run_id": "jysl6iqh",
+    "run_url": "https://wandb.ai/hashimoto-group/public-alchemy/runs/jysl6iqh",
+    "tokens": 153600000
+  },
+  "p2_1536m_best_joint": {
+    "learning_rate": 0.0015,
+    "weight_decay": 1.6,
+    "final_val_loss": 3.1844499111175537,
+    "run_id": "bmkn0egr",
+    "run_url": "https://wandb.ai/hashimoto-group/public-alchemy/runs/bmkn0egr",
+    "tokens": 153600000,
+    "global_best_run_id": "bmkn0egr",
+    "global_best_loss": 3.1844499111175537
+  }
+}
