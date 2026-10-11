@@ -41,6 +41,9 @@ Layout: `batches/`, `manifests/`, `helpers/`, `plots/p{1..5}/` (with
   starters with raw or Adam-preconditioned sharpness logging.
 - [p4_inside_the_hessian.py](p4_inside_the_hessian.py): measure the supplied
   checkpoints, rescale parameters, and continue with projected gradients.
+- [p5_cooldown_barrier.py](p5_cooldown_barrier.py): exploratory P5 post-separation
+  cooldown (arms R/C/K → ledger `P5-*`); thin entry
+  `launch_p5_cooldown`. Default is `--dry-run` until `--execute`.
 
 For Problem 1, run the stages in order and wait for each to finish before
 starting the next:
