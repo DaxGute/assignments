@@ -5,6 +5,31 @@ use your environment and W&B project from `utils.py`; training still uses the
 default recipe unless a starter explicitly overrides it. Run commands from
 the repository root. Review each file before launching its sweep.
 
+## Batch workflow (A2-style)
+
+Orchestration wraps these starters — it does not replace them. Prefer batch
+entry points when resuming; official stage commands remain valid.
+
+| Batch | Contents | Entry |
+|-------|----------|-------|
+| **1** | P1 only: prefix → branches → measure | `uv run python -m experiments.a3_optimization.launch_batch1` |
+| **2** | P2 + P3 (independent, parallel) | `uv run python -m experiments.a3_optimization.launch_batch2` |
+| **3** | P4 (+ gated exploratory) | `uv run python -m experiments.a3_optimization.launch_batch3 --stage a` |
+
+```bash
+uv run python -m experiments.a3_optimization.launch_batch1 --dry-run
+uv run python -m experiments.a3_optimization.launch_batch1 --execute
+# After prefix finishes:
+uv run python -m experiments.a3_optimization.launch_batch1 --stage branches
+uv run python -m experiments.a3_optimization.launch_batch1 --stage measure
+
+uv run python -m experiments.a3_optimization.launch_batch2 --dry-run
+uv run python -m experiments.a3_optimization.launch_batch --batch 3 --stage a --dry-run
+```
+
+Layout: `batches/`, `manifests/`, `helpers/`, `plots/p{1..5}/` (with
+`counterfactual/` nested per problem). Completed Modal volume runs are skipped.
+
 ## Problems
 
 - [p1_mode_connectivity.py](p1_mode_connectivity.py): train a shared prefix,
