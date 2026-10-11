@@ -7637,3 +7637,640 @@ Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/man
 [2026-10-11 11:35:08] FETCH_AFTER_c count=22
 [2026-10-11 11:35:09] DONE_PIPELINE
 [2026-10-11 11:35:55] watchdog restart
+[2026-10-11 11:35:56] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=72592 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:35:58] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:35:58] EXECUTE fetch
+[2026-10-11 11:36:00] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:36:00] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:36:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:36:02] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:36:02] EXECUTE fetch
+[2026-10-11 11:36:04] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:36:04] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:36:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:36:07] wait c 3/3 tasks=0
+[2026-10-11 11:36:07] EXECUTE fetch
+[2026-10-11 11:36:08] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:36:08] FETCH_AFTER_c count=22
+[2026-10-11 11:36:10] DONE_PIPELINE
+[2026-10-11 11:36:55] watchdog restart
+[2026-10-11 11:36:56] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=72763 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:36:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:36:59] EXECUTE fetch
+[2026-10-11 11:37:00] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:37:00] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:37:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:37:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:37:03] EXECUTE fetch
+[2026-10-11 11:37:04] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:37:04] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:37:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:37:07] wait c 3/3 tasks=0
+[2026-10-11 11:37:07] EXECUTE fetch
+[2026-10-11 11:37:08] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:37:08] FETCH_AFTER_c count=22
+[2026-10-11 11:37:10] DONE_PIPELINE
+[2026-10-11 11:37:55] watchdog restart
+[2026-10-11 11:37:56] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=72957 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:37:58] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:37:58] EXECUTE fetch
+[2026-10-11 11:38:00] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:38:00] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:38:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:38:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:38:03] EXECUTE fetch
+[2026-10-11 11:38:04] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:38:04] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:38:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:38:07] wait c 3/3 tasks=0
+[2026-10-11 11:38:07] EXECUTE fetch
+[2026-10-11 11:38:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:38:09] FETCH_AFTER_c count=22
+[2026-10-11 11:38:10] DONE_PIPELINE
+[2026-10-11 11:38:55] watchdog restart
+[2026-10-11 11:38:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=73045 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:38:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:38:59] EXECUTE fetch
+[2026-10-11 11:39:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:39:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:39:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:39:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:39:03] EXECUTE fetch
+[2026-10-11 11:39:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:39:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:39:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:39:07] wait c 3/3 tasks=0
+[2026-10-11 11:39:07] EXECUTE fetch
+[2026-10-11 11:39:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:39:09] FETCH_AFTER_c count=22
+[2026-10-11 11:39:10] DONE_PIPELINE
+[2026-10-11 11:39:55] watchdog restart
+[2026-10-11 11:39:56] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=73196 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:39:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:39:59] EXECUTE fetch
+[2026-10-11 11:40:00] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:40:00] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:40:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:40:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:40:03] EXECUTE fetch
+[2026-10-11 11:40:04] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:40:04] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:40:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:40:07] wait c 3/3 tasks=0
+[2026-10-11 11:40:07] EXECUTE fetch
+[2026-10-11 11:40:08] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:40:08] FETCH_AFTER_c count=22
+[2026-10-11 11:40:10] DONE_PIPELINE
+[2026-10-11 11:40:55] watchdog restart
+[2026-10-11 11:40:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=73259 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:40:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:40:59] EXECUTE fetch
+[2026-10-11 11:41:00] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:41:00] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:41:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:41:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:41:03] EXECUTE fetch
+[2026-10-11 11:41:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:41:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:41:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:41:07] wait c 3/3 tasks=0
+[2026-10-11 11:41:07] EXECUTE fetch
+[2026-10-11 11:41:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:41:09] FETCH_AFTER_c count=22
+[2026-10-11 11:41:11] DONE_PIPELINE
+[2026-10-11 11:41:55] watchdog restart
+[2026-10-11 11:41:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=73643 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:41:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:41:59] EXECUTE fetch
+[2026-10-11 11:42:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:42:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:42:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:42:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:42:03] EXECUTE fetch
+[2026-10-11 11:42:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:42:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:42:07] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:42:07] wait c 3/3 tasks=0
+[2026-10-11 11:42:07] EXECUTE fetch
+[2026-10-11 11:42:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:42:09] FETCH_AFTER_c count=22
+[2026-10-11 11:42:10] DONE_PIPELINE
+[2026-10-11 11:42:56] watchdog restart
+[2026-10-11 11:42:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=73931 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:42:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:42:59] EXECUTE fetch
+[2026-10-11 11:43:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:43:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:43:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:43:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:43:03] EXECUTE fetch
+[2026-10-11 11:43:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:43:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:43:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:43:07] wait c 3/3 tasks=0
+[2026-10-11 11:43:07] EXECUTE fetch
+[2026-10-11 11:43:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:43:09] FETCH_AFTER_c count=22
+[2026-10-11 11:43:10] DONE_PIPELINE
+[2026-10-11 11:43:56] watchdog restart
+[2026-10-11 11:43:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74003 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:43:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:43:59] EXECUTE fetch
+[2026-10-11 11:44:00] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:44:00] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:44:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:44:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:44:03] EXECUTE fetch
+[2026-10-11 11:44:04] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:44:04] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:44:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:44:07] wait c 3/3 tasks=0
+[2026-10-11 11:44:07] EXECUTE fetch
+[2026-10-11 11:44:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:44:09] FETCH_AFTER_c count=22
+[2026-10-11 11:44:10] DONE_PIPELINE
+[2026-10-11 11:44:56] watchdog restart
+[2026-10-11 11:44:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74070 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:44:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:44:59] EXECUTE fetch
+[2026-10-11 11:45:00] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:45:00] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:45:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:45:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:45:03] EXECUTE fetch
+[2026-10-11 11:45:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:45:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:45:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:45:07] wait c 3/3 tasks=0
+[2026-10-11 11:45:07] EXECUTE fetch
+[2026-10-11 11:45:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:45:09] FETCH_AFTER_c count=22
+[2026-10-11 11:45:10] DONE_PIPELINE
+[2026-10-11 11:45:56] watchdog restart
+[2026-10-11 11:45:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74151 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:46:00] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:46:00] EXECUTE fetch
+[2026-10-11 11:46:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:46:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:46:03] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:46:04] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:46:04] EXECUTE fetch
+[2026-10-11 11:46:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:46:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:46:07] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:46:08] wait c 3/3 tasks=0
+[2026-10-11 11:46:08] EXECUTE fetch
+[2026-10-11 11:46:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:46:09] FETCH_AFTER_c count=22
+[2026-10-11 11:46:11] DONE_PIPELINE
+[2026-10-11 11:46:56] watchdog restart
+[2026-10-11 11:46:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74228 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:46:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:46:59] EXECUTE fetch
+[2026-10-11 11:47:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:47:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:47:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:47:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:47:03] EXECUTE fetch
+[2026-10-11 11:47:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:47:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:47:07] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:47:08] wait c 3/3 tasks=0
+[2026-10-11 11:47:08] EXECUTE fetch
+[2026-10-11 11:47:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:47:09] FETCH_AFTER_c count=22
+[2026-10-11 11:47:10] DONE_PIPELINE
+[2026-10-11 11:47:56] watchdog restart
+[2026-10-11 11:47:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74307 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:47:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:47:59] EXECUTE fetch
+[2026-10-11 11:48:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:48:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:48:03] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:48:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:48:03] EXECUTE fetch
+[2026-10-11 11:48:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:48:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:48:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:48:07] wait c 3/3 tasks=0
+[2026-10-11 11:48:07] EXECUTE fetch
+[2026-10-11 11:48:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:48:09] FETCH_AFTER_c count=22
+[2026-10-11 11:48:10] DONE_PIPELINE
+[2026-10-11 11:48:56] watchdog restart
+[2026-10-11 11:48:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74397 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:48:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:48:59] EXECUTE fetch
+[2026-10-11 11:49:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:49:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:49:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:49:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:49:03] EXECUTE fetch
+[2026-10-11 11:49:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:49:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:49:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:49:07] wait c 3/3 tasks=0
+[2026-10-11 11:49:07] EXECUTE fetch
+[2026-10-11 11:49:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:49:09] FETCH_AFTER_c count=22
+[2026-10-11 11:49:10] DONE_PIPELINE
+[2026-10-11 11:49:56] watchdog restart
+[2026-10-11 11:49:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74474 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:49:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:49:59] EXECUTE fetch
+[2026-10-11 11:50:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:50:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:50:02] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:50:03] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:50:03] EXECUTE fetch
+[2026-10-11 11:50:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:50:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:50:06] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:50:08] wait c 3/3 tasks=0
+[2026-10-11 11:50:08] EXECUTE fetch
+[2026-10-11 11:50:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:50:09] FETCH_AFTER_c count=22
+[2026-10-11 11:50:11] DONE_PIPELINE
+[2026-10-11 11:50:56] watchdog restart
+[2026-10-11 11:50:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74564 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:50:59] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:50:59] EXECUTE fetch
+[2026-10-11 11:51:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:51:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:51:03] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:51:04] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:51:04] EXECUTE fetch
+[2026-10-11 11:51:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:51:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:51:07] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:51:08] wait c 3/3 tasks=0
+[2026-10-11 11:51:08] EXECUTE fetch
+[2026-10-11 11:51:10] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:51:10] FETCH_AFTER_c count=22
+[2026-10-11 11:51:12] DONE_PIPELINE
+[2026-10-11 11:51:56] watchdog restart
+[2026-10-11 11:51:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74647 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:52:00] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:52:00] EXECUTE fetch
+[2026-10-11 11:52:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:52:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:52:03] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:52:04] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:52:04] EXECUTE fetch
+[2026-10-11 11:52:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:52:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:52:07] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:52:08] wait c 3/3 tasks=0
+[2026-10-11 11:52:08] EXECUTE fetch
+[2026-10-11 11:52:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:52:09] FETCH_AFTER_c count=22
+[2026-10-11 11:52:11] DONE_PIPELINE
+[2026-10-11 11:52:56] watchdog restart
+[2026-10-11 11:52:57] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74752 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:53:01] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:53:01] EXECUTE fetch
+[2026-10-11 11:53:04] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:53:04] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:53:06] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:53:08] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:53:08] EXECUTE fetch
+[2026-10-11 11:53:09] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:53:09] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:53:11] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:53:12] wait c 3/3 tasks=0
+[2026-10-11 11:53:12] EXECUTE fetch
+[2026-10-11 11:53:14] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:53:14] FETCH_AFTER_c count=22
+[2026-10-11 11:53:15] DONE_PIPELINE
+[2026-10-11 11:53:56] watchdog restart
+[2026-10-11 11:53:58] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74861 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:54:00] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:54:00] EXECUTE fetch
+[2026-10-11 11:54:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:54:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:54:03] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:54:04] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:54:04] EXECUTE fetch
+[2026-10-11 11:54:06] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:54:06] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:54:08] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:54:09] wait c 3/3 tasks=0
+[2026-10-11 11:54:09] EXECUTE fetch
+[2026-10-11 11:54:10] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:54:10] FETCH_AFTER_c count=22
+[2026-10-11 11:54:12] DONE_PIPELINE
+[2026-10-11 11:54:56] watchdog restart
+[2026-10-11 11:54:58] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=74938 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:55:00] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:55:00] EXECUTE fetch
+[2026-10-11 11:55:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:55:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:55:03] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:55:04] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:55:04] EXECUTE fetch
+[2026-10-11 11:55:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:55:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:55:07] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:55:08] wait c 3/3 tasks=0
+[2026-10-11 11:55:08] EXECUTE fetch
+[2026-10-11 11:55:10] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:55:10] FETCH_AFTER_c count=22
+[2026-10-11 11:55:11] DONE_PIPELINE
+[2026-10-11 11:55:57] watchdog restart
+[2026-10-11 11:55:58] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=75086 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:56:00] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:56:00] EXECUTE fetch
+[2026-10-11 11:56:01] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:56:01] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:56:03] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:56:04] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:56:04] EXECUTE fetch
+[2026-10-11 11:56:05] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:56:05] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:56:07] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:56:08] wait c 3/3 tasks=0
+[2026-10-11 11:56:08] EXECUTE fetch
+[2026-10-11 11:56:10] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:56:10] FETCH_AFTER_c count=22
+[2026-10-11 11:56:11] DONE_PIPELINE
+[2026-10-11 11:56:57] watchdog restart
+[2026-10-11 11:56:58] START cwd=/Users/daxtongutekunst/Desktop/assignments pid=75251 lock=/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.lock
+[2026-10-11 11:57:00] stage_a 13/13 tasks=? state=unknown media=13
+[2026-10-11 11:57:00] EXECUTE fetch
+[2026-10-11 11:57:02] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:57:02] FETCHED_COUNT=22 names=['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:57:04] SKIP_EXECUTE b-rescale: volume already complete ['b-rescale-reference', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+[2026-10-11 11:57:05] wait b-rescale 4/4 tasks=0
+[2026-10-11 11:57:05] EXECUTE fetch
+[2026-10-11 11:57:06] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:57:06] FETCH_AFTER_b-rescale count=22
+[2026-10-11 11:57:08] SKIP_EXECUTE c: volume already complete ['c-full', 'c-top', 'c-removed']
+[2026-10-11 11:57:09] wait c 3/3 tasks=0
+[2026-10-11 11:57:09] EXECUTE fetch
+[2026-10-11 11:57:11] FETCH_RC=0 out=est.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 fetch ---
+['a-adamw-0', 'a-adamw-15', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-3', 'a-adamw-305', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-61', 'a-adamw-6104', 'a-adamw-763', 'a-adamw-7630', 'a-adamw-9375', 'a-random-energy-1526', 'a-random-energy-9375', 'b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2', 'b-rescale-reference', 'c-full', 'c-removed', 'c-top']
+[2026-10-11 11:57:11] FETCH_AFTER_c count=22
+[2026-10-11 11:57:12] DONE_PIPELINE
