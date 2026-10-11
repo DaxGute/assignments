@@ -1,0 +1,55 @@
+ALL_FDS
+0 host:[1]
+1 host:[2]
+2 host:[3]
+3 anon_inode:[eventpoll]
+4 socket:[1]
+5 socket:[2]
+6 socket:[3]
+7 anon_inode:[eventpoll]
+8 socket:[4]
+9 socket:[5]
+10 anon_inode:[eventfd]
+11 pipe:[1]
+12 pipe:[1]
+13 pipe:[2]
+14 pipe:[2]
+15 /dev/nvidiactl
+16 /dev/nvidia-uvm
+17 /dev/nvidia4
+18 /dev/nvidia4
+19 /dev/nvidia4
+20 /dev/nvidia4
+21 socket:[7]
+22 anon_inode:[eventfd]
+23 /dev/nvidiactl
+24 /dev/nvidia4
+25 /dev/nvidia-uvm
+26 /dev/nvidia4
+27 /dev/nvidia4
+28 anon_inode:[eventfd]
+29 /dev/nvidia4
+30 /dev/nvidia4
+31 /dev/nvidia4
+32 /dev/nvidia4
+33 /dev/nvidia4
+34 /dev/nvidia4
+35 /dev/nvidia4
+36 /dev/nvidia4
+37 anon_inode:[eventfd]
+38 /dev/nvidia4
+39 /dev/nvidia4
+40 /dev/nvidia4
+41 /dev/nvidia4
+42 /dev/nvidia4
+43 /dev/nvidia4
+44 /dev/nvidia4
+45 /dev/nvidia4
+46 pipe:[3]
+47 pipe:[3]
+--- maps paths with step/ckpt/pt/data ---
+--- try pyrasite-like: ctypes remote dlopen not available ---
+which None None None
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa    command 
+# Idx           #    C/G      %      %      %      %      %      %    name 
+    0          1     C     98     43      -      -      -      -    dumb-init      

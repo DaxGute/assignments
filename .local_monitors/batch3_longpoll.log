@@ -1,0 +1,168 @@
+LONGPOLL2_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[99, 99] tasks=2
+LONGPOLL_N4_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 baseline=4 utils=[] tasks=2
+tick N=4/13 baseline=4 utils=[] tasks=2
+tick N=4/13 baseline=4 utils=[] tasks=2
+LONGPOLL20_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[] tasks=2
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[100] tasks=2 copied=[]
+tick N=4/13 utils=[] tasks=2 copied=[]
+[ensure] started pipeline pid=37451
+[ensure] started watchdog pid=37455
+PIPELINE_PID=37451
+WATCHDOG_PID=37455
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[] tasks=2 copied=[]
+tick N=4/13 utils=[99] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=4/13 utils=[] tasks=2 copied=[]
+NEW_JSON a-adamw-305 lambda_max= 4.32926630998023
+tick N=5/13 utils=[99] tasks=2 copied=['a-adamw-305']
+EXIT_EVENT n_jump
+FINAL {"reason": "n_jump", "from": 4, "n": 5, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-305"], "miss": ["a-adamw-153", "a-adamw-763", "a-adamw-1526", "a-adamw-3052", "a-adamw-4578", "a-adamw-6104", "a-adamw-7630", "a-adamw-9375"], "copied_new": ["a-adamw-305"], "lambda_max": {"a-adamw-305": 4.32926630998023}, "tasks": "2", "gpu_utils": [99], "gpu_status": "PARTIAL", "ts": "2026-10-10 19:21 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=4
+tick N=5/13 utils=[] tasks=2 copied=[]
+EXIT_EVENT n_jump
+FINAL {"reason": "n_jump", "from": 4, "n": 5, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-305"], "miss": ["a-adamw-153", "a-adamw-763", "a-adamw-1526", "a-adamw-3052", "a-adamw-4578", "a-adamw-6104", "a-adamw-7630", "a-adamw-9375"], "copied_new": [], "lambda_max": {}, "tasks": "2", "gpu_utils": [], "gpu_status": "BUSY", "ts": "2026-10-10 19:21 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=5
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=6
+tick N=6/13 utils=[] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=6
+tick N=6/13 utils=[] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=6
+tick N=6/13 utils=[] tasks=2 copied=[]
+WORKER_POLL20_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=6
+tick N=6/13 utils=[] tasks=2 copied=[]
+tick N=6/13 utils=[] tasks=2 copied=[]
+WORKER_SMI_POLL_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=6
+tick N=6/13 utils=[99, 99] tasks=2 copied=[]
+tick N=6/13 utils=[] tasks=2 copied=[]
+tick N=6/13 utils=[] tasks=2 copied=[]
+WORKER_LIVE_POLL_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=6
+tick N=6/13 utils=[99, 99] live_expect=['a-adamw-763', 'a-adamw-1526'] tasks=2 copied=[]
+tick N=6/13 utils=[99] tasks=2 copied=[]
+WORKER_POLL_N6_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=6
+tick N=6/13 utils=[99, 99] live=['a-adamw-763', 'a-adamw-1526'] tasks=2 copied=[]
+tick N=6/13 utils=[] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+tick N=7/13 utils=[99] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+tick N=7/13 utils=[] tasks=2 copied=[]
+WORKER_POLL_N7_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+tick N=7/13 utils=[96, 100] live=['a-adamw-3052', 'a-adamw-1526'] tasks=2 copied=[]
+WORKER_POLL_N7_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+tick N=7/13 utils=[] tasks=2 copied=[]
+tick N=7/13 utils=[] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+tick N=7/13 utils=[99, 100] live=['a-adamw-3052', 'a-adamw-1526'] tasks=2 copied=[]
+tick N=7/13 utils=[99, 99] live=['a-adamw-3052', 'a-adamw-1526'] tasks=2 copied=[]
+2026-10-10 19:45:54 SUPERVISOR start worker_poll_n6 baseline7
+WORKER_POLL_N7_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+tick N=7/13 utils=[100, 99] live=['a-adamw-3052', 'a-adamw-1526'] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+NEW_JSON a-adamw-3052 lambda_max= 3.1637529312879873
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=7
+tick N=8/13 utils=[99, 99] live=['a-adamw-4578', 'a-adamw-1526'] tasks=2 copied=[]
+EXIT_EVENT n_jump
+FINAL {"reason": "n_jump", "from": 7, "n": 8, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-153", "a-adamw-305", "a-adamw-763", "a-adamw-3052"], "miss": ["a-adamw-1526", "a-adamw-4578", "a-adamw-6104", "a-adamw-7630", "a-adamw-9375"], "copied_new": [], "lambda_max": {}, "tasks": "2", "gpu_utils": [99, 99], "gpu_status": "BUSY", "ts": "2026-10-10 19:46 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+(eval):15: command not found: setsid
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=8
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=8
+tick N=8/13 utils=[99, 100] live=['a-adamw-4578', 'a-adamw-1526'] tasks=2 copied=[]
+tick N=9/13 utils=[97, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+EXIT_EVENT n_jump
+FINAL {"reason": "n_jump", "from": 8, "n": 9, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-153", "a-adamw-305", "a-adamw-763", "a-adamw-1526", "a-adamw-3052"], "miss": ["a-adamw-4578", "a-adamw-6104", "a-adamw-7630", "a-adamw-9375"], "copied_new": [], "lambda_max": {}, "tasks": "2", "gpu_utils": [97, 99], "gpu_status": "BUSY", "ts": "2026-10-10 19:50 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=9
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=9
+tick N=9/13 utils=[99, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+tick N=9/13 utils=[99, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+2026-10-10 19:53:41 SUPERVISOR start worker_poll baseline9
+WORKER_POLL_N9_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=9
+tick N=9/13 utils=[100, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+2026-10-10 19:54:28 SUPERVISOR start worker_poll baseline9
+WORKER_POLL_N9_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=9
+tick N=9/13 utils=[99, 100] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+tick N=9/13 utils=[100, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=9
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=9
+tick N=9/13 utils=[100, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+tick N=9/13 utils=[100, 100] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+tick N=9/13 utils=[97, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+tick N=9/13 utils=[99, 99] live=['a-adamw-4578', 'a-adamw-6104'] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=9
+tick N=10/13 utils=[99, 99] live=['a-adamw-7630', 'a-adamw-6104'] tasks=2 copied=[]
+EXIT_EVENT n_jump
+FINAL {"reason": "n_jump", "from": 9, "n": 10, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-153", "a-adamw-305", "a-adamw-763", "a-adamw-1526", "a-adamw-3052", "a-adamw-4578"], "miss": ["a-adamw-6104", "a-adamw-7630", "a-adamw-9375"], "copied_new": [], "lambda_max": {}, "tasks": "2", "gpu_utils": [99, 99], "gpu_status": "BUSY", "ts": "2026-10-10 20:01 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=10
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=10
+2026-10-10 20:01:31 SUPERVISOR start worker_poll baseline10
+WORKER_POLL_N10_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=10
+tick N=10/13 utils=[100, 88] live=['a-adamw-7630', 'a-adamw-6104'] tasks=2 copied=[]
+2026-10-10 20:02:34 SUPERVISOR start worker_poll
+WORKER_POLL_N11_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+2026-10-10 20:02:50 SUPERVISOR start worker_poll baseline11
+WORKER_POLL_N11_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+tick N=11/13 utils=[99, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+tick N=11/13 utils=[100, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+EXIT_EVENT n_jump
+FINAL {"reason": "n_jump", "from": 10, "n": 11, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-153", "a-adamw-305", "a-adamw-763", "a-adamw-1526", "a-adamw-3052", "a-adamw-4578", "a-adamw-6104"], "miss": ["a-adamw-7630", "a-adamw-9375"], "copied_new": [], "lambda_max": {}, "tasks": "2", "gpu_utils": [100, 99], "gpu_status": "BUSY", "ts": "2026-10-10 20:03 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+tick N=11/13 utils=[99, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+2026-10-10 20:06:35 SUPERVISOR start worker_poll baseline11
+WORKER_POLL_N11_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+tick N=11/13 utils=[99, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+tick N=11/13 utils=[100, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+tick N=11/13 utils=[99, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+tick N=11/13 utils=[98, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+tick N=11/13 utils=[99, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+2026-10-10 20:13:12 SUPERVISOR start worker_poll baseline11
+WORKER_POLL_N11_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=11
+tick N=11/13 utils=[99, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+tick N=11/13 utils=[0, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+tick N=12/13 utils=[0, 99] live=['a-adamw-7630', 'a-adamw-9375'] tasks=2 copied=[]
+EXIT_EVENT n_jump
+FINAL {"reason": "n_jump", "from": 11, "n": 12, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-153", "a-adamw-305", "a-adamw-763", "a-adamw-1526", "a-adamw-3052", "a-adamw-4578", "a-adamw-6104", "a-adamw-7630"], "miss": ["a-adamw-9375"], "copied_new": [], "lambda_max": {}, "tasks": "2", "gpu_utils": [0, 99], "gpu_status": "PARTIAL", "ts": "2026-10-10 20:14 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+2026-10-10 20:16:00 SUPERVISOR start worker_poll baseline12
+WORKER_POLL_N12_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=12
+tick N=12/13 utils=[99] live=['a-adamw-9375'] tasks=1 copied=[]
+2026-10-10 20:17:24 SUPERVISOR start worker_poll baseline12
+WORKER_POLL_N12_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=12
+tick N=12/13 utils=[100] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[100] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[100] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[99] live=['a-adamw-9375'] tasks=1 copied=[]
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=12
+tick N=12/13 utils=[99] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[99] live=['a-adamw-9375'] tasks=1 copied=[]
+2026-10-10 20:24:03 SUPERVISOR start worker_poll baseline12
+WORKER_POLL_N12_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=12
+tick N=12/13 utils=[100] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[99] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[100] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[99] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=12/13 utils=[99] live=['a-adamw-9375'] tasks=1 copied=[]
+tick N=13/13 utils=[] live=[] tasks=0 copied=[]
+EXIT_EVENT complete
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/longpoll_n4.py", line 338, in <module>
+    subprocess.run(["bash", str(ensure)], cwd=str(ROOT), timeout=60, check=False)
+NameError: name 'ensure' is not defined
+LONGPOLL_DURABLE_START cwd=/Users/daxtongutekunst/Desktop/assignments baseline=13
+tick N=13/13 utils=[] live=[] tasks=0 copied=[]
+EXIT_EVENT complete
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/longpoll_n4.py", line 338, in <module>
+    subprocess.run(["bash", str(ensure)], cwd=str(ROOT), timeout=60, check=False)
+NameError: name 'ensure' is not defined

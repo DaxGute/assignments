@@ -1,0 +1,10 @@
+{
+  "first": "b-rescale-head-x0.25",
+  "scale": {
+    "lm_head.weight": 0.25
+  },
+  "lambda_max": 2.780040977639008,
+  "probe_loss": 5.685978919267654,
+  "ts": "2026-10-10 21:24:47 PDT",
+  "app": "ap-lSeukZDR7yWisgODr61i1k"
+}

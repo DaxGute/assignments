@@ -1,0 +1,2 @@
+ls: cannot access '/.modal/.container-arguments': No such file or directory
+--- container-arguments ---

@@ -1,0 +1,59 @@
+{
+  "done": 4,
+  "total": 4,
+  "rows": [
+    {
+      "name": "model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order1-fork500-b09143-stop600",
+      "exists": true,
+      "have": [
+        "config.json",
+        "latest.pt",
+        "metadata.json",
+        "model.pt",
+        "run_state.json",
+        "step_600.pt"
+      ],
+      "path": "/ckpts/model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order1-fork500-b09143-stop600"
+    },
+    {
+      "name": "model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order2-fork500-a62d09-stop600",
+      "exists": true,
+      "have": [
+        "config.json",
+        "latest.pt",
+        "metadata.json",
+        "model.pt",
+        "run_state.json",
+        "step_600.pt"
+      ],
+      "path": "/ckpts/model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order2-fork500-a62d09-stop600"
+    },
+    {
+      "name": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-b09143-stop600",
+      "exists": true,
+      "have": [
+        "config.json",
+        "latest.pt",
+        "metadata.json",
+        "model.pt",
+        "run_state.json",
+        "step_600.pt"
+      ],
+      "path": "/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-b09143-stop600"
+    },
+    {
+      "name": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-a62d09-stop600",
+      "exists": true,
+      "have": [
+        "config.json",
+        "latest.pt",
+        "metadata.json",
+        "model.pt",
+        "run_state.json",
+        "step_600.pt"
+      ],
+      "path": "/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-a62d09-stop600"
+    }
+  ],
+  "app": "ap-I57w3JnswkRdSl3qU1hMQV"
+}

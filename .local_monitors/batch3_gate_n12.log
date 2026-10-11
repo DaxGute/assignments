@@ -1,0 +1,87 @@
+GATE_N12_START cwd= /Users/daxtongutekunst/Desktop/assignments baseline= 11
+RESPAWN batch3_stage_pipeline
+N_JUMP_DETECTED n=12
+VOLUME 12/13 done=['a-adamw-0', 'a-adamw-3', 'a-adamw-15', 'a-adamw-61', 'a-adamw-153', 'a-adamw-305', 'a-adamw-763', 'a-adamw-1526', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-6104', 'a-adamw-7630']
+MISS ['a-adamw-9375']
+COPIED a-adamw-7630 lambda_max=5.281516516770698
+{
+  "n": 12,
+  "copied": [
+    "a-adamw-7630"
+  ],
+  "lambda_max_new": {
+    "a-adamw-7630": 5.281516516770698
+  },
+  "lam1526": 2.1954286466134665,
+  "lam3052": 3.1637529312879873,
+  "live_expect": [
+    "a-adamw-7630",
+    "a-adamw-9375"
+  ],
+  "gpu_utils": [
+    0,
+    99
+  ],
+  "miss": [
+    "a-adamw-9375"
+  ],
+  "complete": false
+}
+COPIED a-adamw-7630 lambda_max=5.281516516770698
+discovered 12/13: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630]
+updated /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/docs/a3-experimental-appendix.md
+filled MEASURED steps: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630]
+[p4-update-lambda-plot] wrote media/p4/p4_lambda_max_early.png n=12/13 steps=0,3,15,61,153,305,763,1526,3052,4578,6104,7630
+  step=0 lambda_max=1431.5030691763686
+  step=3 lambda_max=1571.7420262270407
+  step=15 lambda_max=53.36426571742344
+  step=61 lambda_max=18.054717868295125
+  step=153 lambda_max=6.502395300121604
+  step=305 lambda_max=4.32926630998023
+  step=763 lambda_max=3.02398152405625
+  step=1526 lambda_max=2.1954286466134665
+  step=3052 lambda_max=3.1637529312879873
+  step=4578 lambda_max=3.7423705126158477
+  step=6104 lambda_max=4.155164815834522
+  step=7630 lambda_max=5.281516516770698
+GATE_N12_EXIT {"reason": "n_jump", "from": 11, "n": 12, "lambda_max_new": {"a-adamw-7630": 5.281516516770698}, "miss": ["a-adamw-9375"], "live_expect": ["a-adamw-7630", "a-adamw-9375"], "gpu_utils": [0, 99], "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+GATE_N12_START cwd= /Users/daxtongutekunst/Desktop/assignments baseline= 12
+N_JUMP_DETECTED n=13
+VOLUME 13/13 done=['a-adamw-0', 'a-adamw-3', 'a-adamw-15', 'a-adamw-61', 'a-adamw-153', 'a-adamw-305', 'a-adamw-763', 'a-adamw-1526', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-6104', 'a-adamw-7630', 'a-adamw-9375']
+MISS []
+{
+  "n": 13,
+  "copied": [],
+  "lambda_max_new": {},
+  "lam1526": 2.1954286466134665,
+  "lam3052": 3.1637529312879873,
+  "live_expect": [
+    "a-adamw-9375"
+  ],
+  "gpu_utils": [
+    0
+  ],
+  "miss": [],
+  "complete": true
+}
+COPIED a-adamw-7630 lambda_max=5.281516516770698
+COPIED a-adamw-9375 lambda_max=5.967310256347902
+discovered 13/13: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630, 9375]
+updated /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/docs/a3-experimental-appendix.md
+filled MEASURED steps: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630, 9375]
+[p4-update-lambda-plot] wrote media/p4/p4_lambda_max_early.png n=13/13 steps=0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375
+  step=0 lambda_max=1431.5030691763686
+  step=3 lambda_max=1571.7420262270407
+  step=15 lambda_max=53.36426571742344
+  step=61 lambda_max=18.054717868295125
+  step=153 lambda_max=6.502395300121604
+  step=305 lambda_max=4.32926630998023
+  step=763 lambda_max=3.02398152405625
+  step=1526 lambda_max=2.1954286466134665
+  step=3052 lambda_max=3.1637529312879873
+  step=4578 lambda_max=3.7423705126158477
+  step=6104 lambda_max=4.155164815834522
+  step=7630 lambda_max=5.281516516770698
+  step=9375 lambda_max=5.967310256347902
+GATE_N12_EXIT {"reason": "complete", "from": 12, "n": 13, "lambda_max_new": {"a-adamw-7630": 5.281516516770698, "a-adamw-9375": 5.967310256347902}, "miss": [], "live_expect": ["a-adamw-9375"], "gpu_utils": [0], "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+HIT_13_PIPELINE

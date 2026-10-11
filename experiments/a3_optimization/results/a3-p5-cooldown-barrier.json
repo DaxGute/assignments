@@ -1,0 +1,87 @@
+{
+  "ledger_ids": [
+    "P5-B-cool-x0",
+    "P5-dB-cool",
+    "P5-B-const-ctrl",
+    "P5-rank-arms",
+    "P5-G-cool-fitC",
+    "P5-L-cool-dir",
+    "P5-emergent-basin"
+  ],
+  "B_R": 0.6237,
+  "B_cool": 0.7697049379348755,
+  "B_const": 0.7320129871368408,
+  "G_cool": 0.8391239460323332,
+  "G_const": 0.8325204254702272,
+  "dB": -0.14600493793487546,
+  "dL_endpoints": null,
+  "emergent": "true-modes",
+  "cool_pair": [
+    [
+      "model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order1-fork500-b09143-stop600",
+      600
+    ],
+    [
+      "model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order2-fork500-a62d09-stop600",
+      600
+    ]
+  ],
+  "const_pair": [
+    [
+      "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-b09143-stop600",
+      600
+    ],
+    [
+      "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-a62d09-stop600",
+      600
+    ]
+  ],
+  "rows": [
+    {
+      "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order1-fork500-b09143-stop600/step_600.pt",
+      "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order2-fork500-a62d09-stop600/step_600.pt",
+      "alphas": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "interpolation": [
+        3.572204828262329,
+        3.7728703022003174,
+        4.33719539642334,
+        3.7728259563446045,
+        3.5627760887145996
+      ],
+      "ensemble": 3.4980714503910066,
+      "run_a": "model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order1-fork500-b09143-stop600",
+      "step_a": 600,
+      "run_b": "model-d8-lr0.003-tok614M-wsd0.0-dip0.0533333-0.064-1x0-order2-fork500-a62d09-stop600",
+      "step_b": 600
+    },
+    {
+      "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-b09143-stop600/step_600.pt",
+      "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-a62d09-stop600/step_600.pt",
+      "alphas": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "interpolation": [
+        3.6641438007354736,
+        3.8405568599700928,
+        4.3933000564575195,
+        3.839474678039551,
+        3.658430337905884
+      ],
+      "ensemble": 3.5607796309872923,
+      "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-b09143-stop600",
+      "step_a": 600,
+      "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-a62d09-stop600",
+      "step_b": 600
+    }
+  ]
+}

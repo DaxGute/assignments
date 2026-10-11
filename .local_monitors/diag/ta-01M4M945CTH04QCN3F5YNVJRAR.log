@@ -1,0 +1,3 @@
+Initializing native d8 model
+Loaded train_dataset dclm: 9,600,000 rows (9,830,400,000 tokens) from /root/shared_data/datasets/dclm_9p6m_ctx1024/train.
+Initializing native d8 model

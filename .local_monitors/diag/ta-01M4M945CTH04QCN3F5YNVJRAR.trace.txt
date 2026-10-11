@@ -1,0 +1,52 @@
+PIDS [(2, 'python -u -R --check-hash-based-pycs never -m modal._container_entrypoint ')]
+PID 2 interesting_fds []
+cwd /root/assignments
+ENV MODAL_TASK_ID=ta-01M4M945CTH04QCN3F5YNVJRAR
+stack_err [Errno 2] No such file or directory: '/proc/2/stack'
+Name:	python
+State:	R (running)
+VmRSS:	4348752 kB
+Threads:	5
+voluntary_ctxt_switches:	4645970
+CMD ls -la /tmp 2>/dev/null | head
+total 1
+drwxrwxrwx 1 root root  46 Sep  6 21:57 .
+drwxr-xr-x 1 root root 120 Oct 11 01:27 ..
+-rw-rw-rw- 1 root root   0 Sep  6 21:57 uv-8f63f5b790a552d3.lock
+CMD find /tmp /root/data -name "*adamw*" 2>/dev/null | head -40
+
+CMD find /dev/shm -type f 2>/dev/null | head -20
+
+CMD ls -la /root/data/ckpts 2>/dev/null | head
+total 0
+drwxr-xr-x 1 root root 0 Sep 28 00:29 .
+drwxr-xr-x 1 root root 0 Oct 11 01:27 ..
+drwxr-xr-x 1 root root 0 Oct  5 18:47 model-a2-d8-lr0.0015-bs128-tok614M-wd0.5532224402553738-a2-a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.55322244-nearby_validation
+drwxr-xr-x 1 root root 0 Oct  5 18:47 model-a2-d8-lr0.0015-bs128-tok614M-wd0.7823746780182889-a2-a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd0.78237468-predicted
+drwxr-xr-x 1 root root 0 Oct  5 19:12 model-a2-d8-lr0.0015-bs128-tok614M-wd1.1064448805107476-a2-a2-b2-p32b-fixed_lr_scale_wd-b128-lr0.0015-wd1.1064449-nearby_validation
+drwxr-xr-x 1 root root 0 Oct  5 03:41 model-a2-d8-lr0.0015-bs16-tok614M-a2-a2-b1-p32a-lr-b016-lr0.0015-wd0.1
+drwxr-xr-x 1 root root 0 Oct  5 04:42 model-a2-d8-lr0.0015-bs16-tok614M-wd0.2-a2-a2-b1-p32b-wd-b016-lr0.0015-wd0.2
+drwxr-xr-x 1 root root 0 Oct  5 04:55 model-a2-d8-lr0.0015-bs16-tok614M-wd0.4-a2-a2-b1-p32b-wd-b016-lr0.0015-wd0.4
+drwxr-xr-x 1 root root 0 Oct  5 04:55 model-a2-d8-lr0.0015-bs16-tok614M-wd0.8-a2-a2-b1-p32b-wd-b016-lr0.0015-wd0.8
+CMD find /root/data -name "step_*.pt" 2>/dev/null | head -20
+
+Sun Oct 11 01:48:52 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:84:00.0 Off |                    0 |
+| N/A   51C    P0            516W /  700W |   35699MiB /  81559MiB |     99%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A               1      C   /bin/dumb-init                        35690MiB |
++-----------------------------------------------------------------------------------------+

@@ -1,0 +1,8 @@
+{
+  "heads": [
+    "b-rescale-head-x0.25",
+    "b-rescale-head-x0.5",
+    "b-rescale-head-x2"
+  ],
+  "ts": "2026-10-10 21:48:59 PDT"
+}

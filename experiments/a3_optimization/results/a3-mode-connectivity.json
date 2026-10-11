@@ -1,0 +1,692 @@
+[
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-stop500/step_25.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-stop500/step_25.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      6.4380364418029785,
+      6.422370910644531,
+      6.422811985015869,
+      6.438125133514404,
+      6.465258598327637
+    ],
+    "ensemble": 6.407699352394917,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-stop500",
+    "step_a": 25,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-stop500",
+    "step_b": 25
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-stop500/step_50.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-stop500/step_50.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      5.632941722869873,
+      5.610189437866211,
+      5.618044853210449,
+      5.641442775726318,
+      5.686367034912109
+    ],
+    "ensemble": 5.579768053519062,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-stop500",
+    "step_a": 50,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-stop500",
+    "step_b": 50
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-stop500/step_100.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-stop500/step_100.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      5.028156280517578,
+      4.9916276931762695,
+      5.0063910484313965,
+      4.9975972175598145,
+      5.039612293243408
+    ],
+    "ensemble": 4.923765670821115,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-stop500",
+    "step_a": 100,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-stop500",
+    "step_b": 100
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-stop500/step_250.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-stop500/step_250.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.3201775550842285,
+      4.358462333679199,
+      4.531938552856445,
+      4.3576130867004395,
+      4.309183120727539
+    ],
+    "ensemble": 4.204623274071359,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-stop500",
+    "step_a": 250,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-stop500",
+    "step_b": 250
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-stop500/step_500.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-stop500/step_500.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.751072645187378,
+      3.9156336784362793,
+      4.373422145843506,
+      3.89613938331604,
+      3.748309373855591
+    ],
+    "ensemble": 3.645352058895406,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-stop500",
+    "step_a": 500,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-stop500",
+    "step_b": 500
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550/step_75.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550/step_75.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      5.27080774307251,
+      5.200992107391357,
+      5.178378582000732,
+      5.204675197601318,
+      5.287721633911133
+    ],
+    "ensemble": 5.196240163734116,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550",
+    "step_a": 75,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550",
+    "step_b": 75
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550/step_100.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550/step_100.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      5.045306205749512,
+      4.961266040802002,
+      4.939796447753906,
+      4.96903657913208,
+      5.044921398162842
+    ],
+    "ensemble": 4.944124053030303,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550",
+    "step_a": 100,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550",
+    "step_b": 100
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550/step_150.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550/step_150.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.694326877593994,
+      4.622360706329346,
+      4.603114604949951,
+      4.625074863433838,
+      4.693976879119873
+    ],
+    "ensemble": 4.587203415200391,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550",
+    "step_a": 150,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550",
+    "step_b": 150
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550/step_300.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550/step_300.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.127837181091309,
+      4.108353137969971,
+      4.131634712219238,
+      4.105329513549805,
+      4.124520301818848
+    ],
+    "ensemble": 4.023122785312806,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550",
+    "step_a": 300,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550",
+    "step_b": 300
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550/step_550.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550/step_550.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.7008819580078125,
+      3.7345004081726074,
+      3.825272560119629,
+      3.726518392562866,
+      3.6897799968719482
+    ],
+    "ensemble": 3.594347812805474,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork50-c4871f-stop550",
+    "step_a": 550,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork50-c4871f-stop550",
+    "step_b": 550
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600/step_125.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600/step_125.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.826789379119873,
+      4.755373001098633,
+      4.731141090393066,
+      4.753439903259277,
+      4.821893692016602
+    ],
+    "ensemble": 4.7374119318181815,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600",
+    "step_a": 125,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600",
+    "step_b": 125
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600/step_150.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600/step_150.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.687012195587158,
+      4.606625080108643,
+      4.577599048614502,
+      4.598380088806152,
+      4.67192268371582
+    ],
+    "ensemble": 4.578999450146627,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600",
+    "step_a": 150,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600",
+    "step_b": 150
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600/step_200.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600/step_200.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.488686561584473,
+      4.403754711151123,
+      4.3690595626831055,
+      4.378365993499756,
+      4.443854808807373
+    ],
+    "ensemble": 4.3591355999511245,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600",
+    "step_a": 200,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600",
+    "step_b": 200
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600/step_350.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600/step_350.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.9960625171661377,
+      3.9419758319854736,
+      3.934192419052124,
+      3.9308557510375977,
+      3.9747426509857178
+    ],
+    "ensemble": 3.880788077346041,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600",
+    "step_a": 350,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600",
+    "step_b": 350
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600/step_600.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600/step_600.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.6669883728027344,
+      3.661824941635132,
+      3.6945064067840576,
+      3.6559228897094727,
+      3.65816330909729
+    ],
+    "ensemble": 3.5634131231671553,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork100-c4871f-stop600",
+    "step_a": 600,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork100-c4871f-stop600",
+    "step_b": 600
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750/step_275.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750/step_275.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.24003267288208,
+      4.168333053588867,
+      4.146125316619873,
+      4.171634674072266,
+      4.244899272918701
+    ],
+    "ensemble": 4.158078537390029,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750",
+    "step_a": 275,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750",
+    "step_b": 275
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750/step_300.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750/step_300.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      4.138311862945557,
+      4.056453227996826,
+      4.031145095825195,
+      4.059958457946777,
+      4.145102024078369
+    ],
+    "ensemble": 4.050483672409579,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750",
+    "step_a": 300,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750",
+    "step_b": 300
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750/step_350.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750/step_350.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.9971861839294434,
+      3.9018497467041016,
+      3.870910167694092,
+      3.8953897953033447,
+      3.976749897003174
+    ],
+    "ensemble": 3.8868885783235583,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750",
+    "step_a": 350,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750",
+    "step_b": 350
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750/step_500.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750/step_500.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.742920160293579,
+      3.6789629459381104,
+      3.661461353302002,
+      3.675023078918457,
+      3.7357442378997803
+    ],
+    "ensemble": 3.6446713862414466,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750",
+    "step_a": 500,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750",
+    "step_b": 500
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750/step_750.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750/step_750.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.5739974975585938,
+      3.5275375843048096,
+      3.5204174518585205,
+      3.5247669219970703,
+      3.571239471435547
+    ],
+    "ensemble": 3.4843984451368524,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork250-c4871f-stop750",
+    "step_a": 750,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork250-c4871f-stop750",
+    "step_b": 750
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000/step_525.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000/step_525.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.7265822887420654,
+      3.6677403450012207,
+      3.646270513534546,
+      3.661733865737915,
+      3.7154438495635986
+    ],
+    "ensemble": 3.6522193914956014,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000",
+    "step_a": 525,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000",
+    "step_b": 525
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000/step_550.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000/step_550.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.710505485534668,
+      3.637500047683716,
+      3.6123197078704834,
+      3.6313979625701904,
+      3.697141170501709
+    ],
+    "ensemble": 3.622566425342131,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000",
+    "step_a": 550,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000",
+    "step_b": 550
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000/step_600.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000/step_600.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.665355920791626,
+      3.5920605659484863,
+      3.5679640769958496,
+      3.588747501373291,
+      3.661074161529541
+    ],
+    "ensemble": 3.5798205797898337,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000",
+    "step_a": 600,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000",
+    "step_b": 600
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000/step_750.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000/step_750.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.576674222946167,
+      3.5068154335021973,
+      3.484739303588867,
+      3.503782272338867,
+      3.5747687816619873
+    ],
+    "ensemble": 3.491836052052786,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000",
+    "step_a": 750,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000",
+    "step_b": 750
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000/step_1000.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000/step_1000.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.486246109008789,
+      3.4259848594665527,
+      3.4096872806549072,
+      3.425070285797119,
+      3.4856889247894287
+    ],
+    "ensemble": 3.4037044843597264,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork500-c4871f-stop1000",
+    "step_a": 1000,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork500-c4871f-stop1000",
+    "step_b": 1000
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500/step_1025.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500/step_1025.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.47857403755188,
+      3.4335923194885254,
+      3.419429302215576,
+      3.4346606731414795,
+      3.4796271324157715
+    ],
+    "ensemble": 3.422124541788856,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500",
+    "step_a": 1025,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500",
+    "step_b": 1025
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500/step_1050.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500/step_1050.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.472966432571411,
+      3.41504168510437,
+      3.397404432296753,
+      3.4170782566070557,
+      3.4757421016693115
+    ],
+    "ensemble": 3.4051446725317693,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500",
+    "step_a": 1050,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500",
+    "step_b": 1050
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500/step_1100.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500/step_1100.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.4618582725524902,
+      3.396693706512451,
+      3.3759958744049072,
+      3.3962371349334717,
+      3.461050033569336
+    ],
+    "ensemble": 3.3866631842619745,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500",
+    "step_a": 1100,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500",
+    "step_b": 1100
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500/step_1250.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500/step_1250.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.4240894317626953,
+      3.3574912548065186,
+      3.337822914123535,
+      3.358003616333008,
+      3.4224729537963867
+    ],
+    "ensemble": 3.3448742363147606,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500",
+    "step_a": 1250,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500",
+    "step_b": 1250
+  },
+  {
+    "a": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500/step_1500.pt",
+    "b": "/root/data/ckpts/model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500/step_1500.pt",
+    "alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "interpolation": [
+      3.3812057971954346,
+      3.316986560821533,
+      3.298624038696289,
+      3.317222833633423,
+      3.3809549808502197
+    ],
+    "ensemble": 3.301684796554252,
+    "run_a": "model-d8-lr0.003-tok614M-wsd0.0-order1-fork1000-c4871f-stop1500",
+    "step_a": 1500,
+    "run_b": "model-d8-lr0.003-tok614M-wsd0.0-order2-fork1000-c4871f-stop1500",
+    "step_b": 1500
+  }
+]

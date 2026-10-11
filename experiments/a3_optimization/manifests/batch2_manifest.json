@@ -1,0 +1,217 @@
+{
+  "batch": "batch2",
+  "jobs": [
+    {
+      "label": "a3-b2-p2-wsd0.0",
+      "track": "p2",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p2",
+        "p2a",
+        "river-valley",
+        "wsd0.0"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "a",
+          "family": "river_valley",
+          "config_role": "wsd0.0"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p2-linear",
+      "track": "p2",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p2",
+        "p2a",
+        "river-valley",
+        "linear"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "a",
+          "family": "river_valley",
+          "config_role": "linear"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p2-cos",
+      "track": "p2",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p2",
+        "p2a",
+        "river-valley",
+        "cos"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "a",
+          "family": "river_valley",
+          "config_role": "cos"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p2-wsd0.2",
+      "track": "p2",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p2",
+        "p2a",
+        "river-valley",
+        "wsd0.2"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "a",
+          "family": "river_valley",
+          "config_role": "wsd0.2"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p2-wsd0.2",
+      "track": "p2",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p2",
+        "p2a",
+        "river-valley",
+        "wsd0.2"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "a",
+          "family": "river_valley",
+          "config_role": "wsd0.2"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p2-invsqrt",
+      "track": "p2",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p2",
+        "p2a",
+        "river-valley",
+        "invsqrt"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "a",
+          "family": "river_valley",
+          "config_role": "invsqrt"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p2-sgdr2000",
+      "track": "p2",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p2",
+        "p2a",
+        "river-valley",
+        "sgdr2000"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "a",
+          "family": "river_valley",
+          "config_role": "sgdr2000"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-0-sgd",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3a",
+        "edge-of-stability",
+        "starter"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "a",
+          "family": "edge_of_stability",
+          "config_role": "starter"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-1-adamw",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3b",
+        "edge-of-stability",
+        "starter"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "b",
+          "family": "edge_of_stability",
+          "config_role": "starter"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "P2 and P3 are independent; launch both when GPU budget allows.",
+    "Starter RUNS are the required core; expand p3 exploration in the starter before Batch 2 execute if aiming for ~22 runs.",
+    "Counterfactuals stay out of this required manifest (Batch 3 gated)."
+  ]
+}

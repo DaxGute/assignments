@@ -1,0 +1,4 @@
+label,stage,kind,problem,subpart,config_role,count
+a3-b1-p1-prefix,prefix,p1_stage,1,a,prefix,1
+a3-b1-p1-branches,branches,p1_stage,1,a,branch,12
+a3-b1-p1-measure,measure,p1_stage,1,b,measure,30

@@ -1,0 +1,59 @@
+{
+  "n": 13,
+  "of": 13,
+  "remaining": 0,
+  "done": [
+    "a-adamw-0",
+    "a-adamw-3",
+    "a-adamw-15",
+    "a-adamw-61",
+    "a-adamw-153",
+    "a-adamw-305",
+    "a-adamw-763",
+    "a-adamw-1526",
+    "a-adamw-3052",
+    "a-adamw-4578",
+    "a-adamw-6104",
+    "a-adamw-7630",
+    "a-adamw-9375"
+  ],
+  "miss": [],
+  "lambda_max": {
+    "a-adamw-0": 1431.5030691763686,
+    "a-adamw-3": 1571.7420262270407,
+    "a-adamw-15": 53.36426571742344,
+    "a-adamw-61": 18.054717868295125,
+    "a-adamw-153": 6.502395300121604,
+    "a-adamw-305": 4.32926630998023,
+    "a-adamw-763": 3.02398152405625,
+    "a-adamw-1526": 2.1954286466134665,
+    "a-adamw-3052": 3.1637529312879873,
+    "a-adamw-4578": 3.7423705126158477,
+    "a-adamw-6104": 4.155164815834522,
+    "a-adamw-7630": 5.281516516770698,
+    "a-adamw-9375": 5.967310256347902
+  },
+  "live_expect": [],
+  "gpu_utils": [
+    0
+  ],
+  "gpu_status": "COMPLETE",
+  "still_running": false,
+  "checkout": "/Users/daxtongutekunst/Desktop/assignments",
+  "forbidden_used": false,
+  "ts": "2026-10-10 20:29 PDT",
+  "ts_iso": "2026-10-11T03:29:29Z",
+  "copied_new": [
+    "a-adamw-9375"
+  ],
+  "lambda_new": {
+    "a-adamw-9375": 5.967310256347902
+  },
+  "focus": {
+    "a-adamw-7630": "DONE",
+    "a-adamw-9375": "DONE"
+  },
+  "n13": true,
+  "phase_extra": "13/13 \u2014 starting fetch\u2192b-rescale\u2192c",
+  "probe": "wait_9375_then_pipeline_bc-876ea7f3"
+}

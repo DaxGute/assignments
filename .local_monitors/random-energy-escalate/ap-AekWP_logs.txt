@@ -1,0 +1,4 @@
+2026-10-10 22:43:13-07:00 Initializing native d8 model
+2026-10-10 22:43:15-07:00 Initializing native d8 model
+2026-10-10 22:43:15-07:00 Loaded train_dataset dclm: 9,600,000 rows (9,830,400,000 tokens) from /root/shared_data/datasets/dclm_9p6m_ctx1024/train.
+2026-10-10 22:43:17-07:00 Loaded train_dataset dclm: 9,600,000 rows (9,830,400,000 tokens) from /root/shared_data/datasets/dclm_9p6m_ctx1024/train.

@@ -1,0 +1,8 @@
+NVIDIA 99 %, 45 %, 35699 MiB, 81559 MiB, 541.95 W, 56
+PMON     0          1     C     99     44      -      -      -      -    dumb-init      
+JOBS ['a-adamw-15', 'a-adamw-3', 'a-adamw-305', 'a-adamw-61']
+CKPTS []
+State:	R (running)
+VmRSS:	4473768 kB
+Threads:	5
+VOL ['a-adamw-15.json', 'a-adamw-3.json', 'a-adamw-61.json']

@@ -1,3 +1,4 @@
+import hashlib
 import time
 from dataclasses import asdict, dataclass, field, replace
 from pathlib import Path
@@ -6,7 +7,11 @@ import torch
 from torch.nn import DataParallel
 from torch.nn import functional as F
 
-from checkpointing import TrainingCheckpointer, normalize_checkpoint_steps
+from checkpointing import (
+    TrainingCheckpointer,
+    normalize_checkpoint_steps,
+    restore_rng_state,
+)
 from data import (
     DEFAULT_DATA_SEED,
     TokenDatasetConfig,
@@ -14,7 +19,7 @@ from data import (
     dclm_val_dataset,
     load_token_dataset,
 )
-from lr_schedules import build_scheduler
+from lr_schedules import build_scheduler, set_scheduler_to_completed_steps
 from metric_logging import (
     AFTER_BACKWARD,
     AFTER_EVAL,
@@ -53,6 +58,7 @@ class TrainConfig:
     model_config: LMConfig | None = None
     model_builder: str | None = None
     model_builder_kwargs: dict = field(default_factory=dict)
+    embedding_init_scale: float = 1.0
     run_name_suffix: str | None = None
     init_checkpoint_path: str | Path | None = None
     learning_rate: float = 3e-3
@@ -68,8 +74,6 @@ class TrainConfig:
     tie_word_embeddings: bool = False
     deterministic: bool = False
     perturb_one_token: bool = False
-    perturb_step: int | None = None
-    perturb_num_tokens: int = 1
     wandb_tags: tuple[str, ...] = field(default_factory=tuple)
     wandb_online: bool = True
     force_run: bool = False
@@ -78,13 +82,26 @@ class TrainConfig:
     train_dataset: TokenDatasetConfig = field(default_factory=dclm_train_dataset)
     val_dataset: TokenDatasetConfig = field(default_factory=dclm_val_dataset)
     optimizer_name: str = "adamw"
-    optimizer_builder: str | None = None
-    optimizer_kwargs: dict = field(default_factory=dict)
-    experiment_metadata: dict = field(default_factory=dict)
     beta1: float = 0.9
     beta2: float = 0.95
     save_model: bool = True
     lr_schedule: str = "linear"
+    # Absolute warmup length in updates; overrides warmup_percent when set.
+    warmup_steps: int | None = None
+    # Floor of the "sgdrT" schedule, as a fraction of learning_rate.
+    min_lr_ratio: float = 0.0
+    # (start, bottom, end, scale) as fractions of training: the LR multiplier
+    # falls linearly from 1 to scale over [start, bottom], then returns to 1 by end.
+    lr_dip: tuple[float, float, float, float] | None = None
+    # Evaluation-only exponential moving averages of the parameters.
+    ema_decays: tuple[float, ...] = field(default_factory=tuple)
+    # Seeded permutation of the training micro-batch order.
+    batch_order_seed: int | None = None
+    # Continue another run from its kept step checkpoint, with optimizer state.
+    fork_from_run: str | None = None
+    fork_from_step: int | None = None
+    # Stop after this many updates; the schedule still uses the full run length.
+    stop_at_step: int | None = None
     precision: str = "mp"
     num_train_sequences: int = 600_000
     resume_from_checkpoint: bool = True
@@ -147,6 +164,8 @@ def training_run_name(config):
     run_name += f"-tok{format_token_count(train_tokens)}"
     if config.weight_decay != TrainConfig.weight_decay:
         run_name += f"-wd{config.weight_decay}"
+    if config.embedding_init_scale != TrainConfig.embedding_init_scale:
+        run_name += f"-emb{config.embedding_init_scale:g}"
     if config.warmup_percent != TrainConfig.warmup_percent:
         run_name += f"-warmup{config.warmup_percent}"
     if config.grad_norm != TrainConfig.grad_norm:
@@ -163,9 +182,7 @@ def training_run_name(config):
     if config.deterministic != TrainConfig.deterministic:
         run_name += "-deterministic"
     if config.perturb_one_token != TrainConfig.perturb_one_token:
-        run_name += f"-perturb{config.perturb_num_tokens}tok"
-        if config.perturb_step is not None:
-            run_name += f"-at{config.perturb_step}"
+        run_name += "-perturb1tok"
     if config.data_seed != TrainConfig.data_seed:
         if config.data_seed is None:
             run_name += "-dsnone"
@@ -188,6 +205,22 @@ def training_run_name(config):
         run_name += f"-{config.lr_schedule}"
     if config.precision != TrainConfig.precision:
         run_name += f"-{config.precision}"
+    if config.warmup_steps is not None:
+        run_name += f"-warmupsteps{config.warmup_steps}"
+    if config.min_lr_ratio != TrainConfig.min_lr_ratio:
+        run_name += f"-minlr{config.min_lr_ratio:g}"
+    if config.lr_dip is not None:
+        start, bottom, end, scale = config.lr_dip
+        run_name += f"-dip{start:g}-{bottom:g}-{end:g}x{scale:g}"
+    if config.ema_decays:
+        run_name += "-ema" + "-".join(f"{decay:g}" for decay in config.ema_decays)
+    if config.batch_order_seed is not None:
+        run_name += f"-order{config.batch_order_seed}"
+    if config.fork_from_run is not None:
+        source = hashlib.sha1(config.fork_from_run.encode()).hexdigest()[:6]
+        run_name += f"-fork{config.fork_from_step}-{source}"
+    if config.stop_at_step is not None:
+        run_name += f"-stop{config.stop_at_step}"
     if config.run_name_suffix is not None:
         run_name += f"-{config.run_name_suffix}"
     return run_name
@@ -240,6 +273,9 @@ def build_model(config, device):
     post_initialize = getattr(model, "post_initialize", None)
     if post_initialize is not None:
         post_initialize()
+    if config.embedding_init_scale != 1.0:
+        with torch.no_grad():
+            model.get_input_embeddings().weight.mul_(config.embedding_init_scale)
     return model.to(device=device, dtype=dtype)
 
 
@@ -291,11 +327,139 @@ def evaluate(model, val_batches, config, device):
     return torch.tensor(total_nll / total_tokens)
 
 
+def _is_int(value):
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def validate_a3_fields(config):
+    if config.warmup_steps is not None and (
+        not _is_int(config.warmup_steps) or config.warmup_steps < 0
+    ):
+        raise ValueError(f"warmup_steps must be a nonnegative int, got {config.warmup_steps!r}.")
+    if not 0.0 <= config.min_lr_ratio <= 1.0:
+        raise ValueError(f"min_lr_ratio must be in [0, 1], got {config.min_lr_ratio}.")
+    if config.min_lr_ratio and not config.lr_schedule.startswith("sgdr"):
+        raise ValueError("min_lr_ratio is only used by the sgdr schedule.")
+    if config.lr_dip is not None:
+        if len(config.lr_dip) != 4:
+            raise ValueError("lr_dip must be (start, bottom, end, scale).")
+        start, bottom, end, scale = config.lr_dip
+        if not 0.0 <= start <= bottom <= end <= 1.0 or start == end or scale < 0:
+            raise ValueError(
+                "lr_dip needs 0 <= start <= bottom <= end <= 1, start < end, "
+                f"and scale >= 0; got {config.lr_dip}."
+            )
+    if not isinstance(config.ema_decays, tuple):
+        raise TypeError("ema_decays must be a tuple.")
+    if len(set(config.ema_decays)) != len(config.ema_decays) or not all(
+        0.0 < decay < 1.0 for decay in config.ema_decays
+    ):
+        raise ValueError(f"ema_decays must be distinct values in (0, 1), got {config.ema_decays}.")
+    if config.batch_order_seed is not None and not _is_int(config.batch_order_seed):
+        raise TypeError("batch_order_seed must be an int or None.")
+    if (config.fork_from_run is None) != (config.fork_from_step is None):
+        raise ValueError("Set fork_from_run and fork_from_step together.")
+    if config.fork_from_step is not None and (
+        not _is_int(config.fork_from_step) or config.fork_from_step <= 0
+    ):
+        raise ValueError("fork_from_step must be a positive int; for step 0, start a fresh run.")
+    if config.stop_at_step is not None:
+        if not _is_int(config.stop_at_step) or config.stop_at_step <= 0:
+            raise ValueError("stop_at_step must be a positive int.")
+        if config.fork_from_step is not None and config.stop_at_step <= config.fork_from_step:
+            raise ValueError("stop_at_step must come after fork_from_step.")
+        late = [step for step in config.keep_checkpoint_steps if step > config.stop_at_step]
+        if late:
+            raise ValueError(f"keep_checkpoint_steps after stop_at_step are never saved: {late}")
+
+
+class PermutedBatches:
+    """Training batches in a fixed seeded order; micro-batches are permuted."""
+
+    def __init__(self, batches, seed):
+        self.batches = batches
+        generator = torch.Generator().manual_seed(seed)
+        self.order = torch.randperm(len(batches), generator=generator).tolist()
+
+    def __len__(self):
+        return len(self.batches)
+
+    def __getitem__(self, idx):
+        return self.batches[self.order[idx]]
+
+
+def fork_checkpoint_path(config):
+    return Path(config.model_dir) / config.fork_from_run / f"step_{config.fork_from_step}.pt"
+
+
+def restore_fork(config, model, optimizer, scheduler):
+    """Load model and optimizer state from another run, keeping this config's hyperparameters."""
+    path = fork_checkpoint_path(config)
+    if not path.is_file():
+        raise FileNotFoundError(
+            f"Fork checkpoint {path} does not exist. Train {config.fork_from_run!r} "
+            f"with keep_checkpoint_steps including {config.fork_from_step} first."
+        )
+    checkpoint = torch.load(path, map_location="cpu", weights_only=False)
+    completed_steps = int(checkpoint["completed_steps"])
+    assert completed_steps == config.fork_from_step
+    model.load_state_dict(checkpoint["model_state"])
+    hyperparameters = [
+        {key: value for key, value in group.items() if key != "params"}
+        for group in optimizer.param_groups
+    ]
+    optimizer.load_state_dict(checkpoint["optimizer_state"])
+    for group, values in zip(optimizer.param_groups, hyperparameters):
+        group.update(values)
+    set_scheduler_to_completed_steps(scheduler, completed_steps)
+    restore_rng_state(checkpoint.get("rng_state"))
+    print(f"Forked from {path} at completed step {completed_steps}")
+    return completed_steps, checkpoint
+
+
+class ParameterEMA:
+    """FP32 parameter averages, used only for evaluation."""
+
+    def __init__(self, params, decays, state=None):
+        self.params = params
+        self.decays = decays
+        device = params[0].device
+        if state is None:
+            self.averages = {
+                decay: [p.detach().float().clone() for p in params] for decay in decays
+            }
+        else:
+            self.averages = {
+                decay: [value.to(device) for value in state[f"{decay:g}"]] for decay in decays
+            }
+
+    @torch.no_grad()
+    def update(self):
+        current = [p.detach().float() for p in self.params]
+        for decay, values in self.averages.items():
+            torch._foreach_lerp_(values, current, 1.0 - decay)
+
+    def state_dict(self):
+        return {f"{decay:g}": values for decay, values in self.averages.items()}
+
+    @torch.no_grad()
+    def evaluate(self, model, batches, config, device):
+        original = [p.detach().clone() for p in self.params]
+        losses = {}
+        try:
+            for decay, values in self.averages.items():
+                torch._foreach_copy_(self.params, values)
+                losses[decay] = evaluate(model, batches, config, device).item()
+        finally:
+            torch._foreach_copy_(self.params, original)
+        return losses
+
+
 def checked_train_config(config):
     if not isinstance(config, TrainConfig):
         raise TypeError(f"config must be a TrainConfig, got {type(config).__name__}.")
     validate_precision(config.precision)
-    if config.optimizer_builder is None and config.optimizer_name not in {"adamw", "sgd"}:
+    if config.optimizer_name not in {"adamw", "sgd"}:
         raise ValueError(
             f"optimizer_name must be 'adamw' or 'sgd', got {config.optimizer_name!r}."
         )
@@ -322,26 +486,6 @@ def checked_train_config(config):
             "perturb_one_token must be bool, got "
             f"{type(config.perturb_one_token).__name__}."
         )
-    if config.perturb_step is not None and (
-        not isinstance(config.perturb_step, int)
-        or isinstance(config.perturb_step, bool)
-        or config.perturb_step < 0
-    ):
-        raise ValueError(
-            f"perturb_step must be a nonnegative integer or None, got "
-            f"{config.perturb_step!r}."
-        )
-    if (
-        not isinstance(config.perturb_num_tokens, int)
-        or isinstance(config.perturb_num_tokens, bool)
-        or config.perturb_num_tokens <= 0
-    ):
-        raise ValueError(
-            f"perturb_num_tokens must be a positive integer, got "
-            f"{config.perturb_num_tokens!r}."
-        )
-    if config.perturb_step is not None and not config.perturb_one_token:
-        raise ValueError("perturb_step requires perturb_one_token=True.")
     if config.deterministic and config.model_seed is None:
         raise ValueError("deterministic=True requires model_seed to be set.")
     if config.model_builder_kwargs is None:
@@ -351,15 +495,11 @@ def checked_train_config(config):
             "model_builder_kwargs must be a dict, got "
             f"{type(config.model_builder_kwargs).__name__}."
         )
-    resolve_model_builder(config.model_builder)
-    resolve_model_builder(config.optimizer_builder)
-    if not isinstance(config.optimizer_kwargs, dict):
-        raise TypeError("optimizer_kwargs must be a dict")
-    if not isinstance(config.experiment_metadata, dict):
-        raise TypeError(
-            "experiment_metadata must be a dict, got "
-            f"{type(config.experiment_metadata).__name__}."
+    if not config.embedding_init_scale > 0:
+        raise ValueError(
+            f"embedding_init_scale must be positive, got {config.embedding_init_scale!r}."
         )
+    resolve_model_builder(config.model_builder)
     LoggerManager(config.metric_loggers)
     if config.batch_size % config.num_micro_batches != 0:
         raise ValueError(
@@ -381,6 +521,7 @@ def checked_train_config(config):
             f"num_train_sequences must be positive, got {config.num_train_sequences}."
         )
     normalize_checkpoint_steps(config.keep_checkpoint_steps)
+    validate_a3_fields(config)
     if not isinstance(config.train_dataset, TokenDatasetConfig):
         raise TypeError(
             f"train_dataset must be a TokenDatasetConfig, got "
@@ -435,22 +576,10 @@ def train(config):
     train_dataset = select_train_sequences(train_dataset, config)
     if config.data_seed is not None:
         train_dataset = train_dataset.shuffle(seed=config.data_seed)
-    if config.perturb_one_token and config.perturb_step is None:
+    if config.perturb_one_token:
         first_input_ids = train_dataset[0]["input_ids"]
-        if config.perturb_num_tokens > len(first_input_ids):
-            raise ValueError(
-                "A pre-training perturbation cannot exceed one sequence "
-                f"({len(first_input_ids)} tokens)."
-            )
-        indices = (np.arange(config.perturb_num_tokens) + 100) % len(first_input_ids)
-        original = first_input_ids[indices].copy()
-        if config.perturb_num_tokens == 1:
-            assert int(original[0]) != 17
-            replacement = np.array([17], dtype=original.dtype)
-        else:
-            replacement = np.where(original == 17, 18, 17)
-        first_input_ids[indices] = replacement
-        assert np.all(first_input_ids[indices] != original)
+        assert int(first_input_ids[100]) != 17
+        first_input_ids[100] = 17
     effective_train_sequences = len(train_dataset)
     seq_len = len(train_dataset[0]["input_ids"])
     train_tokens = effective_train_sequences * seq_len
@@ -495,19 +624,19 @@ def train(config):
         print(f"Using DataParallel across {num_cuda_devices} CUDA devices")
         model = DataParallel(base_model, device_ids=list(range(num_cuda_devices)))
 
-    optimizer_factory = resolve_model_builder(config.optimizer_builder) or build_optimizer
-    optimizer = optimizer_factory(
+    optimizer = build_optimizer(
         base_model,
         optimizer_name=config.optimizer_name,
         learning_rate=config.learning_rate,
         weight_decay=config.weight_decay,
         beta1=config.beta1,
         beta2=config.beta2,
-        **config.optimizer_kwargs,
     )
 
     micro_batch_size = config.batch_size // config.num_micro_batches
     train_batches = create_batches(train_dataset, micro_batch_size)
+    if config.batch_order_seed is not None:
+        train_batches = PermutedBatches(train_batches, config.batch_order_seed)
 
     val_batches = {
         split: create_batches(val_dataset[split], micro_batch_size)
@@ -515,10 +644,6 @@ def train(config):
     }
     steps_per_epoch = len(train_batches) // config.num_micro_batches
     total_steps = int(config.num_epochs * steps_per_epoch)
-    if config.perturb_step is not None and config.perturb_step >= total_steps:
-        raise ValueError(
-            f"perturb_step={config.perturb_step} must be below total_steps={total_steps}."
-        )
     keep_checkpoint_steps = normalize_checkpoint_steps(config.keep_checkpoint_steps)
     out_of_range_steps = [step for step in keep_checkpoint_steps if step > total_steps]
     if out_of_range_steps:
@@ -526,7 +651,15 @@ def train(config):
             "keep_checkpoint_steps cannot exceed total_steps="
             f"{total_steps}: {out_of_range_steps}"
         )
-    warmup_steps = int(total_steps * config.warmup_percent)
+    end_step = total_steps
+    if config.stop_at_step is not None:
+        end_step = min(total_steps, config.stop_at_step)
+    if config.fork_from_step is not None and config.fork_from_step >= end_step:
+        raise ValueError(f"fork_from_step must be below the final step {end_step}.")
+    if config.warmup_steps is not None:
+        warmup_steps = config.warmup_steps
+    else:
+        warmup_steps = int(total_steps * config.warmup_percent)
     eval_steps = (total_steps // config.num_evals) + 1
 
     scheduler = build_scheduler(
@@ -534,6 +667,8 @@ def train(config):
         lr_schedule=config.lr_schedule,
         warmup_steps=warmup_steps,
         total_steps=total_steps,
+        **({"min_lr_ratio": config.min_lr_ratio} if config.min_lr_ratio else {}),
+        **({"lr_dip": config.lr_dip} if config.lr_dip is not None else {}),
     )
     config_metadata = asdict(replace(config, metric_loggers=()))
     config_metadata["metric_loggers"] = metric_loggers.describe()
@@ -545,6 +680,8 @@ def train(config):
         "num_epochs": float(config.num_epochs),
         "optim_lr": config.learning_rate,
         "total_steps": total_steps,
+        "end_step": end_step,
+        "warmup_steps_applied": warmup_steps,
         "num_train_sequences": effective_train_sequences,
         "train_tokens": train_tokens,
         "parameter_count": parameter_count(base_model),
@@ -561,13 +698,6 @@ def train(config):
     if run_config["init_checkpoint_path"] is not None:
         run_config["init_checkpoint_path"] = str(run_config["init_checkpoint_path"])
     run_config["wandb_tags"] = list(config.wandb_tags)
-    for key, value in config.experiment_metadata.items():
-        if key in run_config and run_config[key] != value:
-            raise ValueError(
-                f"experiment_metadata[{key!r}] collides with training config "
-                f"value {run_config[key]!r}."
-            )
-        run_config[key] = value
     checkpointer.set_metadata(run_config)
 
     start_step = checkpointer.restore_if_available(
@@ -576,6 +706,23 @@ def train(config):
         scheduler,
         total_steps,
     )
+    resumed = start_step > 0
+    source_checkpoint = checkpointer.latest_checkpoint if resumed else None
+    if not resumed and config.fork_from_run is not None:
+        start_step, source_checkpoint = restore_fork(config, base_model, optimizer, scheduler)
+
+    ema = None
+    if config.ema_decays:
+        ema_state = None
+        if source_checkpoint is not None:
+            ema_state = source_checkpoint.get("ema_state")
+            if ema_state is not None and not all(
+                f"{decay:g}" in ema_state for decay in config.ema_decays
+            ):
+                ema_state = None
+            if ema_state is None and resumed:
+                raise ValueError("Cannot resume: the checkpoint has no matching EMA state.")
+        ema = ParameterEMA(list(base_model.parameters()), config.ema_decays, ema_state)
 
     training_loss = CausalLMTrainingLoss(model)
     if torch_compile_enabled:
@@ -631,13 +778,13 @@ def train(config):
     )
 
     last_completed_step = start_step
-    completed_training = start_step >= total_steps
+    completed_training = start_step >= end_step
     interrupted = False
     training_loop_start_time = time.perf_counter()
     first_step_seconds = None
     try:
         with checkpointer.capture_interrupts() as interrupt_state:
-            for step in range(start_step, total_steps):
+            for step in range(start_step, end_step):
                 step_start_time = time.perf_counter()
                 current_loss_tensor = None
                 for micro_batch in range(config.num_micro_batches):
@@ -645,32 +792,6 @@ def train(config):
                         train_batches
                     )
                     input_ids = train_batches[batch_idx].to(device)
-                    if (
-                        config.perturb_one_token
-                        and config.perturb_step == step
-                        and micro_batch == 0
-                    ):
-                        if config.perturb_num_tokens > input_ids.numel():
-                            raise ValueError(
-                                "perturb_num_tokens exceeds the number of tokens "
-                                "in one micro-batch."
-                            )
-                        input_ids = input_ids.clone()
-                        flat_input_ids = input_ids.view(-1)
-                        indices = (
-                            torch.arange(
-                                config.perturb_num_tokens,
-                                device=input_ids.device,
-                            )
-                            + 100
-                        ) % flat_input_ids.numel()
-                        original = flat_input_ids[indices].clone()
-                        flat_input_ids[indices] = torch.where(
-                            original == 17,
-                            torch.tensor(18, device=input_ids.device),
-                            torch.tensor(17, device=input_ids.device),
-                        )
-                        assert torch.all(flat_input_ids[indices] != original)
                     if torch_compile_enabled and hasattr(
                         torch.compiler,
                         "cudagraph_mark_step_begin",
@@ -705,15 +826,16 @@ def train(config):
                         base_model.parameters(), max_norm=config.grad_norm
                     )
 
-                applied_learning_rate = optimizer.param_groups[0]["lr"]
                 optimizer.step()
                 scheduler.step()
+                if ema is not None:
+                    ema.update()
 
                 completed_steps = step + 1
                 last_completed_step = completed_steps
-                completed_training = completed_steps >= total_steps
+                completed_training = completed_steps >= end_step
 
-                is_eval_step = (step + 1) % eval_steps == 0 or step == total_steps - 1
+                is_eval_step = (step + 1) % eval_steps == 0 or step == end_step - 1
                 current_loss = None
                 if config.wandb_online or is_eval_step:
                     current_loss = current_loss_tensor.item()
@@ -738,7 +860,7 @@ def train(config):
                         {
                             "optimizer_step": step,
                             "train_loss": current_loss,
-                            "learning_rate": applied_learning_rate,
+                            "learning_rate": scheduler.get_last_lr()[0],
                             "step": step,
                             "progress": completed_steps / total_steps,
                             **train_logger_stats,
@@ -752,13 +874,13 @@ def train(config):
                     elapsed_seconds = time.perf_counter() - training_loop_start_time
                     steps_this_run = completed_steps - start_step
                     steps_per_second = steps_this_run / max(elapsed_seconds, 1e-12)
-                    eta_seconds = (total_steps - completed_steps) / max(
+                    eta_seconds = (end_step - completed_steps) / max(
                         steps_per_second,
                         1e-12,
                     )
                     print_str = (
-                        f"Step {step + 1}/{total_steps}, "
-                        f"Progress: {(step + 1) / total_steps:.2%}, "
+                        f"Step {step + 1}/{end_step}, "
+                        f"Progress: {(step + 1) / end_step:.2%}, "
                         f"Loss: {current_loss:.6f}, "
                         f"Elapsed: {format_duration(elapsed_seconds)}, "
                         f"ETA: {format_duration(eta_seconds)}"
@@ -772,6 +894,13 @@ def train(config):
                         )
                         stats[f"{split}_loss"] = val_loss.item()
                         print_str += f", {split} Loss: {val_loss.item():.6f}"
+                        if ema is not None:
+                            ema_losses = ema.evaluate(
+                                model, val_batches[split], config=config, device=device
+                            )
+                            for decay, ema_loss in ema_losses.items():
+                                stats[f"{split}_ema{decay:g}_loss"] = ema_loss
+                                print_str += f", {split} EMA{decay:g}: {ema_loss:.6f}"
                     stats.update(
                         metric_loggers.collect(
                             AFTER_EVAL,
@@ -793,11 +922,12 @@ def train(config):
 
                 checkpoint_saved = checkpointer.maybe_save_training_checkpoint(
                     completed_steps=completed_steps,
-                    total_steps=total_steps,
+                    total_steps=end_step,
                     model=base_model,
                     optimizer=optimizer,
                     wandb_run_id=wandb_run_id,
                     force=interrupt_state.stop_requested,
+                    extra_state=None if ema is None else {"ema_state": ema.state_dict()},
                 )
                 if first_step_seconds is None:
                     first_step_seconds = time.perf_counter() - step_start_time
@@ -807,7 +937,7 @@ def train(config):
                     checkpointer.report_interrupted(
                         interrupt_state,
                         completed_steps=completed_steps,
-                        total_steps=total_steps,
+                        total_steps=end_step,
                         checkpoint_saved=checkpoint_saved,
                     )
                     break
@@ -819,7 +949,7 @@ def train(config):
         base_model,
         completed_training=completed_training,
         last_completed_step=last_completed_step,
-        total_steps=total_steps,
+        total_steps=end_step,
     )
 
     train_end_time = time.perf_counter()

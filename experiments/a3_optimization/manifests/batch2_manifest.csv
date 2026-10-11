@@ -1,0 +1,10 @@
+label,track,problem,subpart,family,config_role
+a3-b2-p2-wsd0.0,p2,2,a,river_valley,wsd0.0
+a3-b2-p2-linear,p2,2,a,river_valley,linear
+a3-b2-p2-cos,p2,2,a,river_valley,cos
+a3-b2-p2-wsd0.2,p2,2,a,river_valley,wsd0.2
+a3-b2-p2-wsd0.2,p2,2,a,river_valley,wsd0.2
+a3-b2-p2-invsqrt,p2,2,a,river_valley,invsqrt
+a3-b2-p2-sgdr2000,p2,2,a,river_valley,sgdr2000
+a3-b2-p3-0-sgd,p3,3,a,edge_of_stability,starter
+a3-b2-p3-1-adamw,p3,3,b,edge_of_stability,starter

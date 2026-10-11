@@ -1,0 +1,91 @@
+{
+  "batch": "batch1",
+  "problem": "1",
+  "jobs": [
+    {
+      "label": "a3-b1-p1-prefix",
+      "stage": "prefix",
+      "kind": "p1_stage",
+      "count": 1,
+      "tags": [
+        "a3",
+        "batch1",
+        "p1",
+        "p1a",
+        "mode-connectivity",
+        "prefix"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch1",
+          "problem": "1",
+          "subpart": "a",
+          "family": "mode_connectivity",
+          "config_role": "prefix",
+          "stage": "prefix"
+        }
+      ],
+      "results_path": null
+    },
+    {
+      "label": "a3-b1-p1-branches",
+      "stage": "branches",
+      "kind": "p1_stage",
+      "count": 12,
+      "tags": [
+        "a3",
+        "batch1",
+        "p1",
+        "p1a",
+        "mode-connectivity",
+        "branch",
+        "branches"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch1",
+          "problem": "1",
+          "subpart": "a",
+          "family": "mode_connectivity",
+          "config_role": "branch",
+          "stage": "branches"
+        }
+      ],
+      "results_path": null
+    },
+    {
+      "label": "a3-b1-p1-measure",
+      "stage": "measure",
+      "kind": "p1_stage",
+      "count": 30,
+      "tags": [
+        "a3",
+        "batch1",
+        "p1",
+        "p1b",
+        "mode-connectivity",
+        "measure"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch1",
+          "problem": "1",
+          "subpart": "b",
+          "family": "mode_connectivity",
+          "config_role": "measure",
+          "stage": "measure"
+        }
+      ],
+      "results_path": "/workspace/experiments/a3_optimization/results/a3-mode-connectivity.json"
+    }
+  ],
+  "notes": [
+    "Batch 1 is P1 only. P2+P3 are Batch 2; P4 (+ exploratory) is Batch 3.",
+    "Stages are sequential: prefix \u2192 branches \u2192 measure.",
+    "Ad hoc official launches fold in: skip completed, leave in-flight alone.",
+    "P1(d) counterfactuals are Batch 3 (gated), not Batch 1."
+  ]
+}
