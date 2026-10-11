@@ -1,1 +1,1 @@
-"""A3 batch launchers wrapping official a3_optimization starters (A2-style)."""
+"""A2-style batch launchers for A3. Official p1–p4 starters remain the source of configs."""

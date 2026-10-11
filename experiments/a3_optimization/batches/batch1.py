@@ -1,21 +1,14 @@
-"""Batch 1 — required baselines that do not depend on prior A3 measurements.
+"""A3 Batch 1 — P1 mode connectivity only (sequential).
 
-Mirrors ``experiments.a2.batches.batch1``: dry-run writes manifests; execute
-submits via Modal (when credentials exist). Official starters stay the source of
-truth for TrainConfig construction.
-
-Stages in this batch (order matters for P1)::
+Wraps ``p1_mode_connectivity``; does not redefine the (x, y) grid.
 
     uv run python -m experiments.a3_optimization.batches.batch1 --dry-run
-    uv run python -m experiments.a3_optimization.batches.batch1 --stage prefix
-    # after prefix checkpoints exist on the volume:
-    uv run python -m experiments.a3_optimization.batches.batch1 --stage branches
-    uv run python -m experiments.a3_optimization.batches.batch1 --stage p2a
-    uv run python -m experiments.a3_optimization.batches.batch1 --stage p3ab
+    uv run python -m experiments.a3_optimization.batches.batch1 --execute
+    uv run python -m experiments.a3_optimization.launch_batch1 --execute
 
-Default ``--stage all`` launches independent LM jobs only (P2a schedules + P3
-a-i/b). P1 prefix/branches remain explicit stages so Mac operators do not
-accidentally fork before the prefix finishes.
+Stages: prefix → wait → branches → wait → measure.
+Resume: ``--stage {prefix|branches|measure}``; completed volume runs are skipped
+by the shared Modal launcher / prefix checkpoint check (same as ad hoc launches).
 """
 
 from __future__ import annotations
@@ -23,315 +16,250 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-from dataclasses import replace
+import sys
 from pathlib import Path
 
-from train import TrainConfig, training_run_name
-
-from experiments.a3_optimization import p1_mode_connectivity as p1
-from experiments.a3_optimization import p2_river_valley as p2
-from experiments.a3_optimization import p3_edge_of_stability as p3
-from experiments.a3_optimization.helpers.metadata import membership_tags
-from experiments.a3_optimization.helpers.paths import MANIFEST_DIR, ensure_layout
+from experiments.a3_optimization.helpers.metadata import membership, membership_tags
+from experiments.a3_optimization.helpers.paths import MANIFEST_DIR
+from experiments.a3_optimization.helpers.results import (
+    classify_train_configs,
+    format_status_lines,
+    pending_configs,
+)
 
 
 BATCH = "batch1"
-ASSIGNMENT = "a3"
+STAGES = ("prefix", "branches", "measure")
 
 
-def _membership(problem, subpart, family, config_role, stage=None, hypothesis=None):
-    row = {
-        "assignment": ASSIGNMENT,
-        "batch": BATCH,
-        "problem": problem,
-        "subpart": subpart,
-        "family": family,
-        "config_role": config_role,
-    }
-    if stage:
-        row["stage"] = stage
-    if hypothesis:
-        row["hypothesis"] = hypothesis
-    return row
+def _p1():
+    from experiments.a3_optimization import p1_mode_connectivity as p1
+
+    return p1
 
 
-def _tag_config(config: TrainConfig, memberships: list[dict]) -> TrainConfig:
-    tags = list(config.wandb_tags)
-    for membership in memberships:
-        for tag in membership_tags(membership, batch=BATCH):
-            if tag not in tags:
-                tags.append(tag)
-    return replace(config, wandb_tags=tuple(tags))
-
-
-def _lm_job(label, config, memberships, *, kind="lm", stage="train"):
-    tagged = _tag_config(config, memberships)
-    primary = memberships[0]
-    return {
-        "label": label,
-        "aliases": [label, training_run_name(tagged)],
-        "kind": kind,
-        "stage": stage,
-        "config": tagged,
-        "tags": list(tagged.wandb_tags),
-        "memberships": memberships,
-        "metadata": {
-            "assignment": ASSIGNMENT,
-            "batch": BATCH,
-            "problem": primary["problem"],
-            "subpart": primary["subpart"],
-            "family": primary["family"],
-            "config_role": primary["config_role"],
-            "stage": primary.get("stage") or stage,
-        },
-        "hyperparameters": {
-            "peak_lr": tagged.learning_rate,
-            "weight_decay": tagged.weight_decay,
-            "batch_size": tagged.batch_size,
-            "lr_schedule": tagged.lr_schedule,
-            "token_budget": tagged.num_train_sequences * 1024,
-            "optimizer": tagged.optimizer_name,
-            "stop_at_step": tagged.stop_at_step,
-            "fork_from_step": tagged.fork_from_step,
-            "batch_order_seed": tagged.batch_order_seed,
-            "ema_decays": list(tagged.ema_decays),
-        },
-    }
-
-
-def build_batch1():
-    """Return the Batch 1 plan. Does not launch jobs or invent measurements."""
-    ensure_layout()
-    jobs = []
-
-    # P1 prefix (must finish before branches).
-    jobs.append(
-        _lm_job(
-            "p1-prefix",
-            p1.PREFIX,
-            [
-                _membership(
-                    "1", "a", "mode_connectivity", "prefix", stage="prefix"
+def build_plan():
+    p1 = _p1()
+    branches = [run for runs in p1.BRANCHES.values() for run in runs]
+    jobs = [
+        {
+            "label": "a3-b1-p1-prefix",
+            "stage": "prefix",
+            "kind": "p1_stage",
+            "count": 1,
+            "memberships": [
+                membership(
+                    problem="1",
+                    subpart="a",
+                    family="mode_connectivity",
+                    config_role="prefix",
+                    batch=BATCH,
+                    stage="prefix",
                 )
             ],
-            stage="prefix",
-        )
-    )
-
-    # P1 branches (one job per (x, order_seed)); stage gated.
-    for x, runs in p1.BRANCHES.items():
-        for config, seed in zip(runs, p1.BRANCH_ORDER_SEEDS):
-            jobs.append(
-                _lm_job(
-                    f"p1-branch-x{x}-order{seed}",
-                    config,
-                    [
-                        _membership(
-                            "1",
-                            "a",
-                            "mode_connectivity",
-                            "branch",
-                            stage="branches",
-                        )
-                    ],
+            "config": p1.PREFIX,
+        },
+        {
+            "label": "a3-b1-p1-branches",
+            "stage": "branches",
+            "kind": "p1_stage",
+            "count": len(branches),
+            "memberships": [
+                membership(
+                    problem="1",
+                    subpart="a",
+                    family="mode_connectivity",
+                    config_role="branch",
+                    batch=BATCH,
                     stage="branches",
                 )
-            )
-
-    # P2 (a)(b) schedule + EMA baselines.
-    for config in p2.SCHEDULE_RUNS:
-        jobs.append(
-            _lm_job(
-                f"p2-schedule-{config.lr_schedule}",
-                config,
-                [
-                    _membership(
-                        "2", "a", "river_valley", "schedule", stage="p2a"
-                    ),
-                    _membership(
-                        "2", "b", "river_valley", "ema", stage="p2a"
-                    ),
-                ],
-                stage="p2a",
-            )
-        )
-
-    # P3 (a)i clean full-batch + (b) minibatch base.
-    for config in p3.FULL_BATCH_RUNS:
-        jobs.append(
-            _lm_job(
-                "p3-fullbatch-clean",
-                config,
-                [
-                    _membership(
-                        "3", "a", "edge_of_stability", "full_batch", stage="p3ab"
-                    )
-                ],
-                stage="p3ab",
-            )
-        )
-    for config in p3.MINIBATCH_RUNS:
-        jobs.append(
-            _lm_job(
-                "p3-minibatch-base",
-                config,
-                [
-                    _membership(
-                        "3", "b", "edge_of_stability", "minibatch", stage="p3ab"
-                    )
-                ],
-                stage="p3ab",
-            )
-        )
-
+            ],
+            "configs": branches,
+        },
+        {
+            "label": "a3-b1-p1-measure",
+            "stage": "measure",
+            "kind": "p1_stage",
+            "count": len(p1.pairs()),
+            "memberships": [
+                membership(
+                    problem="1",
+                    subpart="b",
+                    family="mode_connectivity",
+                    config_role="measure",
+                    batch=BATCH,
+                    stage="measure",
+                )
+            ],
+            "results_path": str(p1.RESULTS_PATH),
+        },
+    ]
+    for job in jobs:
+        tags = []
+        for record in job["memberships"]:
+            tags.extend(membership_tags(record))
+        job["tags"] = list(dict.fromkeys(tags))
     return {
-        "assignment": ASSIGNMENT,
         "batch": BATCH,
+        "problem": "1",
         "jobs": jobs,
         "notes": [
-            "Wraps official p1_mode_connectivity / p2_river_valley / p3_edge_of_stability.",
-            "P1 branches require prefix checkpoints on the Modal volume.",
-            "No counterfactual / open-ended exploration jobs in Batch 1.",
+            "Batch 1 is P1 only. P2+P3 are Batch 2; P4 (+ exploratory) is Batch 3.",
+            "Stages are sequential: prefix → branches → measure.",
+            "Ad hoc official launches fold in: skip completed, leave in-flight alone.",
+            "P1(d) counterfactuals are Batch 3 (gated), not Batch 1.",
         ],
-        "references": {},
-        "fits": {},
     }
 
 
-def _public_job(job):
-    return {
-        "label": job["label"],
-        "aliases": job["aliases"],
-        "wandb_name": training_run_name(job["config"]),
-        "kind": job["kind"],
-        "stage": job["stage"],
-        "tags": job["tags"],
-        "metadata": job["metadata"],
-        "memberships": job["memberships"],
-        "hyperparameters": job["hyperparameters"],
-    }
-
-
-def write_manifest(plan, directory=MANIFEST_DIR):
+def write_manifest(plan, directory=None):
+    directory = Path(directory or MANIFEST_DIR)
     directory.mkdir(parents=True, exist_ok=True)
-    payload = {
-        "assignment": plan["assignment"],
-        "batch": plan["batch"],
-        "notes": plan["notes"],
-        "fits": plan["fits"],
-        "references": plan["references"],
-        "jobs": [_public_job(job) for job in plan["jobs"]],
-    }
+    public = []
+    for job in plan["jobs"]:
+        public.append(
+            {
+                "label": job["label"],
+                "stage": job["stage"],
+                "kind": job["kind"],
+                "count": job["count"],
+                "tags": job["tags"],
+                "memberships": job["memberships"],
+                "results_path": job.get("results_path"),
+            }
+        )
+    payload = {"batch": BATCH, "problem": "1", "jobs": public, "notes": plan["notes"]}
     json_path = directory / "batch1_manifest.json"
     csv_path = directory / "batch1_manifest.csv"
     json_path.write_text(json.dumps(payload, indent=2) + "\n")
-    fields = (
-        "label",
-        "kind",
-        "stage",
-        "problem",
-        "subpart",
-        "family",
-        "config_role",
-        "peak_lr",
-        "lr_schedule",
-        "batch_size",
-        "tokens",
-        "optimizer",
-        "stop_at_step",
-        "fork_from_step",
-        "batch_order_seed",
-        "wandb_name",
-    )
+    fields = ("label", "stage", "kind", "problem", "subpart", "config_role", "count")
     with csv_path.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
-        for job in payload["jobs"]:
+        for job in public:
             primary = job["memberships"][0]
-            hp = job["hyperparameters"]
             writer.writerow(
                 {
                     "label": job["label"],
-                    "kind": job["kind"],
                     "stage": job["stage"],
+                    "kind": job["kind"],
                     "problem": primary["problem"],
                     "subpart": primary["subpart"],
-                    "family": primary["family"],
                     "config_role": primary["config_role"],
-                    "peak_lr": hp.get("peak_lr"),
-                    "lr_schedule": hp.get("lr_schedule"),
-                    "batch_size": hp.get("batch_size"),
-                    "tokens": hp.get("token_budget"),
-                    "optimizer": hp.get("optimizer"),
-                    "stop_at_step": hp.get("stop_at_step"),
-                    "fork_from_step": hp.get("fork_from_step"),
-                    "batch_order_seed": hp.get("batch_order_seed"),
-                    "wandb_name": job["wandb_name"],
+                    "count": job["count"],
                 }
             )
     return json_path, csv_path
 
 
-def jobs_for_stage(plan, stage: str):
-    if stage == "all":
-        # Independent LM jobs only — never auto-start P1 forks.
-        return [job for job in plan["jobs"] if job["stage"] in {"p2a", "p3ab"}]
-    return [job for job in plan["jobs"] if job["stage"] == stage]
+def format_operator_summary(plan, statuses=None) -> str:
+    lines = [
+        "A3 Batch 1 (P1 only)",
+        "====================",
+        "",
+        "Prerequisites: Modal + course volume",
+        "Contents: P1 prefix → branches → measure",
+        "Not included: P2, P3, P4, P1(d), P5",
+        "",
+    ]
+    for note in plan["notes"]:
+        lines.append(f"- {note}")
+    lines.append("")
+    if statuses:
+        lines.extend(format_status_lines("Train configs (prefix+branches)", statuses))
+        lines.append("")
+    for job in plan["jobs"]:
+        lines.append(f"{job['label']:<28} stage={job['stage']:<10} n={job['count']}")
+    return "\n".join(lines)
 
 
-def launch_stage(plan, stage: str, *, max_parallel=2):
-    """Submit TrainConfigs for one stage. P1 prefix uses the official check helper for branches."""
-    from modal_train import launch_training_jobs
-
-    selected = jobs_for_stage(plan, stage)
-    if not selected:
-        print(f"No jobs for stage={stage!r}.")
-        return []
-    if stage == "branches":
-        p1.check_prefix_checkpoints()
-    configs = [job["config"] for job in selected]
-    print(f"Launching {len(configs)} jobs for stage={stage!r}")
-    return launch_training_jobs(configs, max_parallel_runs=max_parallel)
+def _run_official_stage(stage: str) -> None:
+    p1 = _p1()
+    old = sys.argv
+    try:
+        sys.argv = [old[0], stage]
+        p1.main()
+    finally:
+        sys.argv = old
 
 
-def main(argv=None):
+def run_batch1(
+    *,
+    dry_run: bool = False,
+    max_parallel: int = 2,
+    stage: str | None = None,
+    manifest_dir: Path | None = None,
+) -> int:
+    del max_parallel  # official p1 launcher sets parallelism; kept for A2 CLI parity
+    plan = build_plan()
+    paths = write_manifest(plan, directory=manifest_dir)
+    train_configs = [plan["jobs"][0]["config"], *plan["jobs"][1]["configs"]]
+    statuses = None
+    try:
+        statuses = classify_train_configs(train_configs)
+    except Exception as exc:
+        print(f"Volume completion check unavailable: {type(exc).__name__}: {exc}")
+    print(format_operator_summary(plan, statuses))
+    print()
+    print(f"Wrote {paths[0]}")
+    print(f"Wrote {paths[1]}")
+    print()
+
+    stages = STAGES if stage is None else (stage,)
+    if dry_run:
+        for name in stages:
+            job = next(item for item in plan["jobs"] if item["stage"] == name)
+            if name == "prefix":
+                print(f"[dry-run] P1 prefix keep_checkpoint_steps={job['config'].keep_checkpoint_steps}")
+            elif name == "branches":
+                pending = (
+                    pending_configs(job["configs"], statuses)
+                    if statuses is not None
+                    else job["configs"]
+                )
+                print(f"[dry-run] P1 branches: {len(pending)}/{job['count']} would launch")
+            else:
+                print(f"[dry-run] P1 measure: {job['count']} cells → {job['results_path']}")
+        print("Dry run only. Re-run with --execute (or omit --dry-run) to submit.")
+        return 0
+
+    # Execute one stage at a time so the operator waits (official README discipline).
+    for name in stages:
+        print(f"--- P1 {name} ---")
+        _run_official_stage(name)
+        if stage is None and name != "measure":
+            nxt = "branches" if name == "prefix" else "measure"
+            print(
+                f"Finished submit/check for P1 {name}. "
+                f"After it completes on Modal, run:\n"
+                f"  uv run python -m experiments.a3_optimization.launch_batch1 --stage {nxt}"
+            )
+            return 0
+    return 0
+
+
+def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument(
         "--execute",
         action="store_true",
-        help="Submit jobs (default when --dry-run is omitted).",
-    )
-    parser.add_argument(
-        "--stage",
-        choices=("all", "prefix", "branches", "p2a", "p3ab"),
-        default="all",
-        help="all = p2a+p3ab only; use prefix/branches explicitly for P1.",
+        help="Submit stages (default when --dry-run is omitted).",
     )
     parser.add_argument("--max-parallel", type=int, default=2)
-    parser.add_argument("--manifest-dir", type=Path, default=MANIFEST_DIR)
+    parser.add_argument("--manifest-dir", type=Path, default=None)
+    parser.add_argument("--stage", choices=STAGES, help="Resume a single P1 stage.")
     args = parser.parse_args(argv)
     if args.execute and args.dry_run:
         parser.error("pass only one of --dry-run and --execute")
-    plan = build_batch1()
-    paths = write_manifest(plan, args.manifest_dir)
-    execute = not args.dry_run
-    selected = jobs_for_stage(plan, args.stage)
-    print(f"Batch 1: {len(plan['jobs'])} jobs in plan; {len(selected)} for stage={args.stage!r}")
-    for job in selected:
-        hp = job["hyperparameters"]
-        print(
-            f"  {job['label']}  stage={job['stage']}  "
-            f"sched={hp['lr_schedule']}  lr={hp['peak_lr']}  "
-            f"stop={hp['stop_at_step']}  fork={hp['fork_from_step']}"
-        )
-    for path in paths:
-        print(f"Wrote {path}")
-    if not execute:
-        print("Dry run only. Re-run without --dry-run (and with Modal auth) to submit.")
-        return 0
-    launch_stage(plan, args.stage, max_parallel=args.max_parallel)
-    return 0
+    if args.max_parallel < 1:
+        parser.error("--max-parallel must be positive")
+    return run_batch1(
+        dry_run=args.dry_run,
+        max_parallel=args.max_parallel,
+        stage=args.stage,
+        manifest_dir=args.manifest_dir,
+    )
 
 
 if __name__ == "__main__":

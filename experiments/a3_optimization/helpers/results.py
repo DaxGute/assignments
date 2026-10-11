@@ -1,50 +1,50 @@
-"""Light result / counterfactual bookkeeping for A3 (no fabricated measurements)."""
+"""Light completion helpers for A3 batch launchers.
+
+Official starters already skip finished Modal volume outputs for many stages.
+These helpers only classify TrainConfig jobs the same way A2 Batch 1 does.
+"""
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
-
-from experiments.a3_optimization.helpers.paths import data_directory, problem_directory
+from collections.abc import Iterable, Sequence
 
 
-class ResultsError(RuntimeError):
-    """Required completed results are missing or ambiguous."""
+def classify_train_configs(configs: Sequence) -> dict[str, str]:
+    """Map training_run_name → completed|missing using the Modal volume.
+
+    Does not query W&B. In-flight / failed distinction needs W&B (optional later).
+    """
+    from modal_train import _completed_model_exists
+    from train import training_run_name
+
+    statuses = {}
+    for config in configs:
+        name = training_run_name(config)
+        exists, _ = _completed_model_exists(config)
+        statuses[name] = "completed" if exists else "missing"
+    return statuses
 
 
-def counterfactual_path(problem: str, name: str) -> Path:
-    """JSON path for a pre-registered counterfactual under pN/counterfactuals/."""
-    root = problem_directory(problem) / "counterfactuals"
-    root.mkdir(parents=True, exist_ok=True)
-    return root / f"{name}.json"
+def pending_configs(configs: Sequence, statuses: dict[str, str] | None = None) -> list:
+    from train import training_run_name
+
+    if statuses is None:
+        statuses = classify_train_configs(configs)
+    return [config for config in configs if statuses.get(training_run_name(config)) != "completed"]
 
 
-def write_counterfactual(problem: str, name: str, payload: dict) -> Path:
-    """Write a counterfactual record. Caller must set status predicted before launch."""
-    if "status" not in payload:
-        payload = {**payload, "status": "predicted"}
-    if payload.get("observed") is None:
-        payload.setdefault("observed", None)
-    path = counterfactual_path(problem, name)
-    path.write_text(json.dumps(payload, indent=2) + "\n")
-    return path
+def format_status_lines(label: str, statuses: dict[str, str]) -> list[str]:
+    values = list(statuses.values())
+    return [
+        label,
+        f"  Already completed: {values.count('completed')}",
+        f"  New / missing: {values.count('missing')}",
+        f"  Total named jobs: {len(values)}",
+    ]
 
 
-def load_counterfactuals(problem: str) -> list[dict]:
-    root = problem_directory(problem) / "counterfactuals"
-    if not root.exists():
-        return []
-    rows = []
-    for path in sorted(root.glob("*.json")):
-        rows.append(json.loads(path.read_text()))
-    return rows
-
-
-def save_json(problem: str, name: str, payload: dict) -> Path:
-    path = data_directory(problem) / f"{name}.json"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2) + "\n")
-    local = problem_directory(problem) / "results" / f"{name}.json"
-    local.parent.mkdir(parents=True, exist_ok=True)
-    local.write_text(json.dumps(payload, indent=2) + "\n")
-    return path
+def flatten(groups: Iterable[Sequence]) -> list:
+    out = []
+    for group in groups:
+        out.extend(group)
+    return out

@@ -1,9 +1,12 @@
-"""Batch 3 — P1 measure, P4 Hessian stages, optional P5 slot.
+"""A3 Batch 3 — P4 Hessian (+ gated exploratory).
+
+Required core wraps ``p4_inside_the_hessian`` stages. Counterfactual / P1(d) / P5
+jobs are listed only under ``exploratory`` after ledger pre-registration and are
+never mixed unmarked into the required manifest.
 
     uv run python -m experiments.a3_optimization.batches.batch3 --dry-run
-    uv run python -m experiments.a3_optimization.batches.batch3 --stage p1-measure
-    uv run python -m experiments.a3_optimization.batches.batch3 --stage p4-a
-    uv run python -m experiments.a3_optimization.batches.batch3 --stage p4-fetch
+    uv run python -m experiments.a3_optimization.batches.batch3 --execute --stage a
+    uv run python -m experiments.a3_optimization.launch_batch3 --stage fetch
 """
 
 from __future__ import annotations
@@ -11,247 +14,249 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import sys
 from pathlib import Path
 
-from experiments.a3_optimization import p1_mode_connectivity as p1
-from experiments.a3_optimization import p4_inside_the_hessian as p4
-from experiments.a3_optimization.helpers.paths import MANIFEST_DIR, ensure_layout
-from experiments.a3_optimization.helpers.results import write_counterfactual
+from experiments.a3_optimization.helpers.metadata import membership, membership_tags
+from experiments.a3_optimization.helpers.paths import MANIFEST_DIR
 
 
 BATCH = "batch3"
-ASSIGNMENT = "a3"
+REQUIRED_STAGES = ("a", "b-rescale", "b-train", "b-measure", "c", "fetch")
 
 
-def register_p4_p5_slots():
-    return [
-        write_counterfactual(
-            "p4",
-            "p4b-sharpen-without-loss",
+def _p4():
+    from experiments.a3_optimization import p4_inside_the_hessian as p4
+
+    return p4
+
+
+def build_plan(*, include_exploratory: bool = False):
+    p4 = _p4()
+    jobs = []
+    for stage, stage_jobs in p4.STAGES.items():
+        for item in stage_jobs:
+            record = membership(
+                problem="4",
+                subpart=stage[0],
+                family="inside_hessian",
+                config_role=stage,
+                batch=BATCH,
+                stage=stage,
+            )
+            jobs.append(
+                {
+                    "label": f"a3-b3-p4-{item['name']}",
+                    "stage": stage,
+                    "kind": "hessian",
+                    "required": True,
+                    "hessian_job": item,
+                    "memberships": [record],
+                    "tags": membership_tags(record),
+                }
+            )
+    for config in p4.RUNS:
+        record = membership(
+            problem="4",
+            subpart="b",
+            family="inside_hessian",
+            config_role="b-train",
+            batch=BATCH,
+            stage="b-train",
+        )
+        jobs.append(
             {
-                "id": "p4b-sharpen-without-loss",
-                "problem": "4",
-                "subpart": "b",
-                "change": "Move final lambda_max by >=2x; keep val loss in [2.925, 2.931]",
-                "predicted": None,
-                "observed": None,
-                "status": "predicted",
-            },
-        ),
-        write_counterfactual(
-            "p5",
-            "p5-custom-prediction",
+                "label": f"a3-b3-p4-train-{config.lr_schedule}",
+                "stage": "b-train",
+                "kind": "lm",
+                "required": True,
+                "config": config,
+                "memberships": [record],
+                "tags": membership_tags(record),
+            }
+        )
+    exploratory = []
+    if include_exploratory:
+        # Placeholder section only — real CF jobs are appended after ledger rows exist.
+        exploratory.append(
             {
-                "id": "p5-custom-prediction",
-                "problem": "5",
-                "subpart": "a",
-                "change": "Optional staff-quiz-style prediction problem",
-                "predicted": None,
-                "observed": None,
-                "status": "predicted",
-                "note": "Not required for core grade; design after P1–P4 intuition.",
-            },
-        ),
-    ]
-
-
-def build_batch3():
-    ensure_layout()
-    slots = register_p4_p5_slots()
-    jobs = [
-        {
-            "label": "p1-measure",
-            "kind": "measure",
-            "stage": "p1-measure",
-            "module": "experiments.a3_optimization.p1_mode_connectivity",
-            "action": "measure",
-            "n_pairs": len(p1.pairs()),
-            "results_path": str(p1.RESULTS_PATH),
-            "memberships": [
-                {
-                    "assignment": ASSIGNMENT,
-                    "batch": BATCH,
-                    "problem": "1",
-                    "subpart": "b",
-                    "family": "mode_connectivity",
-                    "config_role": "measure",
-                    "stage": "p1-measure",
-                }
-            ],
-            "hyperparameters": {},
-        },
-        {
-            "label": "p4-a-look",
-            "kind": "hessian",
-            "stage": "p4-a",
-            "module": "experiments.a3_optimization.p4_inside_the_hessian",
-            "action": "a",
-            "n_jobs": len(p4.LOOK_JOBS),
-            "memberships": [
-                {
-                    "assignment": ASSIGNMENT,
-                    "batch": BATCH,
-                    "problem": "4",
-                    "subpart": "a",
-                    "family": "hessian",
-                    "config_role": "look",
-                    "stage": "p4-a",
-                }
-            ],
-            "hyperparameters": {"checkpoints": list(p4.CHECKPOINTS)},
-            "note": "Reads course volume hard-dl-dclm-v1 a3_hessian runs.",
-        },
-        {
-            "label": "p4-c-subspace",
-            "kind": "hessian",
-            "stage": "p4-c",
-            "module": "experiments.a3_optimization.p4_inside_the_hessian",
-            "action": "c",
-            "n_jobs": len(p4.SUBSPACE_JOBS),
-            "memberships": [
-                {
-                    "assignment": ASSIGNMENT,
-                    "batch": BATCH,
-                    "problem": "4",
-                    "subpart": "c",
-                    "family": "hessian",
-                    "config_role": "subspace",
-                    "stage": "p4-c",
-                }
-            ],
-            "hyperparameters": {"arms": ["full", "top", "removed"]},
-        },
-        {
-            "label": "p4-fetch",
-            "kind": "fetch",
-            "stage": "p4-fetch",
-            "module": "experiments.a3_optimization.p4_inside_the_hessian",
-            "action": "fetch",
-            "memberships": [
-                {
-                    "assignment": ASSIGNMENT,
-                    "batch": BATCH,
-                    "problem": "4",
-                    "subpart": "a",
-                    "family": "hessian",
-                    "config_role": "fetch",
-                    "stage": "p4-fetch",
-                }
-            ],
-            "hyperparameters": {},
-        },
-    ]
+                "label": "a3-b3-exploratory-placeholder",
+                "stage": "exploratory",
+                "kind": "gated",
+                "required": False,
+                "note": (
+                    "Add P1(d)/P5/counterfactual jobs here only after "
+                    "docs/a3-prediction-ledger.md rows are pre-registered."
+                ),
+                "memberships": [
+                    membership(
+                        problem="5",
+                        subpart="a",
+                        family="exploratory",
+                        config_role="gated",
+                        batch=BATCH,
+                        stage="exploratory",
+                    )
+                ],
+                "tags": ["a3", "batch3", "counterfactual", "gated"],
+            }
+        )
     return {
-        "assignment": ASSIGNMENT,
         "batch": BATCH,
         "jobs": jobs,
-        "counterfactual_slots": [str(path) for path in slots],
+        "exploratory": exploratory,
         "notes": [
-            "P1 measure requires all Batch 1 branch checkpoints.",
-            "P4 needs Modal access to hard-dl-dclm-v1.",
-            "P4(b) train/rescale jobs are student-filled on the official starter; not auto-listed until configured.",
+            "Required: P4 stages a → fetch, then b-*, then c (see official starter).",
+            "Needs shared volume hard-dl-dclm-v1 for provided checkpoints.",
+            "Exploratory/counterfactual jobs require --include-exploratory and ledger pre-reg.",
         ],
-        "references": {},
-        "fits": {},
     }
 
 
-def write_manifest(plan, directory=MANIFEST_DIR):
+def write_manifest(plan, directory=None):
+    directory = Path(directory or MANIFEST_DIR)
     directory.mkdir(parents=True, exist_ok=True)
+    public_jobs = []
+    for job in plan["jobs"] + plan.get("exploratory", []):
+        public_jobs.append(
+            {
+                "label": job["label"],
+                "stage": job["stage"],
+                "kind": job["kind"],
+                "required": job.get("required", False),
+                "tags": job.get("tags", []),
+                "memberships": job.get("memberships", []),
+                "hessian_name": None
+                if job.get("hessian_job") is None
+                else job["hessian_job"]["name"],
+                "note": job.get("note"),
+            }
+        )
     payload = {
-        "assignment": plan["assignment"],
-        "batch": plan["batch"],
+        "batch": BATCH,
+        "jobs": [job for job in public_jobs if job["required"]],
+        "exploratory": [job for job in public_jobs if not job["required"]],
         "notes": plan["notes"],
-        "counterfactual_slots": plan["counterfactual_slots"],
-        "jobs": plan["jobs"],
-        "fits": plan["fits"],
-        "references": plan["references"],
     }
     json_path = directory / "batch3_manifest.json"
     csv_path = directory / "batch3_manifest.csv"
     json_path.write_text(json.dumps(payload, indent=2) + "\n")
-    fields = ("label", "kind", "stage", "problem", "subpart", "action", "module")
+    fields = ("label", "stage", "kind", "required", "problem", "subpart", "hessian_name")
     with csv_path.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
-        for job in plan["jobs"]:
-            primary = job["memberships"][0]
+        for job in public_jobs:
+            primary = (job.get("memberships") or [{"problem": "", "subpart": ""}])[0]
             writer.writerow(
                 {
                     "label": job["label"],
-                    "kind": job["kind"],
                     "stage": job["stage"],
-                    "problem": primary["problem"],
-                    "subpart": primary["subpart"],
-                    "action": job.get("action", ""),
-                    "module": job.get("module", ""),
+                    "kind": job["kind"],
+                    "required": job["required"],
+                    "problem": primary.get("problem", ""),
+                    "subpart": primary.get("subpart", ""),
+                    "hessian_name": job.get("hessian_name") or "",
                 }
             )
     return json_path, csv_path
 
 
-def launch_stage(plan, stage: str):
-    selected = [job for job in plan["jobs"] if job["stage"] == stage]
-    if not selected:
-        print(f"No jobs for stage={stage!r}.")
-        return None
-    job = selected[0]
-    if stage == "p1-measure":
-        from experiments.a3_optimization.connectivity import measure_pairs_on_modal
-
-        rows = measure_pairs_on_modal(p1.pairs())
-        p1.RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-        p1.RESULTS_PATH.write_text(json.dumps(rows, indent=2) + "\n")
-        # Mirror into package p1/results and outputs/a3/data/p1
-        from experiments.a3_optimization.helpers.results import save_json
-
-        save_json("p1", "mode-connectivity", {"n_cells": len(rows), "rows": rows})
-        print(f"Wrote {len(rows)} cells to {p1.RESULTS_PATH}")
-        return rows
-    if stage.startswith("p4"):
-        from experiments.a3_optimization.hessian_jobs import fetch, launch
-        from experiments.a3_optimization.p4_inside_the_hessian import STAGES
-
-        action = job["action"]
-        if action == "fetch":
-            names = [j["name"] for jobs in STAGES.values() for j in jobs]
-            print(fetch(names))
-            return names
-        return launch(STAGES[action], local=False)
-    raise ValueError(f"Unhandled stage {stage!r}")
+def format_operator_summary(plan) -> str:
+    required = len(plan["jobs"])
+    exploratory = len(plan.get("exploratory") or [])
+    lines = [
+        "A3 Batch 3 (P4 + gated exploratory)",
+        "===================================",
+        "",
+        "Prerequisites: shared Hessian volume; prefer Batch 1–2 baselines before CFs",
+        f"Required P4 jobs listed: {required}",
+        f"Exploratory (gated) listed: {exploratory}",
+        "",
+    ]
+    for note in plan["notes"]:
+        lines.append(f"- {note}")
+    by_stage = {}
+    for job in plan["jobs"]:
+        by_stage[job["stage"]] = by_stage.get(job["stage"], 0) + 1
+    lines.append("")
+    for stage in REQUIRED_STAGES:
+        if stage in by_stage or stage == "fetch":
+            lines.append(f"  {stage}: {by_stage.get(stage, 0)} jobs (fetch downloads results)")
+    return "\n".join(lines)
 
 
-def main(argv=None):
+def _run_official_stage(stage: str, *, local: bool = False) -> None:
+    p4 = _p4()
+    old = sys.argv
+    argv = [old[0], stage]
+    if local:
+        argv.append("--local")
+    try:
+        sys.argv = argv
+        p4.main()
+    finally:
+        sys.argv = old
+
+
+def run_batch3(
+    *,
+    dry_run: bool = False,
+    stage: str = "a",
+    local: bool = False,
+    include_exploratory: bool = False,
+    manifest_dir: Path | None = None,
+) -> int:
+    plan = build_plan(include_exploratory=include_exploratory)
+    paths = write_manifest(plan, directory=manifest_dir)
+    print(format_operator_summary(plan))
+    print()
+    print(f"Wrote {paths[0]}")
+    print(f"Wrote {paths[1]}")
+    print()
+    if dry_run:
+        print(f"[dry-run] Would run official P4 stage {stage!r} (local={local}).")
+        if include_exploratory:
+            print("[dry-run] Exploratory section present but not auto-launched.")
+        print("Dry run only.")
+        return 0
+    if stage == "exploratory":
+        print(
+            "Exploratory jobs are gated. Add concrete configs after ledger "
+            "pre-registration; this wrapper does not invent CF launches."
+        )
+        return 1
+    print(f"--- P4 {stage} ---")
+    _run_official_stage(stage, local=local)
+    return 0
+
+
+def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--execute", action="store_true")
     parser.add_argument(
         "--stage",
-        choices=("all", "p1-measure", "p4-a", "p4-c", "p4-fetch"),
-        default="all",
+        choices=(*REQUIRED_STAGES, "exploratory"),
+        default="a",
+        help="Official P4 stage (default: a).",
     )
-    parser.add_argument("--manifest-dir", type=Path, default=MANIFEST_DIR)
+    parser.add_argument("--local", action="store_true", help="Pass --local to P4 measure stages.")
+    parser.add_argument(
+        "--include-exploratory",
+        action="store_true",
+        help="List gated exploratory placeholder in the manifest (does not launch CFs).",
+    )
+    parser.add_argument("--manifest-dir", type=Path, default=None)
     args = parser.parse_args(argv)
     if args.execute and args.dry_run:
         parser.error("pass only one of --dry-run and --execute")
-    plan = build_batch3()
-    paths = write_manifest(plan, args.manifest_dir)
-    execute = not args.dry_run
-    print(f"Batch 3: {len(plan['jobs'])} jobs")
-    for job in plan["jobs"]:
-        print(f"  {job['label']}  stage={job['stage']}  kind={job['kind']}")
-    for slot in plan["counterfactual_slots"]:
-        print(f"Counterfactual slot: {slot}")
-    for path in paths:
-        print(f"Wrote {path}")
-    if not execute:
-        print("Dry run only.")
-        return 0
-    if args.stage == "all":
-        print("Refusing --stage all on execute; pick p1-measure / p4-a / p4-c / p4-fetch.")
-        return 1
-    launch_stage(plan, args.stage)
-    return 0
+    return run_batch3(
+        dry_run=args.dry_run,
+        stage=args.stage,
+        local=args.local,
+        include_exploratory=args.include_exploratory,
+        manifest_dir=args.manifest_dir,
+    )
 
 
 if __name__ == "__main__":
