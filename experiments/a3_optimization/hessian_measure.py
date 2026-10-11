@@ -47,7 +47,8 @@ from utils import create_batches
 
 
 def measure(model, *, probe=None, extremes=True, top_k=5, families=True, tensors=(),
-            density_runs=0, energy=(), energy_probes=4, hutchinson_probes=0, lanczos_steps=48, bottom_steps=96,
+            density_runs=0, energy=(), energy_probes=4, random_energy=(), random_energy_seed=None,
+            hutchinson_probes=0, lanczos_steps=48, bottom_steps=96,
             block_steps=24, density_steps=96):
     """Measure the Hessian of the probe loss at the model's current weights.
 
@@ -60,6 +61,11 @@ def measure(model, *, probe=None, extremes=True, top_k=5, families=True, tensors
                    for hessian.density.
     energy         partitions among "family", "layer", "tensor": for each, Hutchinson
                    estimates of ||H_cb||_F^2 for every pair of its blocks, per probe.
+    random_energy  partitions among "family", "layer": matched-size random partitions,
+                   writing random_within_frac / random_within (and optional audit fields)
+                   under energy[part]. Does not change the structured energy["blocks"] /
+                   energy["per_probe"] shape used by stage-a jobs.
+    random_energy_seed  RNG seed for the random partitions (recorded in the result).
     hutchinson_probes  tr(H)/d and tr(H^2)/d samples.
     """
     hs.exact_numerics()
@@ -112,6 +118,27 @@ def measure(model, *, probe=None, extremes=True, top_k=5, families=True, tensors
                 keys, E = hs.block_energy(H.hvp, H.size, hs.partition(H.names, H.sizes, label),
                                           device, probes=energy_probes)
                 out["energy"][part] = {"blocks": keys, "per_probe": E.tolist()}
+        if isinstance(random_energy, str):
+            random_energy = (random_energy,)
+        if random_energy:
+            if random_energy_seed is None:
+                raise ValueError("random_energy requires random_energy_seed")
+            out["random_energy_seed"] = int(random_energy_seed)
+            out.setdefault("energy", {})
+            label_of = {"family": hs.family_of, "layer": hs.layer_of}
+            for i, part in enumerate(random_energy):
+                structured = hs.partition(H.names, H.sizes, label_of[part])
+                sizes_list = [hs.block_size(structured[k]) for k in structured]
+                # Distinct seeds per partition so family/layer draws are independent.
+                part_seed = int(random_energy_seed) + 1000 * i
+                rand_blocks = hs.matched_size_random_partition(H.size, sizes_list, seed=part_seed)
+                keys, E = hs.block_energy(
+                    H.hvp, H.size, rand_blocks, device, probes=energy_probes, seed=part_seed + 17)
+                slot = out["energy"].setdefault(part, {})
+                slot["random_blocks"] = keys
+                slot["random_per_probe"] = E.tolist()
+                slot["random_within_frac"] = hs.within_frac_from_probes(E)
+                slot["random_within"] = slot["random_within_frac"]
         if hutchinson_probes:
             out["hutchinson"] = hs.hutchinson(H.hvp, H.size, device, probes=hutchinson_probes)
     out["seconds"] = time.time() - t0

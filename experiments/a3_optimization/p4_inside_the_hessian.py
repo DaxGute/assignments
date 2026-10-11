@@ -4,6 +4,7 @@ Each stage launches its jobs on Modal and returns; re-running a stage launches o
 jobs whose results are not on your volume yet. `fetch` downloads every finished result.
 
     uv run python -m experiments.a3_optimization.p4_inside_the_hessian a          # part (a)
+    uv run python -m experiments.a3_optimization.p4_inside_the_hessian a-random-energy  # AFTER b/c
     uv run python -m experiments.a3_optimization.p4_inside_the_hessian b-rescale  # part (b)
     uv run python -m experiments.a3_optimization.p4_inside_the_hessian b-train
     uv run python -m experiments.a3_optimization.p4_inside_the_hessian b-measure  # after b-train
@@ -40,6 +41,27 @@ LOOK_JOBS = [
     for step in CHECKPOINTS
 ]
 
+# Part (a) block-energy baseline: matched-size random partitions (new names so volume
+# does not skip finished a-adamw-* jobs). Launch ONLY after b-rescale and c free GPUs.
+# Do NOT append these into LOOK_JOBS / STAGES["a"].
+RANDOM_ENERGY_STEPS = (1526, 9375)
+RANDOM_ENERGY_JOBS = [
+    {
+        "name": f"a-random-energy-{step}",
+        "measure": {
+            "run": "adamw",
+            "step": step,
+            "extremes": False,
+            "families": False,
+            "energy": (),
+            "random_energy": ("family", "layer"),
+            "energy_probes": 4,
+            "random_energy_seed": 40_000 + step,
+        },
+    }
+    for step in RANDOM_ENERGY_STEPS
+]
+
 # Part (b): hand rescaling of the shipped final checkpoint (no training). `scale`
 # multiplies named parameters by constants before measuring; `tensors` reports the top
 # eigenvalue of each named tensor's own block, with its RMS and gradient norm.
@@ -74,8 +96,8 @@ SUBSPACE_JOBS = [
 ]
 
 
-# TODO: Part (a): anything else you need, e.g. the baseline for the block-structure
-# question. H.hvp (hessian.ProbeHessian) applies H to any vector you construct.
+# Part (a) baseline for block-structure: see RANDOM_ENERGY_JOBS / stage a-random-energy.
+# H.hvp (hessian.ProbeHessian) applies H to any vector you construct.
 # TODO: Part (b): one rescaling job per transformation you test, e.g.
 # RESCALE_JOBS.append({"name": "b-rescale-<label>",
 #     "measure": {"run": "adamw", "step": FINAL_STEP, **FINAL,
@@ -86,7 +108,13 @@ SUBSPACE_JOBS = [
 # Options: k, refresh, steps, lr_scale (multiplies the run's schedule), reset_momentum,
 # and the starting step (any of STEPS; the run has optimizer state at each).
 
-STAGES = {"a": LOOK_JOBS, "b-rescale": RESCALE_JOBS, "b-measure": FINAL_JOBS, "c": SUBSPACE_JOBS}
+STAGES = {
+    "a": LOOK_JOBS,
+    "a-random-energy": RANDOM_ENERGY_JOBS,  # AFTER b-rescale + c; never while they hold GPUs
+    "b-rescale": RESCALE_JOBS,
+    "b-measure": FINAL_JOBS,
+    "c": SUBSPACE_JOBS,
+}
 
 
 def main():

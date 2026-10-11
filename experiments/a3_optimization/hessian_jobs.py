@@ -51,7 +51,9 @@ def run_job(job, results_dir):
     if "measure" in job:
         from experiments.a3_optimization.hessian_measure import measure_checkpoint
 
-        tmp.write_text(json.dumps(measure_checkpoint(**job["measure"])))
+        result = measure_checkpoint(**job["measure"])
+        result.setdefault("job", job["name"])
+        tmp.write_text(json.dumps(result))
     elif "continue" in job:
         from experiments.a3_optimization.hessian_measure import continue_projected
 

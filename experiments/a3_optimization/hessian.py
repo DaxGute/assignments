@@ -10,6 +10,10 @@ and TF32 off. Decoupled weight decay is not part of the loss, so it is not part 
 * density           eigenvalue density from Lanczos runs (stochastic Lanczos quadrature).
 * family_of / layer_of / partition
                     named blocks of the parameter vector, as {block: [(start, stop), ...]}.
+* matched_size_random_partition
+                    same block sizes as a structured partition, random coordinates.
+* within_frac_from_probes
+                    mean over probes of tr(E)/sum(E) for a block-energy array.
 * restrict          the principal block H_bb of one block.
 * block_energy      Hutchinson estimate of ||H_cb||_F^2 for every pair of blocks.
 * hutchinson        tr(H)/d and tr(H^2)/d.
@@ -289,6 +293,47 @@ def partition(names, sizes, label):
 
 def block_size(ranges):
     return sum(stop - start for start, stop in ranges)
+
+
+def matched_size_random_partition(size: int, block_sizes: list[int], seed: int) -> dict:
+    """Cover [0, size) with |blocks|=len(block_sizes), sizes matching block_sizes (order preserved).
+
+    Coordinates are a random permutation sliced into those sizes; each block is stored as
+    merged contiguous (start, stop) ranges in original index space (compatible with
+    scatter / block_energy).
+    """
+    if sum(block_sizes) != size:
+        raise ValueError(f"sum(block_sizes)={sum(block_sizes)} != size={size}")
+    rng = np.random.default_rng(seed)
+    order = rng.permutation(size)
+    blocks = {}
+    offset = 0
+    for i, n in enumerate(block_sizes):
+        idxs = np.sort(order[offset: offset + n])
+        ranges = []
+        start = prev = int(idxs[0])
+        for x in idxs[1:]:
+            x = int(x)
+            if x == prev + 1:
+                prev = x
+            else:
+                ranges.append((start, prev + 1))
+                start = prev = x
+        ranges.append((start, prev + 1))
+        blocks[f"R{i}"] = ranges
+        offset += n
+    return blocks
+
+
+def within_frac_from_probes(E) -> float:
+    """Mean over probes of tr(E)/sum(E) — within-block energy fraction."""
+    E = np.asarray(E, dtype=np.float64)
+    fracs = []
+    for mat in E:
+        tot = float(mat.sum())
+        diag = float(np.trace(mat))
+        fracs.append(diag / tot if tot else float("nan"))
+    return float(np.mean(fracs))
 
 
 def gather(vector, ranges):
