@@ -1,0 +1,470 @@
+{
+  "batch": "batch3",
+  "jobs": [
+    {
+      "label": "a3-b3-p4-a-adamw-0",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-0",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-3",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-3",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-15",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-15",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-61",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-61",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-153",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-153",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-305",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-305",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-763",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-763",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-1526",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-1526",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-3052",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-3052",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-4578",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-4578",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-6104",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-6104",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-7630",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-7630",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-a-adamw-9375",
+      "stage": "a",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4a",
+        "inside-hessian",
+        "a"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "inside_hessian",
+          "config_role": "a",
+          "stage": "a"
+        }
+      ],
+      "hessian_name": "a-adamw-9375",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-b-rescale-reference",
+      "stage": "b-rescale",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4b",
+        "inside-hessian",
+        "b-rescale"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "b",
+          "family": "inside_hessian",
+          "config_role": "b-rescale",
+          "stage": "b-rescale"
+        }
+      ],
+      "hessian_name": "b-rescale-reference",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-c-full",
+      "stage": "c",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4c",
+        "inside-hessian",
+        "c"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "c",
+          "family": "inside_hessian",
+          "config_role": "c",
+          "stage": "c"
+        }
+      ],
+      "hessian_name": "c-full",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-c-top",
+      "stage": "c",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4c",
+        "inside-hessian",
+        "c"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "c",
+          "family": "inside_hessian",
+          "config_role": "c",
+          "stage": "c"
+        }
+      ],
+      "hessian_name": "c-top",
+      "note": null
+    },
+    {
+      "label": "a3-b3-p4-c-removed",
+      "stage": "c",
+      "kind": "hessian",
+      "required": true,
+      "tags": [
+        "a3",
+        "batch3",
+        "p4",
+        "p4c",
+        "inside-hessian",
+        "c"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "c",
+          "family": "inside_hessian",
+          "config_role": "c",
+          "stage": "c"
+        }
+      ],
+      "hessian_name": "c-removed",
+      "note": null
+    }
+  ],
+  "exploratory": [],
+  "notes": [
+    "Required: P4 stages a \u2192 fetch, then b-*, then c (see official starter).",
+    "Needs shared volume hard-dl-dclm-v1 for provided checkpoints.",
+    "Exploratory/counterfactual jobs require --include-exploratory and ledger pre-reg."
+  ]
+}
