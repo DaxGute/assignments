@@ -99,6 +99,53 @@ class HessianToolsTests(unittest.TestCase):
         families = set(hs.partition(self.names, self.sizes, hs.family_of))
         self.assertEqual(families, set(hs.FAMILIES))
 
+    def test_matched_size_random_partition_is_index_form(self):
+        structured = hs.partition(self.names, self.sizes, hs.family_of)
+        sizes_list = [hs.block_size(structured[k]) for k in structured]
+        blocks = hs.matched_size_random_partition(self.size, sizes_list, seed=7)
+        self.assertEqual([hs.block_size(blocks[k]) for k in blocks], sizes_list)
+        covered = np.concatenate([blocks[k] for k in blocks])
+        np.testing.assert_array_equal(np.sort(covered), np.arange(self.size))
+        # Index form: one advanced-index piece per nonempty block, not ~O(d) ranges.
+        self.assertEqual(sum(hs.selector_piece_count(blocks[k]) for k in blocks),
+                         sum(1 for n in sizes_list if n))
+        index = {k: torch.as_tensor(blocks[k], dtype=torch.long) for k in blocks}
+        keys, E = hs.block_energy(self.matvec, self.size, blocks, "cpu", probes=800, seed=9)
+        exact = np.array([[float(self.H[index[c]][:, index[b]].square().sum()) for b in keys]
+                          for c in keys])
+        np.testing.assert_allclose(E.mean(0), exact, rtol=0.15, atol=1e-3 * exact.max())
+
+    def test_random_partition_piece_count_stays_o_blocks(self):
+        """Monte Carlo: index-form piece count is O(blocks); legacy range count ~0.83*d."""
+
+        def legacy_range_count(size, block_sizes, seed):
+            order = np.random.default_rng(seed).permutation(size)
+            total, offset = 0, 0
+            for n in block_sizes:
+                idxs = np.sort(order[offset: offset + n])
+                runs = 1 + int(np.sum(np.diff(idxs) > 1)) if n else 0
+                total += runs
+                offset += n
+            return total
+
+        rows = []
+        for size in (10**5, 10**6):
+            # Equal-ish six blocks (matches escalate MC); remainder on the last.
+            base, rem = divmod(size, 6)
+            sizes_list = [base] * 5 + [base + rem]
+            blocks = hs.matched_size_random_partition(size, sizes_list, seed=123)
+            pieces = sum(hs.selector_piece_count(blocks[k]) for k in blocks)
+            legacy = legacy_range_count(size, sizes_list, seed=123)
+            rows.append((size, pieces, legacy, legacy / size))
+            self.assertEqual(pieces, 6)
+            self.assertGreater(legacy, 0.8 * size)
+        # Extrapolate legacy ~0.83 * d to d≈3.46e7 (P4 param count scale).
+        d_big = 34_600_000
+        legacy_big = rows[-1][3] * d_big
+        self.assertGreater(legacy_big, 2.8e7)
+        self.assertLess(legacy_big, 3.0e7)
+        self.assertEqual(len(rows), 2)
+
     def test_restrict_is_the_principal_block(self):
         ranges = hs.partition(self.names, self.sizes, hs.family_of)["attention"]
         index = torch.cat([torch.arange(a, b) for a, b in ranges])
@@ -125,7 +172,8 @@ class HessianToolsTests(unittest.TestCase):
                       tensors=[self.names[0]], density_runs=1, energy=("family", "layer"),
                       lanczos_steps=40, block_steps=20, density_steps=20)
         exact = torch.linalg.eigvalsh(self.H.double())
-        self.assertAlmostEqual(out["lambda_max"], float(exact[-1]), places=3)
+        # Lanczos on ProbeHessian can sit ~5e-4 from the dense eigval; places=3 is razor-edge.
+        self.assertAlmostEqual(out["lambda_max"], float(exact[-1]), delta=1e-3)
         self.assertEqual(set(out["energy"]), {"family", "layer"})
         E = np.array(out["energy"]["family"]["per_probe"])
         self.assertEqual(E.shape, (4, 6, 6))

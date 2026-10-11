@@ -11,7 +11,8 @@ and TF32 off. Decoupled weight decay is not part of the loss, so it is not part 
 * family_of / layer_of / partition
                     named blocks of the parameter vector, as {block: [(start, stop), ...]}.
 * matched_size_random_partition
-                    same block sizes as a structured partition, random coordinates.
+                    same block sizes as a structured partition, random coordinates
+                    (flat int64 index arrays; not O(d) merged ranges).
 * within_frac_from_probes
                     mean over probes of tr(E)/sum(E) for a block-energy array.
 * restrict          the principal block H_bb of one block.
@@ -291,16 +292,24 @@ def partition(names, sizes, label):
     return blocks
 
 
+def _is_index_selector(selector):
+    """True for a flat index array (random partition); False for [(start, stop), ...] ranges."""
+    return isinstance(selector, (np.ndarray, torch.Tensor))
+
+
 def block_size(ranges):
+    if _is_index_selector(ranges):
+        return int(ranges.shape[0] if isinstance(ranges, np.ndarray) else ranges.numel())
     return sum(stop - start for start, stop in ranges)
 
 
 def matched_size_random_partition(size: int, block_sizes: list[int], seed: int) -> dict:
     """Cover [0, size) with |blocks|=len(block_sizes), sizes matching block_sizes (order preserved).
 
-    Coordinates are a random permutation sliced into those sizes; each block is stored as
-    merged contiguous (start, stop) ranges in original index space (compatible with
-    scatter / block_energy).
+    Coordinates are a random permutation sliced into those sizes. Each block is a sorted
+    int64 index array (not merged (start, stop) ranges). A random assignment fragments
+    into ~O(d) singleton ranges; index form keeps O(block_size) storage and lets
+    scatter / block_energy use a single advanced-index write / read per block.
     """
     if sum(block_sizes) != size:
         raise ValueError(f"sum(block_sizes)={sum(block_sizes)} != size={size}")
@@ -309,20 +318,19 @@ def matched_size_random_partition(size: int, block_sizes: list[int], seed: int) 
     blocks = {}
     offset = 0
     for i, n in enumerate(block_sizes):
-        idxs = np.sort(order[offset: offset + n])
-        ranges = []
-        start = prev = int(idxs[0])
-        for x in idxs[1:]:
-            x = int(x)
-            if x == prev + 1:
-                prev = x
-            else:
-                ranges.append((start, prev + 1))
-                start = prev = x
-        ranges.append((start, prev + 1))
-        blocks[f"R{i}"] = ranges
+        if n == 0:
+            blocks[f"R{i}"] = np.empty(0, dtype=np.int64)
+        else:
+            blocks[f"R{i}"] = np.sort(order[offset: offset + n]).astype(np.int64, copy=False)
         offset += n
     return blocks
+
+
+def selector_piece_count(selector) -> int:
+    """Number of scatter/gather pieces: len(ranges) or 1 for an index-array block."""
+    if _is_index_selector(selector):
+        return 0 if block_size(selector) == 0 else 1
+    return len(selector)
 
 
 def within_frac_from_probes(E) -> float:
@@ -336,17 +344,36 @@ def within_frac_from_probes(E) -> float:
     return float(np.mean(fracs))
 
 
+def _index_tensor(selector, device):
+    if isinstance(selector, torch.Tensor):
+        return selector.to(device=device, dtype=torch.long)
+    return torch.from_numpy(np.asarray(selector, dtype=np.int64)).to(device=device)
+
+
 def gather(vector, ranges):
+    if _is_index_selector(ranges):
+        return vector[_index_tensor(ranges, vector.device)]
     return torch.cat([vector[start:stop] for start, stop in ranges])
 
 
 def scatter(values, ranges, size):
+    if _is_index_selector(ranges):
+        full = values.new_zeros(size)
+        full[_index_tensor(ranges, values.device)] = values
+        return full
     full = values.new_zeros(size)
     offset = 0
     for start, stop in ranges:
         full[start:stop] = values[offset:offset + stop - start]
         offset += stop - start
     return full
+
+
+def _block_sum_squares(hz2, selector):
+    """Sum of hz2 over a block; index-array path avoids O(d) Python range loops."""
+    if _is_index_selector(selector):
+        return float(hz2[_index_tensor(selector, hz2.device)].sum(dtype=torch.float64))
+    return float(sum(hz2[start:stop].sum(dtype=torch.float64) for start, stop in selector))
 
 
 def restrict(matvec, size, ranges):
@@ -364,17 +391,25 @@ def block_energy(matvec, size, blocks, device, probes=4, seed=11):
     average over the first axis for the estimate, and use the spread for standard errors.
     Summing all cells gives tr(H^2) = ||H||_F^2. Estimates for a fine partition (e.g. one
     block per tensor) sum exactly to any coarser partition.
+
+    Block values may be [(start, stop), ...] ranges (structured partitions) or flat int64
+    index arrays from matched_size_random_partition.
     """
     keys = list(blocks)
+    # Materialize index selectors once per block (device tensors) so probes do not re-copy.
+    selectors = []
+    for b in keys:
+        sel = blocks[b]
+        selectors.append(_index_tensor(sel, device) if _is_index_selector(sel) else sel)
     out = np.zeros((probes, len(keys), len(keys)))
     gen = torch.Generator(device=device).manual_seed(seed)
     for j, b in enumerate(keys):
         for k in range(probes):
-            hz = matvec(scatter(random_signs(block_size(blocks[b]), gen, device), blocks[b], size))
+            hz = matvec(scatter(random_signs(block_size(selectors[j]), gen, device),
+                                selectors[j], size))
             hz2 = hz.square()
             for i, c in enumerate(keys):
-                out[k, i, j] = float(sum(hz2[start:stop].sum(dtype=torch.float64)
-                                         for start, stop in blocks[c]))
+                out[k, i, j] = _block_sum_squares(hz2, selectors[i])
     return keys, out
 
 
