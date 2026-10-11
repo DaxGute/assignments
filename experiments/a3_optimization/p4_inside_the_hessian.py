@@ -68,8 +68,39 @@ RANDOM_ENERGY_JOBS = [
 FINAL = {"extremes": True, "families": True}
 
 RESCALE_JOBS = [
+    # Already MEASURED — keep so fetch is idempotent
     {"name": "b-rescale-reference",
      "measure": {"run": "adamw", "step": FINAL_STEP, **FINAL, "tensors": []}},
+
+    # PRIMARY — starter template factor 0.25 on late-sharpest family (head)
+    {"name": "b-rescale-head-x0.25",
+     "measure": {
+         "run": "adamw",
+         "step": FINAL_STEP,
+         **FINAL,
+         "scale": {"lm_head.weight": 0.25},
+         "tensors": ["lm_head.weight"],
+     }},
+
+    # OPTIONAL — milder downscale
+    {"name": "b-rescale-head-x0.5",
+     "measure": {
+         "run": "adamw",
+         "step": FINAL_STEP,
+         **FINAL,
+         "scale": {"lm_head.weight": 0.5},
+         "tensors": ["lm_head.weight"],
+     }},
+
+    # OPTIONAL — upscale arm for PREDICT ratio band (0, 0.5)
+    {"name": "b-rescale-head-x2",
+     "measure": {
+         "run": "adamw",
+         "step": FINAL_STEP,
+         **FINAL,
+         "scale": {"lm_head.weight": 2.0},
+         "tensors": ["lm_head.weight"],
+     }},
 ]
 
 # Part (b): training changes. A run takes about 11 minutes on an H200 (a little more on
@@ -98,11 +129,8 @@ SUBSPACE_JOBS = [
 
 # Part (a) baseline for block-structure: see RANDOM_ENERGY_JOBS / stage a-random-energy.
 # H.hvp (hessian.ProbeHessian) applies H to any vector you construct.
-# TODO: Part (b): one rescaling job per transformation you test, e.g.
-# RESCALE_JOBS.append({"name": "b-rescale-<label>",
-#     "measure": {"run": "adamw", "step": FINAL_STEP, **FINAL,
-#                 "scale": {"<parameter name>": 0.25, ...}, "tensors": ["<parameter name>", ...]}})
-# and the training changes in RUNS.
+# Part (b) hand-rescale arms: see RESCALE_JOBS (head x0.25 / x0.5 / x2).
+# TODO: Part (b) training changes in RUNS if needed for P4-b-train-2x.
 # TODO: Part (c): vary what you think decides the outcome, e.g.
 # SUBSPACE_JOBS.append({"name": "c-removed-<label>", "continue": {**START, "transform": "removed", ...}})
 # Options: k, refresh, steps, lr_scale (multiplies the run's schedule), reset_momentum,
