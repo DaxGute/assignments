@@ -1,0 +1,5 @@
+label,kind,stage,problem,subpart,action,module
+p1-measure,measure,p1-measure,1,b,measure,experiments.a3_optimization.p1_mode_connectivity
+p4-a-look,hessian,p4-a,4,a,a,experiments.a3_optimization.p4_inside_the_hessian
+p4-c-subspace,hessian,p4-c,4,c,c,experiments.a3_optimization.p4_inside_the_hessian
+p4-fetch,fetch,p4-fetch,4,a,fetch,experiments.a3_optimization.p4_inside_the_hessian

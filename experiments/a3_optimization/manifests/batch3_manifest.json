@@ -1,0 +1,120 @@
+{
+  "assignment": "a3",
+  "batch": "batch3",
+  "notes": [
+    "P1 measure requires all Batch 1 branch checkpoints.",
+    "P4 needs Modal access to hard-dl-dclm-v1.",
+    "P4(b) train/rescale jobs are student-filled on the official starter; not auto-listed until configured."
+  ],
+  "counterfactual_slots": [
+    "/workspace/experiments/a3_optimization/p4/counterfactuals/p4b-sharpen-without-loss.json",
+    "/workspace/experiments/a3_optimization/p5/counterfactuals/p5-custom-prediction.json"
+  ],
+  "jobs": [
+    {
+      "label": "p1-measure",
+      "kind": "measure",
+      "stage": "p1-measure",
+      "module": "experiments.a3_optimization.p1_mode_connectivity",
+      "action": "measure",
+      "n_pairs": 30,
+      "results_path": "/workspace/experiments/a3_optimization/results/a3-mode-connectivity.json",
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "1",
+          "subpart": "b",
+          "family": "mode_connectivity",
+          "config_role": "measure",
+          "stage": "p1-measure"
+        }
+      ],
+      "hyperparameters": {}
+    },
+    {
+      "label": "p4-a-look",
+      "kind": "hessian",
+      "stage": "p4-a",
+      "module": "experiments.a3_optimization.p4_inside_the_hessian",
+      "action": "a",
+      "n_jobs": 13,
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "hessian",
+          "config_role": "look",
+          "stage": "p4-a"
+        }
+      ],
+      "hyperparameters": {
+        "checkpoints": [
+          0,
+          3,
+          15,
+          61,
+          153,
+          305,
+          763,
+          1526,
+          3052,
+          4578,
+          6104,
+          7630,
+          9375
+        ]
+      },
+      "note": "Reads course volume hard-dl-dclm-v1 a3_hessian runs."
+    },
+    {
+      "label": "p4-c-subspace",
+      "kind": "hessian",
+      "stage": "p4-c",
+      "module": "experiments.a3_optimization.p4_inside_the_hessian",
+      "action": "c",
+      "n_jobs": 3,
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "c",
+          "family": "hessian",
+          "config_role": "subspace",
+          "stage": "p4-c"
+        }
+      ],
+      "hyperparameters": {
+        "arms": [
+          "full",
+          "top",
+          "removed"
+        ]
+      }
+    },
+    {
+      "label": "p4-fetch",
+      "kind": "fetch",
+      "stage": "p4-fetch",
+      "module": "experiments.a3_optimization.p4_inside_the_hessian",
+      "action": "fetch",
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch3",
+          "problem": "4",
+          "subpart": "a",
+          "family": "hessian",
+          "config_role": "fetch",
+          "stage": "p4-fetch"
+        }
+      ],
+      "hyperparameters": {}
+    }
+  ],
+  "fits": {},
+  "references": {}
+}

@@ -1,0 +1,9 @@
+{
+  "id": "p4b-sharpen-without-loss",
+  "problem": "4",
+  "subpart": "b",
+  "change": "Move final lambda_max by >=2x; keep val loss in [2.925, 2.931]",
+  "predicted": null,
+  "observed": null,
+  "status": "predicted"
+}

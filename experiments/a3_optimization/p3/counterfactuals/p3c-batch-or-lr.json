@@ -1,0 +1,9 @@
+{
+  "id": "p3c-batch-or-lr",
+  "problem": "3",
+  "subpart": "c",
+  "change": "Open hparam probe affecting edge entry (batch or LR)",
+  "predicted": null,
+  "observed": null,
+  "status": "predicted"
+}

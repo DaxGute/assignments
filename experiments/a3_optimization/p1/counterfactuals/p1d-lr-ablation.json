@@ -1,0 +1,10 @@
+{
+  "id": "p1d-lr-ablation",
+  "problem": "1",
+  "subpart": "d",
+  "change": "Vary peak LR vs baseline cell; measure barrier B",
+  "predicted": null,
+  "observed": null,
+  "status": "predicted",
+  "note": "Fill predicted before launching; attach TrainConfig in batch2 COUNTERFACTUAL_RUNS."
+}

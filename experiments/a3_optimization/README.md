@@ -95,6 +95,31 @@ the dataset, not these course checkpoints. Outside the course workspace,
 Problem 4 requires checkpoint copies from the staff or checkpoints you train
 yourself. The loader also accepts your own run names or paths.
 
+## Batch orchestration (A2-style)
+
+Official starters above remain the source of truth for configs. The wrappers
+under [`batches/`](batches/) mirror A2 (`batches/` + `manifests/` + `helpers/`)
+and tag jobs with membership metadata. Per-problem trees
+`p1/`…`p5/` hold `counterfactuals/`, `results/`, and `plots/`. Aggregated
+figures also go to `outputs/a3/` via [`helpers/paths.py`](helpers/paths.py).
+
+```bash
+# Write manifests only (safe without Modal)
+uv run python -m experiments.a3_optimization.batches.batch1 --dry-run
+uv run python -m experiments.a3_optimization.batches.batch2 --dry-run
+uv run python -m experiments.a3_optimization.batches.batch3 --dry-run
+
+# Mac / Modal operators — explicit P1 stages
+uv run python -m experiments.a3_optimization.batches.batch1 --stage prefix
+uv run python -m experiments.a3_optimization.batches.batch1 --stage branches
+uv run python -m experiments.a3_optimization.batches.batch1 --stage p2a
+uv run python -m experiments.a3_optimization.batches.batch1 --stage p3ab
+```
+
+Batch 2 covers P2(c,d) and P3(a)ii; Batch 3 covers P1 measure and P4 stages.
+Counterfactual TrainConfigs stay empty until the prediction ledger
+pre-registers them (`batches/batch2.py` `COUNTERFACTUAL_RUNS`).
+
 ## Checks
 
 The numerical and small training tests use synthetic data on CPU, without

@@ -1,0 +1,292 @@
+{
+  "assignment": "a3",
+  "batch": "batch2",
+  "notes": [
+    "Depends on Batch 1 for schedule/EMA reference comparisons.",
+    "COUNTERFACTUAL_RUNS starts empty \u2014 fill after prediction ledger pre-registration.",
+    "P1 measure stays in Batch 3 (needs all branch checkpoints)."
+  ],
+  "counterfactual_slots": [
+    "/workspace/experiments/a3_optimization/p1/counterfactuals/p1d-lr-ablation.json",
+    "/workspace/experiments/a3_optimization/p2/counterfactuals/p2c-dip-deeper.json",
+    "/workspace/experiments/a3_optimization/p3/counterfactuals/p3c-batch-or-lr.json"
+  ],
+  "fits": {},
+  "references": {},
+  "jobs": [
+    {
+      "label": "p2-rewarm-dip",
+      "aliases": [
+        "p2-rewarm-dip",
+        "model-d8-lr0.003-tok614M-wsd0.2-dip0.4-0.45-0.5x0.1"
+      ],
+      "wandb_name": "model-d8-lr0.003-tok614M-wsd0.2-dip0.4-0.45-0.5x0.1",
+      "kind": "lm",
+      "stage": "p2cd",
+      "tags": [
+        "a3-river-valley",
+        "a3",
+        "batch2",
+        "p2",
+        "p2c",
+        "river_valley",
+        "lr_dip",
+        "p2cd"
+      ],
+      "metadata": {
+        "assignment": "a3",
+        "batch": "batch2",
+        "problem": "2",
+        "subpart": "c",
+        "family": "river_valley",
+        "config_role": "lr_dip",
+        "stage": "p2cd",
+        "hypothesis": null
+      },
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "c",
+          "family": "river_valley",
+          "config_role": "lr_dip",
+          "stage": "p2cd"
+        }
+      ],
+      "hyperparameters": {
+        "peak_lr": 0.003,
+        "weight_decay": 0.1,
+        "batch_size": 64,
+        "lr_schedule": "wsd0.2",
+        "token_budget": 614400000,
+        "optimizer": "adamw",
+        "lr_dip": [
+          0.4,
+          0.45,
+          0.5,
+          0.1
+        ],
+        "warmup_steps": null,
+        "min_lr_ratio": 0.0,
+        "ema_decays": []
+      }
+    },
+    {
+      "label": "p2-horizon-invsqrt",
+      "aliases": [
+        "p2-horizon-invsqrt",
+        "model-d8-lr0.003-tok614M-invsqrt-warmupsteps94"
+      ],
+      "wandb_name": "model-d8-lr0.003-tok614M-invsqrt-warmupsteps94",
+      "kind": "lm",
+      "stage": "p2cd",
+      "tags": [
+        "a3-river-valley",
+        "a3",
+        "batch2",
+        "p2",
+        "p2d",
+        "river_valley",
+        "horizon_free",
+        "p2cd"
+      ],
+      "metadata": {
+        "assignment": "a3",
+        "batch": "batch2",
+        "problem": "2",
+        "subpart": "d",
+        "family": "river_valley",
+        "config_role": "horizon_free",
+        "stage": "p2cd",
+        "hypothesis": null
+      },
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "d",
+          "family": "river_valley",
+          "config_role": "horizon_free",
+          "stage": "p2cd"
+        }
+      ],
+      "hyperparameters": {
+        "peak_lr": 0.003,
+        "weight_decay": 0.1,
+        "batch_size": 64,
+        "lr_schedule": "invsqrt",
+        "token_budget": 614400000,
+        "optimizer": "adamw",
+        "lr_dip": null,
+        "warmup_steps": 94,
+        "min_lr_ratio": 0.0,
+        "ema_decays": []
+      }
+    },
+    {
+      "label": "p2-horizon-sgdr2000",
+      "aliases": [
+        "p2-horizon-sgdr2000",
+        "model-d8-lr0.003-tok614M-sgdr2000-warmupsteps94-minlr0.1"
+      ],
+      "wandb_name": "model-d8-lr0.003-tok614M-sgdr2000-warmupsteps94-minlr0.1",
+      "kind": "lm",
+      "stage": "p2cd",
+      "tags": [
+        "a3-river-valley",
+        "a3",
+        "batch2",
+        "p2",
+        "p2d",
+        "river_valley",
+        "horizon_free",
+        "p2cd"
+      ],
+      "metadata": {
+        "assignment": "a3",
+        "batch": "batch2",
+        "problem": "2",
+        "subpart": "d",
+        "family": "river_valley",
+        "config_role": "horizon_free",
+        "stage": "p2cd",
+        "hypothesis": null
+      },
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "2",
+          "subpart": "d",
+          "family": "river_valley",
+          "config_role": "horizon_free",
+          "stage": "p2cd"
+        }
+      ],
+      "hyperparameters": {
+        "peak_lr": 0.003,
+        "weight_decay": 0.1,
+        "batch_size": 64,
+        "lr_schedule": "sgdr2000",
+        "token_budget": 614400000,
+        "optimizer": "adamw",
+        "lr_dip": null,
+        "warmup_steps": 94,
+        "min_lr_ratio": 0.1,
+        "ema_decays": []
+      }
+    },
+    {
+      "label": "p3-fullbatch-half-lr",
+      "aliases": [
+        "p3-fullbatch-half-lr",
+        "model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x0.5"
+      ],
+      "wandb_name": "model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x0.5",
+      "kind": "lm",
+      "stage": "p3aii",
+      "tags": [
+        "a3-edge-of-stability",
+        "a3",
+        "batch2",
+        "p3",
+        "p3a",
+        "edge_of_stability",
+        "full_batch_step",
+        "step750x0.5",
+        "p3aii"
+      ],
+      "metadata": {
+        "assignment": "a3",
+        "batch": "batch2",
+        "problem": "3",
+        "subpart": "a",
+        "family": "edge_of_stability",
+        "config_role": "full_batch_step",
+        "stage": "p3aii",
+        "hypothesis": "step750x0.5"
+      },
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "a",
+          "family": "edge_of_stability",
+          "config_role": "full_batch_step",
+          "stage": "p3aii",
+          "hypothesis": "step750x0.5"
+        }
+      ],
+      "hyperparameters": {
+        "peak_lr": 0.01,
+        "weight_decay": 0.0,
+        "batch_size": 32,
+        "lr_schedule": "step750x0.5",
+        "token_budget": 32768,
+        "optimizer": "sgd",
+        "lr_dip": null,
+        "warmup_steps": null,
+        "min_lr_ratio": 0.0,
+        "ema_decays": []
+      }
+    },
+    {
+      "label": "p3-fullbatch-double-lr",
+      "aliases": [
+        "p3-fullbatch-double-lr",
+        "model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x2"
+      ],
+      "wandb_name": "model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x2",
+      "kind": "lm",
+      "stage": "p3aii",
+      "tags": [
+        "a3-edge-of-stability",
+        "a3",
+        "batch2",
+        "p3",
+        "p3a",
+        "edge_of_stability",
+        "full_batch_step",
+        "step750x2",
+        "p3aii"
+      ],
+      "metadata": {
+        "assignment": "a3",
+        "batch": "batch2",
+        "problem": "3",
+        "subpart": "a",
+        "family": "edge_of_stability",
+        "config_role": "full_batch_step",
+        "stage": "p3aii",
+        "hypothesis": "step750x2"
+      },
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "a",
+          "family": "edge_of_stability",
+          "config_role": "full_batch_step",
+          "stage": "p3aii",
+          "hypothesis": "step750x2"
+        }
+      ],
+      "hyperparameters": {
+        "peak_lr": 0.01,
+        "weight_decay": 0.0,
+        "batch_size": 32,
+        "lr_schedule": "step750x2",
+        "token_budget": 32768,
+        "optimizer": "sgd",
+        "lr_dip": null,
+        "warmup_steps": null,
+        "min_lr_ratio": 0.0,
+        "ema_decays": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+label,stage,problem,subpart,family,config_role,hypothesis,peak_lr,lr_schedule,wandb_name
+p2-rewarm-dip,p2cd,2,c,river_valley,lr_dip,,0.003,wsd0.2,model-d8-lr0.003-tok614M-wsd0.2-dip0.4-0.45-0.5x0.1
+p2-horizon-invsqrt,p2cd,2,d,river_valley,horizon_free,,0.003,invsqrt,model-d8-lr0.003-tok614M-invsqrt-warmupsteps94
+p2-horizon-sgdr2000,p2cd,2,d,river_valley,horizon_free,,0.003,sgdr2000,model-d8-lr0.003-tok614M-sgdr2000-warmupsteps94-minlr0.1
+p3-fullbatch-half-lr,p3aii,3,a,edge_of_stability,full_batch_step,step750x0.5,0.01,step750x0.5,model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x0.5
+p3-fullbatch-double-lr,p3aii,3,a,edge_of_stability,full_batch_step,step750x2,0.01,step750x2,model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x2
