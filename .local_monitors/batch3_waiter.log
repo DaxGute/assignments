@@ -1,0 +1,4 @@
+WAITER20D_START
+MID_N_REFRESH
+/Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-mid-n-refresh.sh: line 5: cd: /cursor/stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af: No such file or directory
+WAITER_EXIT {"reason": "n_jump", "from": 4, "n": 5, "done": ["a-adamw-0", "a-adamw-3", "a-adamw-15", "a-adamw-61", "a-adamw-305"], "miss": ["a-adamw-153", "a-adamw-763", "a-adamw-1526", "a-adamw-3052", "a-adamw-4578", "a-adamw-6104", "a-adamw-7630", "a-adamw-9375"], "copied_new": ["a-adamw-305"], "lambda_max": {"a-adamw-305": 4.32926630998023}, "tasks": "2", "gpu_utils": [99], "gpu_status": "PARTIAL", "ts": "2026-10-10 19:21 PDT", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}

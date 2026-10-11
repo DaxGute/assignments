@@ -1,0 +1,6 @@
+### ta-01M4MN3FHDG16J920JTBY0588R nvidia-smi
+### ta-01M4MN3FHDG16J920JTBY0588R ps
+executing processes for container: executing command "ps -eo pid,etime,pcpu,pmem,args --sort=-pcpu" in sandbox: error finding executable "ps" in PATH [/.uv/.venv/bin /usr/local/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin]: no such file or directory
+### ta-01M4MN3FHDPEFVHM4KB1JF4ZZR nvidia-smi
+55, 16277, 81559
+### ta-01M4MN3FHDPEFVHM4KB1JF4ZZR ps

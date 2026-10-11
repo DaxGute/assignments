@@ -1,0 +1,20 @@
+(eval):59: command not found: setsid
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch2_monitor.py", line 7, in <module>
+    from modal_train import _model_volume_path
+ModuleNotFoundError: No module named 'modal_train'
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch2_monitor.py", line 7, in <module>
+    from modal_train import _model_volume_path
+ModuleNotFoundError: No module named 'modal_train'
+B2_MONITOR_START root= /Users/daxtongutekunst/Desktop/assignments cwd= /Users/daxtongutekunst/Desktop/assignments
+[1s] done=0/9 partial=2 missing=7
+  PARTIAL have=2 model-d8-lr0.003-tok614M-wsd0.0-ema0.99-0.999
+  PARTIAL have=2 model-d8-lr0.003-tok614M-ema0.99-0.999
+  MISSING have=0 model-d8-lr0.003-tok614M-cos-ema0.99-0.999
+  MISSING have=0 model-d8-lr0.003-tok614M-wsd0.2-ema0.99-0.999
+  MISSING have=0 model-d8-lr0.003-tok614M-wsd0.2-dip0.4-0.45-0.5x0.1
+  MISSING have=0 model-d8-lr0.003-tok614M-invsqrt-warmupsteps94
+  MISSING have=0 model-d8-lr0.003-tok614M-sgdr2000-warmupsteps94-minlr0.1
+  MISSING have=0 model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-constant
+  MISSING have=0 model-d8-lr0.003-epochs0.32-tok614M-warmup0.03125-wsd0.0

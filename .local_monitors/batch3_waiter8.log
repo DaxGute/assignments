@@ -1,0 +1,33 @@
+WAITER8_START baseline=7
+WAITER_N8_START
+LONGPOLL_RESPAWN
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_waiter_n8.py", line 187, in <module>
+    for name in fetch(need):
+  File "/Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/hessian_jobs.py", line 129, in fetch
+    tmp.rename(dest)
+  File "/Users/daxtongutekunst/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py", line 1234, in rename
+    self._accessor.rename(self, target)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/results/a3-inside-the-hessian/a-adamw-3052.json.partial' -> '/Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/results/a3-inside-the-hessian/a-adamw-3052.json'
+WAITER_N9_START
+LONGPOLL_RESPAWN
+WAITER_N9_START
+COPIED a-adamw-1526
+WAITER_N9_START
+WAITER_N9_START
+LONGPOLL_RESPAWN
+WAITER_N9_START
+WAITER_N9_START
+WAITER_N9_START
+WAITER_N9_START
+LONGPOLL_RESPAWN
+WAITER_N9_START
+COPIED a-adamw-6104
+WAITER_N9_START
+WAITER_N9_START
+LONGPOLL_RESPAWN
+WAITER_N9_START
+WAITER_N9_START
+WAITER_N9_START
+WAITER_N9_START
+LONGPOLL_RESPAWN

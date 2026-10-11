@@ -1,0 +1,13 @@
+POLL_START baseline=3
+POLL3_START baseline=3
+POLL N=3/13 baseline=3 increased=False tasks=2 new=[]
+POLL3_RESTART baseline= 3
+POLL N=3/13 baseline=3 increased=False tasks=2 new=[]
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/poll_n_loop.py", line 4, in <module>
+    from experiments.a3_optimization.p4_inside_the_hessian import STAGES
+ModuleNotFoundError: No module named 'experiments'
+POLL_LOOP_START baseline= 3
+POLL N=3/13 baseline=3 increased=False tasks=2 new=[]
+POLL_LOOP_START baseline= 3
+POLL N=3/13 baseline=3 increased=False tasks=2 new=[]

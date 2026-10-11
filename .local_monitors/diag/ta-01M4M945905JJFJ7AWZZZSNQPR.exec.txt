@@ -1,0 +1,21 @@
+HOST=modal
+DATE=Sun Oct 11 01:48:20 UTC 2026
+total 0
+drwxr-xr-x 1 root root 0 Oct 11 01:27 .
+drwxr-xr-x 1 root root 0 Oct 11 01:27 ..
+---
+ls: cannot access '/root/data/results/a3-inside-the-hessian/*.partial': No such file or directory
+---
+utilization.gpu [%], utilization.memory [%], memory.used [MiB], memory.total [MiB], temperature.gpu
+99 %, 48 %, 35697 MiB, 81559 MiB, 56
+---
+bash: line 10: ps: command not found
+---
+CMD /bin/dumb-init -- python -u -R --check-hash-based-pycs never -m modal._container_entrypoint
+CWD /
+CMD python -u -R --check-hash-based-pycs never -m modal._container_entrypoint
+CWD /root/assignments
+CMD bash -lc echo HOST=$(hostname) echo DATE=$(date) ls -la /root/data/results/a3-inside-the-hessian/ 2>&1 | head -50 echo --- ls -la /root/data/results/a3-inside-the-hessian/*.partial 2>&1 | head -20 echo --- nvidia-smi --query-gpu=utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu --format=csv 2>&1 echo --- ps -eo pid,pcpu,pmem,etime,cmd --sort=-pcpu 2>&1 | head -15 echo --- # open fds mentioning adamw ls -l /proc/1/fd /proc/2/fd /proc/41/fd /proc/57/fd /proc/58/fd /proc/self/fd /proc/thread-self/fd 2>/dev/null | grep -E "adamw|hessian|partial" | head -30 || true # /proc cmdline for python for p in /proc/[0-9]*; do if tr "\0" " " < "$p/cmdline" 2>/dev/null | grep -q python; then echo CMD $(cat "$p/cmdline" 2>/dev/null | tr "\0" " ") echo CWD $(readlink "$p/cwd" 2>/dev/null) ls -l "$p/fd" 2>/dev/null | grep -E "adamw|partial|hessian|json" | head -20 fi done 2>/dev/null | head -80
+CWD /root/assignments
+CMD bash -lc echo HOST=$(hostname) echo DATE=$(date) ls -la /root/data/results/a3-inside-the-hessian/ 2>&1 | head -50 echo --- ls -la /root/data/results/a3-inside-the-hessian/*.partial 2>&1 | head -20 echo --- nvidia-smi --query-gpu=utilization.gpu,utilization.memory,memory.used,memory.total,temperature.gpu --format=csv 2>&1 echo --- ps -eo pid,pcpu,pmem,etime,cmd --sort=-pcpu 2>&1 | head -15 echo --- # open fds mentioning adamw ls -l /proc/1/fd /proc/2/fd /proc/41/fd /proc/57/fd /proc/58/fd /proc/self/fd /proc/thread-self/fd 2>/dev/null | grep -E "adamw|hessian|partial" | head -30 || true # /proc cmdline for python for p in /proc/[0-9]*; do if tr "\0" " " < "$p/cmdline" 2>/dev/null | grep -q python; then echo CMD $(cat "$p/cmdline" 2>/dev/null | tr "\0" " ") echo CWD $(readlink "$p/cwd" 2>/dev/null) ls -l "$p/fd" 2>/dev/null | grep -E "adamw|partial|hessian|json" | head -20 fi done 2>/dev/null | head -80
+CWD /root/assignments

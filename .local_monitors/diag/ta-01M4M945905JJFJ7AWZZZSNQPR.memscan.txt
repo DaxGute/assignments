@@ -1,0 +1,5 @@
+regions 492
+JOBS ['a-adamw-0']
+CKPTS []
+STEPS []
+99 %, 35697 MiB, 557.80 W

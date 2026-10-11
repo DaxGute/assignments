@@ -1,0 +1,31 @@
+===== ta-01M4MN3FHDG16J920JTBY0588R =====
+nvidia-smi:
+python procs:
+cwd /root/assignments
+pid 11
+1 /bin/dumb-init -- python -u -R --check-hash-based-pycs never -m modal._container_entrypoint 
+2 python -u -R --check-hash-based-pycs never -m modal._container_entrypoint 
+11 python3 -c 
+import os, time
+print('cwd', os.getcwd())
+print('pid', os.getpid())
+# list /proc briefly
+rows=[]
+for p in os.listdir('/proc'):
+  if not p.isdigit():
+===== ta-01M4MN3FHDPEFVHM4KB1JF4ZZR =====
+nvidia-smi:
+51 %, 16277 MiB, 81559 MiB, NVIDIA H100 80GB HBM3
+python procs:
+cwd /root/assignments
+pid 11
+1 /bin/dumb-init -- python -u -R --check-hash-based-pycs never -m modal._container_entrypoint 
+2 python -u -R --check-hash-based-pycs never -m modal._container_entrypoint 
+11 python3 -c 
+import os, time
+print('cwd', os.getcwd())
+print('pid', os.getpid())
+# list /proc briefly
+rows=[]
+for p in os.listdir('/proc'):
+  if not p.isdigit():

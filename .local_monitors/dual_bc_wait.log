@@ -1,0 +1,200 @@
+DUAL_WAIT start /Users/daxtongutekunst/Desktop/assignments
+20:50:10 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_RESTART /Users/daxtongutekunst/Desktop/assignments
+20:51:49 heads=[] c=[] | ['│ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │', '│ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │']
+DUAL_WAIT_RESTART2
+20:53:01 heads=[] c=[] | ['│ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │', '│ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │']
+DUAL_LONGWAIT /Users/daxtongutekunst/Desktop/assignments
+20:54:28 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_TIMER_RESTART
+20:56:41 heads=[] c=[] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_AUTOFILL /Users/daxtongutekunst/Desktop/assignments
+20:57:56 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+20:59:18 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:00:21 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:03:55 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:06:14 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:06:31 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:08:11 heads=[] c=[]/['c-full.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:09:58 heads=[] c=['c-full']/['c-removed.jsonl.partial', 'c-top.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 229, in <module>
+    raise SystemExit(main())
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 197, in main
+    refresh(heads, c_done, c_part, "waiting")
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 138, in refresh
+    f"{partial_rows(c_part)}\n\n"
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 33, in partial_rows
+    from modal_utils import user_volume
+ModuleNotFoundError: No module named 'modal_utils'
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 229, in <module>
+    raise SystemExit(main())
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 197, in main
+    refresh(heads, c_done, c_part, "waiting")
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 138, in refresh
+    f"{partial_rows(c_part)}\n\n"
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 33, in partial_rows
+    from modal_utils import user_volume
+ModuleNotFoundError: No module named 'modal_utils'
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:11:26 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 0     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 2     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:13:08 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:18:15 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+21:18:17 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:19:34 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:20:12 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:20:39 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+21:20:40 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+21:21:29 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+21:21:33 heads=[] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+HEAD_ARM_LANDED b-rescale-head-x0.25 {'lm_head.weight': 0.25} 2.780040977639008 ['b-rescale-head-x0.25.json', 'b-rescale-reference.json']
+FIRST_HEAD_ARM b-rescale-head-x0.25
+AUTOFILL_SH
+8bf8af/files
+fill map: internal/p4-bc-fill-on-complete.md
+waiting:  internal/p4-c-waiting.md
+bands: mean top_frac [0.6,0.85); full≈top < removed; L_removed-L_full [0.02,0.20)
+MISSING jobs: c-removed
+  present: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-full.jsonl
+  present: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-top.jsonl
+  absent:  /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-removed.jsonl (also media/p4/c-removed.{json,jsonl})
+DRAFT P4-top10-frac: INSUFFICIENT (media missing)
+DRAFT P4-c-loss-rank: INSUFFICIENT (media missing)
+ledger: NOT mutated (exit 2 — wait for c-full/c-top/c-removed)
+[autofill] P4-c: exit 2 (INSUFFICIENT / media missing) — left /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-c-score-dryrun.md untouched
+
+=== summary ===
+  b-invar dry-run file: READY /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-b-score-dryrun.md
+  c      dry-run file: waiting (scorer exit 2)
+
+NEXT OPERATOR STEP (manual — script does NOT mutate ledger/docs):
+  1. Open /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-bc-fill-on-complete.md
+  2. Paste DRAFT Observed / HIT/MISS from:
+       - /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-b-score-dryrun.md  →  P4-invar-dL / Q9
+  3. Wire six deliverables per that fill map; keep PREDICT bands; never invent.
+
+AUTOFILL_ERR /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-bc-score-and-apply.sh: line 48: APPLY_FLAG[@]: unbound variable
+
+AUTOFILL_EC 1
+21:24:50 heads=['b-rescale-head-x0.25'] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+HEAD_ARM_LANDED b-rescale-head-x0.25 {'lm_head.weight': 0.25} 2.780040977639008 ['b-rescale-head-x0.25.json', 'b-rescale-reference.json']
+AUTOFILL_SH
+8bf8af/files
+fill map: internal/p4-bc-fill-on-complete.md
+waiting:  internal/p4-c-waiting.md
+bands: mean top_frac [0.6,0.85); full≈top < removed; L_removed-L_full [0.02,0.20)
+MISSING jobs: c-removed
+  present: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-full.jsonl
+  present: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-top.jsonl
+  absent:  /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-removed.jsonl (also media/p4/c-removed.{json,jsonl})
+DRAFT P4-top10-frac: INSUFFICIENT (media missing)
+DRAFT P4-c-loss-rank: INSUFFICIENT (media missing)
+ledger: NOT mutated (exit 2 — wait for c-full/c-top/c-removed)
+[autofill] P4-c: exit 2 (INSUFFICIENT / media missing) — left /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-c-score-dryrun.md untouched
+
+=== summary ===
+  b-invar dry-run file: READY /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-b-score-dryrun.md
+  c      dry-run file: waiting (scorer exit 2)
+
+NEXT OPERATOR STEP (manual — script does NOT mutate ledger/docs):
+  1. Open /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-bc-fill-on-complete.md
+  2. Paste DRAFT Observed / HIT/MISS from:
+       - /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-b-score-dryrun.md  →  P4-invar-dL / Q9
+  3. Wire six deliverables per that fill map; keep PREDICT bands; never invent.
+
+AUTOFILL_ERR /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-bc-score-and-apply.sh: line 48: APPLY_FLAG[@]: unbound variable
+
+AUTOFILL_EC 1
+21:25:47 heads=['b-rescale-head-x0.25'] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+HEAD_ARM_LANDED b-rescale-head-x0.25 {'lm_head.weight': 0.25} 2.780040977639008 ['b-rescale-head-x0.25.json', 'b-rescale-reference.json']
+DUAL_ALIVE 2026-10-10 21:26 PDT heads= ['b-rescale-head-x0.25'] c= ['c-full', 'c-top'] ['c-removed.jsonl.partial'] fetched heads ['b-rescale-head-x0.25']; stage-b copy only (no invent/rescore)
+21:26:52 heads=['b-rescale-head-x0.25'] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+HEAD_ARM_LANDED b-rescale-head-x0.25 {'lm_head.weight': 0.25} 2.780040977639008 ['b-rescale-head-x0.25.json', 'b-rescale-reference.json']
+DUAL_ALIVE 2026-10-10 21:29 PDT heads= ['b-rescale-head-x0.25'] c= ['c-full', 'c-top'] ['c-removed.jsonl.partial'] fetched heads ['b-rescale-head-x0.25']; stage-b copy only (no invent/rescore)
+21:29:14 heads=['b-rescale-head-x0.25'] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 205, in <module>
+    raise SystemExit(main())
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 145, in main
+    fetch()
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/dual_bc_wait.py", line 83, in fetch
+    from experiments.a3_optimization.hessian_jobs import fetch as F
+ModuleNotFoundError: No module named 'experiments'
+DUAL_WAIT_FILE /Users/daxtongutekunst/Desktop/assignments
+HEAD_ARM_LANDED b-rescale-head-x0.25 {'lm_head.weight': 0.25} 2.780040977639008 ['b-rescale-head-x0.25.json', 'b-rescale-reference.json']
+DUAL_ALIVE 2026-10-10 21:29 PDT heads= ['b-rescale-head-x0.25'] c= ['c-full', 'c-top'] ['c-removed.jsonl.partial'] fetched heads ['b-rescale-head-x0.25']; stage-b copy only (no invent/rescore)
+21:30:00 heads=['b-rescale-head-x0.25'] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+DUAL_ALIVE 2026-10-10 21:32 PDT heads= ['b-rescale-head-x0.25'] c= ['c-full', 'c-top'] ['c-removed.jsonl.partial'] waiting
+DUAL_ALIVE 2026-10-10 21:34 PDT heads= ['b-rescale-head-x0.25'] c= ['c-full', 'c-top'] ['c-removed.jsonl.partial'] waiting
+HEAD_ARM_LANDED b-rescale-head-x0.5 {'lm_head.weight': 0.5} 3.4627732796580846 ['b-rescale-head-x0.5.json', 'b-rescale-reference.json']
+DUAL_ALIVE 2026-10-10 21:36 PDT heads= ['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c= ['c-full', 'c-top'] ['c-removed.jsonl.partial'] fetched heads ['b-rescale-head-x0.5']; stage-b copy only (no invent/rescore)
+21:36:26 heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c=['c-full', 'c-top']/['c-removed.jsonl.partial'] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+C_FETCHED ['c-full', 'c-top', 'c-removed'] ['c-full.jsonl', 'c-top.jsonl', 'c-removed.jsonl']
+AUTOFILL_SH
+647363
+  c-removed mean_top_fraction = 0.027522441710655886
+  c-full end_loss = 3.582527816295624
+  c-top end_loss = 5.502330541610718
+  c-removed end_loss = 3.5821831226348877
+--- P4-top10-frac ---
+  source = c-full
+  mean   = 0.09296940652964016
+  band   [0.6,0.85): no
+DRAFT P4-top10-frac: MISS
+--- P4-c-loss-rank ---
+  L_full=3.582527816295624  L_top=5.502330541610718  L_removed=3.5821831226348877
+  gap L_removed-L_full = -0.000344693660736084
+  rank full≈top < removed: no
+  gap band [0.02,0.20): no
+DRAFT P4-c-loss-rank: MISS
+ledger: NOT mutated (dry-run only; see p4-bc-fill-on-complete.md when READY)
+[autofill] P4-c: exit 0 → wrote /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-c-score-dryrun.md
+
+=== summary ===
+  b-invar dry-run file: READY /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-b-score-dryrun.md
+  c      dry-run file: READY /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-c-score-dryrun.md
+
+NEXT OPERATOR STEP (manual — script does NOT mutate ledger/docs):
+  1. Open /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-bc-fill-on-complete.md
+  2. Paste DRAFT Observed / HIT/MISS from:
+       - /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-b-score-dryrun.md  →  P4-invar-dL / Q9
+       - /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-c-score-dryrun.md  →  P4-top10-frac / P4-c-loss-rank / Q10
+  3. Wire six deliverables per that fill map; keep PREDICT bands; never invent.
+
+AUTOFILL_ERR /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-bc-score-and-apply.sh: line 48: APPLY_FLAG[@]: unbound variable
+
+AUTOFILL_EC 1
+DUAL_ALIVE 2026-10-10 21:38 PDT heads= ['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c= ['c-full', 'c-top', 'c-removed'] [] c fetched/copied=['c-full.jsonl', 'c-top.jsonl', 'c-removed.jsonl']; autofill
+21:38:03 heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c=['c-full', 'c-top', 'c-removed']/[] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │
+21:39:39 heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c=['c-full', 'c-top', 'c-removed']/[] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ stopped     │ 0     │ 2026-10-10   │
+DUAL_ALIVE 2026-10-10 21:40 PDT heads= ['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c= ['c-full', 'c-top', 'c-removed'] [] waiting
+DUAL_ALIVE 2026-10-10 21:42 PDT heads= ['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c= ['c-full', 'c-top', 'c-removed'] [] waiting
+DUAL_ALIVE 2026-10-10 21:45 PDT heads= ['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c= ['c-full', 'c-top', 'c-removed'] [] waiting
+DUAL_ALIVE 2026-10-10 21:47 PDT heads= ['b-rescale-head-x0.25', 'b-rescale-head-x0.5'] c= ['c-full', 'c-top', 'c-removed'] [] waiting
+HEAD_ARM_LANDED b-rescale-head-x2 {'lm_head.weight': 2.0} 7.302746614488089 ['b-rescale-head-x2.json', 'b-rescale-reference.json']
+DUAL_ALIVE 2026-10-10 21:48 PDT heads= ['b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2'] c= ['c-full', 'c-top', 'c-removed'] [] fetched heads ['b-rescale-head-x2']; stage-b copy only (no invent/rescore)
+21:48:29 heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2'] c=['c-full', 'c-top', 'c-removed']/[] | │ ap-lSeukZDR7yWisgODr61i1k │ dl-alchemy… │ ephemeral   │ 1     │ 2026-10-10   │ | │ ap-fITMulBWHgvvL54utzP8Wc │ dl-alchemy… │ stopped     │ 0     │ 2026-10-10   │
+DUAL_COMPLETE

@@ -1,0 +1,39 @@
+{
+  "phase": "stage_a",
+  "done": [
+    "a-adamw-0",
+    "a-adamw-3",
+    "a-adamw-15",
+    "a-adamw-61",
+    "a-adamw-153",
+    "a-adamw-305",
+    "a-adamw-763",
+    "a-adamw-1526",
+    "a-adamw-3052",
+    "a-adamw-4578",
+    "a-adamw-6104",
+    "a-adamw-7630",
+    "a-adamw-9375"
+  ],
+  "miss": [],
+  "partial": [],
+  "tasks": "?",
+  "state": "unknown",
+  "media_stage_a": [
+    "a-adamw-0",
+    "a-adamw-15",
+    "a-adamw-1526",
+    "a-adamw-153",
+    "a-adamw-3",
+    "a-adamw-305",
+    "a-adamw-3052",
+    "a-adamw-4578",
+    "a-adamw-61",
+    "a-adamw-6104",
+    "a-adamw-763",
+    "a-adamw-7630",
+    "a-adamw-9375"
+  ],
+  "copied_this_tick": [],
+  "ts": 1791741374.651312
+}

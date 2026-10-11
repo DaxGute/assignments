@@ -1,0 +1,15 @@
+HOST modal
+DATE Sun Oct 11 03:27:10 UTC 2026
+NVIDIA 99 %, 47 %, 35699 MiB, 81559 MiB, 541.96 W, 55
+PMON_TAIL # gpu         pid   type     sm    mem    enc    dec    jpg    ofa    command 
+# Idx           #    C/G      %      %      %      %      %      %    name 
+    0          1     C     98     43      -      -      -      -    dumb-init      
+JOBS ['a-adamw-0', 'a-adamw-1526', 'a-adamw-153', 'a-adamw-6104', 'a-adamw-9375']
+CKPTS ['step_9375.pt']
+State:	R (running)
+VmRSS:	4367796 kB
+Threads:	5
+voluntary_ctxt_switches:	23557682
+VOL_LOCAL ['a-adamw-0.json', 'a-adamw-1526.json', 'a-adamw-153.json', 'a-adamw-6104.json']
+HAS_9375_JSON False
+HAS_9375_PARTIAL False

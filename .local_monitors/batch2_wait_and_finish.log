@@ -1,0 +1,356 @@
+WAIT_START cwd= /Users/daxtongutekunst/Desktop/assignments
+[6s] done=2/9 partial=2 missing=5 tasks=2 kept=2 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=3615 progress=0.38570666666666664 state=running
+  W&B job3 soosjcxr step=3618 progress=0.3860266666666667 state=running
+WAIT_START cwd= /Users/daxtongutekunst/Desktop/assignments
+[6s] done=2/9 partial=2 missing=5 tasks=2 kept=2 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=4710 progress=0.5025066666666667 state=running
+  W&B job3 soosjcxr step=4737 progress=0.5053866666666667 state=running
+WAIT_START cwd= /Users/daxtongutekunst/Desktop/assignments
+[5s] done=2/9 partial=2 missing=5 tasks=2 kept=2 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=5079 progress=0.5418666666666667 state=running
+  W&B job3 soosjcxr step=5104 progress=0.5445333333333333 state=running
+WAIT_START cwd= /Users/daxtongutekunst/Desktop/assignments
+[5s] done=2/9 partial=2 missing=5 tasks=2 kept=2 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=5838 progress=0.6228266666666666 state=running
+  W&B job3 soosjcxr step=5852 progress=0.62432 state=running
+WAIT_START cwd= /Users/daxtongutekunst/Desktop/assignments
+[6s] done=2/9 partial=2 missing=5 tasks=2 kept=2 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=6960 progress=0.7425066666666666 state=running
+  W&B job3 soosjcxr step=6580 progress=0.7019733333333333 state=running
+WAIT_START cwd= /Users/daxtongutekunst/Desktop/assignments
+[6s] done=2/9 partial=2 missing=5 tasks=2 kept=2 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=7331 progress=0.78208 state=running
+  W&B job3 soosjcxr step=7331 progress=0.78208 state=running
+[133s] done=2/9 partial=2 missing=5 tasks=2 kept=2 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=8835 progress=0.9425066666666668 state=running
+  W&B job3 soosjcxr step=8835 progress=0.9425066666666668 state=running
+[260s] done=4/9 partial=2 missing=3 tasks=2 kept=4 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=1326 progress=0.14154666666666663 state=running
+  W&B job5 1jri34em step=1331 progress=0.14208 state=running
+[387s] done=4/9 partial=2 missing=3 tasks=2 kept=4 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=3305 progress=0.35264 state=running
+  W&B job5 1jri34em step=3204 progress=0.34186666666666665 state=running
+[514s] done=4/9 partial=2 missing=3 tasks=2 kept=4 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=4996 progress=0.5330133333333333 state=running
+  W&B job5 1jri34em step=5075 progress=0.54144 state=running
+WAIT_START cwd= /Users/daxtongutekunst/Desktop/assignments
+[6s] done=4/9 partial=2 missing=3 tasks=2 kept=4 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=6799 progress=0.7253333333333334 state=running
+  W&B job5 1jri34em step=6955 progress=0.7419733333333334 state=running
+[133s] done=4/9 partial=2 missing=3 tasks=2 kept=4 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=8607 progress=0.9181866666666668 state=running
+  W&B job5 1jri34em step=8826 progress=0.9415466666666666 state=running
+[261s] done=6/9 partial=2 missing=1 tasks=2 kept=6 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=1199 progress=0.128 state=running
+  W&B job7 0dewkykj step=0 progress=0.0006666666666666666 state=running
+[390s] done=6/9 partial=2 missing=1 tasks=2 kept=6 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=3195 progress=0.3409066666666667 state=running
+  W&B job7 0dewkykj step=199 progress=0.13333333333333333 state=running
+[518s] done=6/9 partial=2 missing=1 tasks=2 kept=6 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=4887 progress=0.5213866666666667 state=running
+  W&B job7 0dewkykj step=449 progress=0.3 state=running
+[645s] done=6/9 partial=2 missing=1 tasks=2 kept=6 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=6767 progress=0.72192 state=running
+  W&B job7 0dewkykj step=699 progress=0.4666666666666667 state=running
+[775s] done=6/9 partial=2 missing=1 tasks=2 kept=6 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9084 progress=0.9690666666666666 state=running
+  W&B job7 0dewkykj step=924 progress=0.6166666666666667 state=running
+[904s] done=7/9 partial=2 missing=0 tasks=2 kept=7 newly=[6]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1224 progress=0.8166666666666667 state=running
+  W&B job8 foew12y0 step=47 progress=0.016 state=running
+[1033s] done=7/9 partial=2 missing=0 tasks=2 kept=7 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1449 progress=0.9666666666666668 state=running
+  W&B job8 foew12y0 step=127 progress=0.042666666666666665 state=running
+[1162s] done=8/9 partial=1 missing=0 tasks=2 kept=8 newly=[7]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1499 progress=1.0 state=finished
+  W&B job8 foew12y0 step=275 progress=0.092 state=running
+[1292s] done=8/9 partial=1 missing=0 tasks=1 kept=8 newly=[7]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1499 progress=1.0 state=finished
+  W&B job8 foew12y0 step=599 progress=0.2 state=running
+[1421s] done=8/9 partial=1 missing=0 tasks=1 kept=8 newly=[7]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1499 progress=1.0 state=finished
+  W&B job8 foew12y0 step=999 progress=0.3333333333333333 state=running
+[1550s] done=8/9 partial=1 missing=0 tasks=1 kept=8 newly=[7]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1499 progress=1.0 state=finished
+  W&B job8 foew12y0 step=1499 progress=0.5 state=running
+[1679s] done=8/9 partial=1 missing=0 tasks=1 kept=8 newly=[7]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1499 progress=1.0 state=finished
+  W&B job8 foew12y0 step=2175 progress=0.7253333333333334 state=running
+[1808s] done=9/9 partial=0 missing=0 tasks=1 kept=9 newly=[]
+  W&B job0 widt420l step=9374 progress=1.0 state=finished
+  W&B job1 r0294p93 step=9374 progress=1.0 state=finished
+  W&B job2 sktw67q8 step=9374 progress=1.0 state=finished
+  W&B job3 soosjcxr step=9374 progress=1.0 state=finished
+  W&B job4 rms7iyyt step=9374 progress=1.0 state=finished
+  W&B job5 1jri34em step=9374 progress=1.0 state=finished
+  W&B job6 51b3qq4n step=9374 progress=1.0 state=finished
+  W&B job7 0dewkykj step=1499 progress=1.0 state=finished
+  W&B job8 foew12y0 step=2999 progress=1.0 state=finished
+ALL_BATCH2_DONE
+FINAL {'i': 0, 'label': 'a3-b2-p2-wsd0.0', 'run_name': 'model-d8-lr0.003-tok614M-wsd0.0-ema0.99-0.999', 'wandb_id': 'widt420l', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/widt420l', 'state': 'finished', 'train_loss': 3.0593721866607666, 'val_loss': 3.0975050926208496, 'optimizer_step': 9374, 'progress': 1.0}
+FINAL {'i': 1, 'label': 'a3-b2-p2-linear', 'run_name': 'model-d8-lr0.003-tok614M-ema0.99-0.999', 'wandb_id': 'r0294p93', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/r0294p93', 'state': 'finished', 'train_loss': 2.886288642883301, 'val_loss': 2.9282028675079346, 'optimizer_step': 9374, 'progress': 1.0}
+FINAL {'i': 2, 'label': 'a3-b2-p2-cos', 'run_name': 'model-d8-lr0.003-tok614M-cos-ema0.99-0.999', 'wandb_id': 'sktw67q8', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/sktw67q8', 'state': 'finished', 'train_loss': 2.8933908939361572, 'val_loss': 2.934119462966919, 'optimizer_step': 9374, 'progress': 1.0}
+FINAL {'i': 3, 'label': 'a3-b2-p2-wsd0.2', 'run_name': 'model-d8-lr0.003-tok614M-wsd0.2-ema0.99-0.999', 'wandb_id': 'soosjcxr', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/soosjcxr', 'state': 'finished', 'train_loss': 2.8900909423828125, 'val_loss': 2.93774151802063, 'optimizer_step': 9374, 'progress': 1.0}
+FINAL {'i': 4, 'label': 'a3-b2-p2-wsd0.2-dip', 'run_name': 'model-d8-lr0.003-tok614M-wsd0.2-dip0.4-0.45-0.5x0.1', 'wandb_id': 'rms7iyyt', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/rms7iyyt', 'state': 'finished', 'train_loss': 2.8953793048858643, 'val_loss': 2.938987970352173, 'optimizer_step': 9374, 'progress': 1.0}
+FINAL {'i': 5, 'label': 'a3-b2-p2-invsqrt', 'run_name': 'model-d8-lr0.003-tok614M-invsqrt-warmupsteps94', 'wandb_id': '1jri34em', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/1jri34em', 'state': 'finished', 'train_loss': 2.983588457107544, 'val_loss': 3.020456075668335, 'optimizer_step': 9374, 'progress': 1.0}
+FINAL {'i': 6, 'label': 'a3-b2-p2-sgdr2000', 'run_name': 'model-d8-lr0.003-tok614M-sgdr2000-warmupsteps94-minlr0.1', 'wandb_id': '51b3qq4n', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/51b3qq4n', 'state': 'finished', 'train_loss': 2.996020793914795, 'val_loss': 3.0348048210144043, 'optimizer_step': 9374, 'progress': 1.0}
+FINAL {'i': 7, 'label': 'a3-b2-p3-0-sgd', 'run_name': 'model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-constant', 'wandb_id': '0dewkykj', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/0dewkykj', 'state': 'finished', 'train_loss': 1.268615484237671, 'val_loss': 8.053705215454102, 'optimizer_step': 1499, 'progress': 1.0}
+FINAL {'i': 8, 'label': 'a3-b2-p3-1-adamw', 'run_name': 'model-d8-lr0.003-epochs0.32-tok614M-warmup0.03125-wsd0.0', 'wandb_id': 'foew12y0', 'wandb_url': 'https://wandb.ai/daxgute-stanford-university/assignments/runs/foew12y0', 'state': 'finished', 'train_loss': 3.2420499324798584, 'val_loss': 3.2397050857543945, 'optimizer_step': 2999, 'progress': 1.0}
+appendix_and_report_updated
+WARN: partial context replace failed
+WARN: row B2-P3-adamw-pre not filled
+WARN: row P2-sched-rank not filled
+WARN: row P2-ema-gap-frac not filled
+WARN: row P2-dip-final-R not filled
+WARN: row P2-horizon-dL not filled
+WARN: row P3-clean-edge not filled
+WARN: row P3-mb-edge not filled
+scorecard_updated
+DRY_STDOUT
+ A3 Batch 3 (P4 + gated exploratory)
+===================================
+
+Prerequisites: shared Hessian volume; prefer Batch 1–2 baselines before CFs
+Required P4 jobs listed: 17
+Exploratory (gated) listed: 0
+
+- Required: P4 stages a → fetch, then b-*, then c (see official starter).
+- Needs shared volume hard-dl-dclm-v1 for provided checkpoints.
+- Exploratory/counterfactual jobs require --include-exploratory and ledger pre-reg.
+
+  a: 13 jobs (fetch downloads results)
+  b-rescale: 1 jobs (fetch downloads results)
+  c: 3 jobs (fetch downloads results)
+  fetch: 0 jobs (fetch downloads results)
+
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+[dry-run] Would run official P4 stage 'a' (local=False).
+Dry run only.
+
+DRY_STDERR
+ 
+EXEC_STDOUT
+ A3 Batch 3 (P4 + gated exploratory)
+===================================
+
+Prerequisites: shared Hessian volume; prefer Batch 1–2 baselines before CFs
+Required P4 jobs listed: 17
+Exploratory (gated) listed: 0
+
+- Required: P4 stages a → fetch, then b-*, then c (see official starter).
+- Needs shared volume hard-dl-dclm-v1 for provided checkpoints.
+- Exploratory/counterfactual jobs require --include-exploratory and ledger pre-reg.
+
+  a: 13 jobs (fetch downloads results)
+  b-rescale: 1 jobs (fetch downloads results)
+  c: 3 jobs (fetch downloads results)
+  fetch: 0 jobs (fetch downloads results)
+
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.json
+Wrote /Users/daxtongutekunst/Desktop/assignments/experiments/a3_optimization/manifests/batch3_manifest.csv
+
+--- P4 a ---
+launch a-adamw-0
+launch a-adamw-3
+launch a-adamw-15
+launch a-adamw-61
+launch a-adamw-153
+launch a-adamw-305
+launch a-adamw-763
+launch a-adamw-1526
+launch a-adamw-3052
+launch a-adamw-4578
+launch a-adamw-6104
+launch a-adamw-7630
+launch a-adamw-9375
+[?25l⠋ Initializing...
+[2K✓ Initialized. View run at 
+[4mhttps://modal.com/apps/cs312-f26/cs312-daxton/ap-DAUDZsFRech705uMDN7q3x[0m
+⠋ Initializing...
+[2K⠋ Initializing...
+[?25h
+[1A[2K[?25l⠋ Creating objects...
+[2K⠸ Creating objects...
+└── ⠋
+[2K[1A[2K⠦ Creating objects...
+└── ⠸ Creating mount PythonPackage:experiments: Uploaded 63/64 missing files
+[2K[1A[2K⠏ Creating objects...
+├── ⠦ Creating mount PythonPackage:experiments: Uploaded 63/64 missing files
+└── ⠋
+[2K[1A[2K[1A[2K⠹ Creating objects...
+├── ⠏ Creating mount PythonPackage:experiments: Uploaded 144/146 missing files
+└── ⠸ Creating mount /Users/daxtongutekunst/Desktop/assignments: Uploaded 60/64 
+    missing files
+[2K[1A[2K[1A[2K[1A[2K⠴ Creating objects...
+├── ⠹ Creating mount PythonPackage:experiments: Uploaded 144/146 missing files
+└── ⠦ Creating mount /Users/daxtongutekunst/Desktop/assignments: Uploaded 
+    122/128 missing files
+[2K[1A[2K[1A[2K[1A[2K⠇ Creating objects...
+├── ⠴ Creating mount PythonPackage:experiments: Finalizing index of 146 files
+└── ⠏ Creating mount /Users/daxtongutekunst/Desktop/assignments: Uploaded 
+    188/192 missing files
+[2K[1A[2K[1A[2K[1A[2K⠹ Creating objects...
+├── 🔨 Created mount PythonPackage:experiments
+└── ⠹ Creating mount /Users/daxtongutekunst/Desktop/assignments: Uploaded 
+    199/202 missing files
+[2K[1A[2K[1A[2K[1A[2K⠴ Creating objects...
+├── 🔨 Created mount PythonPackage:experiments
+└── ⠴ Creating mount /Users/daxtongutekunst/Desktop/assignments: Uploaded 
+    199/202 missing files
+[2K[1A[2K[1A[2K[1A[2K⠇ Creating objects...
+├── 🔨 Created mount PythonPackage:experiments
+└── ⠏ Creating mount /Users/daxtongutekunst/Desktop/assignments: Finalizing 
+    index of 202 files
+[2K[1A[2K[1A[2K[1A[2K⠙ Creating objects...
+├── 🔨 Created mount PythonPackage:experiments
+├── 🔨 Created mount /Users/daxtongutekunst/Desktop/assignments
+└── ⠋ Creating function _run_job_remote...
+[2K[1A[2K[1A[2K[1A[2K⠸ Creating objects...
+├── 🔨 Created mount PythonPackage:experiments
+├── 🔨 Created mount /Users/daxtongutekunst/Desktop/assignments
+└── 🔨 Created function _run_job_remote.
+[?25h
+[1A[2K[1A[2K[1A[2K[1A[2K✓ Created objects.
+├── 🔨 Created mount PythonPackage:experiments
+├── 🔨 Created mount /Users/daxtongutekunst/Desktop/assignments
+└── 🔨 Created function _run_job_remote.
+[?25l⠋ Running app...
+[2K⠸ Running app...
+[2K⠦ Running app...
+[2K⠏ Running app...
+[2K⠹ Running app...
+[2K⠴ Running app...
+[2K⠏ Running app...
+[2K⠹ Running... View app at 
+[4mhttps://modal.com/apps/cs312-f26/cs312-daxton/ap-DAUDZsFRech705uMDN7q3x[0m
+[2K[1A[2K⠹ Running... View app at 
+[4mhttps://modal.com/apps/cs312-f26/cs312-daxton/ap-DAUDZsFRech705uMDN7q3x[0m
+[?25h
+[1A[2K[1A[2KInitializing native d8 model
+Initializing native d8 model
+Loaded train_dataset dclm: 9,600,000 rows (9,830,400,000 tokens) from /root/shared_data/datasets/dclm_9p6m_ctx1024/train.
+Loaded train_dataset dclm: 9,600,000 rows (9,830,400,000 tokens) from /root/shared_data/datasets/dclm_9p6m_ctx1024/train.
+✓ App completed. View run at 
+[4mhttps://modal.com/apps/cs312-f26/cs312-daxton/ap-DAUDZsFRech705uMDN7q3x[0m
+
+EXEC_STDERR
+ [modal-client] 2026-10-10T18:27:16-0700 Timed out waiting for final app logs.
+
+BATCH3_STAGE_A_RC 0
+READY_UNSUBSCRIBE_TIMER

@@ -1,0 +1,836 @@
+FINAL9375_START cwd= /Users/daxtongutekunst/Desktop/assignments
+FINAL9375_RUNBOOK_START cwd= /Users/daxtongutekunst/Desktop/assignments
+HIT_13_DETECTED
+COPIED a-adamw-9375 lambda_max=5.967310256347902
+VOLUME 13/13 done=['a-adamw-0', 'a-adamw-3', 'a-adamw-15', 'a-adamw-61', 'a-adamw-153', 'a-adamw-305', 'a-adamw-763', 'a-adamw-1526', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-6104', 'a-adamw-7630', 'a-adamw-9375']
+MISS []
+{
+  "n": 13,
+  "copied": [],
+  "lambda_max_new": {},
+  "lam1526": 2.1954286466134665,
+  "lam3052": 3.1637529312879873,
+  "live_expect": [
+    "a-adamw-9375"
+  ],
+  "gpu_utils": [
+    0
+  ],
+  "miss": [],
+  "complete": true
+}
+discovered 13/13: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630, 9375]
+updated /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/docs/a3-experimental-appendix.md
+filled MEASURED steps: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630, 9375]
+[p4-update-lambda-plot] wrote media/p4/p4_lambda_max_early.png n=13/13 steps=0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375
+  step=0 lambda_max=1431.5030691763686
+  step=3 lambda_max=1571.7420262270407
+  step=15 lambda_max=53.36426571742344
+  step=61 lambda_max=18.054717868295125
+  step=153 lambda_max=6.502395300121604
+  step=305 lambda_max=4.32926630998023
+  step=763 lambda_max=3.02398152405625
+  step=1526 lambda_max=2.1954286466134665
+  step=3052 lambda_max=3.1637529312879873
+  step=4578 lambda_max=3.7423705126158477
+  step=6104 lambda_max=4.155164815834522
+  step=7630 lambda_max=5.281516516770698
+  step=9375 lambda_max=5.967310256347902
+[p4-update-family-lambda-plot] wrote media/p4/p4_family_lambda_early.png n=13/13 steps=0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375
+
+[wrote] /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-score-dryrun.md
+[summary] coverage=13/13 present=[0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375] apply_gate=READY insufficient=1/4 draft_ready=3/4 missing_gate=—
+---
+cursor:
+  subagentId: "bc-2ecb8f11-3a81-5014-918b-410f252987b3"
+---
+
+# P4 score dry-run (from media)
+
+**Generated:** 2026-10-11 03:29 UTC  
+**Script:** `internal/p4-score-from-media.py`  
+**Bands:** `docs/a3-p4-preregister-draft.md`  
+**Mode:** dry-run (no docs MEASURED / ledger resolve written)
+
+## Files found
+
+| step | path | keys (abbrev) |
+|-----:|------|---------------|
+| 0 | `media/p4/stage-a/a-adamw-0.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3 | `media/p4/stage-a/a-adamw-3.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 15 | `media/p4/stage-a/a-adamw-15.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 61 | `media/p4/stage-a/a-adamw-61.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 153 | `media/p4/stage-a/a-adamw-153.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 305 | `media/p4/stage-a/a-adamw-305.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 763 | `media/p4/stage-a/a-adamw-763.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 1526 | `media/p4/stage-a/a-adamw-1526.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3052 | `media/p4/stage-a/a-adamw-3052.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 4578 | `media/p4/stage-a/a-adamw-4578.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 6104 | `media/p4/stage-a/a-adamw-6104.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 7630 | `media/p4/stage-a/a-adamw-7630.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 9375 | `media/p4/stage-a/a-adamw-9375.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+
+**Coverage:** 13 / 13 stage-a steps with any JSON.  
+**Required for --apply gate:** steps [0, 153, 1526, 9375] → **READY**
+
+## Step → λ / family tops (exact from files)
+
+| step | job | λ_max | λ_min | family #1 | family #2 | source |
+|-----:|-----|------:|------:|-----------|-----------|--------|
+| 0 | `a-adamw-0` | 1431.5030691763686 | -1410.061273996107 | embedding=1414.2983976747726 | attention=9.878542601155342 | `media/p4/stage-a/a-adamw-0.json` |
+| 3 | `a-adamw-3` | 1571.7420262270407 | -601.6596057825041 | embedding=1553.9202300399772 | attention=11.031923073793246 | `media/p4/stage-a/a-adamw-3.json` |
+| 15 | `a-adamw-15` | 53.36426571742344 | -17.452665724452103 | embedding=45.81142761722067 | head=17.366603125537793 | `media/p4/stage-a/a-adamw-15.json` |
+| 61 | `a-adamw-61` | 18.054717868295125 | -1.8957655982714006 | embedding=16.490874755734055 | head=10.538219555088416 | `media/p4/stage-a/a-adamw-61.json` |
+| 153 | `a-adamw-153` | 6.502395300121604 | -0.2562527330248557 | head=6.13913154756097 | embedding=2.4572441518559858 | `media/p4/stage-a/a-adamw-153.json` |
+| 305 | `a-adamw-305` | 4.32926630998023 | -0.06854534676741643 | head=4.213051793309759 | embedding=0.43233615820632054 | `media/p4/stage-a/a-adamw-305.json` |
+| 763 | `a-adamw-763` | 3.02398152405625 | -0.08332850048247277 | head=2.910567118127918 | attention=0.42656153617737463 | `media/p4/stage-a/a-adamw-763.json` |
+| 1526 | `a-adamw-1526` | 2.1954286466134665 | -0.0637674257861686 | head=2.066653951751226 | norm=0.419747262683154 | `media/p4/stage-a/a-adamw-1526.json` |
+| 3052 | `a-adamw-3052` | 3.1637529312879873 | -0.06470202230389413 | head=2.9795749676673937 | norm=0.7062101443702926 | `media/p4/stage-a/a-adamw-3052.json` |
+| 4578 | `a-adamw-4578` | 3.7423705126158477 | -0.04897616951626389 | head=3.558488252437332 | norm=0.6015410920209205 | `media/p4/stage-a/a-adamw-4578.json` |
+| 6104 | `a-adamw-6104` | 4.155164815834522 | -0.03642192924304736 | head=3.9631347788971394 | attention=0.6584555395717259 | `media/p4/stage-a/a-adamw-6104.json` |
+| 7630 | `a-adamw-7630` | 5.281516516770698 | -0.049697684311825786 | head=5.020768145757741 | attention=0.9592068563649059 | `media/p4/stage-a/a-adamw-7630.json` |
+| 9375 | `a-adamw-9375` | 5.967310256347902 | -0.08023598879266304 | head=5.641603135007765 | attention=1.2078980133022608 | `media/p4/stage-a/a-adamw-9375.json` |
+
+## Soft density series (`density_runs` → neg_frac)
+
+Anchors required to **resolve** `P4-a-density-neg`: `[0, 153, 1526, 9375]`.
+
+| step | neg_frac | status |
+|-----:|---------:|--------|
+| 0 | 0.004510114309467541 | present |
+| 153 | 0.01491374251600709 | present |
+| 1526 | 0.9344596369432798 | present |
+| 9375 | 0.06965100420936976 | present |
+
+Segments: 0→153 **rise/flat** (0.004510114309467541 → 0.01491374251600709); 153→1526 **rise/flat** (0.01491374251600709 → 0.9344596369432798); 1526→9375 shrink (0.9344596369432798 → 0.06965100420936976)
+
+**Soft expect:** shrink PREDICT (`neg_frac(9375) < neg_frac(0)`) → **DRAFT_MISS** unless 9375 collapses below init (init=0.004510114309467541; latest=0.06965100420936976 at step 9375).
+
+## P4-a-* draft scores
+
+| ID | Draft | Can resolve? | Observed (file-exact / derived) | Reason |
+|----|-------|--------------|---------------------------------|--------|
+| `P4-a-family-sharpest` | **DRAFT_MISS** | yes | late_sharpest=head (5.641603135007765); early_top2=['embedding', 'attention']; ratio_sharpest/median=7.38436579244244 | Ranking PREDICT not met. |
+| `P4-a-norm-sharpness` | **DRAFT_HIT** | yes | λ_max 1526=2.1954286466134665 → 9375=5.967310256347902 nondecreasing=True; final_λ_in_[4.5,6.0]=True; tr(H^2)/d 1526=8.856225326736765e-07 → 9375=5.364973956804868e-06 nondecreasing=True | Both λ and tr(H^2)/d nondecreasing mid→final; final λ in handout band. |
+| `P4-a-density-neg` | **DRAFT_MISS** | yes | neg_frac series 0:0.004510114309467541 → 153:0.01491374251600709 → 1526:0.9344596369432798 → 9375:0.06965100420936976; shrink_0→9375=False; final_in_[0,0.15)=True; negatives_at_init=True; λ_min_init=-1410.061273996107; λ_max_final=5.967310256347902; positive_λmax_final=True | Density PREDICT not met: neg_frac did not shrink 0→9375 (rose or flat). |
+| `P4-a-block-energy` | **INSUFFICIENT** | no | family_within mid=0.7499098737738006 final=0.7152246849450103; layer_within mid=0.6981917880905328 final=0.6519641906362537; random_within=*missing in JSON* | Have within-family fractions from energy matrices, but no matched-size random partition fraction in media (starter TODO / extra job). Cannot HIT/MISS. |
+
+## Apply policy
+
+- Default = this dry-run only → `internal/p4-score-dryrun.md`.
+- `--apply` refused (exit **2**) unless steps `0, 153, 1526, 9375` exist with `lambda_max`.
+- When gate opens (9375 arrives): still refuses if any `P4-a-*` is INSUFFICIENT (e.g. block-energy random partition). **No auto-HIT invent.**
+- `P4-a-density-neg` resolves only with `density_runs` on all of `[0, 153, 1526, 9375]`.
+- `P4-a-norm-sharpness` scores λ mid→final once 1526+9375 have `lambda_max` (tr(H^2)/d from energy/size when present).
+- Do not invent density, random-partition energy, or missing-step λ.
+
+## Current verdict
+
+With **13** file(s): **1/4** `P4-a-*` INSUFFICIENT, **3/4** draft HIT/MISS ready. Apply gate open — still only resolve can_resolve IDs; no docs mutate unless all four resolve.
+
+mid-N refresh done (no ledger --apply; HIT/MISS gated on 0/153/1526/9375)
+
+[wrote] /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-score-dryrun.md
+[summary] coverage=13/13 present=[0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375] apply_gate=READY insufficient=1/4 draft_ready=3/4 missing_gate=—
+---
+cursor:
+  subagentId: "bc-2ecb8f11-3a81-5014-918b-410f252987b3"
+---
+
+# P4 score dry-run (from media)
+
+**Generated:** 2026-10-11 03:29 UTC  
+**Script:** `internal/p4-score-from-media.py`  
+**Bands:** `docs/a3-p4-preregister-draft.md`  
+**Mode:** dry-run (no docs MEASURED / ledger resolve written)
+
+## Files found
+
+| step | path | keys (abbrev) |
+|-----:|------|---------------|
+| 0 | `media/p4/stage-a/a-adamw-0.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3 | `media/p4/stage-a/a-adamw-3.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 15 | `media/p4/stage-a/a-adamw-15.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 61 | `media/p4/stage-a/a-adamw-61.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 153 | `media/p4/stage-a/a-adamw-153.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 305 | `media/p4/stage-a/a-adamw-305.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 763 | `media/p4/stage-a/a-adamw-763.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 1526 | `media/p4/stage-a/a-adamw-1526.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3052 | `media/p4/stage-a/a-adamw-3052.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 4578 | `media/p4/stage-a/a-adamw-4578.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 6104 | `media/p4/stage-a/a-adamw-6104.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 7630 | `media/p4/stage-a/a-adamw-7630.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 9375 | `media/p4/stage-a/a-adamw-9375.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+
+**Coverage:** 13 / 13 stage-a steps with any JSON.  
+**Required for --apply gate:** steps [0, 153, 1526, 9375] → **READY**
+
+## Step → λ / family tops (exact from files)
+
+| step | job | λ_max | λ_min | family #1 | family #2 | source |
+|-----:|-----|------:|------:|-----------|-----------|--------|
+| 0 | `a-adamw-0` | 1431.5030691763686 | -1410.061273996107 | embedding=1414.2983976747726 | attention=9.878542601155342 | `media/p4/stage-a/a-adamw-0.json` |
+| 3 | `a-adamw-3` | 1571.7420262270407 | -601.6596057825041 | embedding=1553.9202300399772 | attention=11.031923073793246 | `media/p4/stage-a/a-adamw-3.json` |
+| 15 | `a-adamw-15` | 53.36426571742344 | -17.452665724452103 | embedding=45.81142761722067 | head=17.366603125537793 | `media/p4/stage-a/a-adamw-15.json` |
+| 61 | `a-adamw-61` | 18.054717868295125 | -1.8957655982714006 | embedding=16.490874755734055 | head=10.538219555088416 | `media/p4/stage-a/a-adamw-61.json` |
+| 153 | `a-adamw-153` | 6.502395300121604 | -0.2562527330248557 | head=6.13913154756097 | embedding=2.4572441518559858 | `media/p4/stage-a/a-adamw-153.json` |
+| 305 | `a-adamw-305` | 4.32926630998023 | -0.06854534676741643 | head=4.213051793309759 | embedding=0.43233615820632054 | `media/p4/stage-a/a-adamw-305.json` |
+| 763 | `a-adamw-763` | 3.02398152405625 | -0.08332850048247277 | head=2.910567118127918 | attention=0.42656153617737463 | `media/p4/stage-a/a-adamw-763.json` |
+| 1526 | `a-adamw-1526` | 2.1954286466134665 | -0.0637674257861686 | head=2.066653951751226 | norm=0.419747262683154 | `media/p4/stage-a/a-adamw-1526.json` |
+| 3052 | `a-adamw-3052` | 3.1637529312879873 | -0.06470202230389413 | head=2.9795749676673937 | norm=0.7062101443702926 | `media/p4/stage-a/a-adamw-3052.json` |
+| 4578 | `a-adamw-4578` | 3.7423705126158477 | -0.04897616951626389 | head=3.558488252437332 | norm=0.6015410920209205 | `media/p4/stage-a/a-adamw-4578.json` |
+| 6104 | `a-adamw-6104` | 4.155164815834522 | -0.03642192924304736 | head=3.9631347788971394 | attention=0.6584555395717259 | `media/p4/stage-a/a-adamw-6104.json` |
+| 7630 | `a-adamw-7630` | 5.281516516770698 | -0.049697684311825786 | head=5.020768145757741 | attention=0.9592068563649059 | `media/p4/stage-a/a-adamw-7630.json` |
+| 9375 | `a-adamw-9375` | 5.967310256347902 | -0.08023598879266304 | head=5.641603135007765 | attention=1.2078980133022608 | `media/p4/stage-a/a-adamw-9375.json` |
+
+## Soft density series (`density_runs` → neg_frac)
+
+Anchors required to **resolve** `P4-a-density-neg`: `[0, 153, 1526, 9375]`.
+
+| step | neg_frac | status |
+|-----:|---------:|--------|
+| 0 | 0.004510114309467541 | present |
+| 153 | 0.01491374251600709 | present |
+| 1526 | 0.9344596369432798 | present |
+| 9375 | 0.06965100420936976 | present |
+
+Segments: 0→153 **rise/flat** (0.004510114309467541 → 0.01491374251600709); 153→1526 **rise/flat** (0.01491374251600709 → 0.9344596369432798); 1526→9375 shrink (0.9344596369432798 → 0.06965100420936976)
+
+**Soft expect:** shrink PREDICT (`neg_frac(9375) < neg_frac(0)`) → **DRAFT_MISS** unless 9375 collapses below init (init=0.004510114309467541; latest=0.06965100420936976 at step 9375).
+
+## P4-a-* draft scores
+
+| ID | Draft | Can resolve? | Observed (file-exact / derived) | Reason |
+|----|-------|--------------|---------------------------------|--------|
+| `P4-a-family-sharpest` | **DRAFT_MISS** | yes | late_sharpest=head (5.641603135007765); early_top2=['embedding', 'attention']; ratio_sharpest/median=7.38436579244244 | Ranking PREDICT not met. |
+| `P4-a-norm-sharpness` | **DRAFT_HIT** | yes | λ_max 1526=2.1954286466134665 → 9375=5.967310256347902 nondecreasing=True; final_λ_in_[4.5,6.0]=True; tr(H^2)/d 1526=8.856225326736765e-07 → 9375=5.364973956804868e-06 nondecreasing=True | Both λ and tr(H^2)/d nondecreasing mid→final; final λ in handout band. |
+| `P4-a-density-neg` | **DRAFT_MISS** | yes | neg_frac series 0:0.004510114309467541 → 153:0.01491374251600709 → 1526:0.9344596369432798 → 9375:0.06965100420936976; shrink_0→9375=False; final_in_[0,0.15)=True; negatives_at_init=True; λ_min_init=-1410.061273996107; λ_max_final=5.967310256347902; positive_λmax_final=True | Density PREDICT not met: neg_frac did not shrink 0→9375 (rose or flat). |
+| `P4-a-block-energy` | **INSUFFICIENT** | no | family_within mid=0.7499098737738006 final=0.7152246849450103; layer_within mid=0.6981917880905328 final=0.6519641906362537; random_within=*missing in JSON* | Have within-family fractions from energy matrices, but no matched-size random partition fraction in media (starter TODO / extra job). Cannot HIT/MISS. |
+
+## Apply policy
+
+- Default = this dry-run only → `internal/p4-score-dryrun.md`.
+- `--apply` refused (exit **2**) unless steps `0, 153, 1526, 9375` exist with `lambda_max`.
+- When gate opens (9375 arrives): still refuses if any `P4-a-*` is INSUFFICIENT (e.g. block-energy random partition). **No auto-HIT invent.**
+- `P4-a-density-neg` resolves only with `density_runs` on all of `[0, 153, 1526, 9375]`.
+- `P4-a-norm-sharpness` scores λ mid→final once 1526+9375 have `lambda_max` (tr(H^2)/d from energy/size when present).
+- Do not invent density, random-partition energy, or missing-step λ.
+
+## Current verdict
+
+With **13** file(s): **1/4** `P4-a-*` INSUFFICIENT, **3/4** draft HIT/MISS ready. Apply gate open — still only resolve can_resolve IDs; no docs mutate unless all four resolve.
+
+P4_APPLY rc=2
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+FINAL9375_EXIT {"reason": "complete", "n": 13, "lambda_max_9375": 5.967310256347902, "pipeline_done": false, "p4_apply_rc": 2, "runbook": "internal/p4-on-9375-runbook.md \u00a7\u00a71\u20133 + \u00a76", "checkout": "/Users/daxtongutekunst/Desktop/assignments", "forbidden_used": false}
+REPORT_LAMBDA 5.967310256347902
+FINAL9375_RUNBOOK_START cwd= /Users/daxtongutekunst/Desktop/assignments
+RESPAWN longpoll_n4
+HIT_13_DETECTED
+COPIED a-adamw-9375 lambda_max=5.967310256347902
+VOLUME 13/13 done=['a-adamw-0', 'a-adamw-3', 'a-adamw-15', 'a-adamw-61', 'a-adamw-153', 'a-adamw-305', 'a-adamw-763', 'a-adamw-1526', 'a-adamw-3052', 'a-adamw-4578', 'a-adamw-6104', 'a-adamw-7630', 'a-adamw-9375']
+MISS []
+{
+  "n": 13,
+  "copied": [],
+  "lambda_max_new": {},
+  "lam1526": 2.1954286466134665,
+  "lam3052": 3.1637529312879873,
+  "live_expect": [],
+  "gpu_utils": [],
+  "miss": [],
+  "complete": true
+}
+discovered 13/13: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630, 9375]
+updated /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/docs/a3-experimental-appendix.md
+filled MEASURED steps: [0, 3, 15, 61, 153, 305, 763, 1526, 3052, 4578, 6104, 7630, 9375]
+[p4-update-lambda-plot] wrote media/p4/p4_lambda_max_early.png n=13/13 steps=0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375
+  step=0 lambda_max=1431.5030691763686
+  step=3 lambda_max=1571.7420262270407
+  step=15 lambda_max=53.36426571742344
+  step=61 lambda_max=18.054717868295125
+  step=153 lambda_max=6.502395300121604
+  step=305 lambda_max=4.32926630998023
+  step=763 lambda_max=3.02398152405625
+  step=1526 lambda_max=2.1954286466134665
+  step=3052 lambda_max=3.1637529312879873
+  step=4578 lambda_max=3.7423705126158477
+  step=6104 lambda_max=4.155164815834522
+  step=7630 lambda_max=5.281516516770698
+  step=9375 lambda_max=5.967310256347902
+[p4-update-family-lambda-plot] wrote media/p4/p4_family_lambda_early.png n=13/13 steps=0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375
+
+[wrote] /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-score-dryrun.md
+[summary] coverage=13/13 present=[0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375] apply_gate=READY insufficient=1/4 draft_ready=3/4 missing_gate=—
+---
+cursor:
+  subagentId: "bc-2ecb8f11-3a81-5014-918b-410f252987b3"
+---
+
+# P4 score dry-run (from media)
+
+**Generated:** 2026-10-11 05:29 UTC  
+**Script:** `internal/p4-score-from-media.py`  
+**Bands:** `docs/a3-p4-preregister-draft.md`  
+**Mode:** dry-run (no docs MEASURED / ledger resolve written)
+
+## Files found
+
+| step | path | keys (abbrev) |
+|-----:|------|---------------|
+| 0 | `media/p4/stage-a/a-adamw-0.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3 | `media/p4/stage-a/a-adamw-3.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 15 | `media/p4/stage-a/a-adamw-15.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 61 | `media/p4/stage-a/a-adamw-61.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 153 | `media/p4/stage-a/a-adamw-153.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 305 | `media/p4/stage-a/a-adamw-305.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 763 | `media/p4/stage-a/a-adamw-763.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 1526 | `media/p4/stage-a/a-adamw-1526.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3052 | `media/p4/stage-a/a-adamw-3052.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 4578 | `media/p4/stage-a/a-adamw-4578.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 6104 | `media/p4/stage-a/a-adamw-6104.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 7630 | `media/p4/stage-a/a-adamw-7630.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 9375 | `media/p4/stage-a/a-adamw-9375.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+
+**Coverage:** 13 / 13 stage-a steps with any JSON.  
+**Required for --apply gate:** steps [0, 153, 1526, 9375] → **READY**
+
+## Step → λ / family tops (exact from files)
+
+| step | job | λ_max | λ_min | family #1 | family #2 | source |
+|-----:|-----|------:|------:|-----------|-----------|--------|
+| 0 | `a-adamw-0` | 1431.5030691763686 | -1410.061273996107 | embedding=1414.2983976747726 | attention=9.878542601155342 | `media/p4/stage-a/a-adamw-0.json` |
+| 3 | `a-adamw-3` | 1571.7420262270407 | -601.6596057825041 | embedding=1553.9202300399772 | attention=11.031923073793246 | `media/p4/stage-a/a-adamw-3.json` |
+| 15 | `a-adamw-15` | 53.36426571742344 | -17.452665724452103 | embedding=45.81142761722067 | head=17.366603125537793 | `media/p4/stage-a/a-adamw-15.json` |
+| 61 | `a-adamw-61` | 18.054717868295125 | -1.8957655982714006 | embedding=16.490874755734055 | head=10.538219555088416 | `media/p4/stage-a/a-adamw-61.json` |
+| 153 | `a-adamw-153` | 6.502395300121604 | -0.2562527330248557 | head=6.13913154756097 | embedding=2.4572441518559858 | `media/p4/stage-a/a-adamw-153.json` |
+| 305 | `a-adamw-305` | 4.32926630998023 | -0.06854534676741643 | head=4.213051793309759 | embedding=0.43233615820632054 | `media/p4/stage-a/a-adamw-305.json` |
+| 763 | `a-adamw-763` | 3.02398152405625 | -0.08332850048247277 | head=2.910567118127918 | attention=0.42656153617737463 | `media/p4/stage-a/a-adamw-763.json` |
+| 1526 | `a-adamw-1526` | 2.1954286466134665 | -0.0637674257861686 | head=2.066653951751226 | norm=0.419747262683154 | `media/p4/stage-a/a-adamw-1526.json` |
+| 3052 | `a-adamw-3052` | 3.1637529312879873 | -0.06470202230389413 | head=2.9795749676673937 | norm=0.7062101443702926 | `media/p4/stage-a/a-adamw-3052.json` |
+| 4578 | `a-adamw-4578` | 3.7423705126158477 | -0.04897616951626389 | head=3.558488252437332 | norm=0.6015410920209205 | `media/p4/stage-a/a-adamw-4578.json` |
+| 6104 | `a-adamw-6104` | 4.155164815834522 | -0.03642192924304736 | head=3.9631347788971394 | attention=0.6584555395717259 | `media/p4/stage-a/a-adamw-6104.json` |
+| 7630 | `a-adamw-7630` | 5.281516516770698 | -0.049697684311825786 | head=5.020768145757741 | attention=0.9592068563649059 | `media/p4/stage-a/a-adamw-7630.json` |
+| 9375 | `a-adamw-9375` | 5.967310256347902 | -0.08023598879266304 | head=5.641603135007765 | attention=1.2078980133022608 | `media/p4/stage-a/a-adamw-9375.json` |
+
+## Soft density series (`density_runs` → neg_frac)
+
+Anchors required to **resolve** `P4-a-density-neg`: `[0, 153, 1526, 9375]`.
+
+| step | neg_frac | status |
+|-----:|---------:|--------|
+| 0 | 0.004510114309467541 | present |
+| 153 | 0.01491374251600709 | present |
+| 1526 | 0.9344596369432798 | present |
+| 9375 | 0.06965100420936976 | present |
+
+Segments: 0→153 **rise/flat** (0.004510114309467541 → 0.01491374251600709); 153→1526 **rise/flat** (0.01491374251600709 → 0.9344596369432798); 1526→9375 shrink (0.9344596369432798 → 0.06965100420936976)
+
+**Soft expect:** shrink PREDICT (`neg_frac(9375) < neg_frac(0)`) → **DRAFT_MISS** unless 9375 collapses below init (init=0.004510114309467541; latest=0.06965100420936976 at step 9375).
+
+## P4-a-* draft scores
+
+| ID | Draft | Can resolve? | Observed (file-exact / derived) | Reason |
+|----|-------|--------------|---------------------------------|--------|
+| `P4-a-family-sharpest` | **DRAFT_MISS** | yes | late_sharpest=head (5.641603135007765); early_top2=['embedding', 'attention']; ratio_sharpest/median=7.38436579244244 | Ranking PREDICT not met. |
+| `P4-a-norm-sharpness` | **DRAFT_HIT** | yes | λ_max 1526=2.1954286466134665 → 9375=5.967310256347902 nondecreasing=True; final_λ_in_[4.5,6.0]=True; tr(H^2)/d 1526=8.856225326736765e-07 → 9375=5.364973956804868e-06 nondecreasing=True | Both λ and tr(H^2)/d nondecreasing mid→final; final λ in handout band. |
+| `P4-a-density-neg` | **DRAFT_MISS** | yes | neg_frac series 0:0.004510114309467541 → 153:0.01491374251600709 → 1526:0.9344596369432798 → 9375:0.06965100420936976; shrink_0→9375=False; final_in_[0,0.15)=True; negatives_at_init=True; λ_min_init=-1410.061273996107; λ_max_final=5.967310256347902; positive_λmax_final=True | Density PREDICT not met: neg_frac did not shrink 0→9375 (rose or flat). |
+| `P4-a-block-energy` | **INSUFFICIENT** | no | family_within mid=0.7499098737738006 final=0.7152246849450103; layer_within mid=0.6981917880905328 final=0.6519641906362537; random_within=*missing in JSON* | Have within-family fractions from energy matrices, but no matched-size random partition fraction in media (starter TODO / extra job). Cannot HIT/MISS. |
+
+## Apply policy
+
+- Default = this dry-run only → `internal/p4-score-dryrun.md`.
+- `--apply` refused (exit **2**) unless steps `0, 153, 1526, 9375` exist with `lambda_max`.
+- When gate opens (9375 arrives): still refuses if any `P4-a-*` is INSUFFICIENT (e.g. block-energy random partition). **No auto-HIT invent.**
+- `P4-a-density-neg` resolves only with `density_runs` on all of `[0, 153, 1526, 9375]`.
+- `P4-a-norm-sharpness` scores λ mid→final once 1526+9375 have `lambda_max` (tr(H^2)/d from energy/size when present).
+- Do not invent density, random-partition energy, or missing-step λ.
+
+## Current verdict
+
+With **13** file(s): **1/4** `P4-a-*` INSUFFICIENT, **3/4** draft HIT/MISS ready. Apply gate open — still only resolve can_resolve IDs; no docs mutate unless all four resolve.
+
+mid-N refresh done (no ledger --apply; HIT/MISS gated on 0/153/1526/9375)
+
+[wrote] /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-score-dryrun.md
+[summary] coverage=13/13 present=[0,3,15,61,153,305,763,1526,3052,4578,6104,7630,9375] apply_gate=READY insufficient=1/4 draft_ready=3/4 missing_gate=—
+---
+cursor:
+  subagentId: "bc-2ecb8f11-3a81-5014-918b-410f252987b3"
+---
+
+# P4 score dry-run (from media)
+
+**Generated:** 2026-10-11 05:29 UTC  
+**Script:** `internal/p4-score-from-media.py`  
+**Bands:** `docs/a3-p4-preregister-draft.md`  
+**Mode:** dry-run (no docs MEASURED / ledger resolve written)
+
+## Files found
+
+| step | path | keys (abbrev) |
+|-----:|------|---------------|
+| 0 | `media/p4/stage-a/a-adamw-0.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3 | `media/p4/stage-a/a-adamw-3.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 15 | `media/p4/stage-a/a-adamw-15.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 61 | `media/p4/stage-a/a-adamw-61.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 153 | `media/p4/stage-a/a-adamw-153.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 305 | `media/p4/stage-a/a-adamw-305.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 763 | `media/p4/stage-a/a-adamw-763.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 1526 | `media/p4/stage-a/a-adamw-1526.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+| 3052 | `media/p4/stage-a/a-adamw-3052.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 4578 | `media/p4/stage-a/a-adamw-4578.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 6104 | `media/p4/stage-a/a-adamw-6104.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 7630 | `media/p4/stage-a/a-adamw-7630.json` | bottom, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale, seconds… |
+| 9375 | `media/p4/stage-a/a-adamw-9375.json` | bottom, density_runs, energy, families, gradient_norm, lambda_max, lambda_min, names, probe_loss, probe_rows, run, scale… |
+
+**Coverage:** 13 / 13 stage-a steps with any JSON.  
+**Required for --apply gate:** steps [0, 153, 1526, 9375] → **READY**
+
+## Step → λ / family tops (exact from files)
+
+| step | job | λ_max | λ_min | family #1 | family #2 | source |
+|-----:|-----|------:|------:|-----------|-----------|--------|
+| 0 | `a-adamw-0` | 1431.5030691763686 | -1410.061273996107 | embedding=1414.2983976747726 | attention=9.878542601155342 | `media/p4/stage-a/a-adamw-0.json` |
+| 3 | `a-adamw-3` | 1571.7420262270407 | -601.6596057825041 | embedding=1553.9202300399772 | attention=11.031923073793246 | `media/p4/stage-a/a-adamw-3.json` |
+| 15 | `a-adamw-15` | 53.36426571742344 | -17.452665724452103 | embedding=45.81142761722067 | head=17.366603125537793 | `media/p4/stage-a/a-adamw-15.json` |
+| 61 | `a-adamw-61` | 18.054717868295125 | -1.8957655982714006 | embedding=16.490874755734055 | head=10.538219555088416 | `media/p4/stage-a/a-adamw-61.json` |
+| 153 | `a-adamw-153` | 6.502395300121604 | -0.2562527330248557 | head=6.13913154756097 | embedding=2.4572441518559858 | `media/p4/stage-a/a-adamw-153.json` |
+| 305 | `a-adamw-305` | 4.32926630998023 | -0.06854534676741643 | head=4.213051793309759 | embedding=0.43233615820632054 | `media/p4/stage-a/a-adamw-305.json` |
+| 763 | `a-adamw-763` | 3.02398152405625 | -0.08332850048247277 | head=2.910567118127918 | attention=0.42656153617737463 | `media/p4/stage-a/a-adamw-763.json` |
+| 1526 | `a-adamw-1526` | 2.1954286466134665 | -0.0637674257861686 | head=2.066653951751226 | norm=0.419747262683154 | `media/p4/stage-a/a-adamw-1526.json` |
+| 3052 | `a-adamw-3052` | 3.1637529312879873 | -0.06470202230389413 | head=2.9795749676673937 | norm=0.7062101443702926 | `media/p4/stage-a/a-adamw-3052.json` |
+| 4578 | `a-adamw-4578` | 3.7423705126158477 | -0.04897616951626389 | head=3.558488252437332 | norm=0.6015410920209205 | `media/p4/stage-a/a-adamw-4578.json` |
+| 6104 | `a-adamw-6104` | 4.155164815834522 | -0.03642192924304736 | head=3.9631347788971394 | attention=0.6584555395717259 | `media/p4/stage-a/a-adamw-6104.json` |
+| 7630 | `a-adamw-7630` | 5.281516516770698 | -0.049697684311825786 | head=5.020768145757741 | attention=0.9592068563649059 | `media/p4/stage-a/a-adamw-7630.json` |
+| 9375 | `a-adamw-9375` | 5.967310256347902 | -0.08023598879266304 | head=5.641603135007765 | attention=1.2078980133022608 | `media/p4/stage-a/a-adamw-9375.json` |
+
+## Soft density series (`density_runs` → neg_frac)
+
+Anchors required to **resolve** `P4-a-density-neg`: `[0, 153, 1526, 9375]`.
+
+| step | neg_frac | status |
+|-----:|---------:|--------|
+| 0 | 0.004510114309467541 | present |
+| 153 | 0.01491374251600709 | present |
+| 1526 | 0.9344596369432798 | present |
+| 9375 | 0.06965100420936976 | present |
+
+Segments: 0→153 **rise/flat** (0.004510114309467541 → 0.01491374251600709); 153→1526 **rise/flat** (0.01491374251600709 → 0.9344596369432798); 1526→9375 shrink (0.9344596369432798 → 0.06965100420936976)
+
+**Soft expect:** shrink PREDICT (`neg_frac(9375) < neg_frac(0)`) → **DRAFT_MISS** unless 9375 collapses below init (init=0.004510114309467541; latest=0.06965100420936976 at step 9375).
+
+## P4-a-* draft scores
+
+| ID | Draft | Can resolve? | Observed (file-exact / derived) | Reason |
+|----|-------|--------------|---------------------------------|--------|
+| `P4-a-family-sharpest` | **DRAFT_MISS** | yes | late_sharpest=head (5.641603135007765); early_top2=['embedding', 'attention']; ratio_sharpest/median=7.38436579244244 | Ranking PREDICT not met. |
+| `P4-a-norm-sharpness` | **DRAFT_HIT** | yes | λ_max 1526=2.1954286466134665 → 9375=5.967310256347902 nondecreasing=True; final_λ_in_[4.5,6.0]=True; tr(H^2)/d 1526=8.856225326736765e-07 → 9375=5.364973956804868e-06 nondecreasing=True | Both λ and tr(H^2)/d nondecreasing mid→final; final λ in handout band. |
+| `P4-a-density-neg` | **DRAFT_MISS** | yes | neg_frac series 0:0.004510114309467541 → 153:0.01491374251600709 → 1526:0.9344596369432798 → 9375:0.06965100420936976; shrink_0→9375=False; final_in_[0,0.15)=True; negatives_at_init=True; λ_min_init=-1410.061273996107; λ_max_final=5.967310256347902; positive_λmax_final=True | Density PREDICT not met: neg_frac did not shrink 0→9375 (rose or flat). |
+| `P4-a-block-energy` | **INSUFFICIENT** | no | family_within mid=0.7499098737738006 final=0.7152246849450103; layer_within mid=0.6981917880905328 final=0.6519641906362537; random_within=*missing in JSON* | Have within-family fractions from energy matrices, but no matched-size random partition fraction in media (starter TODO / extra job). Cannot HIT/MISS. |
+
+## Apply policy
+
+- Default = this dry-run only → `internal/p4-score-dryrun.md`.
+- `--apply` refused (exit **2**) unless steps `0, 153, 1526, 9375` exist with `lambda_max`.
+- When gate opens (9375 arrives): still refuses if any `P4-a-*` is INSUFFICIENT (e.g. block-energy random partition). **No auto-HIT invent.**
+- `P4-a-density-neg` resolves only with `density_runs` on all of `[0, 153, 1526, 9375]`.
+- `P4-a-norm-sharpness` scores λ mid→final once 1526+9375 have `lambda_max` (tr(H^2)/d from energy/size when present).
+- Do not invent density, random-partition energy, or missing-step λ.
+
+## Current verdict
+
+With **13** file(s): **1/4** `P4-a-*` INSUFFICIENT, **3/4** draft HIT/MISS ready. Apply gate open — still only resolve can_resolve IDs; no docs mutate unless all four resolve.
+
+P4_APPLY rc=0
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+PIPELINE_ADVANCING
+Traceback (most recent call last):
+  File "/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_final_9375.py", line 135, in <module>
+  File "/Users/daxtongutekunst/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/Users/daxtongutekunst/.local/share/uv/python/cpython-3.10-macos-aarch64-none/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/daxtongutekunst/Desktop/assignments/.local_monitors/batch3_stage_pipeline.log'

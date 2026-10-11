@@ -1,0 +1,5 @@
+regions 491
+JOBS ['a-adamw-15', 'a-adamw-3']
+CKPTS ['step_15.pt']
+STEPS []
+99 %, 35699 MiB, 506.46 W

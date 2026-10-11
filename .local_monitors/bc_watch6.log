@@ -1,0 +1,111 @@
+WATCH6_START /Users/daxtongutekunst/Desktop/assignments heads-copy + c-score-and-apply
+DUAL 4481
+STATUS_WROTE cycle=1 signal=STILL_WAITING delta=None partial=39768 heads=['b-rescale-head-x0.25']
+{"cycle": 1, "partial": 39768, "delta": null, "done_rm": false, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25"], "new_heads": [], "signal": "STILL_WAITING", "c_scored": false}
+WATCH6_START /Users/daxtongutekunst/Desktop/assignments heads-copy + c-score-and-apply
+DUAL 4757
+STATUS_WROTE cycle=1 signal=STILL_WAITING delta=None partial=45430 heads=['b-rescale-head-x0.25']
+{"cycle": 1, "partial": 45430, "delta": null, "done_rm": false, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25"], "new_heads": [], "signal": "STILL_WAITING", "c_scored": false}
+WATCH6_START /Users/daxtongutekunst/Desktop/assignments heads-copy + c-score-and-apply
+DUAL 4905
+STATUS_WROTE cycle=1 signal=STILL_WAITING delta=None partial=45430 heads=['b-rescale-head-x0.25']
+{"cycle": 1, "partial": 45430, "delta": null, "done_rm": false, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25"], "new_heads": [], "signal": "STILL_WAITING", "c_scored": false}
+STATUS_WROTE cycle=2 signal=ADVANCED delta=5665 partial=51095 heads=['b-rescale-head-x0.25']
+{"cycle": 2, "partial": 51095, "delta": 5665, "done_rm": false, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25"], "new_heads": [], "signal": "ADVANCED", "c_scored": false}
+STATUS_WROTE cycle=3 signal=ADVANCED delta=5655 partial=56750 heads=['b-rescale-head-x0.25']
+{"cycle": 3, "partial": 56750, "delta": 5655, "done_rm": false, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25"], "new_heads": [], "signal": "ADVANCED", "c_scored": false}
+STATUS_WROTE cycle=4 signal=ADVANCED delta=5658 partial=62408 heads=['b-rescale-head-x0.25']
+{"cycle": 4, "partial": 62408, "delta": 5658, "done_rm": false, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25"], "new_heads": [], "signal": "ADVANCED", "c_scored": false}
+NEW_HEADS ['b-rescale-head-x0.5']
+STATUS_WROTE cycle=5 signal=ADVANCED delta=0 partial=62408 heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 5, "partial": 62408, "delta": 0, "done_rm": false, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": ["b-rescale-head-x0.5"], "signal": "ADVANCED", "c_scored": false}
+C_REMOVED_DONE score-and-apply
+SCORE_APPLY_EC 1
+=== P4 b/c autofill-on-fetch (dry-run only; no ledger mutate) ===
+DRAFT P4-invar-dL: MISS
+[autofill] P4-invar-dL: exit 0 → wrote /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-b-score-dryrun.md
+=== P4-c dry-run (P4-top10-frac / P4-c-loss-rank; no ledger mutate) ===
+DRAFT P4-top10-frac: MISS
+--- P4-c-loss-rank ---
+DRAFT P4-c-loss-rank: MISS
+[autofill] P4-c: exit 0 → wrote /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-c-score-dryrun.md
+  2. Paste DRAFT Observed / HIT/MISS from:
+       - /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/internal/p4-c-score-dryrun.md  →  P4-top10-frac / P4-c-loss-rank / Q10
+STATUS_WROTE cycle=6 signal=ADVANCED delta=5675 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 6, "partial": 68083, "delta": 5675, "done_rm": true, "tasks_c": "1", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": [], "signal": "ADVANCED", "c_scored": true}
+STATUS_WROTE cycle=7 signal=ADVANCED delta=0 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 7, "partial": 68083, "delta": 0, "done_rm": true, "tasks_c": "0", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": [], "signal": "ADVANCED", "c_scored": true}
+STATUS_WROTE cycle=8 signal=ADVANCED delta=0 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 8, "partial": 68083, "delta": 0, "done_rm": true, "tasks_c": "0", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": [], "signal": "ADVANCED", "c_scored": true}
+STATUS_WROTE cycle=9 signal=ADVANCED delta=0 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 9, "partial": 68083, "delta": 0, "done_rm": true, "tasks_c": "0", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": [], "signal": "ADVANCED", "c_scored": true}
+STATUS_WROTE cycle=10 signal=ADVANCED delta=0 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 10, "partial": 68083, "delta": 0, "done_rm": true, "tasks_c": "0", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": [], "signal": "ADVANCED", "c_scored": true}
+STATUS_WROTE cycle=11 signal=ADVANCED delta=0 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 11, "partial": 68083, "delta": 0, "done_rm": true, "tasks_c": "0", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": [], "signal": "ADVANCED", "c_scored": true}
+STATUS_WROTE cycle=12 signal=ADVANCED delta=0 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5']
+{"cycle": 12, "partial": 68083, "delta": 0, "done_rm": true, "tasks_c": "0", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5"], "new_heads": [], "signal": "ADVANCED", "c_scored": true}
+NEW_HEADS ['b-rescale-head-x2']
+STATUS_WROTE cycle=13 signal=ADVANCED delta=0 partial=— heads=['b-rescale-head-x0.25', 'b-rescale-head-x0.5', 'b-rescale-head-x2']
+{"cycle": 13, "partial": 68083, "delta": 0, "done_rm": true, "tasks_c": "0", "tasks_b": "1", "heads": ["b-rescale-head-x0.25", "b-rescale-head-x0.5", "b-rescale-head-x2"], "new_heads": ["b-rescale-head-x2"], "signal": "ADVANCED", "c_scored": true}
+WATCH6_STOP all heads + c scored
+==== p4-c-score-dryrun.md ====
+<!-- autofill: P4-c; generated by p4-bc-autofill-on-fetch.sh; DRAFT only — do not treat as ledger apply -->
+
+=== P4-c dry-run (P4-top10-frac / P4-c-loss-rank; no ledger mutate) ===
+store: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files
+fill map: internal/p4-bc-fill-on-complete.md
+waiting:  internal/p4-c-waiting.md
+bands: mean top_frac [0.6,0.85); full≈top < removed; L_removed-L_full [0.02,0.20)
+loaded c-full: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-full.jsonl
+loaded c-top: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-top.jsonl
+loaded c-removed: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/stage-c/c-removed.jsonl
+  c-full mean_top_fraction = 0.09296940652964016
+  c-top mean_top_fraction = 0.16483314082647363
+  c-removed mean_top_fraction = 0.027522441710655886
+  c-full end_loss = 3.582527816295624
+  c-top end_loss = 5.502330541610718
+  c-removed end_loss = 3.5821831226348877
+--- P4-top10-frac ---
+  source = c-full
+  mean   = 0.09296940652964016
+  band   [0.6,0.85): no
+DRAFT P4-top10-frac: MISS
+--- P4-c-loss-rank ---
+  L_full=3.582527816295624  L_top=5.502330541610718  L_removed=3.5821831226348877
+  gap L_removed-L_full = -0.000344693660736084
+  rank full≈top < removed: no
+  gap band [0.02,0.20): no
+DRAFT P4-c-loss-rank: MISS
+ledger: NOT mutated (dry-run only; see p4-bc-fill-on-complete.md when READY)
+
+---
+
+**Next (operator):** copy DRAFT HIT/MISS into ledger/docs per [`p4-bc-fill-on-complete.md`](p4-bc-fill-on-complete.md). This file is dry-run only — **no auto-mutate**.
+
+==== p4-b-score-dryrun.md ====
+<!-- autofill: P4-invar-dL; generated by p4-bc-autofill-on-fetch.sh; DRAFT only — do not treat as ledger apply -->
+
+=== P4-invar-dL dry-run (no ledger mutate) ===
+store: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files
+before: /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/b-rescale-reference.json
+  lambda_max  = 5.967310256347902
+  probe_loss  = 2.9474442899227142
+  scale       = {}
+after:  /Users/daxtongutekunst/Library/Application Support/Cursor/AgentStores/cursor_agent_stores/bc-01947f99-cdd8-4c04-97a8-01a1028bf8af/files/media/p4/b-rescale-head-x0.25.json
+  lambda_max  = 2.780040977639008
+  probe_loss  = 5.685978919267654
+  scale       = {'lm_head.weight': 0.25}
+--- file-exact ---
+  |dL|  = |5.685978919267654 - 2.9474442899227142| = 2.73853462934494
+  ratio = 2.780040977639008 / 5.967310256347902 = 0.4658784038724411
+--- bands (PREDICT) ---
+  |dL|  in [0,0.002): no
+  ratio in [2,inf) U (0,0.5): yes
+DRAFT P4-invar-dL: MISS
+ledger: NOT mutated (dry-run only; operator copy when ready)
+
+---
+
+**Next (operator):** copy DRAFT HIT/MISS into ledger/docs per [`p4-bc-fill-on-complete.md`](p4-bc-fill-on-complete.md). This file is dry-run only — **no auto-mutate**.
+
