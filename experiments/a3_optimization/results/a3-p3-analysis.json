@@ -1,0 +1,501 @@
+{
+  "measured": {
+    "model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-constant": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/0dewkykj",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 32,
+      "learning_rate": 0.01,
+      "lr_schedule": "constant",
+      "late_n": 12,
+      "late_lambda_max_median": 245.16314737956807,
+      "late_eta_lambda_median": 2.451631473795681,
+      "edge_summary": {
+        "initial": 0.22330664267012829,
+        "crossing": 375,
+        "plateau": 2.547386438768327,
+        "exit": null,
+        "loss_up_before": 0.0,
+        "loss_up_after": 0.40569395017793597
+      }
+    },
+    "model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x0.5": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/93zi9m74",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 32,
+      "learning_rate": 0.01,
+      "lr_schedule": "step750x0.5",
+      "late_n": 12,
+      "late_lambda_max_median": 456.4564233054308,
+      "late_eta_lambda_median": 2.2822821165271536,
+      "edge_summary": {
+        "initial": 0.2233066464687881,
+        "crossing": 375,
+        "plateau": 2.2522658741431467,
+        "exit": null,
+        "loss_up_before": 0.0,
+        "loss_up_after": 0.2669039145907473
+      }
+    },
+    "model-d8-lr0.01-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-step750x2": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/mm964wiy",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 32,
+      "learning_rate": 0.01,
+      "lr_schedule": "step750x2",
+      "late_n": 12,
+      "late_lambda_max_median": 112.26094547811438,
+      "late_eta_lambda_median": 2.2452189095622876,
+      "edge_summary": {
+        "initial": 0.2233066464687881,
+        "crossing": 375,
+        "plateau": 2.713471426902135,
+        "exit": null,
+        "loss_up_before": 0.0,
+        "loss_up_after": 0.4108170310701956
+      }
+    },
+    "model-d8-lr0.003-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/foew12y0",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 64,
+      "learning_rate": 0.003,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 30.987715914514,
+      "post_warmup_eta_lambda_pre_cv": 0.19889601547811386,
+      "threshold_normalized_median": 0.815466208276684
+    },
+    "model-d8-lr0.005-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-constant": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/bd8iewz4",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 32,
+      "learning_rate": 0.005,
+      "lr_schedule": "constant",
+      "late_n": 12,
+      "late_lambda_max_median": 461.96704501111935,
+      "late_eta_lambda_median": 2.309835225055597,
+      "edge_summary": {
+        "initial": 0.11165332133506414,
+        "crossing": 1000,
+        "plateau": 2.309835225055597,
+        "exit": null,
+        "loss_up_before": 0.0,
+        "loss_up_after": 0.374749498997996
+      }
+    },
+    "model-d8-lr0.02-bs32-epochs1500.0-tok32.8K-wd0.0-emb16-nogradclip-b10.0-sgd-constant": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/l32syirp",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 32,
+      "learning_rate": 0.02,
+      "lr_schedule": "constant",
+      "late_n": 12,
+      "late_lambda_max_median": 82.51859500922384,
+      "late_eta_lambda_median": 1.650371900184477,
+      "edge_summary": {
+        "initial": 0.4466132929375762,
+        "crossing": 150,
+        "plateau": 2.918445059603207,
+        "exit": 1125,
+        "loss_up_before": 0.02,
+        "loss_up_after": 0.38950276243093923
+      }
+    },
+    "model-d8-lr0.01-bs16-epochs1500.0-tok16.4K-wd0.0-emb16-nogradclip-b10.0-sgd-constant": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/d5q89y4a",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 16,
+      "learning_rate": 0.01,
+      "lr_schedule": "constant",
+      "late_n": 12,
+      "late_lambda_max_median": 134.99790039180925,
+      "late_eta_lambda_median": 1.3499790039180926,
+      "edge_summary": {
+        "initial": 0.26772504814463816,
+        "crossing": 150,
+        "plateau": 2.6451303751044555,
+        "exit": 975,
+        "loss_up_before": 0.0,
+        "loss_up_after": 0.4020926756352765
+      }
+    },
+    "model-d8-lr0.01-epochs1500.0-tok65.5K-wd0.0-emb16-nogradclip-b10.0-sgd-constant": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/6ziknpel",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 64,
+      "learning_rate": 0.01,
+      "lr_schedule": "constant",
+      "late_n": 12,
+      "late_lambda_max_median": 257.9169134479267,
+      "late_eta_lambda_median": 2.579169134479267,
+      "edge_summary": {
+        "initial": 0.19727987438330938,
+        "crossing": 775,
+        "plateau": 2.529011511308166,
+        "exit": null,
+        "loss_up_before": 0.0,
+        "loss_up_after": 0.36187845303867405
+      }
+    },
+    "model-d8-lr0.01-bs48-epochs1500.0-tok49.2K-wd0.0-emb16-nogradclip-b10.0-sgd-constant": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/ks4yqck9",
+      "kind": "measured",
+      "optimizer": "sgd",
+      "num_sequences": 48,
+      "learning_rate": 0.01,
+      "lr_schedule": "constant",
+      "late_n": 12,
+      "late_lambda_max_median": 258.37860579189703,
+      "late_eta_lambda_median": 2.583786057918971,
+      "edge_summary": {
+        "initial": 0.2069522114638167,
+        "crossing": 575,
+        "plateau": 2.5638912559276146,
+        "exit": null,
+        "loss_up_before": 0.0,
+        "loss_up_after": 0.4004329004329004
+      }
+    },
+    "model-d8-lr0.0015-bs16-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/efpxb73k",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 16,
+      "learning_rate": 0.0015,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 9.077117289111717,
+      "post_warmup_eta_lambda_pre_cv": 2.743886056710319,
+      "threshold_normalized_median": 0.23887150760820303
+    },
+    "model-d8-lr0.003-bs16-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/d8nfj6bd",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 16,
+      "learning_rate": 0.003,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 10.709802847055927,
+      "post_warmup_eta_lambda_pre_cv": 1.1932532089824484,
+      "threshold_normalized_median": 0.2818369170277875
+    },
+    "model-d8-lr0.006-bs16-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/qptpab4h",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 16,
+      "learning_rate": 0.006,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 12.540906236138648,
+      "post_warmup_eta_lambda_pre_cv": 1.342796350977541,
+      "threshold_normalized_median": 0.33002384831943804
+    },
+    "model-d8-lr0.0015-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/0bnchq5s",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 64,
+      "learning_rate": 0.0015,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 28.51634195785767,
+      "post_warmup_eta_lambda_pre_cv": 0.21993048936400095,
+      "threshold_normalized_median": 0.7504300515225701
+    },
+    "model-d8-lr0.006-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/cii0h9ac",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 64,
+      "learning_rate": 0.006,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 32.787749294101346,
+      "post_warmup_eta_lambda_pre_cv": 0.1929486851793168,
+      "threshold_normalized_median": 0.8628355077395089
+    },
+    "model-d8-lr0.0015-bs256-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/ctsr5v3c",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 256,
+      "learning_rate": 0.0015,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 42.50044971647602,
+      "post_warmup_eta_lambda_pre_cv": 0.3692512417363482,
+      "threshold_normalized_median": 1.1184328872756846
+    },
+    "model-d8-lr0.003-bs256-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/2w6bfx1f",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 256,
+      "learning_rate": 0.003,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 46.84168774520339,
+      "post_warmup_eta_lambda_pre_cv": 2.1956706530165286,
+      "threshold_normalized_median": 1.2326759932948257
+    },
+    "model-d8-lr0.006-bs256-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/dspf8k0d",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 256,
+      "learning_rate": 0.006,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 49.52731907796998,
+      "post_warmup_eta_lambda_pre_cv": 0.5220019706518702,
+      "threshold_normalized_median": 1.3033505020518412
+    },
+    "model-d8-lr0.003-epochs0.32-tok614M-warmup0.03125-b10.0-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/fo31av0t",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 64,
+      "learning_rate": 0.003,
+      "beta1": 0.0,
+      "threshold": 2.0,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 14.507258579200894,
+      "post_warmup_eta_lambda_pre_cv": 0.6970369849151326,
+      "threshold_normalized_median": 7.253629289600447
+    },
+    "model-d8-lr0.003-epochs0.32-tok614M-warmup0.03125-b10.5-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/qcsuaio4",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 64,
+      "learning_rate": 0.003,
+      "beta1": 0.5,
+      "threshold": 6.0,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 17.45379890154843,
+      "post_warmup_eta_lambda_pre_cv": 0.6116198334695868,
+      "threshold_normalized_median": 2.908966483591405
+    },
+    "model-d8-lr0.003-bs32-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/osyfo9up",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 32,
+      "learning_rate": 0.003,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 17.955282159927247,
+      "post_warmup_eta_lambda_pre_cv": 0.31898753663514456,
+      "threshold_normalized_median": 0.47250742526124323
+    },
+    "model-d8-lr0.003-bs128-epochs0.32-tok614M-warmup0.03125-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/fzy8r9n1",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 128,
+      "learning_rate": 0.003,
+      "beta1": 0.9,
+      "threshold": 38.00000000000001,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 38.077694338671535,
+      "post_warmup_eta_lambda_pre_cv": 0.1308368028287058,
+      "threshold_normalized_median": 1.002044587859777
+    },
+    "model-d8-lr0.003-epochs0.32-tok614M-warmup0.03125-b10.99-wsd0.0": {
+      "state": "finished",
+      "url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/i8sxy3qh",
+      "kind": "measured",
+      "optimizer": "adamw",
+      "batch_size": 64,
+      "learning_rate": 0.003,
+      "beta1": 0.99,
+      "threshold": 397.99999999999966,
+      "post_warmup_n": 25,
+      "post_warmup_eta_lambda_pre_median": 66.78486695501348,
+      "post_warmup_eta_lambda_pre_cv": 4.888548277103624,
+      "threshold_normalized_median": 0.16780117325380287
+    }
+  },
+  "incomplete": {},
+  "fits": {
+    "full_batch_lambda_vs_lr_n32": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 0.6895099856105988,
+      "exponent": -1.2424993880858874,
+      "r2_log_space": 0.9772370259467391,
+      "n": 3,
+      "adjacent_pair_exponents": [
+        -0.9140478076859124,
+        -1.5709509684858591
+      ],
+      "adjacent_pair_exponent_range": [
+        -1.5709509684858591,
+        -0.9140478076859124
+      ]
+    },
+    "adam_product_vs_lr_batch16": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 41.394255463990916,
+      "exponent": 0.2331677501261936,
+      "r2_log_space": 0.9998173833684925,
+      "n": 3,
+      "adjacent_pair_exponents": [
+        0.23862581799515437,
+        0.227709682257233
+      ],
+      "adjacent_pair_exponent_range": [
+        0.227709682257233,
+        0.23862581799515437
+      ]
+    },
+    "adam_product_vs_lr_batch32": null,
+    "adam_product_vs_lr_batch64": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 55.1245575116145,
+      "exponent": 0.1006839726349963,
+      "r2_log_space": 0.987994550715572,
+      "n": 3,
+      "adjacent_pair_exponents": [
+        0.11990749221722112,
+        0.08146045305277223
+      ],
+      "adjacent_pair_exponent_range": [
+        0.08146045305277223,
+        0.11990749221722112
+      ]
+    },
+    "adam_product_vs_lr_batch128": null,
+    "adam_product_vs_lr_batch256": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 87.71661335209379,
+      "exponent": 0.1103732113116692,
+      "r2_log_space": 0.9760568887221978,
+      "n": 3,
+      "adjacent_pair_exponents": [
+        0.14031495114540823,
+        0.0804314714779308
+      ],
+      "adjacent_pair_exponent_range": [
+        0.0804314714779308,
+        0.14031495114540823
+      ]
+    },
+    "adam_product_vs_batch_lr0.0015": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 2.1952133139083214,
+      "exponent": 0.556793000715278,
+      "r2_log_space": 0.9278391149191099,
+      "n": 3,
+      "adjacent_pair_exponents": [
+        0.8257414110914572,
+        0.28784459033909915
+      ],
+      "adjacent_pair_exponent_range": [
+        0.28784459033909915,
+        0.8257414110914572
+      ]
+    },
+    "adam_product_vs_batch_lr0.003": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 2.756671238968972,
+      "exponent": 0.5342260071427193,
+      "r2_log_space": 0.9494953966641473,
+      "n": 5,
+      "adjacent_pair_exponents": [
+        0.7454764022704381,
+        0.7872880941345429,
+        0.29724970526991484,
+        0.29884693433647047
+      ],
+      "adjacent_pair_exponent_range": [
+        0.29724970526991484,
+        0.7872880941345429
+      ]
+    },
+    "adam_product_vs_batch_lr0.006": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 3.4795354576700985,
+      "exponent": 0.49539573130801623,
+      "r2_log_space": 0.9495107994463579,
+      "n": 3,
+      "adjacent_pair_exponents": [
+        0.6932576336002602,
+        0.29753382901577197
+      ],
+      "adjacent_pair_exponent_range": [
+        0.29753382901577197,
+        0.6932576336002602
+      ]
+    },
+    "adam_product_vs_momentum_threshold": {
+      "kind": "fitted",
+      "form": "y = coefficient * x ** exponent",
+      "coefficient": 11.010432659423959,
+      "exponent": 0.29514552153962287,
+      "r2_log_space": 0.9911663230934818,
+      "n": 4,
+      "adjacent_pair_exponents": [
+        0.16831070716682586,
+        0.3109899434419463,
+        0.32691762648323813
+      ],
+      "adjacent_pair_exponent_range": [
+        0.16831070716682586,
+        0.32691762648323813
+      ]
+    }
+  },
+  "counts": {
+    "expected": 22,
+    "measured": 22,
+    "incomplete": 0
+  }
+}

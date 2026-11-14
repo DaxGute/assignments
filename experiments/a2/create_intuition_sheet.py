@@ -13,12 +13,13 @@ mpl.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 
-from experiments.a2.helpers.paths import OUTPUT_ROOT
+from experiments.a2.helpers.paths import PACKAGE_ROOT
 
-
-SOURCE = OUTPUT_ROOT / "intuition_sheet.md"
-TARGET = OUTPUT_ROOT / "intuition_sheet_printable.pdf"
-DETAILED_TARGET = OUTPUT_ROOT / "intuition_sheet_problem_by_problem.pdf"
+# Legacy renderer. Active hand-ins are deliverables/{a2-assignment-report,a2-study-pack}.pdf.
+ARCHIVE = PACKAGE_ROOT / "deliverables" / "archive"
+SOURCE = ARCHIVE / "intuition_sheet.md"
+TARGET = ARCHIVE / "intuition_sheet_printable.pdf"
+DETAILED_TARGET = ARCHIVE / "intuition_sheet_problem_by_problem.pdf"
 PAGE_SIZE = (8.5, 11)
 LEFT = 0.075
 RIGHT = 0.94

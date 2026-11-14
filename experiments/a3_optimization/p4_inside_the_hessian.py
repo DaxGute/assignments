@@ -66,6 +66,17 @@ RANDOM_ENERGY_JOBS = [
 # multiplies named parameters by constants before measuring; `tensors` reports the top
 # eigenvalue of each named tensor's own block, with its RMS and gradient norm.
 FINAL = {"extremes": True, "families": True}
+ATTN_GAUGE_V4 = {
+    **{
+        f"model.layers.{layer}.self_attn.v_proj.weight": 4.0
+        for layer in range(8)
+    },
+    **{
+        f"model.layers.{layer}.self_attn.o_proj.weight": 0.25
+        for layer in range(8)
+    },
+}
+ATTN_GAUGE_O4 = {name: 1.0 / scale for name, scale in ATTN_GAUGE_V4.items()}
 
 RESCALE_JOBS = [
     # Already MEASURED — keep so fetch is idempotent
@@ -101,13 +112,87 @@ RESCALE_JOBS = [
          "scale": {"lm_head.weight": 2.0},
          "tensors": ["lm_head.weight"],
      }},
+
+    # Exact function-preserving attention gauges: attention is linear in V
+    # before O, so V*c and O/c leave logits unchanged while moving curvature.
+    {"name": "b-rescale-attn-v4-o0.25",
+     "measure": {
+         "run": "adamw",
+         "step": FINAL_STEP,
+         **FINAL,
+         "scale": ATTN_GAUGE_V4,
+         "tensors": [],
+     }},
+    {"name": "b-rescale-attn-v0.25-o4",
+     "measure": {
+         "run": "adamw",
+         "step": FINAL_STEP,
+         **FINAL,
+         "scale": ATTN_GAUGE_O4,
+         "tensors": [],
+     }},
 ]
 
 # Part (b): training changes. A run takes about 11 minutes on an H200 (a little more on
 # an H100); measuring its final checkpoint about 12.
-RUNS = [
-    # TrainConfig(<setting>=<value>, wandb_tags=(EXPERIMENT_KEY,)),
+INITIAL_GAUGE_RUNS = [
+    # Exact-gauge initializations preserve the seed-42 initial function but alter
+    # AdamW's coordinate system throughout training. Predictions were locked in
+    # the ledger before launch under P4-b-train-2x.
+    TrainConfig(
+        model_builder=(
+            "experiments.a3_optimization.p4_training_interventions:"
+            "GaugeInitializedLM"
+        ),
+        model_builder_kwargs={"gauge_factor": factor},
+        run_name_suffix=f"p4-gauge-v{factor:g}",
+        wandb_tags=(EXPERIMENT_KEY, "p4-b-train-gauge"),
+    )
+    for factor in (0.25, 0.5, 2.0, 4.0)
 ]
+
+PERSISTENT_GAUGE_RUNS = [
+    TrainConfig(
+        model_builder=(
+            "experiments.a3_optimization.p4_training_interventions:"
+            "PersistentGaugeLM"
+        ),
+        model_builder_kwargs={"gauge_factor": 0.25},
+        run_name_suffix="p4-persistent-gauge-v0.25",
+        wandb_tags=(EXPERIMENT_KEY, "p4-b-train-persistent-gauge"),
+    )
+]
+
+PERSISTENT_HEAD_GAUGE_RUNS = [
+    TrainConfig(
+        model_builder=(
+            "experiments.a3_optimization.p4_training_interventions:"
+            "PersistentHeadGaugeLM"
+        ),
+        model_builder_kwargs={"gauge_factor": 0.25},
+        run_name_suffix="p4-persistent-head-gauge-v0.25",
+        wandb_tags=(EXPERIMENT_KEY, "p4-b-train-persistent-head-gauge"),
+    )
+]
+
+FROZEN_NORM_GAUGE_RUNS = [
+    TrainConfig(
+        model_builder=(
+            "experiments.a3_optimization.p4_training_interventions:"
+            "FrozenNormPersistentGaugeLM"
+        ),
+        model_builder_kwargs={"gauge_factor": 0.25},
+        run_name_suffix="p4-frozen-norm-gauge-v0.25",
+        wandb_tags=(EXPERIMENT_KEY, "p4-b-train-frozen-norm-gauge"),
+    )
+]
+
+RUNS = (
+    INITIAL_GAUGE_RUNS
+    + PERSISTENT_GAUGE_RUNS
+    + FROZEN_NORM_GAUGE_RUNS
+    + PERSISTENT_HEAD_GAUGE_RUNS
+)
 
 FINAL_JOBS = [
     {"name": f"b-final-{training_run_name(config)}",
@@ -124,13 +209,18 @@ START = {"run": "sgdm", "step": 1526, "k": 10, "steps": 300, "refresh": 25,
 SUBSPACE_JOBS = [
     {"name": f"c-{arm}", "continue": {**START, "transform": arm}}
     for arm in ("full", "top", "removed")
+] + [
+    {
+        "name": f"c-k30-{arm}",
+        "continue": {**START, "k": 30, "transform": arm},
+    }
+    for arm in ("top", "removed")
 ]
 
 
 # Part (a) baseline for block-structure: see RANDOM_ENERGY_JOBS / stage a-random-energy.
 # H.hvp (hessian.ProbeHessian) applies H to any vector you construct.
 # Part (b) hand-rescale arms: see RESCALE_JOBS (head x0.25 / x0.5 / x2).
-# TODO: Part (b) training changes in RUNS if needed for P4-b-train-2x.
 # TODO: Part (c): vary what you think decides the outcome, e.g.
 # SUBSPACE_JOBS.append({"name": "c-removed-<label>", "continue": {**START, "transform": "removed", ...}})
 # Options: k, refresh, steps, lr_scale (multiplies the run's schedule), reset_momentum,

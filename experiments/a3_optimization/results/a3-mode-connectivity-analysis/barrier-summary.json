@@ -1,0 +1,32 @@
+{
+  "kind": "measured",
+  "source": "a3_optimization/results/a3-mode-connectivity.json",
+  "cells": 30,
+  "barrier_min": -0.1160578727722168,
+  "barrier_max": 0.6237311363220215,
+  "barrier_mean": -0.033404584725697836,
+  "averaging_works_count": 26,
+  "criterion": "barrier <= 0.01",
+  "failures": [
+    {
+      "x": 0,
+      "y": 250,
+      "barrier": 0.21725821495056152
+    },
+    {
+      "x": 0,
+      "y": 500,
+      "barrier": 0.6237311363220215
+    },
+    {
+      "x": 50,
+      "y": 500,
+      "barrier": 0.12994158267974854
+    },
+    {
+      "x": 100,
+      "y": 500,
+      "barrier": 0.03193056583404541
+    }
+  ]
+}

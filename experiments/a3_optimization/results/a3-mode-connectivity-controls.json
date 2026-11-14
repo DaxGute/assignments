@@ -1,0 +1,134 @@
+{
+  "baseline": {
+    "cell": {
+      "x": 0,
+      "y": 500,
+      "batch_size": 64,
+      "learning_rate": 0.003
+    },
+    "barrier": 0.6237311363220215,
+    "kind": "measured"
+  },
+  "arms": {
+    "lr-half": {
+      "barrier": 0.29585134983062744,
+      "delta_barrier_vs_baseline": 0.32787978649139404,
+      "endpoint_mean_loss": 3.788737177848816,
+      "ensemble_loss": 3.690164757453568,
+      "ensemble_avg_gap": 0.39442377022587527,
+      "row": {
+        "a": "/root/data/ckpts/model-d8-lr0.0015-tok614M-wsd0.0-order1-stop500/step_500.pt",
+        "b": "/root/data/ckpts/model-d8-lr0.0015-tok614M-wsd0.0-order2-stop500/step_500.pt",
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "interpolation": [
+          3.7879745960235596,
+          3.8624064922332764,
+          4.084588527679443,
+          3.8604111671447754,
+          3.7894997596740723
+        ],
+        "ensemble": 3.690164757453568,
+        "run_a": "model-d8-lr0.0015-tok614M-wsd0.0-order1-stop500",
+        "step_a": 500,
+        "run_b": "model-d8-lr0.0015-tok614M-wsd0.0-order2-stop500",
+        "step_b": 500
+      }
+    },
+    "lr-double": {
+      "barrier": 1.24593186378479,
+      "delta_barrier_vs_baseline": -0.6222007274627686,
+      "endpoint_mean_loss": 3.8197171688079834,
+      "ensemble_loss": 3.711508507453568,
+      "ensemble_avg_gap": 1.3541405251392056,
+      "row": {
+        "a": "/root/data/ckpts/model-d8-lr0.006-tok614M-wsd0.0-order1-stop500/step_500.pt",
+        "b": "/root/data/ckpts/model-d8-lr0.006-tok614M-wsd0.0-order2-stop500/step_500.pt",
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "interpolation": [
+          3.813687324523926,
+          4.1807684898376465,
+          5.065649032592773,
+          4.136460304260254,
+          3.825747013092041
+        ],
+        "ensemble": 3.711508507453568,
+        "run_a": "model-d8-lr0.006-tok614M-wsd0.0-order1-stop500",
+        "step_a": 500,
+        "run_b": "model-d8-lr0.006-tok614M-wsd0.0-order2-stop500",
+        "step_b": 500
+      }
+    },
+    "batch2x-matched-tokens": {
+      "barrier": 0.3304867744445801,
+      "delta_barrier_vs_baseline": 0.2932443618774414,
+      "endpoint_mean_loss": 4.1053900718688965,
+      "ensemble_loss": 4.003759714076247,
+      "ensemble_avg_gap": 0.4321171322372299,
+      "row": {
+        "a": "/root/data/ckpts/model-d8-lr0.003-bs128-tok614M-wsd0.0-order1-stop250/step_250.pt",
+        "b": "/root/data/ckpts/model-d8-lr0.003-bs128-tok614M-wsd0.0-order2-stop250/step_250.pt",
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "interpolation": [
+          4.122313976287842,
+          4.207557201385498,
+          4.435876846313477,
+          4.183592796325684,
+          4.088466167449951
+        ],
+        "ensemble": 4.003759714076247,
+        "run_a": "model-d8-lr0.003-bs128-tok614M-wsd0.0-order1-stop250",
+        "step_a": 250,
+        "run_b": "model-d8-lr0.003-bs128-tok614M-wsd0.0-order2-stop250",
+        "step_b": 250
+      }
+    },
+    "cos-branch": {
+      "barrier": 0.4740642309188843,
+      "delta_barrier_vs_baseline": 0.1496669054031372,
+      "endpoint_mean_loss": 3.8213764429092407,
+      "ensemble_loss": 3.751747036901271,
+      "ensemble_avg_gap": 0.5436936369268541,
+      "row": {
+        "a": "/root/data/ckpts/model-d8-lr0.003-tok32.8M-cos-warmupsteps94-order1-stop500/step_500.pt",
+        "b": "/root/data/ckpts/model-d8-lr0.003-tok32.8M-cos-warmupsteps94-order2-stop500/step_500.pt",
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "interpolation": [
+          3.8591487407684326,
+          4.013796806335449,
+          4.295440673828125,
+          3.9550371170043945,
+          3.783604145050049
+        ],
+        "ensemble": 3.751747036901271,
+        "run_a": "model-d8-lr0.003-tok32.8M-cos-warmupsteps94-order1-stop500",
+        "step_a": 500,
+        "run_b": "model-d8-lr0.003-tok32.8M-cos-warmupsteps94-order2-stop500",
+        "step_b": 500
+      }
+    }
+  }
+}

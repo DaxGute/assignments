@@ -40,6 +40,28 @@ def _p3_runs():
     return list(RUNS)
 
 
+def _p3_membership(index, config):
+    if index == 0:
+        return "a", "clean-edge"
+    if index == 1:
+        return "a", "eta-half"
+    if index == 2:
+        return "a", "eta-double"
+    if index == 3:
+        return "b", "adamw-base"
+    if config.optimizer_name == "sgd":
+        role = (
+            f"full-lr-{config.learning_rate}"
+            if config.learning_rate != 0.01
+            else f"full-n-{config.num_train_sequences}"
+        )
+    elif config.beta1 != 0.9:
+        role = f"mb-beta1-{config.beta1}"
+    else:
+        role = f"mb-bs{config.batch_size}-lr{config.learning_rate}"
+    return "c", role
+
+
 def build_plan():
     jobs = []
     for config in _p2_runs():
@@ -61,17 +83,17 @@ def build_plan():
             }
         )
     for index, config in enumerate(_p3_runs()):
-        subpart = "a" if getattr(config, "optimizer_name", "") == "sgd" else "b"
+        subpart, role = _p3_membership(index, config)
         record = membership(
             problem="3",
             subpart=subpart,
             family="edge_of_stability",
-            config_role="starter",
+            config_role=role,
             batch=BATCH,
         )
         jobs.append(
             {
-                "label": f"a3-b2-p3-{index}-{config.optimizer_name}",
+                "label": f"a3-b2-p3-{subpart}-{role}",
                 "track": "p3",
                 "kind": "lm",
                 "config": config,
@@ -84,7 +106,7 @@ def build_plan():
         "jobs": jobs,
         "notes": [
             "P2 and P3 are independent; launch both when GPU budget allows.",
-            "Starter RUNS are the required core; expand p3 exploration in the starter before Batch 2 execute if aiming for ~22 runs.",
+            "P3 contains 18 unique preregistered runs across required a/b and exploratory c.",
             "Counterfactuals stay out of this required manifest (Batch 3 gated).",
         ],
     }
@@ -109,7 +131,7 @@ def write_manifest(plan, directory=None):
     json_path.write_text(json.dumps(payload, indent=2) + "\n")
     fields = ("label", "track", "problem", "subpart", "family", "config_role")
     with csv_path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for job in public:
             primary = job["memberships"][0]
@@ -135,7 +157,7 @@ def format_operator_summary(plan, statuses=None) -> str:
         "",
         "Prerequisites: Batch 1 not required (independent)",
         f"P2 jobs: {p2}",
-        f"P3 jobs: {p3} (expand starter for full ~22-run exploration)",
+        f"P3 jobs: {p3} (required a/b plus preregistered c exploration)",
         "",
     ]
     for note in plan["notes"]:

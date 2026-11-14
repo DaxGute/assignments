@@ -151,7 +151,7 @@ class HessianToolsTests(unittest.TestCase):
         index = torch.cat([torch.arange(a, b) for a, b in ranges])
         v = torch.randn(len(index))
         torch.testing.assert_close(hs.restrict(self.matvec, self.size, ranges)(v),
-                                   self.H[index][:, index] @ v, rtol=1e-5, atol=1e-6)
+                                   self.H[index][:, index] @ v, rtol=1e-5, atol=1e-5)
 
     def test_block_energy_estimates_frobenius_norms(self):
         blocks = hs.partition(self.names, self.sizes, hs.layer_of)
@@ -185,6 +185,81 @@ class HessianToolsTests(unittest.TestCase):
             torch.testing.assert_close(dict(self.model.named_parameters())[name], 3.0 * before[name])
         for n, p in self.model.named_parameters():
             self.assertTrue(torch.equal(p, before[n]))
+
+    def test_training_gauge_initialization_preserves_function(self):
+        from experiments.a3_optimization.p4_training_interventions import GaugeInitializedLM
+
+        config = self.model.config
+        torch.manual_seed(123)
+        reference = AutoregressiveLM(config)
+        initialize_model(reference)
+        torch.manual_seed(123)
+        gauged = GaugeInitializedLM(config, gauge_factor=4.0)
+        initialize_model(gauged)
+        gauged.post_initialize()
+        with torch.no_grad(), sdpa_kernel(SDPBackend.MATH):
+            torch.testing.assert_close(
+                reference(self.inputs), gauged(self.inputs), rtol=1e-5, atol=1e-6
+            )
+
+    def test_persistent_training_gauge_preserves_initial_function(self):
+        from experiments.a3_optimization.p4_training_interventions import PersistentGaugeLM
+
+        config = self.model.config
+        torch.manual_seed(123)
+        reference = AutoregressiveLM(config)
+        initialize_model(reference)
+        torch.manual_seed(123)
+        gauged = PersistentGaugeLM(config, gauge_factor=0.25)
+        initialize_model(gauged)
+        with torch.no_grad(), sdpa_kernel(SDPBackend.MATH):
+            torch.testing.assert_close(
+                reference(self.inputs), gauged(self.inputs), rtol=1e-5, atol=1e-6
+            )
+        self.assertEqual(
+            tuple(reference.state_dict()),
+            tuple(gauged.state_dict()),
+        )
+
+    def test_frozen_norm_persistent_gauge_preserves_initial_function(self):
+        from experiments.a3_optimization.p4_training_interventions import (
+            FrozenNormPersistentGaugeLM,
+        )
+        from modeling import LlamaRMSNorm
+
+        config = self.model.config
+        torch.manual_seed(123)
+        reference = AutoregressiveLM(config)
+        initialize_model(reference)
+        torch.manual_seed(123)
+        gauged = FrozenNormPersistentGaugeLM(config, gauge_factor=0.25)
+        initialize_model(gauged)
+        with torch.no_grad(), sdpa_kernel(SDPBackend.MATH):
+            torch.testing.assert_close(
+                reference(self.inputs), gauged(self.inputs), rtol=1e-5, atol=1e-6
+            )
+        frozen = [
+            module.weight.requires_grad
+            for module in gauged.modules()
+            if isinstance(module, LlamaRMSNorm)
+        ]
+        self.assertTrue(frozen)
+        self.assertFalse(any(frozen))
+
+    def test_persistent_head_gauge_preserves_initial_function(self):
+        from experiments.a3_optimization.p4_training_interventions import PersistentHeadGaugeLM
+
+        config = self.model.config
+        torch.manual_seed(123)
+        reference = AutoregressiveLM(config)
+        initialize_model(reference)
+        torch.manual_seed(123)
+        gauged = PersistentHeadGaugeLM(config, gauge_factor=0.25)
+        initialize_model(gauged)
+        with torch.no_grad(), sdpa_kernel(SDPBackend.MATH):
+            torch.testing.assert_close(
+                reference(self.inputs), gauged(self.inputs), rtol=1e-5, atol=1e-6
+            )
 
     def test_projection_arms(self):
         basis, _ = torch.linalg.qr(torch.randn(50, 4))

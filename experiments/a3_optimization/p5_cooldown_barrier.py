@@ -36,7 +36,9 @@ PARENT_RUNS = {
 }
 # Arm R — Batch 1 MEASURED cell (0,500); not a new measurement.
 B_R = 0.6237
-L_R_MEAN = None  # optional; filled from Batch 1 JSON by operator if needed for dL
+# Exact endpoint mean from the retained Batch 1 (x=0, y=500) JSON row:
+# (3.751072645187378 + 3.748309373855591) / 2.
+L_R_MEAN = 3.7496910095214844
 EXPERIMENT_KEY = "a3-p5-exploratory"
 RESULTS_PATH = Path(__file__).resolve().parent / "results" / "a3-p5-cooldown-barrier.json"
 LEDGER_IDS = (

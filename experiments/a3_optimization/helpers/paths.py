@@ -1,4 +1,9 @@
-"""Output locations for A3 figures and saved results, organized by problem."""
+"""Result / plot locations for A3, kept inside the assignment package.
+
+Hand-in PDFs live under ``experiments/a3_optimization/deliverables/``.
+Measured JSON and analysis plots live under ``experiments/a3_optimization/results/``.
+Do not write a top-level repo ``outputs/`` tree.
+"""
 
 from pathlib import Path
 
@@ -6,29 +11,25 @@ from pathlib import Path
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = Path(__file__).resolve().parents[3]
 MANIFEST_DIR = PACKAGE_ROOT / "manifests"
-# Package-local plots (gitignored like starter results/) plus repo outputs/.
 PACKAGE_PLOTS = PACKAGE_ROOT / "plots"
 STARTER_RESULTS = PACKAGE_ROOT / "results"
-OUTPUT_ROOT = REPO_ROOT / "outputs" / "a3"
+# Legacy name kept for callers; now package-local under results/.
+OUTPUT_ROOT = STARTER_RESULTS
 
 
 def problem_root(problem: str) -> Path:
-    """``outputs/a3/p1`` … ``outputs/a3/p5`` (accepts ``1``, ``p1``, ``P1``)."""
-    text = str(problem).strip().lower()
-    if text.startswith("p"):
-        text = text[1:]
-    if text not in {"1", "2", "3", "4", "5"}:
-        raise ValueError(f"problem must be 1–5, got {problem!r}")
+    """``results/p1`` … ``results/p5`` (accepts ``1``, ``p1``, ``P1``)."""
+    text = _problem_id(problem)
     path = OUTPUT_ROOT / f"p{text}"
     path.mkdir(parents=True, exist_ok=True)
     return path
 
 
 def plot_directory(problem: str, *parts: str, counterfactual: bool = False) -> Path:
-    """Plots under ``experiments/a3_optimization/plots/pN/`` and ``outputs/a3/plots/pN/``.
+    """Plots under ``experiments/a3_optimization/plots/pN/``.
 
-    Returns the package-local path (starter-adjacent). Also ensures the mirrored
-    ``outputs/a3/plots/pN/`` directory exists. Counterfactuals nest under the problem.
+    Also ensures a mirror under ``results/plots/pN/`` for analysis dumps.
+    Counterfactuals nest under the problem.
     """
     text = _problem_id(problem)
     package = PACKAGE_PLOTS / f"p{text}"

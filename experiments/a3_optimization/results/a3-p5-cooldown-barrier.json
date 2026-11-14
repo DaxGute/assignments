@@ -14,7 +14,9 @@
   "G_cool": 0.8391239460323332,
   "G_const": 0.8325204254702272,
   "dB": -0.14600493793487546,
-  "dL_endpoints": null,
+  "L_R_endpoint_mean": 3.7496910095214844,
+  "L_C_endpoint_mean": 3.5674904584884644,
+  "dL_endpoints": 0.18220055103302002,
   "emergent": "true-modes",
   "cool_pair": [
     [

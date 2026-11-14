@@ -77,6 +77,10 @@ def minibatch(batch_size=64, **changes):
 # Part (a): full-batch training.
 FULL_BATCH_RUNS = [
     full_batch(32, 1500, learning_rate=0.01),  # (a) i: the clean case
+    # (a) ii: intervene only after the clean run has reached the edge. These
+    # preserve the original 1,500-update budget and measurement cadence.
+    full_batch(32, 1500, learning_rate=0.01, lr_schedule="step750x0.5"),
+    full_batch(32, 1500, learning_rate=0.01, lr_schedule="step750x2"),
 ]
 
 # Part (b): minibatch training.
@@ -84,13 +88,46 @@ MINIBATCH_RUNS = [
     minibatch(),  # (b): the base recipe
 ]
 
-RUNS = FULL_BATCH_RUNS + MINIBATCH_RUNS
+# Part (c): 18 exploration runs (22 total with parts a/b), matching the handout.
+# The grid varies only learning rate, batch size, sample count, and beta1.
+# Quantitative predictions are locked under P3-c-* in the prediction ledger.
+FULL_BATCH_EXPLORATION_RUNS = [
+    full_batch(32, 1500, learning_rate=0.005),
+    full_batch(32, 1500, learning_rate=0.02),
+    full_batch(16, 1500, learning_rate=0.01),
+    full_batch(64, 1500, learning_rate=0.01),
+    # Interpolate the observed N=32/64 sustained-edge regime and resolve the
+    # preregistered N=48 quiz prediction.
+    full_batch(48, 1500, learning_rate=0.01),
+]
 
+MINIBATCH_GRID_RUNS = [
+    minibatch(batch_size=batch_size, learning_rate=learning_rate)
+    for batch_size in (16, 64, 256)
+    for learning_rate in (0.0015, 0.003, 0.006)
+    if (batch_size, learning_rate) != (64, 0.003)
+]
 
-# TODO: Part (a) ii: halve and double the learning rate mid-run
-# (lr_schedule="step750x0.5" and "step750x2").
-# TODO: Part (c): your own hyperparameter exploration. Both helpers take any TrainConfig
-# override, e.g. minibatch(batch_size=256) or minibatch(learning_rate=1e-3).
+MOMENTUM_RUNS = [
+    minibatch(beta1=beta1)
+    for beta1 in (0.0, 0.5)
+]
+
+INTERPOLATION_RUNS = [
+    # Locate the strong batch-size transition between the original powers of four.
+    minibatch(batch_size=32, learning_rate=0.003),
+    minibatch(batch_size=128, learning_rate=0.003),
+    # Test whether the weak empirical threshold exponent survives near beta1=1.
+    minibatch(beta1=0.99),
+]
+
+EXPLORATION_RUNS = (
+    FULL_BATCH_EXPLORATION_RUNS
+    + MINIBATCH_GRID_RUNS
+    + MOMENTUM_RUNS
+    + INTERPOLATION_RUNS
+)
+RUNS = FULL_BATCH_RUNS + MINIBATCH_RUNS + EXPLORATION_RUNS
 
 
 def main():

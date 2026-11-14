@@ -2,168 +2,7 @@
   "batch": "batch2",
   "jobs": [
     {
-      "label": "a3-b2-p2-wsd0.0",
-      "track": "p2",
-      "kind": "lm",
-      "tags": [
-        "a3",
-        "batch2",
-        "p2",
-        "p2a",
-        "river-valley",
-        "wsd0.0"
-      ],
-      "memberships": [
-        {
-          "assignment": "a3",
-          "batch": "batch2",
-          "problem": "2",
-          "subpart": "a",
-          "family": "river_valley",
-          "config_role": "wsd0.0"
-        }
-      ]
-    },
-    {
-      "label": "a3-b2-p2-linear",
-      "track": "p2",
-      "kind": "lm",
-      "tags": [
-        "a3",
-        "batch2",
-        "p2",
-        "p2a",
-        "river-valley",
-        "linear"
-      ],
-      "memberships": [
-        {
-          "assignment": "a3",
-          "batch": "batch2",
-          "problem": "2",
-          "subpart": "a",
-          "family": "river_valley",
-          "config_role": "linear"
-        }
-      ]
-    },
-    {
-      "label": "a3-b2-p2-cos",
-      "track": "p2",
-      "kind": "lm",
-      "tags": [
-        "a3",
-        "batch2",
-        "p2",
-        "p2a",
-        "river-valley",
-        "cos"
-      ],
-      "memberships": [
-        {
-          "assignment": "a3",
-          "batch": "batch2",
-          "problem": "2",
-          "subpart": "a",
-          "family": "river_valley",
-          "config_role": "cos"
-        }
-      ]
-    },
-    {
-      "label": "a3-b2-p2-wsd0.2",
-      "track": "p2",
-      "kind": "lm",
-      "tags": [
-        "a3",
-        "batch2",
-        "p2",
-        "p2a",
-        "river-valley",
-        "wsd0.2"
-      ],
-      "memberships": [
-        {
-          "assignment": "a3",
-          "batch": "batch2",
-          "problem": "2",
-          "subpart": "a",
-          "family": "river_valley",
-          "config_role": "wsd0.2"
-        }
-      ]
-    },
-    {
-      "label": "a3-b2-p2-wsd0.2",
-      "track": "p2",
-      "kind": "lm",
-      "tags": [
-        "a3",
-        "batch2",
-        "p2",
-        "p2a",
-        "river-valley",
-        "wsd0.2"
-      ],
-      "memberships": [
-        {
-          "assignment": "a3",
-          "batch": "batch2",
-          "problem": "2",
-          "subpart": "a",
-          "family": "river_valley",
-          "config_role": "wsd0.2"
-        }
-      ]
-    },
-    {
-      "label": "a3-b2-p2-invsqrt",
-      "track": "p2",
-      "kind": "lm",
-      "tags": [
-        "a3",
-        "batch2",
-        "p2",
-        "p2a",
-        "river-valley",
-        "invsqrt"
-      ],
-      "memberships": [
-        {
-          "assignment": "a3",
-          "batch": "batch2",
-          "problem": "2",
-          "subpart": "a",
-          "family": "river_valley",
-          "config_role": "invsqrt"
-        }
-      ]
-    },
-    {
-      "label": "a3-b2-p2-sgdr2000",
-      "track": "p2",
-      "kind": "lm",
-      "tags": [
-        "a3",
-        "batch2",
-        "p2",
-        "p2a",
-        "river-valley",
-        "sgdr2000"
-      ],
-      "memberships": [
-        {
-          "assignment": "a3",
-          "batch": "batch2",
-          "problem": "2",
-          "subpart": "a",
-          "family": "river_valley",
-          "config_role": "sgdr2000"
-        }
-      ]
-    },
-    {
-      "label": "a3-b2-p3-0-sgd",
+      "label": "a3-b2-p3-a-clean-edge",
       "track": "p3",
       "kind": "lm",
       "tags": [
@@ -172,7 +11,7 @@
         "p3",
         "p3a",
         "edge-of-stability",
-        "starter"
+        "clean-edge"
       ],
       "memberships": [
         {
@@ -181,12 +20,58 @@
           "problem": "3",
           "subpart": "a",
           "family": "edge_of_stability",
-          "config_role": "starter"
+          "config_role": "clean-edge"
         }
       ]
     },
     {
-      "label": "a3-b2-p3-1-adamw",
+      "label": "a3-b2-p3-a-eta-half",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3a",
+        "edge-of-stability",
+        "eta-half"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "a",
+          "family": "edge_of_stability",
+          "config_role": "eta-half"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-a-eta-double",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3a",
+        "edge-of-stability",
+        "eta-double"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "a",
+          "family": "edge_of_stability",
+          "config_role": "eta-double"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-b-adamw-base",
       "track": "p3",
       "kind": "lm",
       "tags": [
@@ -195,7 +80,7 @@
         "p3",
         "p3b",
         "edge-of-stability",
-        "starter"
+        "adamw-base"
       ],
       "memberships": [
         {
@@ -204,14 +89,336 @@
           "problem": "3",
           "subpart": "b",
           "family": "edge_of_stability",
-          "config_role": "starter"
+          "config_role": "adamw-base"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-full-lr-0.005",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "full-lr-0.005"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "full-lr-0.005"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-full-lr-0.02",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "full-lr-0.02"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "full-lr-0.02"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-full-n-16",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "full-n-16"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "full-n-16"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-full-n-64",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "full-n-64"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "full-n-64"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs16-lr0.0015",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs16-lr0.0015"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs16-lr0.0015"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs16-lr0.003",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs16-lr0.003"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs16-lr0.003"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs16-lr0.006",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs16-lr0.006"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs16-lr0.006"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs64-lr0.0015",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs64-lr0.0015"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs64-lr0.0015"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs64-lr0.006",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs64-lr0.006"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs64-lr0.006"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs256-lr0.0015",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs256-lr0.0015"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs256-lr0.0015"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs256-lr0.003",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs256-lr0.003"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs256-lr0.003"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-bs256-lr0.006",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-bs256-lr0.006"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-bs256-lr0.006"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-beta1-0.0",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-beta1-0.0"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-beta1-0.0"
+        }
+      ]
+    },
+    {
+      "label": "a3-b2-p3-c-mb-beta1-0.5",
+      "track": "p3",
+      "kind": "lm",
+      "tags": [
+        "a3",
+        "batch2",
+        "p3",
+        "p3c",
+        "edge-of-stability",
+        "mb-beta1-0.5"
+      ],
+      "memberships": [
+        {
+          "assignment": "a3",
+          "batch": "batch2",
+          "problem": "3",
+          "subpart": "c",
+          "family": "edge_of_stability",
+          "config_role": "mb-beta1-0.5"
         }
       ]
     }
   ],
   "notes": [
     "P2 and P3 are independent; launch both when GPU budget allows.",
-    "Starter RUNS are the required core; expand p3 exploration in the starter before Batch 2 execute if aiming for ~22 runs.",
+    "P3 contains 18 unique preregistered runs across required a/b and exploratory c.",
     "Counterfactuals stay out of this required manifest (Batch 3 gated)."
   ]
 }

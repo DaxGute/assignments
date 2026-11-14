@@ -1,0 +1,91 @@
+{
+  "kind": "measured",
+  "reference_lambda_max": 5.967310256347902,
+  "rows": [
+    {
+      "kind": "measured",
+      "run_name": "model-d8-lr0.003-tok614M-p4-gauge-v0.25",
+      "wandb_id": "9mm1oa3t",
+      "wandb_url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/9mm1oa3t",
+      "intervention": "initial-only",
+      "gauge_factor": 0.25,
+      "val_loss": 2.934701919555664,
+      "lambda_max": 5.919389563719939,
+      "lambda_ratio": 0.9919694652080497,
+      "assignment_criterion": false
+    },
+    {
+      "kind": "measured",
+      "run_name": "model-d8-lr0.003-tok614M-p4-gauge-v0.5",
+      "wandb_id": "jnlh4wxo",
+      "wandb_url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/jnlh4wxo",
+      "intervention": "initial-only",
+      "gauge_factor": 0.5,
+      "val_loss": 2.929998874664306,
+      "lambda_max": 6.119720765619674,
+      "lambda_ratio": 1.025540905822626,
+      "assignment_criterion": false
+    },
+    {
+      "kind": "measured",
+      "run_name": "model-d8-lr0.003-tok614M-p4-gauge-v2",
+      "wandb_id": "y6qvugtq",
+      "wandb_url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/y6qvugtq",
+      "intervention": "initial-only",
+      "gauge_factor": 2.0,
+      "val_loss": 2.928154230117798,
+      "lambda_max": 7.480154313416926,
+      "lambda_ratio": 1.2535219373686313,
+      "assignment_criterion": false
+    },
+    {
+      "kind": "measured",
+      "run_name": "model-d8-lr0.003-tok614M-p4-gauge-v4",
+      "wandb_id": "wz72y30z",
+      "wandb_url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/wz72y30z",
+      "intervention": "initial-only",
+      "gauge_factor": 4.0,
+      "val_loss": 2.9296505451202393,
+      "lambda_max": 5.900320602130003,
+      "lambda_ratio": 0.98877389454543,
+      "assignment_criterion": false
+    },
+    {
+      "kind": "measured",
+      "run_name": "model-d8-lr0.003-tok614M-p4-persistent-gauge-v0.25",
+      "wandb_id": "6lpmyqvg",
+      "wandb_url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/6lpmyqvg",
+      "intervention": "persistent",
+      "gauge_factor": 0.25,
+      "val_loss": 2.9268739223480225,
+      "lambda_max": 6.40995093024087,
+      "lambda_ratio": 1.0741775866978085,
+      "assignment_criterion": false
+    },
+    {
+      "kind": "measured",
+      "run_name": "model-d8-lr0.003-tok614M-p4-frozen-norm-gauge-v0.25",
+      "wandb_id": "yk0nf5pc",
+      "wandb_url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/yk0nf5pc",
+      "intervention": "frozen-norm",
+      "gauge_factor": 0.25,
+      "val_loss": 2.956740379333496,
+      "lambda_max": 5.445531748588394,
+      "lambda_ratio": 0.9125605196739266,
+      "assignment_criterion": false
+    },
+    {
+      "kind": "measured",
+      "run_name": "model-d8-lr0.003-tok614M-p4-persistent-head-gauge-v0.25",
+      "wandb_id": "tdkerd6y",
+      "wandb_url": "https://wandb.ai/daxgute-stanford-university/assignments/runs/tdkerd6y",
+      "intervention": "persistent-head",
+      "gauge_factor": 0.25,
+      "val_loss": 2.925405979156494,
+      "lambda_max": 6.033114411926259,
+      "lambda_ratio": 1.0110274399606347,
+      "assignment_criterion": false
+    }
+  ],
+  "assignment_criterion_met": false
+}

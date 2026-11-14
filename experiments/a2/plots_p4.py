@@ -6,7 +6,7 @@ with the supplied width-512 reference, and writes PNG/PDF/CSV/JSON bundles::
     uv run python -m experiments.a2.plots_p4
 
 No missing measurement is imputed.  Missing files or cells are listed in
-``outputs/a2/data/p4_summary.json``.
+``experiments/a2/results/data/p4_summary.json``.
 """
 
 from __future__ import annotations
@@ -1324,9 +1324,9 @@ def run(*, refresh: bool = False) -> dict:
             "supplied_width512_preclip_gradient_rows": supplied_gradient_rows,
         },
         "required_loss_lr_bundles": {
-            "p41a": "outputs/a2/plots/p41/p41a_loss_vs_base_lr",
-            "p41c": "outputs/a2/plots/p41/p41c_loss_vs_base_lr",
-            "p42a": "outputs/a2/plots/p42/p42a_loss_vs_base_lr",
+            "p41a": "experiments/a2/results/plots/p41/p41a_loss_vs_base_lr",
+            "p41c": "experiments/a2/results/plots/p41/p41c_loss_vs_base_lr",
+            "p42a": "experiments/a2/results/plots/p42/p42a_loss_vs_base_lr",
         },
         "warnings": [
             (

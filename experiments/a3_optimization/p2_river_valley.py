@@ -22,10 +22,28 @@ SCHEDULE_RUNS = [
     )
 ]
 
+# Robustness sweep for part (a): bracket the default peak LR for every schedule.
+SCHEDULE_TUNING_RUNS = [
+    TrainConfig(
+        lr_schedule=lr_schedule,
+        learning_rate=learning_rate,
+        ema_decays=EMA_DECAYS,
+        wandb_tags=(EXPERIMENT_KEY, "p2-a-lr-tuning"),
+    )
+    for lr_schedule in ("wsd0.0", "linear", "cos", "wsd0.2")
+    for learning_rate in (0.0015, 0.006)
+]
+
 # Part (c): the LR falls to 0.1x between 40% and 45% of training and is back at
 # full LR by 50%, before the same 20% cooldown as the wsd0.2 control above.
 REWARM_RUNS = [
     TrainConfig(lr_schedule="wsd0.2", lr_dip=(0.4, 0.45, 0.5, 0.1), wandb_tags=(EXPERIMENT_KEY,)),
+    TrainConfig(lr_schedule="wsd0.2", lr_dip=(0.4, 0.45, 0.5, 0.0),
+                wandb_tags=(EXPERIMENT_KEY, "p2-c-dip-sweep")),
+    TrainConfig(lr_schedule="wsd0.2", lr_dip=(0.4, 0.45, 0.5, 0.5),
+                wandb_tags=(EXPERIMENT_KEY, "p2-c-dip-sweep")),
+    TrainConfig(lr_schedule="wsd0.2", lr_dip=(0.3, 0.45, 0.6, 0.1),
+                wandb_tags=(EXPERIMENT_KEY, "p2-c-dip-sweep")),
 ]
 
 # Part (d): horizon-free schedules. warmup_steps fixes the warmup in updates,
@@ -36,14 +54,25 @@ HORIZON_FREE_RUNS = [
                 wandb_tags=(EXPERIMENT_KEY,)),
 ]
 
-RUNS = SCHEDULE_RUNS + REWARM_RUNS + HORIZON_FREE_RUNS
+HORIZON_BUDGET_RUNS = [
+    TrainConfig(
+        num_train_sequences=num_sequences,
+        lr_schedule=schedule,
+        warmup_steps=94 if schedule in ("invsqrt", "sgdr2000") else None,
+        min_lr_ratio=0.1 if schedule == "sgdr2000" else TrainConfig.min_lr_ratio,
+        wandb_tags=(EXPERIMENT_KEY, "p2-d-budget-sweep"),
+    )
+    for num_sequences in (150_000, 300_000)
+    for schedule in ("linear", "cos", "invsqrt", "sgdr2000")
+]
 
-
-# TODO: Part (b): try other EMA timescales.
-# TODO: Part (c): vary the depth and duration of lr_dip.
-# TODO: Part (d): run the horizon-free schedules to your largest budget, read
-# them off at several smaller budgets, and train budget-tuned schedules
-# (e.g. linear with a smaller num_train_sequences) at each budget.
+RUNS = (
+    SCHEDULE_RUNS
+    + SCHEDULE_TUNING_RUNS
+    + REWARM_RUNS
+    + HORIZON_FREE_RUNS
+    + HORIZON_BUDGET_RUNS
+)
 
 
 def main():
