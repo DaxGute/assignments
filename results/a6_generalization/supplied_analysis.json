@@ -1,0 +1,809 @@
+{
+  "parameter_scaling": {
+    "baseline": {
+      "batch": 64,
+      "checkpoint": "checkpoints/baseline_d8_e32_s42.pt",
+      "data_seed": 42,
+      "depth": 8,
+      "epochs": 32,
+      "id": "0baf962ea57fafacec22",
+      "lr": 0.003,
+      "ntrain": 30000,
+      "parameters": 30437888,
+      "schedule": "linear",
+      "seed": 42,
+      "validation_nll": 1.2627138263769448,
+      "wd": 3.2,
+      "width": 512
+    },
+    "runs": [
+      {
+        "depth": 4,
+        "parameters": 3813632,
+        "epochs": 32,
+        "lr": 0.003,
+        "wd": 1.0,
+        "validation_nll": 1.269528378697112,
+        "training_flops": 34817924136960000,
+        "run_id": "b75b98d840bdfb9342fb"
+      },
+      {
+        "depth": 5,
+        "parameters": 7440320,
+        "epochs": 16,
+        "lr": 0.003,
+        "wd": 0.8,
+        "validation_nll": 1.2662738720420748,
+        "training_flops": 31575873945600000,
+        "run_id": "fbfd2167a4fce0901462"
+      },
+      {
+        "depth": 6,
+        "parameters": 12849024,
+        "epochs": 32,
+        "lr": 0.003,
+        "wd": 3.2,
+        "validation_nll": 1.2627831440288573,
+        "training_flops": 103541007974400000,
+        "run_id": "125c21fdf6bf94aed49a"
+      },
+      {
+        "depth": 7,
+        "parameters": 20396096,
+        "epochs": 16,
+        "lr": 0.003,
+        "wd": 1.6,
+        "validation_nll": 1.2629262695237995,
+        "training_flops": 79043777003520000,
+        "run_id": "d3bdcdaf2e68083a8bba"
+      },
+      {
+        "depth": 8,
+        "parameters": 30437888,
+        "epochs": 32,
+        "lr": 0.003,
+        "wd": 3.2,
+        "validation_nll": 1.2627138263769448,
+        "training_flops": 228893235609600000,
+        "run_id": "0baf962ea57fafacec22"
+      },
+      {
+        "depth": 9,
+        "parameters": 43330752,
+        "epochs": 32,
+        "lr": 0.003,
+        "wd": 1.0,
+        "validation_nll": 1.2593597444854676,
+        "training_flops": 318059902402560000,
+        "run_id": "1843c5940853ea87f4c5"
+      },
+      {
+        "depth": 10,
+        "parameters": 59431040,
+        "epochs": 16,
+        "lr": 0.003,
+        "wd": 1.0,
+        "validation_nll": 1.26144565224275,
+        "training_flops": 213844702003200000,
+        "run_id": "5e13ec06a7f0dde0b0ed"
+      }
+    ],
+    "monotonic_in_parameters": false,
+    "adjacent_deltas": [
+      -0.003254506655037348,
+      -0.003490728013217481,
+      0.00014312549494222004,
+      -0.00021244314685464616,
+      -0.003354081891477234,
+      0.002085907757282346
+    ],
+    "fit": {
+      "all": {
+        "amplitude": 256.98714814832505,
+        "exponent": 0.666064071565865,
+        "offset": 1.258987896242115,
+        "rmse": 0.0009275619664835719
+      },
+      "drop_smallest": {
+        "amplitude": 1118.5997651947844,
+        "exponent": 0.7606518616873549,
+        "offset": 1.2593391637817104,
+        "rmse": 0.000994102734366097
+      },
+      "drop_largest": {
+        "amplitude": 4.826513801079238,
+        "exponent": 0.38133118592266757,
+        "offset": 1.254525422857347,
+        "rmse": 0.000894056883058733
+      }
+    },
+    "selected_lr_values": [
+      0.003
+    ],
+    "selected_epochs": [
+      16,
+      32
+    ],
+    "note": "Selected recipes all use LR 0.003. Epoch count and weight decay still vary, so the parameter trend is not a matched-compute comparison. The fitted offset is a descriptive asymptote inside this fit, not a demonstrated loss."
+  },
+  "lr_wd": {
+    "n_runs": 21,
+    "n_positive_wd": 18,
+    "epochs": 16,
+    "lr_values": [
+      0.001,
+      0.003,
+      0.01
+    ],
+    "wd_values": [
+      0.0,
+      0.1,
+      0.3,
+      1.0,
+      3.2,
+      10.0,
+      30.0
+    ],
+    "quadratic_rmse": 0.008593673782095091,
+    "quadratic_coefficients": [
+      1.2666512615683576,
+      -0.007451877674859095,
+      -0.0023171629610285525,
+      0.009183498284505872,
+      0.009433680029087885,
+      0.0027536577107798287
+    ],
+    "product_spearman": -0.05882352941176471,
+    "product_quadratic_rmse": 0.011164244633667407,
+    "best_positive": {
+      "lr": 0.01,
+      "wd": 0.3,
+      "validation_nll": 1.262081793460995,
+      "run_id": "2ff5e803e0dff1a8269b"
+    },
+    "best_wd_0_1": {
+      "lr": 0.01,
+      "wd": 0.1,
+      "validation_nll": 1.2697238953895866,
+      "run_id": "59b769c9b6bb761e6566"
+    },
+    "wd_ratio_best_over_0_1": 2.9999999999999996,
+    "best_zero_wd": {
+      "lr": 0.01,
+      "validation_nll": 1.2778727748282255
+    },
+    "loss_span": 0.07995903682522476
+  },
+  "wd_tuning": {
+    "comparison": {
+      "epochs": 32,
+      "lr": 0.003,
+      "with_wd_tuning": 3.2,
+      "without_wd_tuning": 0.1
+    },
+    "runs": [
+      {
+        "architecture": "dense",
+        "batch": 64,
+        "depth": 8,
+        "epochs": 32,
+        "history": [
+          {
+            "step": 1876,
+            "validation_nll": 1.278929484995082
+          },
+          {
+            "step": 3752,
+            "validation_nll": 1.269763797916472
+          },
+          {
+            "step": 5628,
+            "validation_nll": 1.2741307268915698
+          },
+          {
+            "step": 7504,
+            "validation_nll": 1.2824530443046243
+          },
+          {
+            "step": 9380,
+            "validation_nll": 1.290290081417188
+          },
+          {
+            "step": 11256,
+            "validation_nll": 1.3286538906190544
+          },
+          {
+            "step": 13132,
+            "validation_nll": 1.3278963014930487
+          },
+          {
+            "step": 15008,
+            "validation_nll": 1.4057004241179676
+          }
+        ],
+        "id": "bd649eb7efbf213b6e33",
+        "lr": 0.003,
+        "ntrain": 30000,
+        "parameters": 30437888,
+        "seed": 42,
+        "state": "finished",
+        "validation_nll": 1.4057004241179676,
+        "wd": 0.1,
+        "width": 512
+      },
+      {
+        "architecture": "dense",
+        "batch": 64,
+        "depth": 8,
+        "epochs": 32,
+        "history": [
+          {
+            "step": 1876,
+            "validation_nll": 1.3021741197109222
+          },
+          {
+            "step": 3752,
+            "validation_nll": 1.2926581021696328
+          },
+          {
+            "step": 5628,
+            "validation_nll": 1.3207578377127647
+          },
+          {
+            "step": 7504,
+            "validation_nll": 1.2848520401977002
+          },
+          {
+            "step": 9380,
+            "validation_nll": 1.2813338968455792
+          },
+          {
+            "step": 11256,
+            "validation_nll": 1.2757292010858654
+          },
+          {
+            "step": 13132,
+            "validation_nll": 1.2695048993006348
+          },
+          {
+            "step": 15008,
+            "validation_nll": 1.2627138263769448
+          }
+        ],
+        "id": "0baf962ea57fafacec22",
+        "lr": 0.003,
+        "ntrain": 30000,
+        "parameters": 30437888,
+        "seed": 42,
+        "state": "finished",
+        "validation_nll": 1.2627138263769448,
+        "wd": 3.2,
+        "width": 512
+      }
+    ],
+    "baseline": {
+      "batch": 64,
+      "checkpoint": "checkpoints/baseline_d8_e32_s42.pt",
+      "data_seed": 42,
+      "depth": 8,
+      "epochs": 32,
+      "id": "0baf962ea57fafacec22",
+      "lr": 0.003,
+      "ntrain": 30000,
+      "parameters": 30437888,
+      "schedule": "linear",
+      "seed": 42,
+      "validation_nll": 1.2627138263769448,
+      "wd": 3.2,
+      "width": 512
+    }
+  },
+  "ensemble": {
+    "mean_nll": [
+      1.2619270086288452,
+      1.2570891380310059,
+      1.2555121183395386,
+      1.2547260522842407,
+      1.2542545795440674
+    ],
+    "bootstrap_mean": [
+      1.2618798850330402,
+      1.257036129518037,
+      1.255457220769565,
+      1.2546704314396497,
+      1.2541984305620033
+    ],
+    "bootstrap_p05": [
+      1.2565299317466097,
+      1.2515814069563522,
+      1.2499756740285084,
+      1.2491472354479134,
+      1.2486829867230729
+    ],
+    "bootstrap_p95": [
+      1.2668107594847677,
+      1.2621415168434382,
+      1.2605969088191167,
+      1.2598207399480046,
+      1.259357293032389
+    ],
+    "fit_k1_to_k5": {
+      "amplitude": 0.009465285979270745,
+      "exponent": 1.0323495180201794,
+      "offset": 1.2524622818830464,
+      "rmse": 3.1256387921841715e-06
+    },
+    "fit_k1_to_k4": {
+      "amplitude": 0.009460928428693583,
+      "exponent": 1.0323495180201794,
+      "offset": 1.2524656947894748
+    },
+    "predicted_k10": 1.2533408677685296,
+    "extrapolation_warning": "Five members do not identify L_infinity. The K=10 number is a fit evaluation, not a measurement."
+  },
+  "schedules": {
+    "runs": {
+      "constant": [
+        {
+          "epochs": 16,
+          "lr": 0.0003333333333,
+          "wd": 3.2,
+          "validation_nll": 1.2656590267177672,
+          "run_id": "5f1e62344db69bbb0a32",
+          "history_epochs": [
+            4,
+            8,
+            12,
+            16
+          ]
+        },
+        {
+          "epochs": 32,
+          "lr": 0.0003333333333,
+          "wd": 3.2,
+          "validation_nll": 1.2626729027293622,
+          "run_id": "016d18f9a34bbdc49906",
+          "history_epochs": [
+            4,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32.0
+          ]
+        },
+        {
+          "epochs": 64,
+          "lr": 0.0003333333333,
+          "wd": 3.2,
+          "validation_nll": 1.2616421021725983,
+          "run_id": "1f2d688c125c8377f0ce",
+          "history_epochs": [
+            4,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32.0,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64.0
+          ]
+        },
+        {
+          "epochs": 128,
+          "lr": 0.0003333333333,
+          "wd": 3.2,
+          "validation_nll": 1.2604467401988804,
+          "run_id": "e195f8d6c6a0dd7830ab",
+          "history_epochs": [
+            4,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32.0,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64.0,
+            68,
+            72,
+            76,
+            80,
+            84,
+            88,
+            92,
+            96.0,
+            100,
+            104,
+            108,
+            112,
+            116,
+            120,
+            124,
+            128.0
+          ]
+        },
+        {
+          "epochs": 256,
+          "lr": 0.0003333333333,
+          "wd": 3.2,
+          "validation_nll": 1.260758588887751,
+          "run_id": "e56ab20a7a66b91fb4e0",
+          "history_epochs": [
+            4,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32.0,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64.0,
+            68,
+            72,
+            76,
+            80,
+            84,
+            88,
+            92,
+            96.0,
+            100,
+            104,
+            108,
+            112,
+            116,
+            120,
+            124,
+            128.0,
+            132,
+            136,
+            140,
+            144,
+            148,
+            152,
+            156,
+            160.0,
+            164,
+            168,
+            172,
+            176,
+            180,
+            184,
+            188,
+            192.0,
+            196,
+            200,
+            204,
+            208,
+            212,
+            216,
+            220,
+            224.0,
+            228,
+            232,
+            236,
+            240,
+            244,
+            248,
+            252,
+            256.0
+          ]
+        }
+      ],
+      "linear": [
+        {
+          "epochs": 16,
+          "lr": 0.0014142136,
+          "wd": 3.2,
+          "validation_nll": 1.2613498542271555,
+          "run_id": "d55cdaea9af42869cef3",
+          "history_epochs": [
+            2.0,
+            4.0,
+            6.0,
+            8.0,
+            10.0,
+            12.0,
+            14.0,
+            16.0
+          ]
+        },
+        {
+          "epochs": 32,
+          "lr": 0.003517316504,
+          "wd": 3.2,
+          "validation_nll": 1.2611381514109672,
+          "run_id": "eab15461b446a6156860",
+          "history_epochs": [
+            4.0,
+            8.0,
+            12.0,
+            16.0,
+            20.0,
+            24.0,
+            28.0,
+            32.0
+          ]
+        },
+        {
+          "epochs": 64,
+          "lr": 0.01,
+          "wd": 3.2,
+          "validation_nll": 1.2683149900361896,
+          "run_id": "95dc6bce4dea64005e4e",
+          "history_epochs": [
+            4,
+            8.0,
+            12,
+            16.0,
+            20,
+            24.0,
+            28,
+            32.0,
+            36,
+            40.0,
+            44,
+            48.0,
+            52,
+            56.0,
+            60,
+            64.0
+          ]
+        },
+        {
+          "epochs": 128,
+          "lr": 0.01,
+          "wd": 3.2,
+          "validation_nll": 1.2658131442219018,
+          "run_id": "9c8e654e027c2c669b8b",
+          "history_epochs": [
+            4,
+            8,
+            12,
+            16.0,
+            20,
+            24,
+            28,
+            32.0,
+            36,
+            40,
+            44,
+            48.0,
+            52,
+            56,
+            60,
+            64.0,
+            68,
+            72,
+            76,
+            80.0,
+            84,
+            88,
+            92,
+            96.0,
+            100,
+            104,
+            108,
+            112.0,
+            116,
+            120,
+            124,
+            128.0
+          ]
+        },
+        {
+          "epochs": 256,
+          "lr": 0.01,
+          "wd": 3.2,
+          "validation_nll": 1.266993394535035,
+          "run_id": "a9d71093cd3efc0ef2bc",
+          "history_epochs": [
+            4,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32.0,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64.0,
+            68,
+            72,
+            76,
+            80,
+            84,
+            88,
+            92,
+            96.0,
+            100,
+            104,
+            108,
+            112,
+            116,
+            120,
+            124,
+            128.0,
+            132,
+            136,
+            140,
+            144,
+            148,
+            152,
+            156,
+            160.0,
+            164,
+            168,
+            172,
+            176,
+            180,
+            184,
+            188,
+            192.0,
+            196,
+            200,
+            204,
+            208,
+            212,
+            216,
+            220,
+            224.0,
+            228,
+            232,
+            236,
+            240,
+            244,
+            248,
+            252,
+            256.0
+          ]
+        }
+      ]
+    },
+    "constant_endpoints_match_long_history": [
+      {
+        "epochs": 16,
+        "long_history": 1.2656590267177672,
+        "endpoint": 1.2656590267177672,
+        "abs_diff": 0.0
+      },
+      {
+        "epochs": 32.0,
+        "long_history": 1.2626729027293622,
+        "endpoint": 1.2626729027293622,
+        "abs_diff": 0.0
+      },
+      {
+        "epochs": 64.0,
+        "long_history": 1.2616421021725983,
+        "endpoint": 1.2616421021725983,
+        "abs_diff": 0.0
+      },
+      {
+        "epochs": 128.0,
+        "long_history": 1.2604467401988804,
+        "endpoint": 1.2604467401988804,
+        "abs_diff": 0.0
+      },
+      {
+        "epochs": 256.0,
+        "long_history": 1.260758588887751,
+        "endpoint": 1.260758588887751,
+        "abs_diff": 0.0
+      }
+    ]
+  },
+  "batch": {
+    "rows": [
+      {
+        "batch": 16,
+        "lr": 0.0015,
+        "wd": 1.6,
+        "validation_nll": 1.26238483100757,
+        "sharpness_radius_0_05": 0.12025332450866699,
+        "run_id": "8f3947f2fd5d2b31596b",
+        "updates": 60000
+      },
+      {
+        "batch": 64,
+        "lr": 0.003,
+        "wd": 3.2,
+        "validation_nll": 1.2627138263769448,
+        "sharpness_radius_0_05": null,
+        "run_id": "0baf962ea57fafacec22",
+        "updates": 15008
+      },
+      {
+        "batch": 256,
+        "lr": 0.006,
+        "wd": 6.4,
+        "validation_nll": 1.2694134644959123,
+        "sharpness_radius_0_05": 0.10158061981201172,
+        "run_id": "f45fac8badb267c85fb5",
+        "updates": 3776
+      },
+      {
+        "batch": 1024,
+        "lr": 0.012,
+        "wd": 12.8,
+        "validation_nll": 1.2959017191305757,
+        "sharpness_radius_0_05": 0.169885516166687,
+        "run_id": "245937670386b77e2275",
+        "updates": 960
+      },
+      {
+        "batch": 4096,
+        "lr": 0.024,
+        "wd": 25.6,
+        "validation_nll": 1.394662320613861,
+        "sharpness_radius_0_05": 0.2824336290359497,
+        "run_id": "5b60be2e6d3ef2f86f0e",
+        "updates": 256
+      }
+    ],
+    "missing_sharpness": [
+      64
+    ],
+    "best_batch": 16
+  },
+  "epoch_scaling": [
+    {
+      "epochs": 8,
+      "lr": 0.003,
+      "wd": 3.2,
+      "validation_nll": 1.2687352208197118,
+      "run_id": "a44ba9ab96c22cbe157d"
+    },
+    {
+      "epochs": 16,
+      "lr": 0.003,
+      "wd": 1.0,
+      "validation_nll": 1.2631816016733646,
+      "run_id": "8cc786644ee6672d0879"
+    },
+    {
+      "epochs": 32,
+      "lr": 0.003,
+      "wd": 3.2,
+      "validation_nll": 1.2627138263769448,
+      "run_id": "0baf962ea57fafacec22"
+    },
+    {
+      "epochs": 64,
+      "lr": 0.003,
+      "wd": 3.2,
+      "validation_nll": 1.269079345241189,
+      "run_id": "e644f28d8d2e54f384ef"
+    }
+  ]
+}

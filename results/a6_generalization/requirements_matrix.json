@@ -1,0 +1,39 @@
+{
+  "handout": "a6_generalization.pdf",
+  "deadline": "2026-11-19T13:00:00-08:00",
+  "baseline": {
+    "run_id": "0baf962ea57fafacec22",
+    "validation_nll": 1.2627138263769448,
+    "lr": 0.003,
+    "wd": 3.2,
+    "epochs": 32,
+    "parameters": 30437888
+  },
+  "smoke": {
+    "seconds_per_step": 0.18504331593750006,
+    "dense_parameters": 30437888,
+    "moe_stored_parameters": 96514560,
+    "loop_stored_parameters": 11426688,
+    "baseline_checkpoint_loads": true,
+    "bos_fraction": 1.0
+  },
+  "subsections": [
+    {"id": "P1a", "question": "How does validation NLL scale with dense parameter count after joint LR/WD/epoch selection?", "comparison": "supplied d4-d10", "training": "none", "status": "analyzed"},
+    {"id": "P1b", "question": "Does four-expert top-1 MoE beat dense d8 at matched active compute?", "comparison": "three LRs versus supplied d8", "training": "required", "seeds": "second seed after LR selection", "status": "seed42_1.268434_seed43_1.265620_interval_hit"},
+    {"id": "P1c", "question": "Does RMS+recall looping match dense d8 loss with fewer stored parameters?", "comparison": "three LRs versus supplied d8", "training": "required", "seeds": "second seed after LR selection", "status": "seed42_1.264715_seed43_1.263934_interval_hit"},
+    {"id": "P1d", "question": "Can an architecture improve data efficiency at a fixed parameter budget?", "comparison": "dense depth 3, width 512, against the tuned six-pass loop", "training": "required exploration", "status": "scored_best_1.270093_gap_vs_loop_+0.0054_falsifier_did_not_fire"},
+    {"id": "P2a-i", "question": "Does a quadratic in log LR and log WD, or the product LR*WD, organize 16-epoch loss?", "comparison": "supplied 16-epoch grid versus WD 0.1", "training": "none", "status": "analyzed"},
+    {"id": "P2a-ii", "question": "Does LR-tuned Hyperball recover the benefit of WD 3.2 versus WD 0.1?", "comparison": "supplied AdamW controls", "training": "required", "seeds": "second seed after LR selection", "status": "seed42_1.271385_seed43_1.271424_fraction_0.939_interval_hit"},
+    {"id": "P2b-i", "question": "Does attention dropout help a single d8 model?", "comparison": "rates 0.05, 0.15, 0.25 versus supplied no-dropout", "training": "required", "seeds": "second seed", "status": "seed43_scored_p05_1.258402_p15_1.258863_p25_1.260817_falsifier_did_not_fire"},
+    {"id": "P2b-ii", "question": "How does probability-averaged ensemble NLL scale with K?", "comparison": "supplied five no-dropout members", "training": "none", "status": "analyzed"},
+    {"id": "P2b-iii", "question": "Do dropout and ensembling compose?", "comparison": "dropout ensembles versus no-dropout ensemble curve", "training": "additional members after the dropout rate is chosen", "status": "scored_adding_one_dropout_model_moves_k5_by_at_most_0.00019"},
+    {"id": "P3a", "question": "How do linear and constant schedules compare across horizons?", "comparison": "supplied histories", "training": "only if a matched-LR gap remains", "seeds": "exempt", "status": "analyzed"},
+    {"id": "P3b", "question": "Which batch size generalizes best, and does sharpness track NLL?", "comparison": "supplied B in {16,64,256,1024,4096}", "training": "sharpness probe for B=64 only", "status": "analyzed_b64_sharpness_0.1000"},
+    {"id": "P3c", "question": "Does SAM reach a lower validation NLL than AdamW?", "comparison": "rho grid versus supplied AdamW", "training": "required", "seeds": "second seed after rho selection", "status": "seed42_1.261672_seed43_1.263302_interval_hit"},
+    {"id": "P3d", "question": "Can another optimizer improve data efficiency?", "comparison": "SGD at learning rates 0.001, 0.003, and 0.01, weight decay 3.2, versus tuned AdamW", "training": "required exploration", "status": "scored_best_1.392914_gap_vs_adamw_+0.1302_falsifier_did_not_fire"},
+    {"id": "P4a", "question": "How does full fine-tuning from four initializations rank after 1, 4, and 16 passes?", "comparison": "LR tuned per initialization and horizon", "training": "1, 4, and 16 epochs scored", "seeds": "second data order scored", "status": "scored_both_orders_16epoch_falsified_dclm_leads_1.261285_and_1.261844"},
+    {"id": "P4b", "question": "How does validation NLL scale with unique target samples for each initialization?", "comparison": "n in {1k,3k,10k,30k} at 16 passes", "training": "required after LR scale is known", "status": "scored_related_small_pools_collapse_no_effective_sample_number_falsifier_did_not_fire"},
+    {"id": "P4c", "question": "Which related-DNA adaptation helps: WD, decay toward initialization, frozen head, frozen body?", "comparison": "full fine-tuning", "training": "required", "status": "scored_falsified_frozen_body_1.243429_below_1.254"},
+    {"id": "P4d", "question": "Can a strategy from problems 1-3 improve fine-tuning data efficiency?", "comparison": "full fine-tuning baseline", "training": "required exploration", "status": "scored_best_hyperball_lr0.03_1.268391_falsifier_did_not_fire"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "a6-ft-noise-n30000-e1-lr0.0001-wd3.2-s42",
+  "architecture": "dense",
+  "lr": 0.0001,
+  "wd": 3.2,
+  "epochs": 1,
+  "ntrain": 30000,
+  "batch": 64,
+  "micro_batch": 8,
+  "seed": 42,
+  "data_seed": 42,
+  "schedule": "linear",
+  "attention_dropout": 0.0,
+  "optimizer": "adamw",
+  "rho": 0.05,
+  "initialization": "noise",
+  "adaptation": "full",
+  "depth": 8,
+  "width": 512,
+  "context": 1024,
+  "save_logits": false,
+  "probe_sharpness": true
+}

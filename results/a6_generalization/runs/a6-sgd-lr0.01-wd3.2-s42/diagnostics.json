@@ -1,0 +1,9 @@
+{
+  "stored_parameters": 30437888,
+  "architecture": "dense",
+  "sharpness": {
+    "radius": 0.05,
+    "base_loss": 1.3954267501831055,
+    "max_loss_increase": 2.9386019706726074
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "stored_parameters": 11426688,
+  "architecture": "loop",
+  "executed_depth": 8,
+  "core_size": 1,
+  "passes": 6,
+  "unique_blocks": 3,
+  "sharpness": {
+    "radius": 0.05,
+    "base_loss": 1.2245405912399292,
+    "max_loss_increase": 0.057221293449401855
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "checkpoint": "checkpoints/baseline_d8_e32_s42.pt",
+  "run_id": "0baf962ea57fafacec22",
+  "probe": "First four rows of splits/target_30k.npy, eval mode, token-mean NLL, fp32",
+  "validation_note": "Same function on batch-16 checkpoint returned max_loss_increase 0.120796 at radius 0.05; the release records 0.120253. Base losses 1.218190 vs 1.218185.",
+  "0.01": {
+    "radius": 0.01,
+    "base_loss": 1.2115529775619507,
+    "max_loss_increase": 0.011081695556640625
+  },
+  "0.05": {
+    "radius": 0.05,
+    "base_loss": 1.2115529775619507,
+    "max_loss_increase": 0.10003602504730225
+  },
+  "0.1": {
+    "radius": 0.1,
+    "base_loss": 1.2115529775619507,
+    "max_loss_increase": 0.31911325454711914
+  },
+  "seconds": 8.131203833036125
+}

@@ -84,6 +84,7 @@ IGNORED_SOURCE_PARTS = {
     ".pytest_cache",
     ".ruff_cache",
     ".venv",
+    ".worktrees",
     "__pycache__",
     "cache",
     "ckpts",
@@ -118,7 +119,7 @@ def ignore_source_path(path: Path) -> bool:
         return True
     if any(part in IGNORED_SOURCE_PARTS for part in path.parts):
         return True
-    return path.suffix in {".pyc", ".pyo"}
+    return path.suffix in {".pyc", ".pyo", ".pdf"}
 
 
 def build_image(*, include_tests: bool = False) -> modal.Image:

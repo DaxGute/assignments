@@ -1,0 +1,62 @@
+{
+  "probe": "First four rows of splits/target_30k.npy, eval mode, token-mean NLL, fp32, radius 0.05",
+  "calibration": "Same code on the batch-16 checkpoint returned 0.120796 versus the released 0.120253.",
+  "runs": [
+    {
+      "depth": 4,
+      "width": 256,
+      "parameters": 3813632,
+      "radius": 0.05,
+      "base_loss": 1.2268636226654053,
+      "max_loss_increase": 0.04155170917510986
+    },
+    {
+      "depth": 5,
+      "width": 320,
+      "parameters": 7440320,
+      "radius": 0.05,
+      "base_loss": 1.2267141342163086,
+      "max_loss_increase": 0.020081281661987305
+    },
+    {
+      "depth": 6,
+      "width": 384,
+      "parameters": 12849024,
+      "radius": 0.05,
+      "base_loss": 1.2224688529968262,
+      "max_loss_increase": 0.12274026870727539
+    },
+    {
+      "depth": 7,
+      "width": 448,
+      "parameters": 20396096,
+      "radius": 0.05,
+      "base_loss": 1.21988844871521,
+      "max_loss_increase": 0.034631967544555664
+    },
+    {
+      "depth": 8,
+      "width": 512,
+      "parameters": 30437888,
+      "radius": 0.05,
+      "base_loss": 1.2115529775619507,
+      "max_loss_increase": 0.10003602504730225
+    },
+    {
+      "depth": 9,
+      "width": 576,
+      "parameters": 43330752,
+      "radius": 0.05,
+      "base_loss": 1.2130872011184692,
+      "max_loss_increase": 0.044660091400146484
+    },
+    {
+      "depth": 10,
+      "width": 640,
+      "parameters": 59431040,
+      "radius": 0.05,
+      "base_loss": 1.2192305326461792,
+      "max_loss_increase": 0.02680802345275879
+    }
+  ]
+}

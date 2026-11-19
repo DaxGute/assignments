@@ -1,0 +1,32 @@
+@page { size: letter; margin: 0.62in 0.68in; }
+html { color: #1a1a1a; font-size: 10.5pt; }
+body {
+  margin: 0 auto; max-width: none;
+  font-family: "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, serif;
+  hyphens: auto; overflow-wrap: break-word; font-kerning: normal;
+}
+p { margin: 0.4em 0; line-height: 1.32; }
+.equation { text-align: center; margin: 0.45em 0 0.55em; }
+h1, h2, h3 { margin-top: 0.8em; margin-bottom: 0.25em; page-break-after: avoid; line-height: 1.2; }
+h1 { font-size: 1.35em; }
+h2 { font-size: 1.12em; }
+h3 { font-size: 1.02em; }
+img { max-width: 100%; height: auto; margin: 0.25em 0 0.15em; }
+table {
+  margin: 0.45em 0 0.7em; border-collapse: collapse; width: 100%;
+  font-variant-numeric: lining-nums tabular-nums; font-size: 0.86em;
+}
+th, td { padding: 0.1em 0.35em; vertical-align: middle; text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+.prose-table th, .prose-table td {
+  text-align: left; vertical-align: top; hyphens: manual;
+  padding: 0.22em 0.4em; line-height: 1.25;
+}
+tr { break-inside: avoid; page-break-inside: avoid; }
+th { border-top: 1px solid currentColor; }
+tbody { border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; }
+code { font-family: Menlo, Monaco, Consolas, monospace; font-size: 85%; }
+@media print {
+  html, body { background: transparent; color: black; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+}
